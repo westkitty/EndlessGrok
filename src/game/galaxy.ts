@@ -1,4 +1,6 @@
 import { GALAXY_SIZE, MIN_SYSTEM_DISTANCE, PLANET_TYPE_INFO, RARE_RESOURCE_TYPES, STAR_CLASS_COLORS, SYSTEM_COUNT } from './constants';
+import { markArchiveStars } from './starbinding';
+import { pickStarsilkDeposit } from './starsilkResources';
 import { generateAnomaly, shouldGenerateAnomaly } from './anomalies';
 import {
   applyPlanetFeatureOutputs,
@@ -318,10 +320,22 @@ export function generateGalaxy(
       orbitalStationOwnerId: null,
       siegeBlockaders: [],
       specialization: null,
+      starState: systemType === 'black_hole' ? 'collapsed_black_hole' : 'stable',
+      isArchiveStar: false,
     });
   }
 
   buildConnections(systems);
+
+  const depositRng = new SeededRNG(seed + 99173);
+  for (const system of systems) {
+    for (const planet of system.planets) {
+      planet.starsilkDeposit = pickStarsilkDeposit(depositRng);
+    }
+  }
+
+  const archiveRng = new SeededRNG(seed + 77117);
+  markArchiveStars(systems, archiveRng);
   return systems;
 }
 
