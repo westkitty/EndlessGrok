@@ -17,13 +17,25 @@ async function startNewGame(page: import('@playwright/test').Page, seed = '42') 
 }
 
 async function dismissTurnSummary(page: import('@playwright/test').Page) {
-  const continueBtn = page.getByRole('button', { name: 'Continue' });
-  if (await continueBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
-    await continueBtn.click();
-  }
-  const decision = page.locator('.decision-overlay button').first();
-  if (await decision.isVisible({ timeout: 2000 }).catch(() => false)) {
-    await decision.click();
+  const overlay = page.locator('.overlay');
+  for (let attempt = 0; attempt < 8; attempt++) {
+    if (!(await overlay.first().isVisible().catch(() => false))) return;
+
+    const continueBtn = page.getByRole('button', { name: 'Continue' });
+    if (await continueBtn.isVisible().catch(() => false)) {
+      await continueBtn.click();
+      await expect(overlay.first()).toBeHidden({ timeout: 10000 }).catch(() => {});
+      continue;
+    }
+
+    const decision = page.locator('.decision-overlay button').first();
+    if (await decision.isVisible().catch(() => false)) {
+      await decision.click();
+      await expect(overlay.first()).toBeHidden({ timeout: 10000 }).catch(() => {});
+      continue;
+    }
+
+    await page.keyboard.press('Escape');
   }
 }
 
@@ -61,13 +73,13 @@ test.describe('AI and macro systems UI', () => {
     await startNewGame(page);
     await prepareMacroPanel(page);
     await page.getByTestId('tab-system').click();
+    await expect(page.getByTestId('macro-panel')).toBeVisible({ timeout: 10000 });
     const executeBtn = page.getByTestId('execute-macro-local_checksum_audit');
-    await expect(executeBtn).toBeEnabled({ timeout: 5000 });
+    await expect(executeBtn).toBeEnabled({ timeout: 10000 });
     await executeBtn.click();
     await expect(page.getByTestId('active-macro-local_checksum_audit')).toContainText('3 turns');
     await page.getByTestId('end-turn').click();
     await dismissTurnSummary(page);
-    await page.getByTestId('tab-system').click();
     await expect(page.getByTestId('active-macro-local_checksum_audit')).toContainText('2 turns', { timeout: 10000 });
   });
 

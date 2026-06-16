@@ -34,7 +34,10 @@ test.describe('Victory and hazard systems', () => {
       (window as Window & { __egPrepareMacroTest?: () => void }).__egPrepareMacroTest?.();
     });
     await page.getByTestId('tab-system').click();
-    await page.getByTestId('execute-macro-local_checksum_audit').click();
+    await expect(page.getByTestId('macro-panel')).toBeVisible({ timeout: 10000 });
+    const executeBtn = page.getByTestId('execute-macro-local_checksum_audit');
+    await expect(executeBtn).toBeEnabled({ timeout: 5000 });
+    await executeBtn.click();
     await page.getByTestId('tab-empire').click();
     await expect(page.getByTestId('empire-macro-intel')).toBeVisible();
   });
