@@ -16,6 +16,7 @@ import { SystemPanel } from './components/SystemPanel';
 import { EmpirePanel } from './components/EmpirePanel';
 import { ResearchPanel } from './components/ResearchPanel';
 import { DiplomacyPanel } from './components/DiplomacyPanel';
+import { FleetPanel } from './components/FleetPanel';
 import { EventLog } from './components/EventLog';
 import { ResourceBar } from './components/ResourceBar';
 import { TurnNotifications } from './components/TurnNotifications';
@@ -33,9 +34,15 @@ import { ConfirmDialog } from './components/ConfirmDialog';
 import { LoadSaveModal } from './components/LoadSaveModal';
 import { PrecursorLoreModal } from './components/PrecursorLoreModal';
 
-type Tab = 'system' | 'empire' | 'research' | 'diplomacy';
+type Tab = 'system' | 'empire' | 'fleets' | 'research' | 'diplomacy';
 
-const TAB_HOTKEYS: Record<string, Tab> = { '1': 'system', '2': 'empire', '3': 'research', '4': 'diplomacy' };
+const TAB_HOTKEYS: Record<string, Tab> = {
+  '1': 'system',
+  '2': 'empire',
+  '3': 'fleets',
+  '4': 'research',
+  '5': 'diplomacy',
+};
 
 function NewGameSetup({ onNewGame, onLoadSlot, onImportSave, defaultGalaxyShape }: {
   onNewGame: (seed?: number, settings?: Partial<GameSettings>, factionIndex?: number) => void;
@@ -77,7 +84,7 @@ function NewGameSetup({ onNewGame, onLoadSlot, onImportSave, defaultGalaxyShape 
       <StarfieldBackground seed={42} />
       <div className="menu-content">
         <Icon name="emblem-terran" size={64} className="menu-emblem" />
-        <h1 className="menu-title">Endless Grok</h1>
+        <h1 className="menu-title" data-testid="menu-title">Endless Grok</h1>
         <p className="menu-subtitle">A 4X Space Strategy Prototype</p>
 
         <div className="new-game-setup">
@@ -170,7 +177,7 @@ function NewGameSetup({ onNewGame, onLoadSlot, onImportSave, defaultGalaxyShape 
         )}
 
         <div className="menu-buttons">
-          <button className="btn btn-primary" onClick={handleStart}>New Game</button>
+          <button className="btn btn-primary" onClick={handleStart} data-testid="new-game">New Game</button>
           {hasSave() && (
             <button className="btn" onClick={() => setShowLoadModal(true)}>Load Game</button>
           )}
@@ -336,8 +343,8 @@ function GameScreen({
             <Icon name={getEmblemIconName(player.emblem)} size={24} style={{ filter: `drop-shadow(0 0 6px ${player.color})` }} />
             <span className="hud-empire-name" style={{ color: player.color }}>{player.name}</span>
           </div>
-          <span className="turn-counter">
-            Turn <span>{state.turn}</span>/{state.maxTurns}
+          <span className="turn-counter" data-testid="turn-counter">
+            Turn <span data-testid="turn-number">{state.turn}</span>/{state.maxTurns}
           </span>
           {state.lastAutosaveTurn === state.turn && (
             <span className="autosave-indicator" title="Autosaved this turn">💾 Autosaved</span>
@@ -349,6 +356,7 @@ function GameScreen({
             influence={player.influence}
             deltas={resourceDeltas}
             economy={state.turnSummaries[state.turnSummaries.length - 1]?.economy}
+            showStrategicResources={player.researchedTechs.includes('strategic_resources')}
             compact
           />
         </div>
@@ -358,14 +366,14 @@ function GameScreen({
           <button className="btn btn-sm" onClick={() => setPaused(true)} title="Menu (Esc)">Menu</button>
           <button className="btn btn-sm" onClick={handleSave}>Save</button>
           <button className="btn btn-sm" onClick={() => downloadSave(state)} title="Export save as JSON">Export</button>
-          <button className="btn btn-sm btn-primary" onClick={handleEndTurn} title="End Turn (E)">
+          <button className="btn btn-sm btn-primary" onClick={handleEndTurn} title="End Turn (E)" data-testid="end-turn">
             End Turn <kbd className="hotkey-hint">E</kbd>
           </button>
         </div>
       </div>
 
       <div className="game-layout">
-        <div className="galaxy-container">
+        <div className="galaxy-container" data-testid="galaxy-map">
           <GalaxyMap
             state={state}
             onSelectSystem={handleSelectSystem}
@@ -387,7 +395,7 @@ function GameScreen({
         </div>
         <div className="side-panel" style={panelStyle}>
           <div className="panel-tabs">
-            {(['system', 'empire', 'research', 'diplomacy'] as Tab[]).map((t, i) => (
+            {(['system', 'empire', 'fleets', 'research', 'diplomacy'] as Tab[]).map((t, i) => (
               <div
                 key={t}
                 className={`panel-tab panel-tab--stagger-${i} ${tab === t ? 'active' : ''}`}
@@ -395,10 +403,11 @@ function GameScreen({
                 role="tab"
                 aria-selected={tab === t}
                 tabIndex={0}
+                data-testid={`tab-${t}`}
                 onKeyDown={e => e.key === 'Enter' && setTab(t)}
               >
-                <Icon name={t === 'system' ? 'anomaly' : t === 'empire' ? 'fleet' : t === 'research' ? 'research' : 'diplomacy'} size={16} className="icon" />
-                {t.charAt(0).toUpperCase() + t.slice(1)}
+                <Icon name={t === 'system' ? 'anomaly' : t === 'empire' ? 'fleet' : t === 'fleets' ? 'fleet' : t === 'research' ? 'research' : 'diplomacy'} size={16} className="icon" />
+                {t === 'fleets' ? 'Fleets' : t.charAt(0).toUpperCase() + t.slice(1)}
                 <kbd className="hotkey-hint">{i + 1}</kbd>
               </div>
             ))}
@@ -406,6 +415,7 @@ function GameScreen({
           <div className="panel-body">
             {tab === 'system' && <SystemPanel state={state} onUpdate={onUpdate} animationsEnabled={uiSettings.animationsEnabled} />}
             {tab === 'empire' && <EmpirePanel state={state} onUpdate={onUpdate} />}
+            {tab === 'fleets' && <FleetPanel state={state} onUpdate={onUpdate} />}
             {tab === 'research' && <ResearchPanel state={state} onUpdate={onUpdate} />}
             {tab === 'diplomacy' && <DiplomacyPanel state={state} onUpdate={onUpdate} />}
           </div>

@@ -2,8 +2,15 @@ import { BUILDING_COSTS, COLONY_SHIP_COST, CRUISER_COST, DESTROYER_COST, DREADNO
 import { getBuildingDefinition } from './buildings';
 import { getFleetCommandLimit } from './combat';
 import { hasUnlock } from './research';
+import {
+  formatMissingStrategicResources,
+  getShipStrategicCost,
+  spendStrategicCost,
+} from './strategicResources';
 import { createShip } from './ships';
 import type { BuildingType, Empire, Fleet, GameState, Planet, ProductionItem, ShipType } from './types';
+
+export { getShipStrategicCost };
 
 let productionCounter = 0;
 
@@ -66,6 +73,9 @@ export function canQueueShip(
   if (cost.tech && !hasUnlock(empire.researchedTechs, cost.tech)) return `Requires ${cost.tech} technology`;
   if (empire.resources.credits < cost.credits) return 'Not enough credits';
   if (empire.resources.industry < cost.industry) return 'Not enough industry';
+  const strategicCost = getShipStrategicCost(type);
+  const missingStrategic = formatMissingStrategicResources(empire, strategicCost);
+  if (missingStrategic) return missingStrategic;
   if (planet.productionQueue.length >= 3) return 'Queue full (max 3 items)';
   if (state) {
     const shipCount = state.fleets
@@ -108,8 +118,10 @@ export function queueShipProduction(
   const err = canQueueShip(planet, type, empire, state);
   if (err) return null;
   const cost = SHIP_COSTS[type];
+  const strategicCost = getShipStrategicCost(type);
   empire.resources.credits -= cost.credits;
   empire.resources.industry -= cost.industry;
+  if (!spendStrategicCost(empire, strategicCost)) return null;
   const turns = getShipProductionTurns(type, empire);
   const item: ProductionItem = {
     id: createProductionId(),

@@ -126,6 +126,42 @@ function completeColonization(state: GameState, project: ColonizationProject): v
   });
 }
 
+export function canCancelColonization(
+  state: GameState,
+  projectId: string,
+  empireId: string,
+): string | null {
+  const project = (state.colonizationProjects ?? []).find(p => p.id === projectId);
+  if (!project) return 'Colonization project not found';
+  if (project.empireId !== empireId) return 'Not your colonization project';
+  return null;
+}
+
+export function cancelColonizationProject(
+  state: GameState,
+  projectId: string,
+  empireId: string,
+): boolean {
+  const err = canCancelColonization(state, projectId, empireId);
+  if (err) return false;
+
+  const project = state.colonizationProjects!.find(p => p.id === projectId)!;
+  const planet = state.systems.flatMap(s => s.planets).find(p => p.id === project.planetId);
+  const empire = state.empires.find(e => e.id === empireId);
+
+  state.colonizationProjects = (state.colonizationProjects ?? []).filter(p => p.id !== projectId);
+
+  if (empire && planet) {
+    state.events.push({
+      turn: state.turn,
+      type: 'colonize',
+      message: `${empire.name} canceled colonization of ${planet.name} (no refund)`,
+    });
+  }
+
+  return true;
+}
+
 export function processColonizationProjects(state: GameState): number {
   const projects = state.colonizationProjects ?? [];
   if (projects.length === 0) return 0;

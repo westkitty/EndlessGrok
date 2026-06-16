@@ -8,7 +8,7 @@ import {
 } from './constants';
 import { canBuildOnPlanet, getBuildingDefinition } from './buildings';
 import { exploreAnomaly, canExploreAnomaly } from './anomalies';
-import { canStartColonization, startColonizationProject } from './colonization';
+import { canCancelColonization, canStartColonization, cancelColonizationProject, startColonizationProject } from './colonization';
 import { getEmpireMilitaryPower, getFleetCommandLimit, predictCombatOutcome, repairFleetAtSystem } from './combat';
 import { canDeclareWar, declareWar, demandPeace, demandTribute, getDiplomacy } from './diplomacy';
 import { resolveDecision } from './playerDecisions';
@@ -22,6 +22,7 @@ import { canUpgradeColony, upgradeColonyDevelopment } from './upkeep';
 import { areSystemsConnected, getAdjacentSystems, getSystemDistance } from './galaxy';
 import { queueBuildingProduction, queueShipProduction, canQueueShip, canQueueBuilding } from './production';
 import { hasUnlock, getTechnology, getAvailableTechs } from './research';
+import { formatMissingStrategicResources, getTechStrategicCost, spendStrategicCost } from './strategicResources';
 import { createShip } from './ships';
 import { canReachSystem, findPath, getFleetPath, setFleetTravelPath } from './travel';
 import { SeededRNG } from './rng';
@@ -293,6 +294,18 @@ export function colonizePlanet(state: GameState, planetId: string): boolean {
   return startColonizationProject(state, planetId, player) !== null;
 }
 
+export function canCancelColonizationAction(state: GameState, projectId: string): string | null {
+  return canCancelColonization(state, projectId, state.playerEmpireId);
+}
+
+export function cancelColonizationAction(state: GameState, projectId: string): boolean {
+  return cancelColonizationProject(state, projectId, state.playerEmpireId);
+}
+
+export function cancelFleetMovement(state: GameState, fleetId: string): boolean {
+  return setFleetDestination(state, fleetId, null);
+}
+
 export function canBuildBuilding(state: GameState, planetId: string, buildingType: BuildingType): string | null {
   const player = getPlayer(state);
   const planet = state.systems.flatMap(s => s.planets).find(p => p.id === planetId);
@@ -410,6 +423,9 @@ export function canStartResearch(state: GameState, techId: string, useQueue = fa
   const available = getAvailableTechs(player.researchedTechs, player.repeatableTechCounts ?? {});
   if (!available.find(t => t.id === techId)) return 'Not available';
 
+  const strategicMissing = formatMissingStrategicResources(player, getTechStrategicCost(techId));
+  if (strategicMissing) return strategicMissing;
+
   return null;
 }
 
@@ -418,6 +434,9 @@ export function startResearch(state: GameState, techId: string, useQueue = false
   if (err) return false;
 
   const player = getPlayer(state);
+  const strategicCost = getTechStrategicCost(techId);
+  if (!spendStrategicCost(player, strategicCost)) return false;
+
   if (useQueue) {
     player.researchQueue = techId;
   } else {

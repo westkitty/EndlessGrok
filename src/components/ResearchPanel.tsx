@@ -9,6 +9,7 @@ import {
 } from '../game/research';
 import { Icon } from './icons/Icon';
 import { Tooltip } from './Tooltip';
+import { formatStrategicCost, getTechStrategicCost } from '../game/strategicResources';
 import { cloneGameState } from '../game/clone';
 import type { GameState, Technology } from '../game/types';
 
@@ -215,12 +216,18 @@ export function ResearchPanel({ state, onUpdate }: Props) {
                       Unlocks: {unlocks.join(', ')}
                     </div>
                   )}
-                  {!researched && (
-                    <div className="tech-cost" style={{ fontSize: '0.7rem' }}>
-                      <Icon name="science" size={10} /> {tech.cost}
-                      {tech.repeatable && ` (${player.repeatableTechCounts?.[tech.id] ?? 0}/${tech.maxRepeats ?? 1})`}
-                    </div>
-                  )}
+                  {!researched && (() => {
+                    const strategic = formatStrategicCost(getTechStrategicCost(tech.id));
+                    return (
+                      <div className="tech-cost" style={{ fontSize: '0.7rem' }}>
+                        <Icon name="science" size={10} /> {tech.cost}
+                        {tech.repeatable && ` (${player.repeatableTechCounts?.[tech.id] ?? 0}/${tech.maxRepeats ?? 1})`}
+                        {strategic && (
+                          <span style={{ display: 'block', color: '#c0c0c0' }}>Strategic: {strategic}</span>
+                        )}
+                      </div>
+                    );
+                  })()}
                   {canQueue && (
                     <button
                       className="btn btn-sm"

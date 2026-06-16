@@ -11,6 +11,7 @@ interface ResourceBarProps {
   influence?: number;
   economy?: EconomyBreakdown;
   compact?: boolean;
+  showStrategicResources?: boolean;
 }
 
 const STRATEGIC_CONFIG: {
@@ -93,13 +94,23 @@ function buildTooltip(
   );
 }
 
-export function ResourceBar({ resources, strategicResources, deltas, influence, economy, compact = false }: ResourceBarProps) {
-  const visibleStrategic = strategicResources
-    ? STRATEGIC_CONFIG.filter(({ key }) => strategicResources[key] > 0)
-    : [];
+export function ResourceBar({
+  resources,
+  strategicResources,
+  deltas,
+  influence,
+  economy,
+  compact = false,
+  showStrategicResources = false,
+}: ResourceBarProps) {
+  const visibleStrategic = strategicResources && showStrategicResources
+    ? STRATEGIC_CONFIG
+    : strategicResources
+      ? STRATEGIC_CONFIG.filter(({ key }) => strategicResources[key] > 0)
+      : [];
 
   return (
-    <div className={`resource-bar ${compact ? 'resource-bar--compact' : ''}`}>
+    <div className={`resource-bar ${compact ? 'resource-bar--compact' : ''}`} data-testid="resource-bar">
       {RESOURCE_CONFIG.map(({ key, icon, color }) => {
         if (key === 'influence' && influence === undefined) return null;
         const value = key === 'influence' ? influence! : resources[key as keyof Resources];

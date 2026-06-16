@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { COLONIZATION_CREDITS_COST, COLONIZATION_FOOD_COST, INFLUENCE_COLONIZE_COST, PLANET_TYPE_INFO } from '../game/constants';
 import { getColonizationProjectForPlanet } from '../game/colonization';
 import { BUILDING_DEFINITIONS, getPlanetBuildingSlots } from '../game/buildings';
@@ -7,6 +8,7 @@ import { getAnomalyRewardPreview } from '../game/anomalies';
 import { getStarColor } from '../game/galaxy';
 import {
   canColonize, colonizePlanet,
+  canCancelColonizationAction, cancelColonizationAction,
   moveFleet, getFleetMovePreview, setFleetDestination,
   canBuildBuilding, buildBuilding, canQueueProduction, queueProduction,
   exploreAnomalyAction, setPlanetFocus,
@@ -15,6 +17,8 @@ import {
   clearBlockerAction, canClearBlocker,
   setSystemSpecialization, getCombatPrediction,
 } from '../game/actions';
+import { getShipStrategicCost } from '../game/production';
+import { formatStrategicCost } from '../game/strategicResources';
 import { TERRAFORMING_TURNS } from '../game/constants';
 import { getSystemDefenseRating } from '../game/combat';
 import { isSystemUnderSiege } from '../game/siege';
@@ -24,6 +28,7 @@ import { Icon } from './icons/Icon';
 import { getPlanetIconName, getShipIconName, getStanceIconName } from './icons/iconHelpers';
 import { SystemOrbitalView } from './SystemOrbitalView';
 import { Tooltip } from './Tooltip';
+import { ConfirmDialog } from './ConfirmDialog';
 import { cloneGameState } from '../game/clone';
 import type { BuildingType, GameState, PlanetBlocker, PlanetFocus, ShipType, SystemSpecialization } from '../game/types';
 
@@ -38,6 +43,7 @@ const FOCUS_OPTIONS: PlanetFocus[] = ['balanced', 'food', 'industry', 'science']
 const SPEC_OPTIONS: SystemSpecialization[] = ['science', 'industry', 'economy', 'military', 'frontier'];
 
 export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props) {
+  const [cancelProjectId, setCancelProjectId] = useState<string | null>(null);
   const system = state.systems.find(s => s.id === state.selectedSystemId);
   const player = state.empires.find(e => e.id === state.playerEmpireId)!;
 
@@ -335,10 +341,11 @@ export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props
                       )}
                     </>
                   )}
-                  {colonizationProject && (
-                    <div style={{ marginTop: 6 }}>
+                  {colonizationProject && colonizationProject.empireId === player.id && (
+                    <div style={{ marginTop: 6 }} data-testid="colonization-progress">
                       <div style={{ fontSize: '0.75rem', color: 'var(--accent-green)' }}>
                         Colonization in progress: {colonizationProject.turnsRemaining}/{colonizationProject.totalTurns} turns
+                        {colonizationProject.usedColonyShip ? ' (colony ship consumed)' : ''}
                       </div>
                       <div className="progress-bar" style={{ height: 4, marginTop: 4 }}>
                         <div
@@ -349,6 +356,17 @@ export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props
                           }}
                         />
                       </div>
+                      <Tooltip content={canCancelColonizationAction(state, colonizationProject.id) || 'Cancel colonization (no refund of influence, credits, food, or colony ship)'}>
+                        <button
+                          className="btn btn-sm"
+                          style={{ marginTop: 6 }}
+                          disabled={!!canCancelColonizationAction(state, colonizationProject.id)}
+                          data-testid="cancel-colonization"
+                          onClick={() => setCancelProjectId(colonizationProject.id)}
+                        >
+                          Cancel Colonization
+                        </button>
+                      </Tooltip>
                     </div>
                   )}
                   {!planet.isColonized && !colonizationProject && info.habitability > 0 && (
@@ -411,8 +429,10 @@ export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props
             {SHIP_TYPES.map(type => {
               const err = canQueueProduction(state, ownedPlanet.id, type, 'ship');
               const turns = getShipProductionTurns(type, player);
+              const strategic = formatStrategicCost(getShipStrategicCost(type));
+              const costHint = strategic ? ` · Strategic: ${strategic}` : '';
               return (
-                <Tooltip key={type} content={err || `Queue ${getShipDisplayName(type)} (${turns} turn${turns > 1 ? 's' : ''})`}>
+                <Tooltip key={type} content={err || `Queue ${getShipDisplayName(type)} (${turns} turn${turns > 1 ? 's' : ''})${costHint}`}>
                   <button className="btn btn-sm btn-icon" disabled={!!err} onClick={() => handleQueue(ownedPlanet.id, type, 'ship')}>
                     <Icon name={getShipIconName(type)} size={14} />
                     {getShipDisplayName(type)} ({turns}t)
@@ -516,6 +536,20 @@ export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props
             );
           })}
         </div>
+      )}
+
+      {cancelProjectId && (
+        <ConfirmDialog
+          title="Cancel Colonization?"
+          message="This will stop the colonization project. Influence, credits, food, and any consumed colony ship will not be refunded."
+          confirmLabel="Cancel Project"
+          onConfirm={() => {
+            const newState = cloneGameState(state);
+            if (cancelColonizationAction(newState, cancelProjectId)) onUpdate(newState);
+            setCancelProjectId(null);
+          }}
+          onCancel={() => setCancelProjectId(null)}
+        />
       )}
     </div>
   );
