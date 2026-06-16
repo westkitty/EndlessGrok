@@ -9,6 +9,8 @@ import { GALAXY_SHAPE_DESCRIPTIONS } from './game/settings';
 import { FACTION_DEFINITIONS, factionToPlayerSetup } from './game/factions';
 import { loadUISettings, saveUISettings, type UISettings } from './game/uiSettings';
 import { previewStrategicIncome } from './game/economy';
+import { previewStarsilkIncome, STARSILK_RESOURCE_KEYS } from './game/starsilkResources';
+import { unlockStarbindingTestFixture } from './game/testFixtures';
 import type { Difficulty, GalaxyShape, GalaxySizeOption, GameSettings, GameState, Resources, TurnSummary } from './game/types';
 import { GalaxyMap } from './components/GalaxyMap';
 import { getDefaultViewport, type GalaxyTransform, type GalaxyViewport } from './components/galaxy/mapHelpers';
@@ -255,6 +257,14 @@ function GameScreen({
   const player = state.empires.find(e => e.id === state.playerEmpireId)!;
 
   useEffect(() => {
+    (window as Window & { __egUnlockStarbinding?: () => void }).__egUnlockStarbinding = () => {
+      const s = cloneGameState(state);
+      unlockStarbindingTestFixture(s);
+      onUpdate(s);
+    };
+  }, [state, onUpdate]);
+
+  useEffect(() => {
     if (state.combatResults.length > prevCombatCountRef.current) {
       setCombatFlash(true);
       const t = setTimeout(() => setCombatFlash(false), 700);
@@ -362,6 +372,12 @@ function GameScreen({
             economy={state.turnSummaries[state.turnSummaries.length - 1]?.economy}
             showStrategicResources={player.researchedTechs.includes('strategic_resources')}
             strategicIncome={previewStrategicIncome(player, state.systems)}
+            starsilkResources={player.starsilkResources}
+            showStarsilkResources={
+              player.researchedTechs.includes('starsilk_extraction') ||
+              STARSILK_RESOURCE_KEYS.some(k => (player.starsilkResources?.[k] ?? 0) > 0)
+            }
+            starsilkIncome={previewStarsilkIncome(player, state.systems)}
             compact
           />
         </div>

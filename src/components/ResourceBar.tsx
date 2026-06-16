@@ -2,7 +2,11 @@ import type { ReactNode } from 'react';
 import { Icon } from './icons/Icon';
 import { type IconName } from './icons/iconHelpers';
 import { Tooltip } from './Tooltip';
-import type { EconomyBreakdown, Resources, StrategicResources } from '../game/types';
+import {
+  STARSILK_RESOURCE_KEYS,
+  STARSILK_RESOURCE_LABELS,
+} from '../game/starsilkResources';
+import type { EconomyBreakdown, Resources, StarsilkResources, StrategicResources } from '../game/types';
 
 interface ResourceBarProps {
   resources: Resources;
@@ -13,6 +17,9 @@ interface ResourceBarProps {
   compact?: boolean;
   showStrategicResources?: boolean;
   strategicIncome?: StrategicResources;
+  starsilkResources?: StarsilkResources;
+  showStarsilkResources?: boolean;
+  starsilkIncome?: StarsilkResources;
 }
 
 const STRATEGIC_CONFIG: {
@@ -104,6 +111,9 @@ export function ResourceBar({
   compact = false,
   showStrategicResources = false,
   strategicIncome,
+  starsilkResources,
+  showStarsilkResources = false,
+  starsilkIncome,
 }: ResourceBarProps) {
   const visibleStrategic = strategicResources && showStrategicResources
     ? STRATEGIC_CONFIG
@@ -155,6 +165,31 @@ export function ResourceBar({
               {incomeStr && (
                 <span className="resource-item__delta positive" style={{ fontSize: '0.65rem' }}>{incomeStr}</span>
               )}
+            </div>
+          </Tooltip>
+        );
+      })}
+      {showStarsilkResources && starsilkResources && STARSILK_RESOURCE_KEYS.map(key => {
+        const val = starsilkResources[key];
+        if (val <= 0 && !(starsilkIncome?.[key] ?? 0)) return null;
+        const income = starsilkIncome?.[key] ?? 0;
+        return (
+          <Tooltip
+            key={key}
+            content={
+              <span>
+                <strong>{STARSILK_RESOURCE_LABELS[key]}</strong>: {val}
+                {income > 0 && <> · +{income}/turn from deposits/archives</>}
+              </span>
+            }
+          >
+            <div className="resource-item" data-testid={`starsilk-${key}`}>
+              <span className="resource-item__value" style={{ color: 'var(--accent-violet)', fontSize: '0.75rem' }}>
+                {val}
+              </span>
+              <span style={{ fontSize: '0.6rem', color: 'var(--text-dim)' }}>
+                {STARSILK_RESOURCE_LABELS[key].split(' ')[0]}
+              </span>
             </div>
           </Tooltip>
         );

@@ -34,6 +34,11 @@ import { generateTurnSummary } from './turnSummary';
 import { processFleetMovement } from './travel';
 import { processColonyUnrest } from './unrest';
 import { updateVisibility } from './visibility';
+import { ensureFactionIdeology, applyStarbindingProgressReactions } from './factionIdeology';
+import { processMacroCooldowns } from './macros';
+import { createStarbindingState, processStarbindingTurn } from './starbinding';
+import { createEmptyStarsilkResources, extractStarsilkResources, migratePlanetStarsilk } from './starsilkResources';
+import { processStarsilkDiscoveryEvents } from './starsilkEvents';
 import { checkVictoryConditions, getVictoryMessage, updateEconomyVictoryTracking } from './victory';
 import { processWarWeariness } from './weariness';
 import { applyDifficultyToEmpire, createGameSettings, DEFAULT_SETTINGS } from './settings';
@@ -94,11 +99,16 @@ function createEmpire(
     repeatableTechCounts: {},
     lastSeenSystems: {},
     factionIndex: undefined,
+    starsilkResources: createEmptyStarsilkResources(),
+    starbinding: createStarbindingState(),
+    macroCooldowns: [],
+    activeMacroEffects: [],
+    starsilkDiscoveryFlags: {},
   };
 }
 
 function migratePlanet(planet: Planet): Planet {
-  return migratePlanetFeatures({
+  return migratePlanetStarsilk(migratePlanetFeatures({
     ...planet,
     happiness: planet.happiness ?? 50,
     approval: planet.approval ?? 50,
@@ -107,7 +117,7 @@ function migratePlanet(planet: Planet): Planet {
     rareResource: planet.rareResource ?? 'none',
     focus: planet.focus ?? 'balanced',
     isCapital: planet.isCapital ?? false,
-  });
+  }));
 }
 
 function migrateSystem(system: StarSystem): StarSystem {
@@ -121,6 +131,8 @@ function migrateSystem(system: StarSystem): StarSystem {
     orbitalStationOwnerId: system.orbitalStationOwnerId ?? null,
     siegeBlockaders: system.siegeBlockaders ?? [],
     specialization: system.specialization ?? null,
+    starState: system.starState ?? (system.systemType === 'black_hole' ? 'collapsed_black_hole' : 'stable'),
+    isArchiveStar: system.isArchiveStar ?? false,
     planets: system.planets.map(migratePlanet),
   };
 }
@@ -170,6 +182,13 @@ function migrateEmpire(empire: SerializedEmpire): Empire {
     queuedResearchStrategicSpent: empire.queuedResearchStrategicSpent,
     knownSystems: new Set(empire.knownSystems),
     visibleSystems: new Set(empire.visibleSystems),
+    starsilkResources: empire.starsilkResources ?? createEmptyStarsilkResources(),
+    starbinding: empire.starbinding ?? createStarbindingState(),
+    macroCooldowns: empire.macroCooldowns ?? [],
+    activeMacroEffects: empire.activeMacroEffects ?? [],
+    ideologyTags: empire.ideologyTags,
+    stabilityPenalty: empire.stabilityPenalty ?? 0,
+    starsilkDiscoveryFlags: empire.starsilkDiscoveryFlags ?? {},
   };
 }
 
@@ -220,6 +239,7 @@ function setupStartingPositions(state: GameState, rng: SeededRNG, playerFactionI
       applyFactionStartingBonus(empire, playerFactionIndex);
     }
     applyFactionUniqueTech(empire, factionIndex);
+    ensureFactionIdeology(empire);
 
     if (!empire.isPlayer) {
       empire.aiPersonality = AI_PERSONALITIES[i % AI_PERSONALITIES.length];
@@ -496,6 +516,12 @@ export function endTurn(state: GameState): GameState {
     if (empire.id === player.id) playerIncome = income;
     empire.totalPlanets = countEmpirePlanets(empire.id, state.systems);
     applyOverexpansionPenalty(empire, state.systems);
+    const gained = extractStarsilkResources(empire, state.systems);
+    empire.starsilkDiscoveryFlags = empire.starsilkDiscoveryFlags ?? {};
+    processStarsilkDiscoveryEvents(state, empire, gained);
+    processStarbindingTurn(state, empire.id);
+    processMacroCooldowns(empire);
+    applyStarbindingProgressReactions(state, empire.id);
   }
 
   // 2. Trade pacts & trade routes

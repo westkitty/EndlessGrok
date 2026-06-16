@@ -20,6 +20,7 @@ export function VictoryProgress({ state }: Props) {
   const BARS = [
     { key: 'domination' as const, label: 'Domination', color: 'var(--danger)', hint: '60% of colonizable planets' },
     { key: 'science' as const, label: 'Science', color: 'var(--accent-cyan)', hint: 'Quantum Computing + 16 techs' },
+    { key: 'starbinding' as const, label: 'Starbinding', color: 'var(--accent-violet)', hint: 'Catastrophic Partition victory via heliocide' },
     { key: 'economy' as const, label: 'Economy', color: 'var(--res-credits)', hint: `Galactic Market + ${ECONOMY_VICTORY_CREDITS_THRESHOLD} credits + ${ECONOMY_VICTORY_INCOME_THRESHOLD}/turn income for ${ECONOMY_VICTORY_TURNS} turns` },
     { key: 'influence' as const, label: 'Influence', color: 'var(--res-influence)', hint: `${INFLUENCE_VICTORY_THRESHOLD} influence for ${INFLUENCE_VICTORY_TURNS} turns (${player.influenceVictoryTurns}/${INFLUENCE_VICTORY_TURNS} held)` },
     { key: 'survival' as const, label: 'Survival', color: 'var(--accent-gold)', hint: 'Highest score at max turns' },

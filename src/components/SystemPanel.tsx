@@ -17,7 +17,16 @@ import {
   upgradeColonyAction, canUpgradeColonyDevelopment,
   clearBlockerAction, canClearBlocker,
   setSystemSpecialization, getCombatPrediction,
+  buildStarbindingArrayAction, canBuildStarbindingArrayAction,
+  selectStarbindingTargetAction, canSelectStarbindingTargetAction,
+  beginStarbindingDiveAction, canBeginStarbindingDiveAction,
+  beginFinalStarbindingAction, canBeginFinalStarbindingAction,
+  stabilizeInertStarsilkAction,
+  canExecuteMacroAction, executeMacroAction,
 } from '../game/actions';
+import { getStarbindingStage, isStarbindingUnlocked } from '../game/starbinding';
+import { isCollapsedSystem } from '../game/heliocide';
+import { MacroPanel } from './MacroPanel';
 
 import { formatStrategicCost } from '../game/strategicResources';
 import { TERRAFORMING_TURNS } from '../game/constants';
@@ -148,6 +157,12 @@ export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props
         {system.specialization && (
           <div className="info-row"><span>Specialization</span><span style={{ color: 'var(--accent-cyan)' }}>{system.specialization}</span></div>
         )}
+        {system.isArchiveStar && !isCollapsedSystem(system) && (
+          <div className="info-row"><span>Archive status</span><span style={{ color: 'var(--accent-cyan)' }}>Archive star</span></div>
+        )}
+        {system.starState && system.starState !== 'stable' && (
+          <div className="info-row"><span>Star state</span><span style={{ color: 'var(--warning)' }}>{system.starState.replace(/_/g, ' ')}</span></div>
+        )}
         {ownsPlanet && (
           <div style={{ marginTop: 8 }}>
             <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)' }}>System focus: </span>
@@ -167,6 +182,121 @@ export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props
           </div>
         )}
       </div>
+
+      {isStarbindingUnlocked(player) && !isCollapsedSystem(system) && (
+        <div className="section" data-testid="starbinding-actions">
+          <div className="section-title">Starbinding / Heliocide</div>
+          <p style={{ fontSize: '0.75rem', color: 'var(--warning)' }}>
+            Star dive and heliocide are irreversible.
+          </p>
+          <div className="action-buttons" style={{ flexWrap: 'wrap', gap: 4 }}>
+            {(() => {
+              const buildErr = canBuildStarbindingArrayAction(state, system.id);
+              if (getStarbindingStage(player) >= 3 && !player.starbinding?.arraySystemId) {
+                return (
+                  <button
+                    className="btn btn-sm btn-primary"
+                    disabled={!!buildErr}
+                    title={buildErr ?? undefined}
+                    data-testid="build-starbinding-array"
+                    onClick={() => {
+                      const s = cloneGameState(state);
+                      if (buildStarbindingArrayAction(s, system.id)) onUpdate(s);
+                    }}
+                  >
+                    Build Starbinding Array
+                  </button>
+                );
+              }
+              return null;
+            })()}
+            {(() => {
+              const targetErr = canSelectStarbindingTargetAction(state, system.id);
+              if (player.starbinding?.arraySystemId && system.isArchiveStar) {
+                return (
+                  <button
+                    className="btn btn-sm"
+                    disabled={!!targetErr}
+                    title={targetErr ?? undefined}
+                    data-testid="select-star-dive-target"
+                    onClick={() => {
+                      const s = cloneGameState(state);
+                      if (selectStarbindingTargetAction(s, system.id)) onUpdate(s);
+                    }}
+                  >
+                    Mark for Star Dive
+                  </button>
+                );
+              }
+              return null;
+            })()}
+            {(() => {
+              const diveErr = canBeginStarbindingDiveAction(state, system.id);
+              if (player.starbinding?.targetSystemIds.includes(system.id)) {
+                return (
+                  <button
+                    className="btn btn-sm"
+                    disabled={!!diveErr}
+                    title={diveErr ?? undefined}
+                    data-testid="begin-star-dive"
+                    onClick={() => {
+                      const s = cloneGameState(state);
+                      if (beginStarbindingDiveAction(s, system.id)) onUpdate(s);
+                    }}
+                  >
+                    Begin Star Dive
+                  </button>
+                );
+              }
+              return null;
+            })()}
+          </div>
+          <div className="action-buttons" style={{ flexWrap: 'wrap', gap: 4, marginTop: 6 }}>
+            <button
+              className="btn btn-sm"
+              data-testid="stabilize-inert-starsilk"
+              onClick={() => {
+                const s = cloneGameState(state);
+                if (stabilizeInertStarsilkAction(s, 1)) onUpdate(s);
+              }}
+            >
+              Stabilize Inert Starsilk (+1)
+            </button>
+            {(() => {
+              const finalErr = canBeginFinalStarbindingAction(state);
+              return (
+                <button
+                  className="btn btn-sm btn-primary"
+                  disabled={!!finalErr}
+                  title={finalErr ?? undefined}
+                  data-testid="begin-final-starbinding"
+                  onClick={() => {
+                    const s = cloneGameState(state);
+                    if (beginFinalStarbindingAction(s)) onUpdate(s);
+                  }}
+                >
+                  Execute Final Partition Macro
+                </button>
+              );
+            })()}
+          </div>
+        </div>
+      )}
+
+      {isVisible && (ownsPlanet || fleetsHere.some(f => f.empireId === player.id)) && (
+        <div className="section">
+          <MacroPanel
+            state={state}
+            targetId={system.id}
+            targetLabel={system.name}
+            onExecute={macroId => {
+              const s = cloneGameState(state);
+              if (executeMacroAction(s, macroId, system.id)) onUpdate(s);
+            }}
+            canExecute={macroId => canExecuteMacroAction(state, macroId, system.id)}
+          />
+        </div>
+      )}
 
       {system.anomaly && isVisible && (
         <div className="section">

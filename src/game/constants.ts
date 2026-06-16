@@ -199,4 +199,6 @@ export const BUILDING_COSTS: Record<string, { credits: number; industry: number;
   academy: { credits: 55, industry: 25, turns: 3 },
   fortress: { credits: 70, industry: 45, turns: 4 },
   orbital_station: { credits: 100, industry: 60, turns: 5 },
+  starbinding_array: { credits: 200, industry: 100, turns: 6 },
+  partition_anchor: { credits: 150, industry: 80, turns: 5 },
 };

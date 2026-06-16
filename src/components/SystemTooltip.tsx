@@ -1,4 +1,6 @@
 import { getStarColor } from '../game/galaxy';
+import { getStarbindingWarnings, isCollapsedSystem } from '../game/heliocide';
+import { canSelectStarbindingTarget } from '../game/starbinding';
 import { getIntelLabel } from '../game/intel';
 import { Icon } from './icons/Icon';
 import type { GameState, StarSystem } from '../game/types';
@@ -70,9 +72,41 @@ export function SystemTooltipContent({ system, state, playerId }: Props) {
       {system.systemType === 'black_hole' && (
         <div className="floating-tooltip__row">
           <span>Type</span>
-          <span style={{ color: 'var(--accent-violet)' }}>Black Hole</span>
+          <span style={{ color: 'var(--accent-violet)' }}>Black Hole / Singularity</span>
         </div>
       )}
+      {system.isArchiveStar && !isCollapsedSystem(system) && (
+        <div className="floating-tooltip__row">
+          <span>Archive</span>
+          <span style={{ color: 'var(--accent-cyan)' }}>Archive star</span>
+        </div>
+      )}
+      {getStarbindingWarnings(system).map(w => (
+        <div key={w} className="floating-tooltip__row">
+          <span>Warning</span>
+          <span style={{ color: 'var(--warning)' }}>{w}</span>
+        </div>
+      ))}
+      {(() => {
+        const err = canSelectStarbindingTarget(state, system.id, playerId);
+        if (err === 'Already targeted') {
+          return (
+            <div className="floating-tooltip__row">
+              <span>Starbinding</span>
+              <span style={{ color: 'var(--accent-violet)' }}>Dive target selected</span>
+            </div>
+          );
+        }
+        if (!err && system.isArchiveStar) {
+          return (
+            <div className="floating-tooltip__row">
+              <span>Starbinding</span>
+              <span style={{ color: 'var(--accent-violet)' }}>Eligible dive target</span>
+            </div>
+          );
+        }
+        return null;
+      })()}
     </div>
   );
 }

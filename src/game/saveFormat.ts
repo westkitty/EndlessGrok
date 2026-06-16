@@ -4,7 +4,7 @@ import type { GameState, SerializedGameState } from './types';
 import { createDefaultShipDesigns } from './shipDesigns';
 
 /** Increment when the on-disk save envelope or serialized state shape changes. */
-export const SAVE_SCHEMA_VERSION = 2;
+export const SAVE_SCHEMA_VERSION = 3;
 
 export const SAVE_GAME_ID = 'endlessgrok';
 
@@ -100,9 +100,53 @@ function migrateSerializedV1ToV2(state: SerializedGameState): SerializedGameStat
   };
 }
 
+function migrateSerializedV2ToV3(state: SerializedGameState): SerializedGameState {
+  return {
+    ...state,
+    systems: state.systems.map(system => ({
+      ...system,
+      starState: system.starState ?? (system.systemType === 'black_hole' ? 'collapsed_black_hole' : 'stable'),
+      isArchiveStar: system.isArchiveStar ?? false,
+      planets: system.planets.map(planet => ({
+        ...planet,
+        starsilkDeposit: planet.starsilkDeposit ?? 'none',
+      })),
+    })),
+    empires: state.empires.map(empire => ({
+      ...empire,
+      starsilkResources: empire.starsilkResources ?? {
+        starsilkThread: 0,
+        inertStarsilk: 0,
+        syrinReagent: 0,
+        archiveData: 0,
+        bloodRingGlass: 0,
+        siegeLatticeFragment: 0,
+      },
+      starbinding: empire.starbinding ?? {
+        stage: 0,
+        targetSystemIds: [],
+        completedDiveSystemIds: [],
+        activeCollapseSystemId: null,
+        collapseTurnsRemaining: 0,
+        inertStarsilkStabilized: 0,
+        partitionAnchorsBuilt: 0,
+        arraySystemId: null,
+        finalExecutionTurnsRemaining: 0,
+        failed: false,
+        crisisTriggered: false,
+      },
+      macroCooldowns: empire.macroCooldowns ?? [],
+      activeMacroEffects: empire.activeMacroEffects ?? [],
+      stabilityPenalty: empire.stabilityPenalty ?? 0,
+      starsilkDiscoveryFlags: empire.starsilkDiscoveryFlags ?? {},
+    })),
+  };
+}
+
 /** Dispatcher for serialized-state migrations between schema versions. */
 const SERIALIZED_STATE_MIGRATIONS: Partial<Record<number, SerializedMigration>> = {
   2: migrateSerializedV1ToV2,
+  3: migrateSerializedV2ToV3,
 };
 
 export function migrateSerializedState(

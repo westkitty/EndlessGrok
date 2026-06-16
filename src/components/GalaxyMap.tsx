@@ -370,6 +370,33 @@ export function GalaxyMap({
         ctx.stroke();
       }
 
+      if (system.isArchiveStar && system.systemType !== 'black_hole' && isVisible) {
+        ctx.beginPath();
+        ctx.arc(pos.x + radius + 5, pos.y - radius - 5, 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(61, 214, 245, 0.9)';
+        ctx.fill();
+      }
+
+      if (system.starState === 'starbinding_targeted' && isVisible) {
+        ctx.save();
+        ctx.setLineDash([3, 3]);
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, radius + 11, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(212, 90, 255, 0.85)';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      if (system.starState === 'collapsing' && isVisible && animationsEnabled) {
+        const pulse = 1 + Math.sin(time * 0.008) * 0.2;
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, (radius + 14) * pulse, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(255, 90, 106, 0.9)';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
       if (sieged && animationsEnabled) {
         const pulse = 1 + Math.sin(time * 0.005) * 0.15;
         ctx.beginPath();

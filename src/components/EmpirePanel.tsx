@@ -8,7 +8,7 @@ import { getFleetRole, getFleetRoleLabel, getPrimaryShipType } from '../game/fle
 import { calculateFleetUpkeep } from '../game/upkeep';
 import { getTraitName } from '../game/traits';
 import { getEmpireRankings } from '../game/scoring';
-import { getVictoryProgress } from '../game/victory';
+import { VictoryPanel } from './VictoryPanel';
 import { getShipDisplayName } from '../game/ships';
 import { Icon } from './icons/Icon';
 import { getEmblemIconName, getShipIconName, getStanceIconName } from './icons/iconHelpers';
@@ -29,7 +29,6 @@ export function EmpirePanel({ state, onUpdate }: Props) {
   const fleets = getPlayerFleets(state);
   const militaryPower = getPlayerMilitaryPower(state, player.id);
   const rankings = getEmpireRankings(state);
-  const victoryProgress = getVictoryProgress(state);
   const playerRank = rankings.find(r => r.empire.id === player.id);
   const ledger = computeEmpireLedger(state, player);
 
@@ -298,18 +297,7 @@ export function EmpirePanel({ state, onUpdate }: Props) {
       <BattleReportPanel state={state} />
 
       <div className="section">
-        <div className="section-title">Victory Progress</div>
-        {(['domination', 'science', 'influence', 'survival'] as const).map(type => (
-          <div key={type} style={{ marginBottom: 6 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem' }}>
-              <span>{type.charAt(0).toUpperCase() + type.slice(1)}</span>
-              <span>{Math.round(victoryProgress[type] * 100)}%</span>
-            </div>
-            <div style={{ height: 6, background: 'var(--bg-dark)', borderRadius: 3, overflow: 'hidden' }}>
-              <div style={{ height: '100%', width: `${victoryProgress[type] * 100}%`, background: 'var(--accent-blue)', borderRadius: 3 }} />
-            </div>
-          </div>
-        ))}
+        <VictoryPanel state={state} />
       </div>
     </div>
   );

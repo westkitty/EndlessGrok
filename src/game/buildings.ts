@@ -104,6 +104,22 @@ export const BUILDING_DEFINITIONS: BuildingDefinition[] = [
     maxPerPlanet: 1,
     effects: { defense: 5, industry: 1 },
   },
+  {
+    type: 'starbinding_array',
+    name: 'Starbinding Array',
+    description: 'Partition macro anchor — enables star dive sequence',
+    techRequired: 'syrin_inerting_method',
+    maxPerPlanet: 1,
+    effects: { science: 2 },
+  },
+  {
+    type: 'partition_anchor',
+    name: 'Partition Anchor',
+    description: 'Inert singularity anchor for Partition escape geometry',
+    techRequired: 'partition_mathematics',
+    maxPerPlanet: 1,
+    effects: { defense: 8, science: 1 },
+  },
 ];
 
 export function getBuildingDefinition(type: BuildingType): BuildingDefinition | undefined {

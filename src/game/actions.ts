@@ -42,6 +42,18 @@ import type { ShipDesign } from './types';
 import { createShip } from './ships';
 import { canReachSystem, findPath, getFleetPath, setFleetTravelPath } from './travel';
 import { SeededRNG } from './rng';
+import { executeMacro, canExecuteMacro } from './macros';
+import {
+  beginFinalStarbindingExecution,
+  beginStarbindingDive,
+  buildStarbindingArray,
+  canBeginFinalExecution,
+  canBeginStarDive,
+  canBuildStarbindingArray,
+  canSelectStarbindingTarget,
+  selectStarbindingTarget,
+  stabilizeInertStarsilk,
+} from './starbinding';
 import type { AnomalyExploreChoice, BuildingType, DiplomacyState, Fleet, FleetStance, GameState, PlanetBlocker, PlanetFocus, ShipType, SystemSpecialization } from './types';
 
 export { getEmpireMilitaryPower, predictCombatOutcome };
@@ -794,6 +806,50 @@ export function getCombatPrediction(state: GameState, fleetId: string, targetSys
   );
   if (enemyFleets.length === 0) return null;
   return predictCombatOutcome(state, fleet, enemyFleets[0], targetSystemId);
+}
+
+export function buildStarbindingArrayAction(state: GameState, systemId: string): boolean {
+  return buildStarbindingArray(state, systemId, state.playerEmpireId);
+}
+
+export function canBuildStarbindingArrayAction(state: GameState, systemId: string): string | null {
+  return canBuildStarbindingArray(state, systemId, state.playerEmpireId);
+}
+
+export function selectStarbindingTargetAction(state: GameState, systemId: string): boolean {
+  return selectStarbindingTarget(state, systemId, state.playerEmpireId);
+}
+
+export function canSelectStarbindingTargetAction(state: GameState, systemId: string): string | null {
+  return canSelectStarbindingTarget(state, systemId, state.playerEmpireId);
+}
+
+export function beginStarbindingDiveAction(state: GameState, systemId: string): boolean {
+  return beginStarbindingDive(state, systemId, state.playerEmpireId);
+}
+
+export function canBeginStarbindingDiveAction(state: GameState, systemId: string): string | null {
+  return canBeginStarDive(state, systemId, state.playerEmpireId);
+}
+
+export function stabilizeInertStarsilkAction(state: GameState, amount: number): boolean {
+  return stabilizeInertStarsilk(state, state.playerEmpireId, amount);
+}
+
+export function beginFinalStarbindingAction(state: GameState): boolean {
+  return beginFinalStarbindingExecution(state, state.playerEmpireId);
+}
+
+export function canBeginFinalStarbindingAction(state: GameState): string | null {
+  return canBeginFinalExecution(state, state.playerEmpireId);
+}
+
+export function executeMacroAction(state: GameState, macroId: string, targetId: string): boolean {
+  return executeMacro(state, state.playerEmpireId, macroId, targetId);
+}
+
+export function canExecuteMacroAction(state: GameState, macroId: string, targetId: string): string | null {
+  return canExecuteMacro(state, state.playerEmpireId, macroId, targetId);
 }
 
 export function getMergeableFleets(state: GameState, fleetId: string): Fleet[] {
