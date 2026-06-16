@@ -1,0 +1,25 @@
+{
+  "batchId": "batch-missing-file",
+  "batchName": "Integrated Missing File",
+  "sourceAgent": "test",
+  "createdAt": "2026-06-16T00:00:00.000Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "ghost-asset",
+      "mechanicalKey": "resource:ghostAsset",
+      "family": "resources",
+      "displayName": "Ghost",
+      "filename": "does-not-exist.svg",
+      "relativePath": "src/assets/icons/resources/does-not-exist-ghost.svg",
+      "status": "integrated",
+      "testId": "ghost-asset",
+      "iconName": "credits",
+      "tooltip": {
+        "title": "Ghost",
+        "mechanical": "File missing test.",
+        "lore": "Test."
+      }
+    }
+  ]
+}

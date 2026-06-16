@@ -1,0 +1,24 @@
+{
+  "batchId": "batch-invalid-language",
+  "batchName": "Invalid Prohibited Language",
+  "sourceAgent": "test",
+  "createdAt": "2026-06-16T00:00:00.000Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "spider-bad",
+      "mechanicalKey": "ui:spider-bad",
+      "family": "ui",
+      "displayName": "Bad Icon",
+      "filename": "bad.svg",
+      "relativePath": "src/assets/icons/ui/bad.svg",
+      "status": "planned",
+      "testId": "spider-bad",
+      "tooltip": {
+        "title": "Spider web motif",
+        "mechanical": "Should fail validation.",
+        "lore": "Spider imagery is prohibited."
+      }
+    }
+  ]
+}

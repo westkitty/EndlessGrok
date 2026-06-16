@@ -1,0 +1,24 @@
+{
+  "batchId": "batch-invalid-key",
+  "batchName": "Invalid Missing Key",
+  "sourceAgent": "test",
+  "createdAt": "2026-06-16T00:00:00.000Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "bad-entry",
+      "mechanicalKey": "",
+      "family": "resources",
+      "displayName": "Bad",
+      "filename": "bad.svg",
+      "relativePath": "src/assets/icons/resources/bad.svg",
+      "status": "planned",
+      "testId": "bad",
+      "tooltip": {
+        "title": "Bad",
+        "mechanical": "Missing key test.",
+        "lore": "Test."
+      }
+    }
+  ]
+}

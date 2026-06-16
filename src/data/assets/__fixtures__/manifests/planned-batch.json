@@ -1,0 +1,30 @@
+{
+  "batchId": "batch-001-planned",
+  "batchName": "Starsilk Resource Icons (Planned)",
+  "sourceAgent": "Starsilk Asset Production Agent",
+  "createdAt": "2026-06-16T00:00:00.000Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "starsilk-thread",
+      "mechanicalKey": "resource:starsilkThread",
+      "family": "resources",
+      "type": "strategic",
+      "displayName": "Starsilk Thread",
+      "filename": "starsilk-thread.svg",
+      "relativePath": "src/assets/icons/resources/starsilk-thread.svg",
+      "status": "planned",
+      "testId": "resource-starsilk-thread",
+      "tooltip": {
+        "title": "Starsilk Thread",
+        "mechanical": "Rare strategic filament for macros and catastrophic projects.",
+        "lore": "Dangerous systemic thread — not fuel.",
+        "warning": "Not generic fuel.",
+        "canonLabel": "direct_canon"
+      },
+      "states": ["default"],
+      "sourceLabel": "fixture planned batch",
+      "qaChecks": ["mechanical summary present", "imagery guardrails pass"]
+    }
+  ]
+}

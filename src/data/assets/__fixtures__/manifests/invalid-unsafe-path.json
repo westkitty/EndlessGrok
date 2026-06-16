@@ -1,0 +1,24 @@
+{
+  "batchId": "batch-invalid-path",
+  "batchName": "Invalid Unsafe Path",
+  "sourceAgent": "test",
+  "createdAt": "2026-06-16T00:00:00.000Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "unsafe",
+      "mechanicalKey": "resource:unsafe",
+      "family": "resources",
+      "displayName": "Unsafe",
+      "filename": "unsafe.svg",
+      "relativePath": "../../.env/steal.svg",
+      "status": "planned",
+      "testId": "unsafe",
+      "tooltip": {
+        "title": "Unsafe",
+        "mechanical": "Path traversal test.",
+        "lore": "Test."
+      }
+    }
+  ]
+}

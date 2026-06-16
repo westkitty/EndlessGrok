@@ -1,0 +1,29 @@
+{
+  "batchId": "batch-002-integrated",
+  "batchName": "Core Resource Integration Fixture",
+  "sourceAgent": "Starsilk Asset Production Agent",
+  "createdAt": "2026-06-16T00:00:00.000Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "credits",
+      "mechanicalKey": "resource:credits",
+      "family": "resources",
+      "type": "core",
+      "displayName": "Credits",
+      "filename": "credits.svg",
+      "relativePath": "src/assets/icons/resources/credits.svg",
+      "status": "integrated",
+      "testId": "resource-credits",
+      "iconName": "credits",
+      "tooltip": {
+        "title": "Credits",
+        "mechanical": "Empire currency for upkeep, trade, and construction.",
+        "lore": "Ledgered exchange mass.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": ["default"],
+      "sourceLabel": "fixture integrated batch"
+    }
+  ]
+}
