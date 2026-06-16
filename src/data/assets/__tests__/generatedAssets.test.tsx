@@ -18,6 +18,8 @@ const GENERATED_SAMPLES = [
   { key: 'resource:starsilkThread', file: 'public/assets/icons/resources/resource-starsilk-thread.svg' },
   { key: 'victory:starbinding', file: 'public/assets/icons/victory/victory-starbinding.svg' },
   { key: 'macro:local_checksum_audit', file: 'public/assets/icons/macros/macro-local-checksum-audit.svg' },
+  { key: 'map:collapsed_black_hole', file: 'public/assets/icons/map/map-collapsed-star.svg' },
+  { key: 'faction:ledger-administration-emblem', file: 'public/assets/icons/factions/faction-ledger-administration-emblem.svg' },
 ] as const;
 
 describe('generated Starsilk asset batch', () => {

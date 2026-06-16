@@ -25,8 +25,9 @@ describe('ledger manifest', () => {
   it('loads 134 ledger records from assets.manifest.json', () => {
     const records = loadLedgerManifest(manifestPath);
     expect(records).toHaveLength(134);
-    expect(records.filter(r => r.status === 'prompted')).toHaveLength(115);
-    expect(records.filter(r => r.status === 'generated-unverified')).toHaveLength(19);
+    expect(records.filter(r => r.status === 'prompted')).toHaveLength(91);
+    expect(records.filter(r => r.status === 'generated-unverified')).toHaveLength(24);
+    expect(records.filter(r => r.status === 'generated-verified')).toHaveLength(19);
   });
 
   it('exports manifest for app import', () => {

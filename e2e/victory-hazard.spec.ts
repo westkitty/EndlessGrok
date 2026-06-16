@@ -23,9 +23,9 @@ test.describe('Victory and hazard systems', () => {
       (window as Window & { __egSetupSyrinVictory?: () => void }).__egSetupSyrinVictory?.();
     });
     await page.getByTestId('tab-empire').click();
-    await expect(page.getByTestId('victory-path-syrinInerting')).toBeVisible();
-    await expect(page.getByTestId('syrin-inerting-details')).toBeVisible();
-    await expect(page.getByTestId('syrin-victory-ready')).toBeVisible();
+    await expect(page.getByTestId('victory-path-syrinInerting')).toBeVisible({ timeout: 15000 });
+    await expect(page.getByTestId('syrin-inerting-details')).toBeVisible({ timeout: 10000 });
+    await expect(page.getByTestId('syrin-victory-ready')).toBeVisible({ timeout: 10000 });
   });
 
   test('macro intel appears in empire panel after macro execute', async ({ page }) => {

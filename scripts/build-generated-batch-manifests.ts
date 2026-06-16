@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 import { RESOURCE_ASSETS } from '../src/data/assets/records/resources.ts';
 import { VICTORY_ASSETS } from '../src/data/assets/records/victory.ts';
 import { MACRO_ASSETS } from '../src/data/assets/records/macros.ts';
+import { MAP_ASSETS } from '../src/data/assets/records/map.ts';
+import { STARSILK_FACTION_ASSETS } from '../src/data/assets/records/starsilkFactions.ts';
 import type { AssetRecord } from '../src/data/assets/types.ts';
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -46,10 +48,22 @@ const resources = RESOURCE_ASSETS.filter(r => r.id.startsWith('resource-'));
 const victories = VICTORY_ASSETS.filter(r => r.id.startsWith('victory-') && r.status === 'generated');
 const macros = MACRO_ASSETS.filter(r => r.status === 'generated');
 
+const ledgerMapIds = new Set([
+  'map-star-normal', 'map-collapsed-star', 'map-starbinding-target',
+  'map-deposit-starsilk-leak', 'map-deposit-syrin-trace', 'map-deposit-blood-ring-glass',
+  'map-deposit-siege-lattice-fragment', 'map-deposit-archive-data',
+  'map-hazard-singularity', 'map-hazard-unstable-star', 'map-hazard-macro-sealed-system',
+  'map-lane-normal', 'map-lane-unknown', 'map-lane-blocked', 'map-lane-hazardous',
+  'map-lane-sealed', 'map-lane-hostile', 'map-fog-intel-mask',
+]);
+const mapLedger = MAP_ASSETS.filter(r => ledgerMapIds.has(r.id));
+
 const batches = [
   ['batch-resources-generated', 'Starsilk Resource Icons (Generated)', resources],
   ['batch-victory-generated', 'Starsilk Victory Icons (Generated)', victories],
   ['batch-macros-generated', 'Starsilk Macro Icons (Generated)', macros],
+  ['batch-map-generated', 'Starsilk Map Icons (Generated)', mapLedger],
+  ['batch-factions-generated', 'Starsilk Faction Emblems (Generated)', STARSILK_FACTION_ASSETS],
 ] as const;
 
 for (const [id, name, records] of batches) {
