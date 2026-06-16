@@ -1,28 +1,75 @@
-# Event Writing Guide — UI / Asset Consumption
+# Event Writing Guide
 
-## Separation of concerns
+## Required Fields
 
-- **Event log text** remains in `src/game/events.ts`, macros, diplomacy, Starbinding modules.
-- **Asset registry** supplies icon + tooltip contracts for UI surfaces (resources, macros, victory, map).
-- Future **event banks** from the Starsilk Asset Production Agent should map to `family: 'events'` records with mechanical keys `event:{id}`.
+- `id`
+- `title`
+- `body`
+- `triggerCondition`
+- `affectedScope`
+- `mechanicalEffect`
+- `severity`
+- `sourceLabel`
+- `options`
+- `testFixture`
 
-## Tooltip vs event log
+## Tone Rules
 
-| Surface | Mechanics first? | Lore? | Warning prominent? |
-|---------|------------------|-------|-------------------|
-| StarsilkTooltip | Yes | Second | Yes — bordered |
-| Event log | Yes | Allowed | Use `type` coloring |
+- Clinical, procedural, mechanically clear.
+- Moral weight is allowed; heroic celebration is not.
+- Mechanics must be visible before lore flourish.
+- No generic sci-fi filler.
+- No celebratory language after catastrophic actions.
 
-Do not paste long lore into event log entries that already have a tooltip elsewhere.
+## Fixture Rules
 
-## Asset-agent ingest (future)
+Deterministic E2E events require a fixed seed or explicit trigger condition, expected option labels, expected mechanical effect, and expected UI badge/tooltip state.
 
-When event banks arrive from upstream batches:
+## UI / asset consumption
 
-1. Add `AssetRecord` per event template with `mechanicalKey: event:{id}`.
-2. Wire triggers in `src/game/events.ts` — do not duplicate prose in components.
-3. QA: event message must match `AssetRecord.tooltip.mechanical` intent.
+- Structured event definitions live in `src/data/events/*.json` (category files) and `src/data/events/records.ts`.
+- Runtime game events still materialize through `materializeEventLogEntry()` into the `GameEvent` shape used by `EventLog`.
+- Asset registry supplies icon + tooltip contracts for UI surfaces via `relatedAssetIds`.
+- `StarsilkTooltip` presents mechanics first, lore second, warning third.
 
-## Upstream reference
+## Event JSON schema
 
-`starsilk_4x_assets/starsilk_asset_agent_full_context/05_stubs/docs/event-writing-guide.md`
+Category files: `starbinding.json`, `macros.json`, `resources.json`, `diplomacy.json`, `anomalies.json`, `victory.json`.
+
+Each `EventDefinition` requires:
+
+| Field | Purpose |
+|---|---|
+| `id` | Stable event ID (`event-victory-heliocide-confirmation`) |
+| `title` | Log headline |
+| `category` | File grouping (`starbinding`, `macros`, `resources`, etc.) |
+| `trigger` | When the event fires |
+| `body` | Log body text |
+| `choices` | `{ id, label, mechanicalEffect }[]` |
+| `effects` | Summary mechanical outcome |
+| `severity` | `low` \| `medium` \| `high` \| `critical` |
+| `sourceLabel` | Canon basis |
+| `mechanicalTags` | Searchable tags |
+| `relatedAssetIds` | Canonical asset IDs for icons/tooltips |
+| `testId` | Stable `data-testid` |
+| `logType` | `GameEvent.type` mapping (`event`, `macro`, `starbinding`, `heliocide`, etc.) |
+| `canonSafetyNotes` | Optional QA guardrails |
+
+Loaders: `loadEventDefinitions()`, `getEventDefinitionById()`, `getEventsByCategory()`, `validateEventDefinition()`.
+
+Regenerate category JSON from TypeScript records:
+
+```bash
+npm run events:materialize
+```
+
+## Event fixture workflow
+
+Deterministic E2E coverage uses:
+
+- `tests/fixtures/events/{category}.json` — category slices
+- `tests/fixtures/events/event-{id}.json` — per-event fixtures
+- `window.__egSeedEvent(eventId)` — dev/E2E hook in `App.tsx`
+- `seedEventDefinitionFixture()` in `src/game/testFixtures.ts`
+
+Playwright specs seed events by ID, then assert `data-testid="event-log-{eventDefinitionId}"` on `EventLog` entries. No random event dependency.
