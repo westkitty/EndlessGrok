@@ -47,7 +47,7 @@ Then drag **Endless Grok** from `~/Applications` into your Dock. Double-click an
 | Key | Action |
 |-----|--------|
 | `E` | End turn |
-| `1–4` | Switch tabs (System, Empire, Research, Diplomacy) |
+| `1–5` | Switch tabs (System, Empire, Fleets, Research, Diplomacy) |
 | `Esc` | Deselect / pause menu |
 | `?` | Keyboard shortcuts overlay |
 | `R` | Reset galaxy map zoom |
@@ -158,7 +158,8 @@ Multi-turn colonization projects, player decision events (frontier surveys), AI 
 ```bash
 npm run dev       # Dev server
 npm run build     # Production build
-npm test          # 98 tests (deterministic sim, save round-trip, loops 301-400)
+npm test          # 122 tests (deterministic sim, save round-trip, strategic resources)
+npm run test:e2e  # Playwright smoke test (boot, end turn, fleet manager)
 ```
 
 ## Documentation
