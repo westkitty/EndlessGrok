@@ -23,6 +23,7 @@ import { createShip } from './ships';
 import { canReachSystem, setFleetTravelPath } from './travel';
 import { getDifficultyModifiers } from './settings';
 import { SeededRNG } from './rng';
+import { processAIStarbinding } from './aiStarbinding';
 import { updateVisibility } from './visibility';
 import type { AIGoal, BuildingType, Empire, Fleet, GameState, PlanetFocus, StarSystem } from './types';
 
@@ -631,6 +632,8 @@ function aiAttack(state: GameState, empire: Empire, rng: SeededRNG): void {
 }
 
 export function runAI(state: GameState, rng: SeededRNG): void {
+  processAIStarbinding(state, rng);
+
   const aiEmpires = state.empires.filter(e => !e.isPlayer && e.isAlive && !e.isPirate);
 
   for (const empire of aiEmpires) {
