@@ -1,0 +1,271 @@
+{
+  "batchId": "batch-macros-generated",
+  "batchName": "Starsilk Macro Icons (Generated)",
+  "sourceAgent": "Starsilk Asset Production Agent",
+  "createdAt": "2026-06-16T18:21:13.990Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "macro-local-checksum-audit",
+      "mechanicalKey": "macro:local_checksum_audit",
+      "family": "macros",
+      "displayName": "Local Checksum Audit",
+      "filename": "macro-local-checksum-audit.svg",
+      "relativePath": "public/assets/icons/macros/macro-local-checksum-audit.svg",
+      "status": "generated",
+      "testId": "macro-icon-local_checksum_audit",
+      "fallbackIconName": "diplomacy",
+      "visualVariant": "default",
+      "tooltip": {
+        "title": "Local Checksum Audit",
+        "mechanical": "+15% system defense, -5 approval empire-wide for 3 turns",
+        "lore": "Administrative checksum loop",
+        "warning": "Reduces approval — stability through audit is never free",
+        "effects": [
+          "Lasts 3 turns"
+        ],
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "locked",
+        "ready",
+        "cooldown",
+        "active"
+      ],
+      "sourceLabel": "macro definitions",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "macro-first-dirt-protocol",
+      "mechanicalKey": "macro:first_dirt_protocol",
+      "family": "macros",
+      "displayName": "First Dirt Protocol",
+      "filename": "macro-first-dirt-protocol.svg",
+      "relativePath": "public/assets/icons/macros/macro-first-dirt-protocol.svg",
+      "status": "generated",
+      "testId": "macro-icon-first_dirt_protocol",
+      "fallbackIconName": "colony",
+      "visualVariant": "default",
+      "tooltip": {
+        "title": "First Dirt Protocol",
+        "mechanical": "Restore limited habitability on ruined world (+1 pop, +food)",
+        "lore": "Frontier restoration macro",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "locked",
+        "ready",
+        "cooldown",
+        "active"
+      ],
+      "sourceLabel": "macro definitions",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "macro-syrin-inerting-mist",
+      "mechanicalKey": "macro:syrin_inerting_mist",
+      "family": "macros",
+      "displayName": "Syrin Inerting Mist",
+      "filename": "macro-syrin-inerting-mist.svg",
+      "relativePath": "public/assets/icons/macros/macro-syrin-inerting-mist.svg",
+      "status": "generated",
+      "testId": "macro-icon-syrin_inerting_mist",
+      "fallbackIconName": "research",
+      "visualVariant": "inerting",
+      "tooltip": {
+        "title": "Syrin Inerting Mist",
+        "mechanical": "Suppress Starsilk hazard in system for 5 turns",
+        "lore": "Syrin containment macro",
+        "warning": "Consumes Syrin — inerting is expensive",
+        "effects": [
+          "Lasts 5 turns"
+        ],
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "locked",
+        "ready",
+        "cooldown",
+        "active"
+      ],
+      "sourceLabel": "macro definitions",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "macro-siege-lattice-anchor",
+      "mechanicalKey": "macro:siege_lattice_anchor",
+      "family": "macros",
+      "displayName": "Siege Lattice Anchor",
+      "filename": "macro-siege-lattice-anchor.svg",
+      "relativePath": "public/assets/icons/macros/macro-siege-lattice-anchor.svg",
+      "status": "generated",
+      "testId": "macro-icon-siege_lattice_anchor",
+      "fallbackIconName": "industry",
+      "visualVariant": "default",
+      "tooltip": {
+        "title": "Siege Lattice Anchor",
+        "mechanical": "Fortify chokepoint or collapsed system (+25% defense)",
+        "lore": "Lattice containment macro",
+        "warning": "Anchors singularity-adjacent systems — fleet hazard remains",
+        "effects": [
+          "Lasts 6 turns"
+        ],
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "locked",
+        "ready",
+        "cooldown",
+        "active"
+      ],
+      "sourceLabel": "macro definitions",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "macro-archive-extraction-loop",
+      "mechanicalKey": "macro:archive_extraction_loop",
+      "family": "macros",
+      "displayName": "Archive Extraction Loop",
+      "filename": "macro-archive-extraction-loop.svg",
+      "relativePath": "public/assets/icons/macros/macro-archive-extraction-loop.svg",
+      "status": "generated",
+      "testId": "macro-icon-archive_extraction_loop",
+      "fallbackIconName": "science",
+      "visualVariant": "default",
+      "tooltip": {
+        "title": "Archive Extraction Loop",
+        "mechanical": "+1 Archive Data/turn for 3 turns, -3 approval on target",
+        "lore": "Archive harvest macro",
+        "warning": "Destabilizes local population",
+        "effects": [
+          "Lasts 3 turns"
+        ],
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "locked",
+        "ready",
+        "cooldown",
+        "active"
+      ],
+      "sourceLabel": "macro definitions",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "macro-drakken-biosphere-render",
+      "mechanicalKey": "macro:drakken_biosphere_render",
+      "family": "macros",
+      "displayName": "Drakken Biosphere Render",
+      "filename": "macro-drakken-biosphere-render.svg",
+      "relativePath": "public/assets/icons/macros/macro-drakken-biosphere-render.svg",
+      "status": "generated",
+      "testId": "macro-icon-drakken_biosphere_render",
+      "fallbackIconName": "combat",
+      "visualVariant": "catastrophic",
+      "tooltip": {
+        "title": "Drakken Biosphere Render",
+        "mechanical": "Convert population to industry (+industry, -population)",
+        "lore": "Drakken infrastructure macro",
+        "warning": "Diplomatic penalty from non-Drakken factions",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "locked",
+        "ready",
+        "cooldown",
+        "active"
+      ],
+      "sourceLabel": "macro definitions",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "macro-gravity-thread-seal",
+      "mechanicalKey": "macro:gravity_thread_seal",
+      "family": "macros",
+      "displayName": "Gravity Thread Seal",
+      "filename": "macro-gravity-thread-seal.svg",
+      "relativePath": "public/assets/icons/macros/macro-gravity-thread-seal.svg",
+      "status": "generated",
+      "testId": "macro-icon-gravity_thread_seal",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "seal",
+      "tooltip": {
+        "title": "Gravity Thread Seal",
+        "mechanical": "Protect fleets in system from singularity hazard for 4 turns",
+        "lore": "Partition geometry seal",
+        "warning": "Requires stabilized Starsilk",
+        "effects": [
+          "Lasts 4 turns"
+        ],
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "locked",
+        "ready",
+        "cooldown",
+        "active"
+      ],
+      "sourceLabel": "macro definitions",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "macro-counter-macro-scrub",
+      "mechanicalKey": "macro:counter_macro_scrub",
+      "family": "macros",
+      "displayName": "Counter-Macro Scrub",
+      "filename": "macro-counter-macro-scrub.svg",
+      "relativePath": "public/assets/icons/macros/macro-counter-macro-scrub.svg",
+      "status": "generated",
+      "testId": "macro-icon-counter_macro_scrub",
+      "fallbackIconName": "combat",
+      "visualVariant": "counter",
+      "tooltip": {
+        "title": "Counter-Macro Scrub",
+        "mechanical": "Remove active enemy macro effects in system",
+        "lore": "Anti-macro checksum scrub",
+        "warning": "May fail if enemy macro is lattice-anchored",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "locked",
+        "ready",
+        "cooldown",
+        "active"
+      ],
+      "sourceLabel": "macro definitions",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    }
+  ]
+}

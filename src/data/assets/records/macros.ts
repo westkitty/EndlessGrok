@@ -39,10 +39,10 @@ function macroAsset(macro: (typeof MACROS)[number]): AssetRecord {
     },
     testId: `macro-icon-${macro.id}`,
     sourceBasis: 'macro definitions',
-    status: 'planned',
+    status: 'generated',
     fallbackIconName: MACRO_ICON_FALLBACK[macro.category] ?? 'anomaly',
     visualVariant: MACRO_VARIANT[macro.category] ?? 'default',
-    plannedFiles: { svg: `src/assets/icons/macros/${macro.id}.svg` },
+    plannedFiles: { svg: `public/assets/icons/macros/macro-${macro.id.replace(/_/g, '-')}.svg` },
   };
 }
 

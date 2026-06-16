@@ -1,0 +1,173 @@
+{
+  "batchId": "batch-resources-generated",
+  "batchName": "Starsilk Resource Icons (Generated)",
+  "sourceAgent": "Starsilk Asset Production Agent",
+  "createdAt": "2026-06-16T18:21:13.984Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "resource-starsilk-thread",
+      "mechanicalKey": "resource:starsilkThread",
+      "family": "resources",
+      "displayName": "Starsilk Thread",
+      "filename": "resource-starsilk-thread.svg",
+      "relativePath": "public/assets/icons/resources/resource-starsilk-thread.svg",
+      "status": "generated",
+      "testId": "resource-starsilk-thread",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "hazard",
+      "tooltip": {
+        "title": "Starsilk Thread",
+        "mechanical": "Consumed by macros, arrays, and catastrophic projects. High leverage, high risk.",
+        "lore": "A living filament in the ledger sky. Handle as containment problem, not treasure.",
+        "warning": "Not generic fuel. Thread misuse escalates diplomatic and hazard pressure.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "Starsilk resource model",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "resource-inert-starsilk",
+      "mechanicalKey": "resource:inertStarsilk",
+      "family": "resources",
+      "displayName": "Inert Starsilk",
+      "filename": "resource-inert-starsilk.svg",
+      "relativePath": "public/assets/icons/resources/resource-inert-starsilk.svg",
+      "status": "generated",
+      "testId": "resource-inert-starsilk",
+      "fallbackIconName": "research",
+      "visualVariant": "inerting",
+      "tooltip": {
+        "title": "Inert Starsilk",
+        "mechanical": "Required for gravity seals, stabilization, and Syrin Inerting progress.",
+        "lore": "Thread made inert under Syrin pressure. Containment, not absolution.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "Starsilk resource model",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "resource-syrin-reagent",
+      "mechanicalKey": "resource:syrinReagent",
+      "family": "resources",
+      "displayName": "Syrin Reagent",
+      "filename": "resource-syrin-reagent.svg",
+      "relativePath": "public/assets/icons/resources/resource-syrin-reagent.svg",
+      "status": "generated",
+      "testId": "resource-syrin-reagent",
+      "fallbackIconName": "research",
+      "visualVariant": "inerting",
+      "tooltip": {
+        "title": "Syrin Reagent",
+        "mechanical": "Powers inerting mist and stabilizes hazardous systems temporarily.",
+        "lore": "Syrin reagent buys time against thread bleed. It does not erase consequences.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "Starsilk resource model",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "resource-archive-data",
+      "mechanicalKey": "resource:archiveData",
+      "family": "resources",
+      "displayName": "Archive Data",
+      "filename": "resource-archive-data.svg",
+      "relativePath": "public/assets/icons/resources/resource-archive-data.svg",
+      "status": "generated",
+      "testId": "resource-archive-data",
+      "fallbackIconName": "science",
+      "tooltip": {
+        "title": "Archive Data",
+        "mechanical": "Spent on audits, scrubs, and archive-linked macros.",
+        "lore": "Data torn from archive light fields. Preservation factions watch how you spend it.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "Starsilk resource model",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "resource-blood-ring-glass",
+      "mechanicalKey": "resource:bloodRingGlass",
+      "family": "resources",
+      "displayName": "Blood Ring Glass",
+      "filename": "resource-blood-ring-glass.svg",
+      "relativePath": "public/assets/icons/resources/resource-blood-ring-glass.svg",
+      "status": "generated",
+      "testId": "resource-blood-ring-glass",
+      "fallbackIconName": "combat",
+      "visualVariant": "catastrophic",
+      "tooltip": {
+        "title": "Blood Ring Glass",
+        "mechanical": "Enables biosphere render and Blood Eclipse foundation progress.",
+        "lore": "Glass formed where rings burned. Non-Drakken factions react badly.",
+        "warning": "Using this material carries diplomatic cost.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "Starsilk resource model",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "resource-siege-lattice-fragment",
+      "mechanicalKey": "resource:siegeLatticeFragment",
+      "family": "resources",
+      "displayName": "Siege Lattice Fragment",
+      "filename": "resource-siege-lattice-fragment.svg",
+      "relativePath": "public/assets/icons/resources/resource-siege-lattice-fragment.svg",
+      "status": "generated",
+      "testId": "resource-siege-lattice-fragment",
+      "fallbackIconName": "industry",
+      "visualVariant": "hazard",
+      "tooltip": {
+        "title": "Siege Lattice Fragment",
+        "mechanical": "Anchors chokepoints and collapsed systems. Does not remove fleet hazard.",
+        "lore": "Lattice torn from siege geometry. Anchoring admits the wound stays open.",
+        "warning": "Fortification near singularities remains dangerous.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "Starsilk resource model",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    }
+  ]
+}
