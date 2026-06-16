@@ -4,7 +4,7 @@ export type PlanetType = keyof typeof PLANET_TYPE_INFO;
 export type DiplomacyState = 'neutral' | 'hostile' | 'war' | 'trade' | 'pact' | 'research_pact';
 export type ShipType = 'scout' | 'frigate' | 'cruiser' | 'destroyer' | 'carrier' | 'colony' | 'dreadnought';
 export type GamePhase = 'menu' | 'playing' | 'victory' | 'defeat';
-export type VictoryType = 'domination' | 'science' | 'survival' | 'influence' | 'economy' | 'starbinding' | null;
+export type VictoryType = 'domination' | 'science' | 'survival' | 'influence' | 'economy' | 'starbinding' | 'syrin_inerting' | null;
 export type StarState = 'stable' | 'unstable' | 'starbinding_targeted' | 'collapsing' | 'collapsed_black_hole' | 'inert_partition_anchor';
 export type StarsilkDepositType =
   | 'none'
@@ -304,6 +304,12 @@ export interface Empire {
   aiVictoryFocus?: AIVictoryFocus;
   aiVictoryFocusTurn?: number;
   starbindingThreatWarned?: Record<string, number>;
+  starbindingDiplomacyLedger?: Record<string, { stage: number; dives: number; progressBand: number }>;
+  starbindingDiplomacyMessages?: Record<string, number>;
+  starbindingThreatLedger?: Record<string, number>;
+  syrinInertingProgress?: { systemsProtected: string[]; mistApplications: number };
+  syrinInertingDiplomacyBand?: number;
+  aiStarbindingLastActionTurn?: number;
   repeatableTechCounts?: Record<string, number>;
   factionResearchHint?: string;
   isPirate?: boolean;
@@ -560,6 +566,12 @@ export interface SerializedEmpire {
   aiVictoryFocus?: AIVictoryFocus;
   aiVictoryFocusTurn?: number;
   starbindingThreatWarned?: Record<string, number>;
+  starbindingDiplomacyLedger?: Record<string, { stage: number; dives: number; progressBand: number }>;
+  starbindingDiplomacyMessages?: Record<string, number>;
+  starbindingThreatLedger?: Record<string, number>;
+  syrinInertingProgress?: { systemsProtected: string[]; mistApplications: number };
+  syrinInertingDiplomacyBand?: number;
+  aiStarbindingLastActionTurn?: number;
   repeatableTechCounts?: Record<string, number>;
   factionResearchHint?: string;
   isPirate?: boolean;

@@ -1,3 +1,5 @@
+import { addOrRefreshMacroEffect } from './macroEffects';
+import { ensureSyrinInertingProgress, SYRIN_INERTING_MIN_INERT, SYRIN_INERTING_MIN_MIST_APPLICATIONS, SYRIN_INERTING_REQUIRED_SYSTEMS } from './syrinInertingVictory';
 import type { GameState } from './types';
 import { createEmptyStarsilkResources } from './starsilkResources';
 import { createStarbindingState } from './starbinding';
@@ -64,4 +66,27 @@ export function simulatePlayerStarbindingThreat(state: GameState): void {
     }
     ai.starbindingThreatWarned = {};
   }
+}
+
+/** Near-complete Syrin Inerting victory fixture for unit/E2E tests. */
+export function setupSyrinInertingVictoryFixture(state: GameState, empireId?: string): void {
+  unlockStarbindingTestFixture(state, empireId);
+  const empire = state.empires.find(e => e.id === (empireId ?? state.playerEmpireId));
+  if (!empire?.capitalSystemId) return;
+
+  const progress = ensureSyrinInertingProgress(empire);
+  const systems = state.systems
+    .filter(s => s.id !== empire.capitalSystemId && s.systemType !== 'black_hole')
+    .slice(0, SYRIN_INERTING_REQUIRED_SYSTEMS);
+
+  for (const system of systems) {
+    if (!progress.systemsProtected.includes(system.id)) {
+      progress.systemsProtected.push(system.id);
+      addOrRefreshMacroEffect(empire, 'syrin_inerting_mist', system.id, 'system', 5, state.turn);
+    }
+    empire.knownSystems.add(system.id);
+  }
+  progress.mistApplications = SYRIN_INERTING_MIN_MIST_APPLICATIONS;
+  empire.starsilkResources!.inertStarsilk = SYRIN_INERTING_MIN_INERT;
+  empire.starbinding!.completedDiveSystemIds = [];
 }

@@ -15,6 +15,11 @@ import {
   getStarbindingStage,
   isStarbindingUnlocked,
 } from './starbinding';
+import {
+  checkSyrinInertingVictory,
+  getSyrinInertingVictoryProgress,
+  isSyrinInertingUnlocked,
+} from './syrinInertingVictory';
 import type { Empire, GameState, VictoryProgress, VictoryType } from './types';
 
 export function getVictoryProgress(state: GameState, empireId?: string): VictoryProgress {
@@ -59,8 +64,8 @@ export function getVictoryProgress(state: GameState, empireId?: string): Victory
     ? Math.min(1, (empire.starsilkResources?.bloodRingGlass ?? 0) / 10 + domination * 0.2)
     : 0;
 
-  const syrinInerting = empire.researchedTechs.includes('syrin_inerting_method')
-    ? Math.min(1, (empire.starsilkResources?.inertStarsilk ?? 0) / 15)
+  const syrinInerting = isSyrinInertingUnlocked(empire)
+    ? getSyrinInertingVictoryProgress(state, empire.id)
     : 0;
 
   return {
@@ -118,6 +123,10 @@ export function checkVictoryConditions(state: GameState): { winnerId: string | n
       return { winnerId: empire.id, type: 'starbinding' };
     }
 
+    if (checkSyrinInertingVictory(state, empire.id)) {
+      return { winnerId: empire.id, type: 'syrin_inerting' };
+    }
+
     const owned = colonizable.filter(p => p.ownerId === empire.id && p.isColonized).length;
     if (totalColonizable > 0 && owned / totalColonizable >= DOMINATION_THRESHOLD) {
       return { winnerId: empire.id, type: 'domination' };
@@ -167,6 +176,7 @@ export function getVictoryMessage(type: VictoryType, empireName: string, maxTurn
     case 'influence': return `${empireName} achieves Influence Victory!`;
     case 'economy': return `${empireName} achieves Economic Hegemony Victory!`;
     case 'starbinding': return `${empireName} executes The Starbinding. The sky is severed. No consensus was sought.`;
+    case 'syrin_inerting': return `${empireName} achieves Syrin Inerting. The galaxy's Starsilk hazards are contained — not erased, not forgiven.`;
     default: return '';
   }
 }

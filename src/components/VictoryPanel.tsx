@@ -9,6 +9,14 @@ import {
   isStarbindingUnlocked,
 } from '../game/starbinding';
 import { isCollapsedSystem } from '../game/heliocide';
+import {
+  canAchieveSyrinInertingVictory,
+  getSyrinInertingVictoryDetails,
+  isSyrinInertingUnlocked,
+  SYRIN_INERTING_MIN_INERT,
+  SYRIN_INERTING_MIN_MIST_APPLICATIONS,
+  SYRIN_INERTING_REQUIRED_SYSTEMS,
+} from '../game/syrinInertingVictory';
 import type { GameState } from '../game/types';
 
 interface Props {
@@ -86,6 +94,9 @@ export function VictoryPanel({ state }: Props) {
         const status = info?.status ?? 'locked';
         const pct = Math.round((progress[path.id] ?? 0) * 100);
         const isStarbinding = path.id === 'starbinding';
+        const isSyrinInerting = path.id === 'syrinInerting';
+        const syrinDetails = isSyrinInerting ? getSyrinInertingVictoryDetails(player) : null;
+        const syrinBlock = isSyrinInerting ? canAchieveSyrinInertingVictory(state, player.id) : null;
         const showTrack = status === 'complete' || status === 'foundation';
         const badge = statusBadge(status, info?.completable ?? false);
 
@@ -113,6 +124,33 @@ export function VictoryPanel({ state }: Props) {
             {showTrack && (
               <div className="victory-path__track">
                 <div className="victory-path__fill" style={{ width: `${pct}%` }} />
+              </div>
+            )}
+            {isSyrinInerting && isSyrinInertingUnlocked(player) && syrinDetails && (
+              <div className="syrin-inerting-details" data-testid="syrin-inerting-details">
+                <div className="info-row">
+                  <span>Inert Starsilk</span>
+                  <span data-testid="syrin-inert-count">{syrinDetails.inertStarsilk}/{SYRIN_INERTING_MIN_INERT}</span>
+                </div>
+                <div className="info-row">
+                  <span>Systems protected</span>
+                  <span data-testid="syrin-systems-protected">{syrinDetails.systemsProtected}/{SYRIN_INERTING_REQUIRED_SYSTEMS}</span>
+                </div>
+                <div className="info-row">
+                  <span>Mist applications</span>
+                  <span data-testid="syrin-mist-count">{syrinDetails.mistApplications}/{SYRIN_INERTING_MIN_MIST_APPLICATIONS}</span>
+                </div>
+                {syrinDetails.heliocideDisqualified && (
+                  <p className="starbinding-warning" data-testid="syrin-heliocide-block">
+                    Heliocide disqualifies containment victory.
+                  </p>
+                )}
+                {syrinBlock && (
+                  <p className="victory-path__foundation" data-testid="syrin-victory-block">{syrinBlock}</p>
+                )}
+                {!syrinBlock && pct >= 1 && (
+                  <p className="victory-path__foundation" data-testid="syrin-victory-ready">Containment victory achievable.</p>
+                )}
               </div>
             )}
             {isStarbinding && (

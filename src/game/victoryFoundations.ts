@@ -1,6 +1,13 @@
 import { DOMINATION_THRESHOLD, INFLUENCE_VICTORY_THRESHOLD } from './constants';
 import { getColonizablePlanets } from './galaxy';
 import { isCollapsedSystem } from './heliocide';
+import {
+  canAchieveSyrinInertingVictory,
+  getSyrinInertingVictoryDetails,
+  isSyrinInertingUnlocked,
+  SYRIN_INERTING_MIN_INERT,
+  SYRIN_INERTING_REQUIRED_SYSTEMS,
+} from './syrinInertingVictory';
 import type { GameState, VictoryProgress } from './types';
 
 export type VictoryPathStatus = 'complete' | 'foundation' | 'locked';
@@ -55,9 +62,15 @@ export function getVictoryPathInfo(state: GameState, empireId: string): VictoryP
     },
     {
       id: 'syrinInerting',
-      status: empire.researchedTechs.includes('syrin_inerting_method') ? 'foundation' : 'locked',
-      completable: false,
-      foundationNote: 'Foundation: inert Starsilk tracked. Containment victory requires heliocide prevention — not yet enforced.',
+      status: isSyrinInertingUnlocked(empire) ? 'complete' : 'locked',
+      completable: isSyrinInertingUnlocked(empire),
+      foundationNote: isSyrinInertingUnlocked(empire)
+        ? (() => {
+            const d = getSyrinInertingVictoryDetails(empire);
+            const block = canAchieveSyrinInertingVictory({ empires: [empire], systems: state.systems } as GameState, empire.id);
+            return `Containment victory: ${d.inertStarsilk}/${SYRIN_INERTING_MIN_INERT} inert, ${d.systemsProtected}/${SYRIN_INERTING_REQUIRED_SYSTEMS} systems protected${d.heliocideDisqualified ? ' — heliocide disqualifies' : ''}${block ? ` — ${block}` : ' — completable'}`;
+          })()
+        : undefined,
     },
     {
       id: 'domination',
@@ -73,7 +86,7 @@ export function getVictoryPathInfo(state: GameState, empireId: string): VictoryP
 }
 
 export function isVictoryPathCompletable(id: keyof VictoryProgress): boolean {
-  return id === 'starbinding' || id === 'domination' || id === 'science' ||
+  return id === 'starbinding' || id === 'syrinInerting' || id === 'domination' || id === 'science' ||
     id === 'influence' || id === 'economy' || id === 'survival';
 }
 

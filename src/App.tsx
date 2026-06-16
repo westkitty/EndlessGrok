@@ -10,7 +10,7 @@ import { FACTION_DEFINITIONS, factionToPlayerSetup } from './game/factions';
 import { loadUISettings, saveUISettings, type UISettings } from './game/uiSettings';
 import { previewStrategicIncome } from './game/economy';
 import { previewStarsilkIncome, STARSILK_RESOURCE_KEYS } from './game/starsilkResources';
-import { unlockStarbindingTestFixture, simulatePlayerStarbindingThreat } from './game/testFixtures';
+import { unlockStarbindingTestFixture, simulatePlayerStarbindingThreat, setupSyrinInertingVictoryFixture } from './game/testFixtures';
 import type { Difficulty, GalaxyShape, GalaxySizeOption, GameSettings, GameState, Resources, TurnSummary } from './game/types';
 import { GalaxyMap } from './components/GalaxyMap';
 import { getDefaultViewport, type GalaxyTransform, type GalaxyViewport } from './components/galaxy/mapHelpers';
@@ -278,6 +278,11 @@ function GameScreen({
       unlockStarbindingTestFixture(s);
       const cap = s.empires.find(e => e.id === s.playerEmpireId)?.capitalSystemId;
       if (cap) s.selectedSystemId = cap;
+      onUpdate(s);
+    };
+    (window as Window & { __egSetupSyrinVictory?: () => void }).__egSetupSyrinVictory = () => {
+      const s = cloneGameState(state);
+      setupSyrinInertingVictoryFixture(s);
       onUpdate(s);
     };
   }, [state, onUpdate]);
