@@ -6,6 +6,8 @@ import {
   canAIPursueStarbinding,
   processAIStarbinding,
   aiRespondToStarbindingThreat,
+  getAIStarbindingNextAction,
+  broadcastRivalStarbindingIntel,
 } from '../aiStarbinding';
 import { unlockStarbindingTestFixture } from '../testFixtures';
 import { SeededRNG } from '../rng';
@@ -126,6 +128,34 @@ describe('AI Starbinding pursuit', () => {
     const result = canAIPursueStarbinding(state, ai);
     expect(result.eligible).toBe(false);
     expect(result.reason).toMatch(/Prerequisites|strategic need/i);
+  });
+
+  it('deterministic AI selects next action when requirements met', () => {
+    const state = createNewGame(110, { empireCount: 3 });
+    const ai = state.empires.find(e => !e.isPlayer)!;
+    unlockStarbindingTestFixture(state, ai.id);
+    ai.ideologyTags = ['frontier'];
+    ai.aiVictoryFocus = 'starbinding';
+    ai.starsilkResources!.starsilkThread = 5;
+    ai.starsilkResources!.syrinReagent = 5;
+
+    const action = getAIStarbindingNextAction(state, ai);
+    expect(action).toBeTruthy();
+    expect(['research', 'array', 'target', 'move', 'dive', 'stabilize', 'final']).toContain(action);
+  });
+
+  it('broadcasts rival intel to player with visibility', () => {
+    const state = createNewGame(111, { empireCount: 3 });
+    const ai = state.empires.find(e => !e.isPlayer)!;
+    const player = state.empires.find(e => e.isPlayer)!;
+    unlockStarbindingTestFixture(state, ai.id);
+    ai.starbinding!.arraySystemId = ai.capitalSystemId!;
+    player.knownSystems.add(ai.capitalSystemId!);
+
+    const before = state.events.length;
+    broadcastRivalStarbindingIntel(state, ai, 'array', ai.capitalSystemId!);
+    expect(state.events.length).toBeGreaterThan(before);
+    expect(state.events.some(e => e.message.includes('Starbinding Array'))).toBe(true);
   });
 
   it('processAIStarbinding surfaces rival progress when visible', () => {

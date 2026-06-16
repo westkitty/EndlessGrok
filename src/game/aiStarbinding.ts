@@ -271,75 +271,145 @@ function findAIArchiveTarget(state: GameState, empire: Empire): string | null {
   return candidates[0].id;
 }
 
-export function aiPursueStarbinding(state: GameState, empire: Empire, rng: SeededRNG): void {
-  if (empire.aiVictoryFocus !== 'starbinding') return;
-  const pursuit = canAIPursueStarbinding(state, empire);
-  if (!pursuit.eligible && !isStarbindingUnlocked(empire)) return;
+export function broadcastRivalStarbindingIntel(
+  state: GameState,
+  actor: Empire,
+  action: 'array' | 'target' | 'dive' | 'final',
+  systemId?: string,
+): void {
+  const player = state.empires.find(e => e.isPlayer);
+  if (!player || actor.isPlayer) return;
 
-  aiPrioritizeStarbindingResearch(empire);
+  const systemName = systemId
+    ? state.systems.find(s => s.id === systemId)?.name ?? systemId
+    : '';
+  const visible = systemId
+    ? player.knownSystems.has(systemId) || player.visibleSystems.has(systemId)
+    : actor.starbinding?.arraySystemId
+      ? player.knownSystems.has(actor.starbinding.arraySystemId) ||
+        player.visibleSystems.has(actor.starbinding.arraySystemId)
+      : getStarbindingStage(actor) >= 3;
+
+  if (!visible) return;
+
+  const messages: Record<typeof action, string> = {
+    array: `${actor.name} constructs a Starbinding Array. Rival Partition theory advances.`,
+    target: `${actor.name} marks ${systemName} for star dive. Intel confirms targeting.`,
+    dive: `${actor.name} initiates heliocide at ${systemName}. Rival Starbinding escalates.`,
+    final: `${actor.name} begins final Partition macro. Galaxy-wide threat confirmed.`,
+  };
+
+  state.events.push({
+    turn: state.turn,
+    type: 'starbinding',
+    message: messages[action],
+  });
+}
+
+export function getAIStarbindingNextAction(
+  state: GameState,
+  empire: Empire,
+): 'research' | 'array' | 'move' | 'target' | 'dive' | 'stabilize' | 'final' | null {
+  if (empire.aiVictoryFocus !== 'starbinding') return null;
+  const pursuit = canAIPursueStarbinding(state, empire);
+  if (!pursuit.eligible && !isStarbindingUnlocked(empire)) return null;
 
   const stage = getStarbindingStage(empire);
+  const missingTech = STARBINDING_TECH_CHAIN.find(t => !empire.researchedTechs.includes(t));
+  if (missingTech && !empire.currentResearch) return 'research';
+
   const ownedSystem = state.systems.find(s =>
     s.planets.some(p => p.ownerId === empire.id && p.isColonized),
   );
-
   if (stage >= 3 && !empire.starbinding?.arraySystemId && ownedSystem) {
-    const err = canBuildStarbindingArray(state, ownedSystem.id, empire.id);
-    if (!err && rng.next() > 0.3) {
-      if (buildStarbindingArray(state, ownedSystem.id, empire.id)) {
-        state.events.push({
-          turn: state.turn,
-          type: 'starbinding',
-          message: `${empire.name} constructs a Starbinding Array. The ledger expands without appeal.`,
-        });
-      }
+    if (canBuildStarbindingArray(state, ownedSystem.id, empire.id) === null) {
+      return 'array';
     }
   }
 
   const archiveId = findAIArchiveTarget(state, empire);
-  if (!archiveId) return;
+  if (!archiveId) return null;
 
   if (stage >= 4 && !empire.starbinding?.targetSystemIds.includes(archiveId)) {
     const fleet = state.fleets.find(f => f.empireId === empire.id);
-    if (fleet && fleet.systemId !== archiveId) {
-      const neighbors = getAdjacentSystems(state.systems, fleet.systemId);
-      if (!neighbors.some(n => n.id === archiveId) && fleet.movesRemaining > 0) {
-        setFleetTravelPath(fleet, state.systems, archiveId);
-      } else if (neighbors.some(n => n.id === archiveId) && fleet.movesRemaining > 0) {
-        fleet.systemId = archiveId;
-        fleet.movesRemaining--;
-      }
-    }
-    const selectErr = canSelectStarbindingTarget(state, archiveId, empire.id);
-    if (!selectErr && rng.next() > 0.5) {
-      selectStarbindingTarget(state, archiveId, empire.id);
-      const player = state.empires.find(e => e.isPlayer);
-      if (player && (player.knownSystems.has(archiveId) || player.visibleSystems.has(archiveId))) {
-        state.events.push({
-          turn: state.turn,
-          type: 'starbinding',
-          message: `${empire.name} marks ${state.systems.find(s => s.id === archiveId)!.name} for star dive.`,
-        });
-      }
-    }
+    if (fleet && fleet.systemId !== archiveId && fleet.movesRemaining > 0) return 'move';
+    if (!canSelectStarbindingTarget(state, archiveId, empire.id)) return null;
+    return 'target';
   }
 
   if (empire.starbinding?.targetSystemIds.includes(archiveId)) {
-    const diveErr = canBeginStarDive(state, archiveId, empire.id);
-    if (!diveErr && rng.next() > 0.4) {
-      beginStarbindingDive(state, archiveId, empire.id);
-    }
+    if (!canBeginStarDive(state, archiveId, empire.id)) return null;
+    if (!empire.starbinding?.completedDiveSystemIds.includes(archiveId)) return 'dive';
   }
 
   const pool = ensureStarsilkResources(empire);
   if (stage >= 6 && (empire.starbinding?.inertStarsilkStabilized ?? 0) < 5 && pool.starsilkThread >= 1) {
-    stabilizeInertStarsilk(state, empire.id, 1);
+    return 'stabilize';
   }
 
-  const finalErr = canBeginFinalExecution(state, empire.id);
-  if (!finalErr && rng.next() > 0.4) {
-    beginFinalStarbindingExecution(state, empire.id);
+  if (!canBeginFinalExecution(state, empire.id)) return null;
+  return 'final';
+}
+
+export function aiPursueStarbinding(state: GameState, empire: Empire, rng: SeededRNG): void {
+  void rng;
+  if (empire.aiVictoryFocus !== 'starbinding') return;
+  if (empire.aiStarbindingLastActionTurn === state.turn) return;
+
+  const pursuit = canAIPursueStarbinding(state, empire);
+  if (!pursuit.eligible && !isStarbindingUnlocked(empire)) return;
+
+  const action = getAIStarbindingNextAction(state, empire);
+  if (!action) return;
+
+  const archiveId = findAIArchiveTarget(state, empire);
+  const ownedSystem = state.systems.find(s =>
+    s.planets.some(p => p.ownerId === empire.id && p.isColonized),
+  );
+
+  switch (action) {
+    case 'research':
+      aiPrioritizeStarbindingResearch(empire);
+      break;
+    case 'array':
+      if (ownedSystem && buildStarbindingArray(state, ownedSystem.id, empire.id)) {
+        broadcastRivalStarbindingIntel(state, empire, 'array', ownedSystem.id);
+      }
+      break;
+    case 'move': {
+      const fleet = state.fleets.find(f => f.empireId === empire.id);
+      if (fleet && archiveId && fleet.movesRemaining > 0) {
+        const neighbors = getAdjacentSystems(state.systems, fleet.systemId);
+        if (neighbors.some(n => n.id === archiveId)) {
+          fleet.systemId = archiveId;
+          fleet.movesRemaining--;
+        } else {
+          setFleetTravelPath(fleet, state.systems, archiveId);
+        }
+      }
+      break;
+    }
+    case 'target':
+      if (archiveId && selectStarbindingTarget(state, archiveId, empire.id)) {
+        broadcastRivalStarbindingIntel(state, empire, 'target', archiveId);
+      }
+      break;
+    case 'dive':
+      if (archiveId && beginStarbindingDive(state, archiveId, empire.id)) {
+        broadcastRivalStarbindingIntel(state, empire, 'dive', archiveId);
+      }
+      break;
+    case 'stabilize':
+      stabilizeInertStarsilk(state, empire.id, 1);
+      break;
+    case 'final':
+      if (beginFinalStarbindingExecution(state, empire.id)) {
+        broadcastRivalStarbindingIntel(state, empire, 'final');
+      }
+      break;
   }
+
+  empire.aiStarbindingLastActionTurn = state.turn;
 }
 
 function moveFleetTowardSystem(fleet: Fleet, state: GameState, targetId: string): void {
@@ -363,10 +433,6 @@ export function aiRespondToStarbindingThreat(state: GameState, empire: Empire, r
 
     const evaluation = evaluateStarbindingThreat(state, empire.id, perpetrator.id);
     if (evaluation.threatScore < 10) continue;
-
-    empire.relationScores = empire.relationScores ?? {};
-    const delta = -Math.floor(evaluation.threatScore / 8);
-    empire.relationScores[perpetrator.id] = (empire.relationScores[perpetrator.id] ?? 50) + delta;
 
     if (evaluation.shouldOppose && getDiplomacy(empire, perpetrator.id) === 'neutral') {
       if (rng.next() > 0.5) makeHostile(empire, perpetrator);
