@@ -30,6 +30,11 @@ test('boots, ends turn, and opens fleet manager', async ({ page }) => {
 
   await expect(page.getByTestId('turn-number')).not.toHaveText(turnBefore ?? '');
 
+  const decision = page.locator('.decision-overlay button').first();
+  if (await decision.isVisible({ timeout: 2000 }).catch(() => false)) {
+    await decision.click();
+  }
+
   await page.getByTestId('tab-fleets').click();
   await expect(page.getByTestId('fleet-manager')).toBeVisible();
 
