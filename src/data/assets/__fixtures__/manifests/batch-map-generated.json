@@ -1,0 +1,508 @@
+{
+  "batchId": "batch-map-generated",
+  "batchName": "Starsilk Map Icons (Generated)",
+  "sourceAgent": "Starsilk Asset Production Agent",
+  "createdAt": "2026-06-16T18:39:27.762Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "map-starbinding-target",
+      "mechanicalKey": "map:starbinding_targeted",
+      "family": "map",
+      "displayName": "Starbinding Target",
+      "filename": "map-starbinding-target.svg",
+      "relativePath": "public/assets/icons/map/map-starbinding-target.svg",
+      "status": "generated",
+      "testId": "map-starbinding-target",
+      "fallbackIconName": "combat",
+      "visualVariant": "catastrophic",
+      "tooltip": {
+        "title": "Starbinding Target",
+        "mechanical": "Archive or dive target in active Starbinding sequence.",
+        "lore": "The ledger marks this star for severance.",
+        "canonLabel": "direct_canon",
+        "warning": "Targeting escalates rival reactions."
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-star-normal",
+      "mechanicalKey": "map:star-normal",
+      "family": "map",
+      "displayName": "Normal Star",
+      "filename": "map-star-normal.svg",
+      "relativePath": "public/assets/icons/map/map-star-normal.svg",
+      "status": "generated",
+      "testId": "map-star-normal",
+      "fallbackIconName": "anomaly",
+      "tooltip": {
+        "title": "Normal Star",
+        "mechanical": "Standard navigable star.",
+        "lore": "Routine stellar syntax on the ledger map.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-collapsed-star",
+      "mechanicalKey": "map:collapsed-star",
+      "family": "map",
+      "displayName": "Collapsed Star",
+      "filename": "map-collapsed-star.svg",
+      "relativePath": "public/assets/icons/map/map-collapsed-star.svg",
+      "status": "generated",
+      "testId": "map-collapsed-star",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "hazard",
+      "tooltip": {
+        "title": "Collapsed Star",
+        "mechanical": "Post-collapse singularity system.",
+        "lore": "Ledgered void — navigation wound.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-deposit-starsilk-leak",
+      "mechanicalKey": "map:deposit-starsilk-leak",
+      "family": "map",
+      "displayName": "Starsilk Leak Deposit",
+      "filename": "map-deposit-starsilk-leak.svg",
+      "relativePath": "public/assets/icons/map/map-deposit-starsilk-leak.svg",
+      "status": "generated",
+      "testId": "map-deposit-starsilk-leak",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "hazard",
+      "tooltip": {
+        "title": "Starsilk Leak Deposit",
+        "mechanical": "Local Starsilk thread leak deposit.",
+        "lore": "Filament bleed at planetary scale.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-deposit-syrin-trace",
+      "mechanicalKey": "map:deposit-syrin-trace",
+      "family": "map",
+      "displayName": "Syrin Trace Deposit",
+      "filename": "map-deposit-syrin-trace.svg",
+      "relativePath": "public/assets/icons/map/map-deposit-syrin-trace.svg",
+      "status": "generated",
+      "testId": "map-deposit-syrin-trace",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "inerting",
+      "tooltip": {
+        "title": "Syrin Trace Deposit",
+        "mechanical": "Syrin chemistry trace deposit.",
+        "lore": "Inerting precursor residue.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-deposit-blood-ring-glass",
+      "mechanicalKey": "map:deposit-blood-ring-glass",
+      "family": "map",
+      "displayName": "Blood Ring Glass Deposit",
+      "filename": "map-deposit-blood-ring-glass.svg",
+      "relativePath": "public/assets/icons/map/map-deposit-blood-ring-glass.svg",
+      "status": "generated",
+      "testId": "map-deposit-blood-ring-glass",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "catastrophic",
+      "tooltip": {
+        "title": "Blood Ring Glass Deposit",
+        "mechanical": "Atrocity-linked vitrified deposit.",
+        "lore": "Red-black remnant field.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-deposit-siege-lattice-fragment",
+      "mechanicalKey": "map:deposit-siege-lattice-fragment",
+      "family": "map",
+      "displayName": "Siege Lattice Deposit",
+      "filename": "map-deposit-siege-lattice-fragment.svg",
+      "relativePath": "public/assets/icons/map/map-deposit-siege-lattice-fragment.svg",
+      "status": "generated",
+      "testId": "map-deposit-siege-lattice-fragment",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "hazard",
+      "tooltip": {
+        "title": "Siege Lattice Deposit",
+        "mechanical": "Lattice shard deposit near singularity.",
+        "lore": "Containment geometry exposed.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-deposit-archive-data",
+      "mechanicalKey": "map:deposit-archive-data",
+      "family": "map",
+      "displayName": "Archive Data Deposit",
+      "filename": "map-deposit-archive-data.svg",
+      "relativePath": "public/assets/icons/map/map-deposit-archive-data.svg",
+      "status": "generated",
+      "testId": "map-deposit-archive-data",
+      "fallbackIconName": "anomaly",
+      "tooltip": {
+        "title": "Archive Data Deposit",
+        "mechanical": "Archive light field deposit.",
+        "lore": "Stellar record traces.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-hazard-singularity",
+      "mechanicalKey": "map:hazard-singularity",
+      "family": "map",
+      "displayName": "Singularity Hazard",
+      "filename": "map-hazard-singularity.svg",
+      "relativePath": "public/assets/icons/map/map-hazard-singularity.svg",
+      "status": "generated",
+      "testId": "map-hazard-singularity",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "hazard",
+      "tooltip": {
+        "title": "Singularity Hazard",
+        "mechanical": "Fleet hazard applies.",
+        "lore": "Thread geometry bleeds.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-hazard-unstable-star",
+      "mechanicalKey": "map:hazard-unstable-star",
+      "family": "map",
+      "displayName": "Unstable Star Hazard",
+      "filename": "map-hazard-unstable-star.svg",
+      "relativePath": "public/assets/icons/map/map-hazard-unstable-star.svg",
+      "status": "generated",
+      "testId": "map-hazard-unstable-star",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "hazard",
+      "tooltip": {
+        "title": "Unstable Star Hazard",
+        "mechanical": "Pre-collapse instability.",
+        "lore": "Spectral jitter under thread stress.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-hazard-macro-sealed-system",
+      "mechanicalKey": "map:hazard-macro-sealed-system",
+      "family": "map",
+      "displayName": "Macro Sealed System",
+      "filename": "map-hazard-macro-sealed-system.svg",
+      "relativePath": "public/assets/icons/map/map-hazard-macro-sealed-system.svg",
+      "status": "generated",
+      "testId": "map-hazard-macro-sealed-system",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "seal",
+      "tooltip": {
+        "title": "Macro Sealed System",
+        "mechanical": "Gravity thread seal active.",
+        "lore": "Partition seal stitched locally.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-lane-normal",
+      "mechanicalKey": "map:lane-normal",
+      "family": "map",
+      "displayName": "Normal Lane",
+      "filename": "map-lane-normal.svg",
+      "relativePath": "public/assets/icons/map/map-lane-normal.svg",
+      "status": "generated",
+      "testId": "map-lane-normal",
+      "fallbackIconName": "anomaly",
+      "tooltip": {
+        "title": "Normal Lane",
+        "mechanical": "Standard hyperlane.",
+        "lore": "Routine transit syntax.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-lane-unknown",
+      "mechanicalKey": "map:lane-unknown",
+      "family": "map",
+      "displayName": "Unknown Lane",
+      "filename": "map-lane-unknown.svg",
+      "relativePath": "public/assets/icons/map/map-lane-unknown.svg",
+      "status": "generated",
+      "testId": "map-lane-unknown",
+      "fallbackIconName": "anomaly",
+      "tooltip": {
+        "title": "Unknown Lane",
+        "mechanical": "Unsurveyed lane segment.",
+        "lore": "Intel mask active.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-lane-blocked",
+      "mechanicalKey": "map:lane-blocked",
+      "family": "map",
+      "displayName": "Blocked Lane",
+      "filename": "map-lane-blocked.svg",
+      "relativePath": "public/assets/icons/map/map-lane-blocked.svg",
+      "status": "generated",
+      "testId": "map-lane-blocked",
+      "fallbackIconName": "anomaly",
+      "tooltip": {
+        "title": "Blocked Lane",
+        "mechanical": "Transit blocked.",
+        "lore": "Chokepoint denial.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-lane-hazardous",
+      "mechanicalKey": "map:lane-hazardous",
+      "family": "map",
+      "displayName": "Hazardous Lane",
+      "filename": "map-lane-hazardous.svg",
+      "relativePath": "public/assets/icons/map/map-lane-hazardous.svg",
+      "status": "generated",
+      "testId": "map-lane-hazardous",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "hazard",
+      "tooltip": {
+        "title": "Hazardous Lane",
+        "mechanical": "Elevated transit hazard.",
+        "lore": "Thread stress along lane.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-lane-sealed",
+      "mechanicalKey": "map:lane-sealed",
+      "family": "map",
+      "displayName": "Sealed Lane",
+      "filename": "map-lane-sealed.svg",
+      "relativePath": "public/assets/icons/map/map-lane-sealed.svg",
+      "status": "generated",
+      "testId": "map-lane-sealed",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "seal",
+      "tooltip": {
+        "title": "Sealed Lane",
+        "mechanical": "Seal geometry restricts transit.",
+        "lore": "Contained but not safe.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-lane-hostile",
+      "mechanicalKey": "map:lane-hostile",
+      "family": "map",
+      "displayName": "Hostile Lane",
+      "filename": "map-lane-hostile.svg",
+      "relativePath": "public/assets/icons/map/map-lane-hostile.svg",
+      "status": "generated",
+      "testId": "map-lane-hostile",
+      "fallbackIconName": "anomaly",
+      "visualVariant": "catastrophic",
+      "tooltip": {
+        "title": "Hostile Lane",
+        "mechanical": "Hostile control or interdiction.",
+        "lore": "Transit under fire risk.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "map-fog-intel-mask",
+      "mechanicalKey": "map:fog-intel-mask",
+      "family": "map",
+      "displayName": "Fog Intel Mask",
+      "filename": "map-fog-intel-mask.svg",
+      "relativePath": "public/assets/icons/map/map-fog-intel-mask.svg",
+      "status": "generated",
+      "testId": "map-fog-intel-mask",
+      "fallbackIconName": "anomaly",
+      "tooltip": {
+        "title": "Fog Intel Mask",
+        "mechanical": "Unsurveyed intel mask overlay.",
+        "lore": "Unknown until scanned.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "visible",
+        "fogged"
+      ],
+      "sourceLabel": "galaxy map states",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    }
+  ]
+}

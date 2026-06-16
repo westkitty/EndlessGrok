@@ -47,6 +47,17 @@ const MECHANICAL_TO_CANONICAL: Record<string, string> = {
   'fleet:scout': 'fleet-scout-icon',
   'fleet:colony': 'fleet-colony-icon',
   'fleet:military': 'fleet-military-icon',
+  'map:stable': 'map-star-normal',
+  'map:collapsed_black_hole': 'map-collapsed-star',
+  'map:singularity_hazard': 'map-hazard-singularity',
+  'map:unstable': 'map-hazard-unstable-star',
+  'map:collapsing': 'map-hazard-unstable-star',
+  'map:singularity_sealed': 'map-hazard-macro-sealed-system',
+  'map:starbinding_targeted': 'map-starbinding-target',
+  'map:strategic_deposit': 'map-deposit-starsilk-leak',
+  'map:archive_star': 'map-deposit-archive-data',
+  'map:inerted_system': 'map-deposit-syrin-trace',
+  'map:hazard_suppressed': 'map-deposit-syrin-trace',
 };
 
 const CANONICAL_TO_LEGACY = Object.fromEntries(

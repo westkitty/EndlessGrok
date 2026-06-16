@@ -15,7 +15,7 @@
     "tooltip": null,
     "testId": "resource-starsilk-thread",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "resource-inert-starsilk",
@@ -33,7 +33,7 @@
     "tooltip": null,
     "testId": "resource-inert-starsilk",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "resource-syrin-reagent",
@@ -51,7 +51,7 @@
     "tooltip": null,
     "testId": "resource-syrin-reagent",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "resource-archive-data",
@@ -69,7 +69,7 @@
     "tooltip": null,
     "testId": "resource-archive-data",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "resource-blood-ring-glass",
@@ -87,7 +87,7 @@
     "tooltip": null,
     "testId": "resource-blood-ring-glass",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "resource-siege-lattice-fragment",
@@ -105,7 +105,7 @@
     "tooltip": null,
     "testId": "resource-siege-lattice-fragment",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "resource-macro-labor",
@@ -195,7 +195,7 @@
     "tooltip": null,
     "testId": "victory-starbinding",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "victory-starbinding-stage-forbidden-theory",
@@ -411,7 +411,7 @@
     "tooltip": null,
     "testId": "victory-syrin-inerting",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "victory-ledger-dominion",
@@ -429,7 +429,7 @@
     "tooltip": null,
     "testId": "victory-ledger-dominion",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "victory-blood-eclipse",
@@ -447,7 +447,7 @@
     "tooltip": null,
     "testId": "victory-blood-eclipse",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "victory-archive-continuity",
@@ -465,7 +465,7 @@
     "tooltip": null,
     "testId": "victory-archive-continuity",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-star-normal",
@@ -483,7 +483,7 @@
     "tooltip": null,
     "testId": "map-star-normal",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-collapsed-star",
@@ -501,7 +501,7 @@
     "tooltip": null,
     "testId": "map-collapsed-star",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-starbinding-target",
@@ -519,7 +519,7 @@
     "tooltip": null,
     "testId": "map-starbinding-target",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-deposit-starsilk-leak",
@@ -537,7 +537,7 @@
     "tooltip": null,
     "testId": "map-deposit-starsilk-leak",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-deposit-syrin-trace",
@@ -555,7 +555,7 @@
     "tooltip": null,
     "testId": "map-deposit-syrin-trace",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-deposit-blood-ring-glass",
@@ -573,7 +573,7 @@
     "tooltip": null,
     "testId": "map-deposit-blood-ring-glass",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-deposit-siege-lattice-fragment",
@@ -591,7 +591,7 @@
     "tooltip": null,
     "testId": "map-deposit-siege-lattice-fragment",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-deposit-archive-data",
@@ -609,7 +609,7 @@
     "tooltip": null,
     "testId": "map-deposit-archive-data",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-hazard-singularity",
@@ -627,7 +627,7 @@
     "tooltip": null,
     "testId": "map-hazard-singularity",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-hazard-unstable-star",
@@ -645,7 +645,7 @@
     "tooltip": null,
     "testId": "map-hazard-unstable-star",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-hazard-macro-sealed-system",
@@ -663,7 +663,7 @@
     "tooltip": null,
     "testId": "map-hazard-macro-sealed-system",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-lane-normal",
@@ -681,7 +681,7 @@
     "tooltip": null,
     "testId": "map-lane-normal",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-lane-unknown",
@@ -699,7 +699,7 @@
     "tooltip": null,
     "testId": "map-lane-unknown",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-lane-blocked",
@@ -717,7 +717,7 @@
     "tooltip": null,
     "testId": "map-lane-blocked",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-lane-hazardous",
@@ -735,7 +735,7 @@
     "tooltip": null,
     "testId": "map-lane-hazardous",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-lane-sealed",
@@ -753,7 +753,7 @@
     "tooltip": null,
     "testId": "map-lane-sealed",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-lane-hostile",
@@ -771,7 +771,7 @@
     "tooltip": null,
     "testId": "map-lane-hostile",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-fog-intel-mask",
@@ -789,7 +789,7 @@
     "tooltip": null,
     "testId": "map-fog-intel-mask",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "macro-local-checksum-audit",
@@ -807,7 +807,7 @@
     "tooltip": null,
     "testId": "macro-local-checksum-audit",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "macro-first-dirt-protocol",
@@ -825,7 +825,7 @@
     "tooltip": null,
     "testId": "macro-first-dirt-protocol",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "macro-syrin-inerting-mist",
@@ -843,7 +843,7 @@
     "tooltip": null,
     "testId": "macro-syrin-inerting-mist",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "macro-siege-lattice-anchor",
@@ -861,7 +861,7 @@
     "tooltip": null,
     "testId": "macro-siege-lattice-anchor",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "macro-archive-extraction-loop",
@@ -879,7 +879,7 @@
     "tooltip": null,
     "testId": "macro-archive-extraction-loop",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "macro-drakken-biosphere-render",
@@ -897,7 +897,7 @@
     "tooltip": null,
     "testId": "macro-drakken-biosphere-render",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "macro-gravity-thread-seal",
@@ -915,7 +915,7 @@
     "tooltip": null,
     "testId": "macro-gravity-thread-seal",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "macro-counter-macro-scrub",
@@ -933,7 +933,7 @@
     "tooltip": null,
     "testId": "macro-counter-macro-scrub",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "macro-active-effect-badge",
@@ -987,7 +987,7 @@
     "tooltip": null,
     "testId": "faction-ledger-administration-emblem",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "faction-drakken-genesis-host-emblem",
@@ -1005,7 +1005,7 @@
     "tooltip": null,
     "testId": "faction-drakken-genesis-host-emblem",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "faction-solidarity-cells-partition-front-emblem",
@@ -1023,7 +1023,7 @@
     "tooltip": null,
     "testId": "faction-solidarity-cells-partition-front-emblem",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "faction-syrin-survivor-enclave-emblem",
@@ -1041,7 +1041,7 @@
     "tooltip": null,
     "testId": "faction-syrin-survivor-enclave-emblem",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "faction-archive-custodians-exhumed-cipher-emblem",
@@ -1059,7 +1059,7 @@
     "tooltip": null,
     "testId": "faction-archive-custodians-exhumed-cipher-emblem",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "faction-containment-order-shard-god-emblem",
@@ -1077,7 +1077,7 @@
     "tooltip": null,
     "testId": "faction-containment-order-shard-god-emblem",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "faction-diplomacy-tone-pack-ledger-administration",
