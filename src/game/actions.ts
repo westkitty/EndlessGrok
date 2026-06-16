@@ -20,9 +20,25 @@ import {
 import { canTerraformPlanet, clearBlocker, terraformPlanet } from './planets';
 import { canUpgradeColony, upgradeColonyDevelopment } from './upkeep';
 import { areSystemsConnected, getAdjacentSystems, getSystemDistance } from './galaxy';
-import { queueBuildingProduction, queueShipProduction, canQueueShip, canQueueBuilding } from './production';
+import {
+  queueBuildingProduction,
+  queueShipProduction,
+  canQueueShip,
+  canQueueShipDesign as canQueueShipDesignOnPlanet,
+  canQueueBuilding,
+} from './production';
 import { hasUnlock, getTechnology, getAvailableTechs } from './research';
-import { formatMissingStrategicResources, getTechStrategicCost, spendStrategicCost } from './strategicResources';
+import {
+  copyStrategicCost,
+  formatMissingStrategicResources,
+  formatStrategicCost,
+  getTechStrategicCost,
+  isEmptyStrategicCost,
+  refundStrategicCost,
+  spendStrategicCost,
+} from './strategicResources';
+import { canBuildShipDesign, validateShipDesign } from './shipDesigns';
+import type { ShipDesign } from './types';
 import { createShip } from './ships';
 import { canReachSystem, findPath, getFleetPath, setFleetTravelPath } from './travel';
 import { SeededRNG } from './rng';
@@ -345,7 +361,8 @@ export function queueProduction(
   state: GameState,
   planetId: string,
   itemType: ShipType | BuildingType,
-  kind: 'ship' | 'building'
+  kind: 'ship' | 'building',
+  designId?: string,
 ): boolean {
   const player = getPlayer(state);
   const planet = state.systems.flatMap(s => s.planets).find(p => p.id === planetId);
@@ -354,16 +371,19 @@ export function queueProduction(
 
   let item;
   if (kind === 'ship') {
-    item = queueShipProduction(planet, itemType as ShipType, player, system.id, state);
+    item = queueShipProduction(planet, itemType as ShipType, player, system.id, state, designId);
   } else {
     item = queueBuildingProduction(planet, itemType as BuildingType, player, system.id);
   }
 
   if (!item) return false;
+  const label = kind === 'ship' && designId
+    ? player.shipDesigns?.find(d => d.id === designId)?.name ?? itemType
+    : itemType;
   state.events.push({
     turn: state.turn,
     type: 'production',
-    message: `Queued ${itemType} at ${planet.name} (${item.turnsRemaining} turns)`,
+    message: `Queued ${label} at ${planet.name} (${item.turnsRemaining} turns)`,
   });
   return true;
 }
@@ -372,14 +392,37 @@ export function canQueueProduction(
   state: GameState,
   planetId: string,
   itemType: ShipType | BuildingType,
-  kind: 'ship' | 'building'
+  kind: 'ship' | 'building',
+  designId?: string,
 ): string | null {
   const player = getPlayer(state);
   const planet = state.systems.flatMap(s => s.planets).find(p => p.id === planetId);
   if (!planet) return 'Planet not found';
-  if (kind === 'ship') return canQueueShip(planet, itemType as ShipType, player, state);
+  if (kind === 'ship') {
+    if (designId) {
+      const design = player.shipDesigns?.find(d => d.id === designId);
+      if (!design) return 'Ship design not found';
+      return canQueueShipDesignOnPlanet(planet, design, player, state);
+    }
+    return canQueueShip(planet, itemType as ShipType, player, state);
+  }
   return canQueueBuilding(planet, itemType as BuildingType, player);
 }
+
+export function canQueueShipDesignById(
+  state: GameState,
+  planetId: string,
+  designId: string,
+): string | null {
+  const player = getPlayer(state);
+  const planet = state.systems.flatMap(s => s.planets).find(p => p.id === planetId);
+  if (!planet) return 'Planet not found';
+  const design = player.shipDesigns?.find(d => d.id === designId);
+  if (!design) return 'Ship design not found';
+  return canQueueShipDesignOnPlanet(planet, design, player, state);
+}
+
+export { canBuildShipDesign, formatStrategicCost };
 
 export function exploreAnomalyAction(
   state: GameState,
@@ -437,13 +480,94 @@ export function startResearch(state: GameState, techId: string, useQueue = false
   const strategicCost = getTechStrategicCost(techId);
   if (!spendStrategicCost(player, strategicCost)) return false;
 
+  const spent = copyStrategicCost(strategicCost);
   if (useQueue) {
     player.researchQueue = techId;
+    player.queuedResearchStrategicSpent = spent;
   } else {
     player.currentResearch = techId;
     player.researchProgress = 0;
+    player.activeResearchStrategicSpent = spent;
   }
   return true;
+}
+
+export function canCancelResearch(state: GameState, slot: 'primary' | 'queue' = 'primary'): string | null {
+  const player = getPlayer(state);
+  if (slot === 'primary') {
+    if (!player.currentResearch) return 'No active research';
+    return null;
+  }
+  if (!player.researchQueue) return 'No queued research';
+  return null;
+}
+
+export function cancelResearch(state: GameState, slot: 'primary' | 'queue' = 'primary'): boolean {
+  const err = canCancelResearch(state, slot);
+  if (err) return false;
+
+  const player = getPlayer(state);
+  const techId = slot === 'primary' ? player.currentResearch! : player.researchQueue!;
+  const tech = getTechnology(techId);
+  const techName = tech?.name ?? techId;
+
+  if (slot === 'primary') {
+    const spent = player.activeResearchStrategicSpent;
+    if (spent && !isEmptyStrategicCost(spent)) {
+      refundStrategicCost(player, spent);
+    }
+    player.currentResearch = null;
+    player.researchProgress = 0;
+    player.activeResearchStrategicSpent = undefined;
+
+    const refunded = spent && !isEmptyStrategicCost(spent);
+    state.events.push({
+      turn: state.turn,
+      type: 'research',
+      message: refunded
+        ? `Research canceled: ${techName} (strategic resources refunded; progress lost)`
+        : `Research canceled: ${techName} (progress lost)`,
+    });
+    return true;
+  }
+
+  const spent = player.queuedResearchStrategicSpent;
+  if (spent && !isEmptyStrategicCost(spent)) {
+    refundStrategicCost(player, spent);
+  }
+  player.researchQueue = null;
+  player.queuedResearchStrategicSpent = undefined;
+
+  const refunded = spent && !isEmptyStrategicCost(spent);
+  state.events.push({
+    turn: state.turn,
+    type: 'research',
+    message: refunded
+      ? `Queued research canceled: ${techName} (strategic resources refunded)`
+      : `Queued research canceled: ${techName}`,
+  });
+  return true;
+}
+
+export function saveShipDesign(state: GameState, design: ShipDesign): string | null {
+  const player = getPlayer(state);
+  const err = validateShipDesign(design, player.researchedTechs);
+  if (err) return err;
+
+  player.shipDesigns = player.shipDesigns ?? [];
+  const existingIdx = player.shipDesigns.findIndex(d => d.id === design.id);
+  if (design.isDefault) return 'Cannot overwrite default designs';
+
+  if (existingIdx >= 0) {
+    player.shipDesigns[existingIdx] = design;
+  } else {
+    player.shipDesigns.push(design);
+  }
+  return null;
+}
+
+export function createCustomShipDesignId(empireId: string): string {
+  return `design-${empireId}-${Date.now()}`;
 }
 
 export function setDiplomacyAction(state: GameState, targetEmpireId: string, newState: DiplomacyState): boolean {

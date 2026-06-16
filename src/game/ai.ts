@@ -15,7 +15,9 @@ import {
   canDeclareWar, declareWar, getDiplomacy, getRelationScore,
   makeHostile, proposeResearchPact, proposeTradePact,
 } from './diplomacy';
-import { queueShipProduction } from './production';
+import { getBuildableDesigns } from './shipDesigns';
+import { queueShipDesignProduction } from './production';
+import { canAffordStrategicCost, getTechStrategicCost, spendStrategicCost } from './strategicResources';
 import { hasUnlock, getAvailableTechs } from './research';
 import { createShip } from './ships';
 import { canReachSystem, setFleetTravelPath } from './travel';
@@ -34,14 +36,26 @@ function getEmpireFleets(state: GameState, empireId: string): Fleet[] {
   return state.fleets.filter(f => f.empireId === empireId);
 }
 
-function findUnclaimedPlanets(state: GameState, empire: Empire): { system: StarSystem; planetId: string }[] {
-  const results: { system: StarSystem; planetId: string }[] = [];
+function getPlanetExpansionScore(planet: { rareResource: string }, system: StarSystem): number {
+  let score = system.richness;
+  if (planet.rareResource === 'titanium') score += 2;
+  if (planet.rareResource === 'antimatter') score += 3;
+  if (planet.rareResource === 'darkmatter') score += 4;
+  return score;
+}
+
+function findUnclaimedPlanets(state: GameState, empire: Empire): { system: StarSystem; planetId: string; score: number }[] {
+  const results: { system: StarSystem; planetId: string; score: number }[] = [];
   for (const systemId of empire.knownSystems) {
     const system = state.systems.find(s => s.id === systemId);
     if (!system || system.systemType === 'black_hole') continue;
     for (const planet of system.planets) {
       if (!planet.isColonized && canColonizePlanet(planet, empire, system)) {
-        results.push({ system, planetId: planet.id });
+        results.push({
+          system,
+          planetId: planet.id,
+          score: getPlanetExpansionScore(planet, system),
+        });
       }
     }
   }
@@ -242,7 +256,10 @@ function aiResearch(state: GameState, empire: Empire, rng: SeededRNG): void {
   const threat = weakest ? getThreatLevel(state, empire, weakest) : 0;
   const militaryFleets = getEmpireFleets(state, empire.id).filter(f => f.ships.some(s => s.attack > 0));
 
-  const priorities = available.sort((a, b) => {
+  const affordable = available.filter(t => canAffordStrategicCost(empire, getTechStrategicCost(t.id)));
+  if (affordable.length === 0) return;
+
+  const priorities = affordable.sort((a, b) => {
     const priority = (t: typeof a) => {
       if (empire.aiGoal === 'research' && t.category === 'science') return 7;
       if (empire.aiGoal === 'militarize' && t.category === 'military') return 7;
@@ -260,8 +277,18 @@ function aiResearch(state: GameState, empire: Empire, rng: SeededRNG): void {
     return priority(b) - priority(a) + (rng.next() - 0.5);
   });
 
-  empire.currentResearch = priorities[0].id;
+  const tech = priorities[0];
+  const strategicCost = getTechStrategicCost(tech.id);
+  if (!canAffordStrategicCost(empire, strategicCost)) return;
+  if (!spendStrategicCost(empire, strategicCost)) return;
+
+  empire.currentResearch = tech.id;
   empire.researchProgress = 0;
+  empire.activeResearchStrategicSpent = {
+    titanium: strategicCost.titanium ?? 0,
+    antimatter: strategicCost.antimatter ?? 0,
+    darkmatter: strategicCost.darkmatter ?? 0,
+  };
 }
 
 function hasFoodDeficit(empire: Empire, systems: StarSystem[]): boolean {
@@ -327,16 +354,24 @@ function aiUseProductionQueue(state: GameState, empire: Empire, rng: SeededRNG):
   const weakest = getWeakestNeighbor(state, empire);
   const threat = weakest ? getThreatLevel(state, empire, weakest) : 0;
 
-  if (threat > 1.5 && hasUnlock(empire.researchedTechs, 'destroyer') && rng.next() > 0.3) {
-    queueShipProduction(planet, 'destroyer', empire, system.id, state);
-    return;
-  }
-  if (hasUnlock(empire.researchedTechs, 'frigate') && rng.next() > 0.4) {
-    queueShipProduction(planet, 'frigate', empire, system.id, state);
-    return;
-  }
-  if (hasUnlock(empire.researchedTechs, 'scout') && rng.next() > 0.5) {
-    queueShipProduction(planet, 'scout', empire, system.id, state);
+  const buildable = getBuildableDesigns(empire).filter(d => d.hull !== 'colony');
+  const militaryDesigns = buildable.filter(d => d.hull !== 'colony' && d.hull !== 'scout');
+  const pickDesign = () => {
+    if (threat > 1.5 && militaryDesigns.some(d => d.hull === 'destroyer') && rng.next() > 0.3) {
+      return militaryDesigns.find(d => d.hull === 'destroyer');
+    }
+    if (buildable.some(d => d.hull === 'frigate') && rng.next() > 0.4) {
+      return buildable.find(d => d.hull === 'frigate');
+    }
+    if (buildable.some(d => d.hull === 'scout') && rng.next() > 0.5) {
+      return buildable.find(d => d.hull === 'scout');
+    }
+    return buildable[0];
+  };
+
+  const design = pickDesign();
+  if (design) {
+    queueShipDesignProduction(planet, design, empire, system.id, state);
   }
 }
 
@@ -431,7 +466,9 @@ function aiColonize(state: GameState, empire: Empire, rng: SeededRNG): void {
   const unclaimed = findUnclaimedPlanets(state, empire);
   if (unclaimed.length === 0) return;
 
-  const target = rng.pick(unclaimed);
+  unclaimed.sort((a, b) => b.score - a.score);
+  const top = unclaimed.slice(0, Math.min(3, unclaimed.length));
+  const target = rng.pick(top);
   const planet = target.system.planets.find(p => p.id === target.planetId)!;
   const project = startColonizationProject(state, planet.id, empire);
   if (project) {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { canStartResearch, startResearch } from '../game/actions';
+import { canCancelResearch, canStartResearch, cancelResearch, startResearch } from '../game/actions';
 import {
   getTechnology,
   getTechBranchLabel,
@@ -95,6 +95,20 @@ export function ResearchPanel({ state, onUpdate }: Props) {
                 {player.researchProgress} / {tech.cost}
                 {turnsLeft !== null && ` · ~${turnsLeft} turn${turnsLeft !== 1 ? 's' : ''} remaining`}
               </div>
+              <Tooltip content={canCancelResearch(state, 'primary') || 'Cancel research — progress is lost; strategic resources spent at start are refunded'}>
+                <button
+                  className="btn btn-sm"
+                  style={{ marginTop: 6 }}
+                  disabled={!!canCancelResearch(state, 'primary')}
+                  data-testid="cancel-research-primary"
+                  onClick={() => {
+                    const newState = cloneGameState(state);
+                    if (cancelResearch(newState, 'primary')) onUpdate(newState);
+                  }}
+                >
+                  Cancel Research
+                </button>
+              </Tooltip>
             </div>
           );
         })()}
@@ -113,12 +127,20 @@ export function ResearchPanel({ state, onUpdate }: Props) {
                   Will unlock: {unlocks.join(', ')}
                 </div>
               )}
-              <button className="btn btn-sm" style={{ marginTop: 4 }} onClick={() => {
-                const newState = cloneGameState(state);
-                const p = newState.empires.find(e => e.id === player.id)!;
-                p.researchQueue = null;
-                onUpdate(newState);
-              }}>Cancel Queue</button>
+              <Tooltip content={canCancelResearch(state, 'queue') || 'Cancel queued research — strategic resources spent when queued are refunded'}>
+                <button
+                  className="btn btn-sm"
+                  style={{ marginTop: 4 }}
+                  disabled={!!canCancelResearch(state, 'queue')}
+                  data-testid="cancel-research-queue"
+                  onClick={() => {
+                    const newState = cloneGameState(state);
+                    if (cancelResearch(newState, 'queue')) onUpdate(newState);
+                  }}
+                >
+                  Cancel Queue
+                </button>
+              </Tooltip>
             </div>
           );
         })()}

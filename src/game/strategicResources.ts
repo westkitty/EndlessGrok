@@ -7,7 +7,6 @@ export const SHIP_STRATEGIC_COSTS: Partial<Record<ShipType, StrategicCost>> = {
   destroyer: { titanium: 2 },
   carrier: { titanium: 2, antimatter: 1 },
   dreadnought: { titanium: 3, antimatter: 2, darkmatter: 1 },
-  colony: { titanium: 1 },
 };
 
 export const TECH_STRATEGIC_COSTS: Partial<Record<string, StrategicCost>> = {
@@ -64,6 +63,28 @@ export function spendStrategicCost(empire: Empire, cost: StrategicCost): boolean
     }
   }
   return true;
+}
+
+export function refundStrategicCost(empire: Empire, cost: StrategicCost): void {
+  for (const key of STRATEGIC_KEYS) {
+    const amount = cost[key] ?? 0;
+    if (amount > 0) {
+      empire.strategicResources[key] += amount;
+    }
+  }
+}
+
+export function copyStrategicCost(cost: StrategicCost): StrategicResources {
+  return {
+    titanium: cost.titanium ?? 0,
+    antimatter: cost.antimatter ?? 0,
+    darkmatter: cost.darkmatter ?? 0,
+  };
+}
+
+export function isEmptyStrategicCost(cost: StrategicCost | undefined): boolean {
+  if (!cost) return true;
+  return STRATEGIC_KEYS.every(key => (cost[key] ?? 0) <= 0);
 }
 
 export function formatStrategicCost(cost: StrategicCost): string {
