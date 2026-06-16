@@ -1,0 +1,66 @@
+[
+  {
+    "id": "event-exploration-archive-shard-field",
+    "title": "Archive Shard Field Detected",
+    "category": "anomalies",
+    "trigger": "explore_system_with_archive_deposit",
+    "body": "Long-range scans resolve a debris field of archive shards. Data traces flicker across the lane.",
+    "choices": [
+      {
+        "id": "survey",
+        "label": "Survey shards",
+        "mechanicalEffect": "+1 Archive Data"
+      },
+      {
+        "id": "avoid",
+        "label": "Mark hazard and withdraw",
+        "mechanicalEffect": "No gain; reduces diplomatic exposure"
+      }
+    ],
+    "effects": "Grants +1 Archive Data on survey completion; increases rival intel interest.",
+    "severity": "medium",
+    "sourceLabel": "interpretive adaptation",
+    "mechanicalTags": [
+      "exploration",
+      "medium",
+      "target_system"
+    ],
+    "relatedAssetIds": [
+      "event-exploration-archive-shard-field"
+    ],
+    "testId": "event-exploration-archive-shard-field",
+    "logType": "explore"
+  },
+  {
+    "id": "event-exploration-starsilk-leak-detected",
+    "title": "Starsilk Leak Detected",
+    "category": "anomalies",
+    "trigger": "system_has_starsilk_hazard",
+    "body": "Containment sensors report thread bleed in local space. The leak is active, not historical.",
+    "choices": [
+      {
+        "id": "contain",
+        "label": "Deploy containment protocol",
+        "mechanicalEffect": "Hazard flagged; Syrin cost if inerting available"
+      },
+      {
+        "id": "log",
+        "label": "Log and continue",
+        "mechanicalEffect": "Hazard escalates next turn"
+      }
+    ],
+    "effects": "Applies Starsilk hazard flag; increases macro and diplomatic pressure if ignored.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "exploration",
+      "high",
+      "target_system"
+    ],
+    "relatedAssetIds": [
+      "event-exploration-starsilk-leak-detected"
+    ],
+    "testId": "event-exploration-starsilk-leak-detected",
+    "logType": "explore"
+  }
+]

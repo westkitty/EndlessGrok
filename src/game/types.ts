@@ -438,6 +438,8 @@ export interface GameEvent {
     | 'heliocide'
     | 'macro';
   message: string;
+  /** Optional link to structured event definition for deterministic testing */
+  eventDefinitionId?: string;
 }
 
 export interface EventChainState {

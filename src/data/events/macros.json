@@ -1,0 +1,87 @@
+[
+  {
+    "id": "event-macro-syrin-inerting-mist-executed",
+    "title": "Syrin Inerting Mist Executed",
+    "category": "macros",
+    "trigger": "macro_syrin_inerting_mist_executed",
+    "body": "Inerting mist deployed. Hazard suppression active for fixed duration. Cost logged.",
+    "choices": [
+      {
+        "id": "acknowledge",
+        "label": "Acknowledge report",
+        "mechanicalEffect": "Apply mist duration and costs"
+      }
+    ],
+    "effects": "Suppresses Starsilk hazard 5 turns; consumes Syrin Reagent; counts toward inerting victory tracking.",
+    "severity": "medium",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "macro",
+      "medium",
+      "target_system"
+    ],
+    "relatedAssetIds": [
+      "event-macro-syrin-inerting-mist-executed"
+    ],
+    "testId": "event-macro-syrin-inerting-mist-executed",
+    "logType": "macro"
+  },
+  {
+    "id": "event-macro-counter-macro-scrub-failed",
+    "title": "Counter-Macro Scrub Failed",
+    "category": "macros",
+    "trigger": "counter_macro_scrub_against_lattice_anchored_macro",
+    "body": "Checksum scrub could not dislodge enemy macro. Lattice anchoring resisted removal.",
+    "choices": [
+      {
+        "id": "retry",
+        "label": "Schedule second scrub",
+        "mechanicalEffect": "Cooldown applies; additional cost"
+      },
+      {
+        "id": "accept",
+        "label": "Accept failure",
+        "mechanicalEffect": "No change; hazard remains"
+      }
+    ],
+    "effects": "Enemy macro remains; Archive Data and Syrin Reagent spent without effect.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "macro",
+      "high",
+      "target_system"
+    ],
+    "relatedAssetIds": [
+      "event-macro-counter-macro-scrub-failed"
+    ],
+    "testId": "event-macro-counter-macro-scrub-failed",
+    "logType": "macro"
+  },
+  {
+    "id": "discovery-first-macro",
+    "title": "First Macro Execution",
+    "category": "macros",
+    "trigger": "first_macro_executed",
+    "body": "The universe accepted the loop.",
+    "choices": [
+      {
+        "id": "ack",
+        "label": "Acknowledge",
+        "mechanicalEffect": "Flag first macro"
+      }
+    ],
+    "effects": "First macro execution logged.",
+    "severity": "medium",
+    "sourceLabel": "mechanical UI necessity",
+    "mechanicalTags": [
+      "macro",
+      "execution"
+    ],
+    "relatedAssetIds": [
+      "macro-syrin-inerting-mist"
+    ],
+    "testId": "discovery-first-macro",
+    "logType": "macro"
+  }
+]
