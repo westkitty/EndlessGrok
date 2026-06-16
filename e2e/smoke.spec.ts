@@ -23,12 +23,12 @@ test('boots, ends turn, and opens fleet manager', async ({ page }) => {
   const turnBefore = await page.getByTestId('turn-number').textContent();
   await page.getByTestId('end-turn').click();
 
-  const summary = page.locator('.turn-summary-modal, .overlay-content');
-  if (await summary.first().isVisible({ timeout: 5000 }).catch(() => false)) {
-    await page.keyboard.press('Escape');
-  }
-
   await expect(page.getByTestId('turn-number')).not.toHaveText(turnBefore ?? '');
+
+  const continueBtn = page.getByRole('button', { name: 'Continue' });
+  if (await continueBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+    await continueBtn.click();
+  }
 
   const decision = page.locator('.decision-overlay button').first();
   if (await decision.isVisible({ timeout: 2000 }).catch(() => false)) {
