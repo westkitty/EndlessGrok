@@ -1,5 +1,7 @@
 import { ICONS, type IconName } from '../../components/icons/iconHelpers';
+import { resolveAssetId } from './assetIdReconciliation';
 import { getAssetById, getAssetByMechanicalKey } from './registry';
+import { getManifestBackedTooltip, getManifestRecordForKey, getManifestTestId } from './runtimeResolve';
 import type { AssetRecord, AssetTooltipSpec, RuntimeTooltipContext } from './types';
 
 const DEFAULT_FALLBACK_ICON: IconName = 'anomaly';
@@ -18,7 +20,12 @@ export function resetAssetWarnings(): void {
 
 export function resolveAssetRecord(assetOrKey: string | AssetRecord): AssetRecord | undefined {
   if (typeof assetOrKey === 'string') {
-    return getAssetByMechanicalKey(assetOrKey) ?? getAssetById(assetOrKey);
+    const canonical = resolveAssetId(assetOrKey);
+    return (
+      getAssetByMechanicalKey(assetOrKey)
+      ?? getAssetById(canonical)
+      ?? getAssetById(assetOrKey)
+    );
   }
   return assetOrKey;
 }
@@ -57,6 +64,10 @@ export function getAssetFallbackIcon(mechanicalKeyOrType: string): IconName {
 export function getAssetTestId(assetOrKey: string | AssetRecord): string {
   const record = resolveAssetRecord(assetOrKey);
   if (record) return record.testId;
+  if (typeof assetOrKey === 'string') {
+    const manifestTestId = getManifestTestId(assetOrKey);
+    if (manifestTestId) return manifestTestId;
+  }
   const safe = typeof assetOrKey === 'string'
     ? assetOrKey.replace(/[^a-zA-Z0-9_-]/g, '-')
     : 'asset-unknown';
@@ -65,7 +76,11 @@ export function getAssetTestId(assetOrKey: string | AssetRecord): string {
 
 export function getAssetTooltip(assetOrKey: string | AssetRecord): AssetTooltipSpec | null {
   const record = resolveAssetRecord(assetOrKey);
-  return record?.tooltip ?? null;
+  if (record?.tooltip) return record.tooltip;
+  if (typeof assetOrKey === 'string') {
+    return getManifestBackedTooltip(assetOrKey);
+  }
+  return null;
 }
 
 export function getAssetDisplayName(assetOrKey: string | AssetRecord): string {
@@ -105,11 +120,14 @@ export function buildRuntimeTooltip(
 ): AssetTooltipSpec & RuntimeTooltipContext {
   const base = getAssetTooltip(assetOrKey);
   const record = resolveAssetRecord(assetOrKey);
+  const manifestRecord = typeof assetOrKey === 'string'
+    ? getManifestRecordForKey(assetOrKey)
+    : undefined;
   return {
-    title: base?.title ?? record?.displayName ?? 'Unknown',
-    mechanical: base?.mechanical ?? record?.mechanicalMeaning ?? '',
-    lore: base?.lore ?? record?.loreMeaning ?? '',
-    warning: base?.warning,
+    title: base?.title ?? record?.displayName ?? manifestRecord?.displayName ?? 'Unknown',
+    mechanical: base?.mechanical ?? record?.mechanicalMeaning ?? manifestRecord?.tooltip.mechanical ?? '',
+    lore: base?.lore ?? record?.loreMeaning ?? manifestRecord?.tooltip.lore ?? '',
+    warning: base?.warning ?? manifestRecord?.tooltip.warning,
     requirements: base?.requirements,
     costs: runtime.costs ?? base?.costs,
     effects: runtime.effects ?? base?.effects,
