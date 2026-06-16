@@ -11,6 +11,7 @@ import { getSystemDefenseBonus, systemHasOrbitalStation } from './buildings';
 import { addWarScore, areAtWar } from './diplomacy';
 import { getTraitBonuses } from './traits';
 import { hasUnlock } from './research';
+import { getSystemMacroDefenseBonusPct } from './macroEffects';
 import { countShipsByType, getFleetPower, getWeaponDefenseModifier } from './ships';
 import { SeededRNG } from './rng';
 import type { BattleReport, CombatPrediction, Empire, Fleet, GameState, Ship, ShipLossDetail, ShipType, StarSystem } from './types';
@@ -59,7 +60,8 @@ export function getSystemDefenseRating(state: GameState, system: StarSystem, own
     }
   }
 
-  return Math.round(buildingDefense + fleetDefense);
+  const macroBonus = Math.round(buildingDefense * getSystemMacroDefenseBonusPct(state, system.id, ownerId));
+  return Math.round(buildingDefense + fleetDefense + macroBonus);
 }
 
 export function getEmpireMilitaryPower(state: GameState, empireId: string): number {
