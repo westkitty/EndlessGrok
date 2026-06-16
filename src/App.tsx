@@ -10,7 +10,7 @@ import { FACTION_DEFINITIONS, factionToPlayerSetup } from './game/factions';
 import { loadUISettings, saveUISettings, type UISettings } from './game/uiSettings';
 import { previewStrategicIncome } from './game/economy';
 import { previewStarsilkIncome, STARSILK_RESOURCE_KEYS } from './game/starsilkResources';
-import { unlockStarbindingTestFixture } from './game/testFixtures';
+import { unlockStarbindingTestFixture, simulatePlayerStarbindingThreat } from './game/testFixtures';
 import type { Difficulty, GalaxyShape, GalaxySizeOption, GameSettings, GameState, Resources, TurnSummary } from './game/types';
 import { GalaxyMap } from './components/GalaxyMap';
 import { getDefaultViewport, type GalaxyTransform, type GalaxyViewport } from './components/galaxy/mapHelpers';
@@ -260,6 +260,24 @@ function GameScreen({
     (window as Window & { __egUnlockStarbinding?: () => void }).__egUnlockStarbinding = () => {
       const s = cloneGameState(state);
       unlockStarbindingTestFixture(s);
+      onUpdate(s);
+    };
+    (window as Window & { __egSimulateStarbindingThreat?: () => void }).__egSimulateStarbindingThreat = () => {
+      const s = cloneGameState(state);
+      simulatePlayerStarbindingThreat(s);
+      onUpdate(s);
+    };
+    (window as Window & { __egSelectPlayerCapital?: () => void }).__egSelectPlayerCapital = () => {
+      const s = cloneGameState(state);
+      const cap = s.empires.find(e => e.id === s.playerEmpireId)?.capitalSystemId;
+      if (cap) s.selectedSystemId = cap;
+      onUpdate(s);
+    };
+    (window as Window & { __egPrepareMacroTest?: () => void }).__egPrepareMacroTest = () => {
+      const s = cloneGameState(state);
+      unlockStarbindingTestFixture(s);
+      const cap = s.empires.find(e => e.id === s.playerEmpireId)?.capitalSystemId;
+      if (cap) s.selectedSystemId = cap;
       onUpdate(s);
     };
   }, [state, onUpdate]);
