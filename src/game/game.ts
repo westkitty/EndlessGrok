@@ -34,7 +34,8 @@ import { generateTurnSummary } from './turnSummary';
 import { processFleetMovement } from './travel';
 import { processColonyUnrest } from './unrest';
 import { updateVisibility } from './visibility';
-import { ensureFactionIdeology, applyStarbindingProgressReactions } from './factionIdeology';
+import { ensureFactionIdeology } from './factionIdeology';
+import { applyStarbindingDiplomaticReactions } from './starbindingDiplomacy';
 import { processMacroTurn } from './macros';
 import { migrateActiveMacroEffect } from './macroEffects';
 import { createStarbindingState, processStarbindingTurn } from './starbinding';
@@ -191,6 +192,12 @@ function migrateEmpire(empire: SerializedEmpire): Empire {
     aiVictoryFocus: empire.aiVictoryFocus,
     aiVictoryFocusTurn: empire.aiVictoryFocusTurn,
     starbindingThreatWarned: empire.starbindingThreatWarned ?? {},
+    starbindingDiplomacyLedger: empire.starbindingDiplomacyLedger ?? {},
+    starbindingDiplomacyMessages: empire.starbindingDiplomacyMessages ?? {},
+    starbindingThreatLedger: empire.starbindingThreatLedger ?? {},
+    syrinInertingProgress: empire.syrinInertingProgress,
+    syrinInertingDiplomacyBand: empire.syrinInertingDiplomacyBand,
+    aiStarbindingLastActionTurn: empire.aiStarbindingLastActionTurn,
     ideologyTags: empire.ideologyTags,
     stabilityPenalty: empire.stabilityPenalty ?? 0,
     starsilkDiscoveryFlags: empire.starsilkDiscoveryFlags ?? {},
@@ -450,10 +457,10 @@ function processResearch(state: GameState): void {
   }
 }
 
-function processFleetDestinations(state: GameState): void {
+function processFleetDestinations(state: GameState, rng: SeededRNG): void {
   for (const fleet of state.fleets) {
     if (!fleet.destinationSystemId) continue;
-    processFleetMovement(fleet, state.systems);
+    processFleetMovement(fleet, state.systems, state, rng);
 
     const empire = state.empires.find(e => e.id === fleet.empireId);
     if (empire) {
@@ -526,7 +533,6 @@ export function endTurn(state: GameState): GameState {
     processStarsilkDiscoveryEvents(state, empire, gained);
     processStarbindingTurn(state, empire.id);
     processMacroTurn(state, empire);
-    applyStarbindingProgressReactions(state, empire.id);
   }
 
   // 2. Trade pacts & trade routes
@@ -582,6 +588,9 @@ export function endTurn(state: GameState): GameState {
   // 12. AI actions
   runAI(state, rng);
 
+  // 12a. Centralized Starbinding diplomatic reactions (once per turn)
+  applyStarbindingDiplomaticReactions(state);
+
   // 12b. Diplomacy: proposals, border tension & mutual defense
   for (const empire of state.empires) {
     if (!empire.isAlive || empire.isPlayer) continue;
@@ -595,7 +604,7 @@ export function endTurn(state: GameState): GameState {
   processAggressiveFleets(state);
 
   // 14. Fleet destination movement (multi-hop)
-  processFleetDestinations(state);
+  processFleetDestinations(state, rng);
 
   // 14a. Player auto-explore fleets
   processPlayerAutoExplore(state);

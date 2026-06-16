@@ -112,15 +112,29 @@ export function applyHeliocideDiplomaticReactions(
   }
 }
 
+/** @deprecated use applyStarbindingDiplomaticReactions from starbindingDiplomacy.ts */
 export function applyStarbindingProgressReactions(state: GameState, empireId: string): void {
-  const empire = state.empires.find(e => e.id === empireId);
-  if (!empire?.starbinding) return;
-  const progress = empire.starbinding.completedDiveSystemIds.length / 3;
+  void state;
+  void empireId;
+  // Centralized in starbindingDiplomacy.ts — kept for API compatibility.
+}
 
-  for (const other of state.empires) {
-    if (!other.isAlive || other.id === empireId || other.isPirate) continue;
-    const reaction = getFactionReactionToStarbindingProgress(other, progress);
-    other.relationScores = other.relationScores ?? {};
-    other.relationScores[empireId] = (other.relationScores[empireId] ?? 50) + reaction.relationDelta;
+export function getFactionReactionToSyrinInertingProgress(
+  observer: Empire,
+  progress: number,
+): { relationDelta: number; message: string } {
+  const tags = getFactionIdeologyTags(observer);
+  if (tags.includes('syrin')) {
+    return { relationDelta: Math.floor(progress * 8), message: `${observer.name} approves containment without heliocide.` };
   }
+  if (tags.includes('archive')) {
+    return { relationDelta: Math.floor(progress * 5), message: `${observer.name} notes preservation over erasure.` };
+  }
+  if (tags.includes('administration')) {
+    return { relationDelta: progress > 0.5 ? -3 : 2, message: `${observer.name} distrusts unauthorized inerting protocols.` };
+  }
+  if (tags.includes('drakken')) {
+    return { relationDelta: -Math.floor(progress * 4), message: `${observer.name} treats containment as obstruction.` };
+  }
+  return { relationDelta: Math.floor(progress * 2), message: `${observer.name} registers Syrin containment activity.` };
 }
