@@ -1,3 +1,7 @@
+import { buildRuntimeTooltip } from '../data/assets/resolve';
+import { AssetIcon } from './AssetIcon';
+import { StarsilkTooltipContent } from './StarsilkTooltip';
+import { Tooltip } from './Tooltip';
 import { getVictoryProgress } from '../game/victory';
 import { getVictoryPathInfo, getFoundationProgressLabel } from '../game/victoryFoundations';
 import { getVisibleRivalStarbindingProgress } from '../game/aiStarbinding';
@@ -99,15 +103,29 @@ export function VictoryPanel({ state }: Props) {
         const syrinBlock = isSyrinInerting ? canAchieveSyrinInertingVictory(state, player.id) : null;
         const showTrack = status === 'complete' || status === 'foundation';
         const badge = statusBadge(status, info?.completable ?? false);
+        const victoryKey = `victory:${path.id}`;
+        const tooltipData = buildRuntimeTooltip(victoryKey, {
+          progressPct: showTrack ? pct : undefined,
+          statusLabel: badge,
+          warning: path.id === 'starbinding'
+            ? 'Catastrophic, irreversible, heliocide-linked, morally compromised — not heroic.'
+            : info?.completable === false && status === 'foundation'
+              ? 'Foundation path — not completable yet.'
+              : undefined,
+        });
 
         return (
-          <div
+          <Tooltip
             key={path.id}
-            className={`victory-path ${status === 'locked' ? 'victory-path--locked' : ''}`}
-            data-testid={`victory-path-${path.id}`}
-            data-victory-status={status}
+            content={<StarsilkTooltipContent data={tooltipData} testId={`tooltip-${victoryKey}`} />}
           >
+            <div
+              className={`victory-path ${status === 'locked' ? 'victory-path--locked' : ''}`}
+              data-testid={`victory-path-${path.id}`}
+              data-victory-status={status}
+            >
             <div className="victory-path__header">
+              <AssetIcon mechanicalKey={victoryKey} size={18} />
               <span className="victory-path__label">{path.label}</span>
               <span className="victory-path__badge" data-testid={`victory-badge-${path.id}`}>{badge}</span>
               {showTrack && <span className="victory-path__pct">{pct}%</span>}
@@ -189,7 +207,8 @@ export function VictoryPanel({ state }: Props) {
                 )}
               </div>
             )}
-          </div>
+            </div>
+          </Tooltip>
         );
       })}
 

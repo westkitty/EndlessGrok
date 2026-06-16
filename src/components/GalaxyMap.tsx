@@ -10,6 +10,7 @@ import {
   generateStarfield,
   getNebulaPaletteForRegion,
 } from '../assets/galaxy/nebula-procedural';
+import { getPrimaryMapBadge } from '../data/assets/mapStateBadges';
 import { FloatingTooltip } from './Tooltip';
 import { SystemTooltipContent } from './SystemTooltip';
 import {
@@ -374,6 +375,19 @@ export function GalaxyMap({
         ctx.beginPath();
         ctx.arc(pos.x + radius + 5, pos.y - radius - 5, 3, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(61, 214, 245, 0.9)';
+        ctx.fill();
+      }
+
+      const primaryBadge = getPrimaryMapBadge(system, state, player.id);
+      if (primaryBadge && isVisible && primaryBadge.mechanicalKey !== 'map:archive_star') {
+        ctx.beginPath();
+        ctx.arc(pos.x - radius - 6, pos.y - radius - 4, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = primaryBadge.color.includes('var(')
+          ? (primaryBadge.variant === 'catastrophic' ? 'rgba(255, 90, 106, 0.95)'
+            : primaryBadge.variant === 'seal' ? 'rgba(212, 90, 255, 0.95)'
+            : primaryBadge.variant === 'inerting' ? 'rgba(61, 214, 245, 0.95)'
+            : 'rgba(255, 184, 74, 0.95)')
+          : primaryBadge.color;
         ctx.fill();
       }
 

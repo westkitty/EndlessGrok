@@ -865,6 +865,130 @@
   gap: var(--space-md);
 }
 
+.starsilk-tooltip {
+  white-space: normal;
+  max-width: 280px;
+  text-align: left;
+  line-height: 1.35;
+}
+
+.starsilk-tooltip--compact {
+  max-width: 240px;
+  font-size: 0.72rem;
+}
+
+.starsilk-tooltip__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--accent-cyan);
+  margin-bottom: 4px;
+}
+
+.starsilk-tooltip__mechanical {
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.starsilk-tooltip__runtime,
+.starsilk-tooltip__costs,
+.starsilk-tooltip__effects,
+.starsilk-tooltip__requirements,
+.starsilk-tooltip__state {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-bottom: 3px;
+}
+
+.starsilk-tooltip__label {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.starsilk-tooltip__warning {
+  color: var(--warning);
+  font-weight: 600;
+  margin: 6px 0;
+  border-left: 2px solid var(--warning);
+  padding-left: 6px;
+}
+
+.starsilk-tooltip__lore {
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.starsilk-tooltip__canon {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  margin-top: 4px;
+  opacity: 0.85;
+}
+
+.tooltip .starsilk-tooltip {
+  white-space: normal;
+}
+
+.asset-icon {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.asset-icon--hazard .icon,
+.asset-icon--catastrophic .icon {
+  filter: drop-shadow(0 0 4px rgba(255, 90, 106, 0.45));
+}
+
+.asset-icon--inerting .icon,
+.asset-icon--seal .icon {
+  filter: drop-shadow(0 0 4px rgba(61, 214, 245, 0.35));
+}
+
+.macro-item__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.macro-active-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.macro-active-item--seal {
+  border-left: 2px solid var(--accent-violet);
+  padding-left: 6px;
+}
+
+.macro-active-item--inerting {
+  border-left: 2px solid var(--accent-cyan);
+  padding-left: 6px;
+}
+
+.macro-item--inerting {
+  border-left: 2px solid rgba(61, 214, 245, 0.35);
+}
+
+.macro-item--seal {
+  border-left: 2px solid rgba(212, 90, 255, 0.35);
+}
+
+.macro-item--counter {
+  border-left: 2px solid rgba(255, 184, 74, 0.35);
+}
+
+.victory-path__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* ── Turn notifications ── */
 .turn-notifications {
   position: fixed;

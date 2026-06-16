@@ -1,7 +1,10 @@
+import { getSystemMapStateBadges } from '../data/assets/mapStateBadges';
+
 import { getStarColor } from '../game/galaxy';
 import { getStarbindingWarnings, isCollapsedSystem } from '../game/heliocide';
 import { canSelectStarbindingTarget } from '../game/starbinding';
 import { getIntelLabel } from '../game/intel';
+import { AssetIcon } from './AssetIcon';
 import { Icon } from './icons/Icon';
 import type { GameState, StarSystem } from '../game/types';
 import { getSectorLabel, getSystemOwner } from './galaxy/mapHelpers';
@@ -21,9 +24,10 @@ export function SystemTooltipContent({ system, state, playerId }: Props) {
   const mapSize = state.systems.reduce((max, s) => Math.max(max, s.x, s.y), 800);
   const isChokepoint = system.connections.length <= 2;
   const intelLabel = getIntelLabel(player, system, state.turn);
+  const mapBadges = getSystemMapStateBadges(system, state, playerId);
 
   return (
-    <div className="system-tooltip">
+    <div className="system-tooltip" data-testid="system-tooltip">
       <div className="floating-tooltip__title">{system.name}</div>
       <div className="floating-tooltip__row">
         <span>Sector</span>
@@ -79,6 +83,16 @@ export function SystemTooltipContent({ system, state, playerId }: Props) {
         <div className="floating-tooltip__row">
           <span>Archive</span>
           <span style={{ color: 'var(--accent-cyan)' }}>Archive star</span>
+        </div>
+      )}
+      {mapBadges.length > 0 && (
+        <div className="system-tooltip__badges" data-testid="system-map-badges">
+          {mapBadges.slice(0, 4).map(badge => (
+            <div key={badge.mechanicalKey} className="floating-tooltip__row" data-testid={badge.testId}>
+              <span><AssetIcon mechanicalKey={badge.mechanicalKey} size={12} /> State</span>
+              <span style={{ color: badge.color }}>{badge.label}</span>
+            </div>
+          ))}
         </div>
       )}
       {getStarbindingWarnings(system).map(w => (
