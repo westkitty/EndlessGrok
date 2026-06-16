@@ -2,6 +2,8 @@ import { Icon } from './icons/Icon';
 import {
   getAssetAccessibilityLabel,
   getAssetIconName,
+  getAssetIconSrc,
+  getAssetSvgUrl,
   getAssetTestId,
   getAssetVisualVariant,
 } from '../data/assets/resolve';
@@ -14,7 +16,8 @@ interface Props {
 }
 
 export function AssetIcon({ mechanicalKey, size = 20, className = '', title }: Props) {
-  const iconName = getAssetIconName(mechanicalKey);
+  const svgUrl = getAssetSvgUrl(mechanicalKey);
+  const iconSrc = getAssetIconSrc(mechanicalKey);
   const variant = getAssetVisualVariant(mechanicalKey);
   const testId = getAssetTestId(mechanicalKey);
   const aria = title ?? getAssetAccessibilityLabel(mechanicalKey);
@@ -24,9 +27,22 @@ export function AssetIcon({ mechanicalKey, size = 20, className = '', title }: P
       className={`asset-icon asset-icon--${variant} ${className}`.trim()}
       data-testid={testId}
       data-asset-key={mechanicalKey}
+      data-asset-svg={svgUrl ?? undefined}
       aria-label={aria}
     >
-      <Icon name={iconName} size={size} title={aria} />
+      {svgUrl ? (
+        <img
+          src={iconSrc}
+          alt={aria}
+          title={aria}
+          className="icon"
+          width={size}
+          height={size}
+          draggable={false}
+        />
+      ) : (
+        <Icon name={getAssetIconName(mechanicalKey)} size={size} title={aria} />
+      )}
     </span>
   );
 }

@@ -1,5 +1,6 @@
 import { ICONS, type IconName } from '../../components/icons/iconHelpers';
 import { resolveAssetId } from './assetIdReconciliation';
+import { publicAssetPathToUrl } from './paths';
 import { getAssetById, getAssetByMechanicalKey } from './registry';
 import { getManifestBackedTooltip, getManifestRecordForKey, getManifestTestId } from './runtimeResolve';
 import type { AssetRecord, AssetTooltipSpec, RuntimeTooltipContext } from './types';
@@ -41,7 +42,22 @@ export function getAssetIconName(assetOrKey: string | AssetRecord): IconName {
   return DEFAULT_FALLBACK_ICON;
 }
 
+export function hasGeneratedAssetRecord(record: AssetRecord): boolean {
+  if (record.status !== 'generated' && record.status !== 'integrated') return false;
+  const svgPath = record.plannedFiles?.svg;
+  return Boolean(svgPath?.startsWith('public/assets/icons/'));
+}
+
+export function getAssetSvgUrl(assetOrKey: string | AssetRecord): string | null {
+  const record = resolveAssetRecord(assetOrKey);
+  if (!record?.plannedFiles?.svg) return null;
+  if (!hasGeneratedAssetRecord(record)) return null;
+  return publicAssetPathToUrl(record.plannedFiles.svg);
+}
+
 export function getAssetIconSrc(assetOrKey: string | AssetRecord): string {
+  const svgUrl = getAssetSvgUrl(assetOrKey);
+  if (svgUrl) return svgUrl;
   return ICONS[getAssetIconName(assetOrKey)];
 }
 

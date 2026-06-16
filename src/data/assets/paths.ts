@@ -1,6 +1,7 @@
 import type { AssetFamily, AssetRecord } from './types';
 
 export const CANONICAL_ASSET_ICON_ROOT = 'src/assets/icons';
+export const PUBLIC_ASSET_ICON_ROOT = 'public/assets/icons';
 
 export const CANONICAL_FAMILY_DIRS: Record<AssetFamily, string> = {
   resources: `${CANONICAL_ASSET_ICON_ROOT}/resources`,
@@ -35,9 +36,23 @@ export function isSafeAssetPath(relativePath: string): boolean {
   for (const segment of UNSAFE_SEGMENTS) {
     if (normalized.split('/').includes(segment)) return false;
   }
-  if (!normalized.startsWith('src/assets/icons/')) return false;
+  const validRoot = normalized.startsWith(`${CANONICAL_ASSET_ICON_ROOT}/`)
+    || normalized.startsWith(`${PUBLIC_ASSET_ICON_ROOT}/`);
+  if (!validRoot) return false;
   if (!normalized.endsWith('.svg') && !normalized.endsWith('.png')) return false;
   return true;
+}
+
+/** Map a repo-relative asset path to a browser URL served from public/. */
+export function publicAssetPathToUrl(relativePath: string): string | null {
+  const normalized = relativePath.replace(/\\/g, '/');
+  if (!normalized.startsWith(`${PUBLIC_ASSET_ICON_ROOT}/`)) return null;
+  return `/${normalized.slice('public/'.length)}`;
+}
+
+export function getPublicAssetPath(family: AssetFamily, filename: string): string {
+  const safeName = filename.replace(/[/\\]/g, '');
+  return `${PUBLIC_ASSET_ICON_ROOT}/${family}/${safeName}`;
 }
 
 export function getCanonicalAssetPath(
