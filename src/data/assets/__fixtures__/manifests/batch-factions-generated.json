@@ -1,0 +1,165 @@
+{
+  "batchId": "batch-factions-generated",
+  "batchName": "Starsilk Faction Emblems (Generated)",
+  "sourceAgent": "Starsilk Asset Production Agent",
+  "createdAt": "2026-06-16T18:39:27.763Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "faction-ledger-administration-emblem",
+      "mechanicalKey": "faction:ledger-administration-emblem",
+      "family": "factions",
+      "displayName": "Ledger Administration",
+      "filename": "faction-ledger-administration-emblem.svg",
+      "relativePath": "public/assets/icons/factions/faction-ledger-administration-emblem.svg",
+      "status": "generated",
+      "testId": "faction-ledger-administration-emblem",
+      "fallbackIconName": "emblem-terran",
+      "tooltip": {
+        "title": "Ledger Administration",
+        "mechanical": "Identifies faction ideology in diplomacy and intel surfaces.",
+        "lore": "Checksum audit bracket — clinical containment.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "direct canon",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "faction-drakken-genesis-host-emblem",
+      "mechanicalKey": "faction:drakken-genesis-host-emblem",
+      "family": "factions",
+      "displayName": "Drakken Genesis Host",
+      "filename": "faction-drakken-genesis-host-emblem.svg",
+      "relativePath": "public/assets/icons/factions/faction-drakken-genesis-host-emblem.svg",
+      "status": "generated",
+      "testId": "faction-drakken-genesis-host-emblem",
+      "fallbackIconName": "emblem-terran",
+      "tooltip": {
+        "title": "Drakken Genesis Host",
+        "mechanical": "Identifies faction ideology in diplomacy and intel surfaces.",
+        "lore": "Bio-geologic overwrite ring — not draconic.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "direct canon",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "faction-solidarity-cells-partition-front-emblem",
+      "mechanicalKey": "faction:solidarity-cells-partition-front-emblem",
+      "family": "factions",
+      "displayName": "Solidarity Cells / Partition Front",
+      "filename": "faction-solidarity-cells-partition-front-emblem.svg",
+      "relativePath": "public/assets/icons/factions/faction-solidarity-cells-partition-front-emblem.svg",
+      "status": "generated",
+      "testId": "faction-solidarity-cells-partition-front-emblem",
+      "fallbackIconName": "emblem-terran",
+      "tooltip": {
+        "title": "Solidarity Cells / Partition Front",
+        "mechanical": "Identifies faction ideology in diplomacy and intel surfaces.",
+        "lore": "Partition lattice cross — disciplined rupture.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "direct canon",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "faction-syrin-survivor-enclave-emblem",
+      "mechanicalKey": "faction:syrin-survivor-enclave-emblem",
+      "family": "factions",
+      "displayName": "Syrin Survivor Enclave",
+      "filename": "faction-syrin-survivor-enclave-emblem.svg",
+      "relativePath": "public/assets/icons/factions/faction-syrin-survivor-enclave-emblem.svg",
+      "status": "generated",
+      "testId": "faction-syrin-survivor-enclave-emblem",
+      "fallbackIconName": "emblem-terran",
+      "tooltip": {
+        "title": "Syrin Survivor Enclave",
+        "mechanical": "Identifies faction ideology in diplomacy and intel surfaces.",
+        "lore": "Containment arc — preservation and inerting.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "direct canon",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "faction-archive-custodians-exhumed-cipher-emblem",
+      "mechanicalKey": "faction:archive-custodians-exhumed-cipher-emblem",
+      "family": "factions",
+      "displayName": "Archive Custodians / Exhumed Cipher",
+      "filename": "faction-archive-custodians-exhumed-cipher-emblem.svg",
+      "relativePath": "public/assets/icons/factions/faction-archive-custodians-exhumed-cipher-emblem.svg",
+      "status": "generated",
+      "testId": "faction-archive-custodians-exhumed-cipher-emblem",
+      "fallbackIconName": "emblem-terran",
+      "tooltip": {
+        "title": "Archive Custodians / Exhumed Cipher",
+        "mechanical": "Identifies faction ideology in diplomacy and intel surfaces.",
+        "lore": "Archive prism stack — memory custody.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "direct canon",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "faction-containment-order-shard-god-emblem",
+      "mechanicalKey": "faction:containment-order-shard-god-emblem",
+      "family": "factions",
+      "displayName": "Containment Order / Shard-God",
+      "filename": "faction-containment-order-shard-god-emblem.svg",
+      "relativePath": "public/assets/icons/factions/faction-containment-order-shard-god-emblem.svg",
+      "status": "generated",
+      "testId": "faction-containment-order-shard-god-emblem",
+      "fallbackIconName": "emblem-terran",
+      "tooltip": {
+        "title": "Containment Order / Shard-God",
+        "mechanical": "Identifies faction ideology in diplomacy and intel surfaces.",
+        "lore": "Cold procedural triangle — divine administration.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "direct canon",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    }
+  ]
+}
