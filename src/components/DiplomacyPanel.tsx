@@ -1,3 +1,4 @@
+import { getMacroIntelWarnings, getVisibleMacroIntel } from '../game/macroIntel';
 import { acceptProposalAction, demandPeaceAction, demandTributeAction, rejectProposalAction, setDiplomacyAction } from '../game/actions';
 import { getPendingProposalsForEmpire } from '../game/diplomaticProposals';
 import { getBorderFrictionScore, getRelationScore, getWarScore } from '../game/diplomacy';
@@ -33,6 +34,8 @@ export function DiplomacyPanel({ state, onUpdate }: Props) {
   const player = state.empires.find(e => e.id === state.playerEmpireId)!;
   const others = state.empires.filter(e => e.id !== player.id && e.isAlive);
   const pendingProposals = getPendingProposalsForEmpire(state, player.id);
+  const macroWarnings = getMacroIntelWarnings(state, player.id);
+  const hostileMacros = getVisibleMacroIntel(state, player.id).filter(e => e.isHostile);
 
   const cloneState = () => ({
     ...state,
@@ -76,6 +79,25 @@ export function DiplomacyPanel({ state, onUpdate }: Props) {
 
   return (
     <div className="panel-content panel-content--animated">
+      {(macroWarnings.length > 0 || hostileMacros.length > 0) && (
+        <div className="section panel-section--stagger-0" data-testid="diplomacy-macro-intel">
+          <div className="section-title">
+            <Icon name="diplomacy" size={14} />
+            Macro Pressure
+          </div>
+          {macroWarnings.map(w => (
+            <p key={w.testId} data-testid={w.testId} style={{ fontSize: '0.8rem', marginBottom: 4, color: w.severity === 'high' ? 'var(--accent-red)' : 'var(--warning)' }}>
+              {w.message}
+            </p>
+          ))}
+          {hostileMacros.map(entry => (
+            <div key={entry.effectId} className="info-row" data-testid={`diplo-macro-${entry.effectId}`}>
+              <span>{entry.sourceEmpireName}: {entry.macroName}</span>
+              <span>{entry.systemName ?? 'unknown'} — {entry.turnsRemaining} turns</span>
+            </div>
+          ))}
+        </div>
+      )}
       {pendingProposals.length > 0 && (
         <div className="section panel-section--stagger-0" style={{ borderColor: 'var(--accent-violet)' }}>
           <div className="section-title">

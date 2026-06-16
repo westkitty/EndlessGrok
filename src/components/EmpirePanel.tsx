@@ -8,6 +8,7 @@ import { getFleetRole, getFleetRoleLabel, getPrimaryShipType } from '../game/fle
 import { calculateFleetUpkeep } from '../game/upkeep';
 import { getTraitName } from '../game/traits';
 import { getEmpireRankings } from '../game/scoring';
+import { getVisibleMacroIntel, getMacroIntelSummary } from '../game/macroIntel';
 import { VictoryPanel } from './VictoryPanel';
 import { getShipDisplayName } from '../game/ships';
 import { Icon } from './icons/Icon';
@@ -295,6 +296,32 @@ export function EmpirePanel({ state, onUpdate }: Props) {
       </div>
 
       <BattleReportPanel state={state} />
+
+      {(() => {
+        const macroSummary = getMacroIntelSummary(state, player.id);
+        const macroIntel = getVisibleMacroIntel(state, player.id);
+        if (macroIntel.length === 0 && macroSummary.warnings.length === 0) return null;
+        return (
+          <div className="section" data-testid="empire-macro-intel">
+            <div className="section-title">Macro Intel</div>
+            <div className="info-row">
+              <span>Active macros</span>
+              <span>{macroSummary.friendlyCount} friendly / {macroSummary.hostileCount} hostile</span>
+            </div>
+            {macroSummary.warnings.map(w => (
+              <p key={w.testId} data-testid={w.testId} style={{ fontSize: '0.75rem', color: w.severity === 'high' ? 'var(--accent-red)' : 'var(--warning)' }}>
+                {w.message}
+              </p>
+            ))}
+            {macroIntel.slice(0, 6).map(entry => (
+              <div key={entry.effectId} className="info-row" data-testid={`empire-macro-${entry.effectId}`}>
+                <span>{entry.macroName} ({entry.sourceEmpireName})</span>
+                <span>{entry.turnsRemaining}t — {entry.systemName ?? 'empire'}</span>
+              </div>
+            ))}
+          </div>
+        );
+      })()}
 
       <div className="section">
         <VictoryPanel state={state} />
