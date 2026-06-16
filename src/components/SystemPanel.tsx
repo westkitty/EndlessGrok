@@ -27,6 +27,8 @@ import {
 import { getStarbindingStage, isStarbindingUnlocked } from '../game/starbinding';
 import { isCollapsedSystem } from '../game/heliocide';
 import { MacroPanel } from './MacroPanel';
+import { formatActiveMacroEffect, getActiveMacroEffectsForSystem } from '../game/macroEffects';
+import { getMacro } from '../game/macros';
 
 import { formatStrategicCost } from '../game/strategicResources';
 import { TERRAFORMING_TURNS } from '../game/constants';
@@ -280,6 +282,22 @@ export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props
               );
             })()}
           </div>
+        </div>
+      )}
+
+      {isVisible && getActiveMacroEffectsForSystem(state, system.id).length > 0 && (
+        <div className="section" data-testid="system-active-macros">
+          <div className="section-title">Active Macro Effects</div>
+          {getActiveMacroEffectsForSystem(state, system.id).map(effect => {
+            const macro = getMacro(effect.macroId);
+            const owner = state.empires.find(e => e.id === effect.empireId);
+            return (
+              <div key={effect.id} className="info-row" data-testid={`system-macro-${effect.macroId}`}>
+                <span>{macro?.name ?? effect.macroId} ({owner?.name ?? 'unknown'})</span>
+                <span>{effect.turnsRemaining} turns — {formatActiveMacroEffect(effect)}</span>
+              </div>
+            );
+          })}
         </div>
       )}
 

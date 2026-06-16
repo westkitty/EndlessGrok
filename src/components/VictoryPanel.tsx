@@ -1,4 +1,6 @@
 import { getVictoryProgress } from '../game/victory';
+import { getVictoryPathInfo, getFoundationProgressLabel } from '../game/victoryFoundations';
+import { getVisibleRivalStarbindingProgress } from '../game/aiStarbinding';
 import {
   STARBINDING_STAGE_LABELS,
   getRequiredStarDives,
@@ -17,7 +19,6 @@ interface VictoryPathDef {
   id: keyof ReturnType<typeof getVictoryProgress>;
   label: string;
   description: string;
-  implemented: boolean;
 }
 
 const VICTORY_PATHS: VictoryPathDef[] = [
@@ -25,49 +26,51 @@ const VICTORY_PATHS: VictoryPathDef[] = [
     id: 'starbinding',
     label: 'The Starbinding',
     description: 'Catastrophic Partition victory via heliocide and macro execution',
-    implemented: true,
   },
   {
     id: 'ledgerDominion',
     label: 'Ledger Dominion',
     description: 'Administration containment and influence hegemony',
-    implemented: false,
   },
   {
     id: 'bloodEclipse',
     label: 'Blood Eclipse',
     description: 'Drakken biosphere terraforming victory',
-    implemented: false,
   },
   {
     id: 'archiveContinuity',
     label: 'Archive Continuity',
     description: 'Preservation and research syntax victory',
-    implemented: false,
   },
   {
     id: 'syrinInerting',
     label: 'Syrin Inerting',
     description: 'Containment and safety victory',
-    implemented: false,
   },
   {
     id: 'domination',
     label: 'Domination',
     description: 'Control colonizable worlds',
-    implemented: true,
   },
   {
     id: 'science',
     label: 'Science',
     description: 'Quantum computing and tech threshold',
-    implemented: true,
   },
 ];
+
+function statusBadge(status: string, completable: boolean): string {
+  if (status === 'complete' && completable) return 'Implemented';
+  if (status === 'complete') return 'Implemented';
+  if (status === 'foundation') return 'Foundation';
+  return 'Locked';
+}
 
 export function VictoryPanel({ state }: Props) {
   const player = state.empires.find(e => e.id === state.playerEmpireId)!;
   const progress = getVictoryProgress(state);
+  const pathInfo = getVictoryPathInfo(state, player.id);
+  const rivals = getVisibleRivalStarbindingProgress(state, player.id);
   const sbStage = getStarbindingStage(player);
   const sbUnlocked = isStarbindingUnlocked(player);
   const requiredDives = getRequiredStarDives(state);
@@ -79,21 +82,35 @@ export function VictoryPanel({ state }: Props) {
     <div className="victory-panel" data-testid="victory-panel">
       <div className="section-title">Victory Paths</div>
       {VICTORY_PATHS.map(path => {
+        const info = pathInfo.find(p => p.id === path.id);
+        const status = info?.status ?? 'locked';
         const pct = Math.round((progress[path.id] ?? 0) * 100);
         const isStarbinding = path.id === 'starbinding';
+        const showTrack = status === 'complete' || status === 'foundation';
+        const badge = statusBadge(status, info?.completable ?? false);
+
         return (
           <div
             key={path.id}
-            className={`victory-path ${!path.implemented ? 'victory-path--locked' : ''}`}
+            className={`victory-path ${status === 'locked' ? 'victory-path--locked' : ''}`}
             data-testid={`victory-path-${path.id}`}
+            data-victory-status={status}
           >
             <div className="victory-path__header">
               <span className="victory-path__label">{path.label}</span>
-              {!path.implemented && <span className="victory-path__badge">Future</span>}
-              {path.implemented && <span className="victory-path__pct">{pct}%</span>}
+              <span className="victory-path__badge" data-testid={`victory-badge-${path.id}`}>{badge}</span>
+              {showTrack && <span className="victory-path__pct">{pct}%</span>}
             </div>
             <p className="victory-path__desc">{path.description}</p>
-            {path.implemented && (
+            {info?.foundationNote && (
+              <p className="victory-path__foundation" data-testid={`victory-foundation-${path.id}`}>
+                {info.foundationNote}
+              </p>
+            )}
+            {status === 'foundation' && pct > 0 && (
+              <p className="victory-path__foundation-label">{getFoundationProgressLabel(pct / 100)}</p>
+            )}
+            {showTrack && (
               <div className="victory-path__track">
                 <div className="victory-path__fill" style={{ width: `${pct}%` }} />
               </div>
@@ -137,6 +154,18 @@ export function VictoryPanel({ state }: Props) {
           </div>
         );
       })}
+
+      {rivals.length > 0 && (
+        <div className="rival-starbinding" data-testid="rival-starbinding-progress">
+          <div className="section-title">Rival Starbinding</div>
+          {rivals.map(r => (
+            <div key={r.empireId} className="info-row" data-testid={`rival-sb-${r.empireId}`}>
+              <span>{r.empireName}</span>
+              <span>Stage {r.stage} — {Math.round(r.progress * 100)}%</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
