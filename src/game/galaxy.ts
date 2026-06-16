@@ -90,7 +90,7 @@ function getRichnessForStar(starClass: StarSpectralClass, rng: SeededRNG): numbe
 }
 
 function pickRareResource(rng: SeededRNG): RareResource {
-  if (rng.next() > 0.15) return 'none';
+  if (rng.next() > 0.22) return 'none';
   return rng.pick(RARE_RESOURCE_TYPES);
 }
 

@@ -12,7 +12,7 @@ import { applyTraitToProduction, getTraitBonuses } from './traits';
 import { getEconomicEfficiencyBonus, hasUnlock } from './research';
 import { getEconomyMultiplier } from './settings';
 import { getSystemSpecializationBonus } from './upkeep';
-import type { Empire, GameSettings, Planet, PlanetFocus, Resources, StarSystem } from './types';
+import type { Empire, GameSettings, Planet, PlanetFocus, Resources, StarSystem, StrategicResources } from './types';
 
 const FOCUS_MODS: Record<PlanetFocus, { food: number; industry: number; science: number }> = {
   balanced: { food: 1, industry: 1, science: 1 },
@@ -68,6 +68,20 @@ export function calculatePlanetOutputs(
     science,
     credits: Math.floor((planet.minerals * popFactor * 0.5 + planet.energy * popFactor * 0.3 + buildingEffects.credits) * outputMod * specCredits),
   };
+}
+
+export function previewStrategicIncome(empire: Empire, systems: StarSystem[]): StrategicResources {
+  const preview: StrategicResources = { titanium: 0, antimatter: 0, darkmatter: 0 };
+  if (!hasUnlock(empire.researchedTechs, 'strategic_resources')) return preview;
+
+  for (const system of systems) {
+    for (const planet of system.planets) {
+      if (planet.ownerId !== empire.id || !planet.isColonized) continue;
+      if (planet.rareResource === 'none') continue;
+      preview[planet.rareResource as keyof StrategicResources] += 1;
+    }
+  }
+  return preview;
 }
 
 export function extractStrategicResources(empire: Empire, systems: StarSystem[]): void {

@@ -12,6 +12,7 @@ interface ResourceBarProps {
   economy?: EconomyBreakdown;
   compact?: boolean;
   showStrategicResources?: boolean;
+  strategicIncome?: StrategicResources;
 }
 
 const STRATEGIC_CONFIG: {
@@ -102,6 +103,7 @@ export function ResourceBar({
   economy,
   compact = false,
   showStrategicResources = false,
+  strategicIncome,
 }: ResourceBarProps) {
   const visibleStrategic = strategicResources && showStrategicResources
     ? STRATEGIC_CONFIG
@@ -134,14 +136,29 @@ export function ResourceBar({
           </Tooltip>
         );
       })}
-      {visibleStrategic.map(({ key, icon, label, color }) => (
-        <Tooltip key={key} content={<span><strong>{label}</strong>: {strategicResources![key]}</span>}>
-          <div className="resource-item">
-            <Icon name={icon} size={compact ? 16 : 20} className="resource-item__icon" />
-            <span className="resource-item__value" style={{ color }}>{strategicResources![key]}</span>
-          </div>
-        </Tooltip>
-      ))}
+      {visibleStrategic.map(({ key, icon, label, color }) => {
+        const income = strategicIncome?.[key] ?? 0;
+        const incomeStr = income > 0 ? `+${income}/turn` : '';
+        return (
+          <Tooltip
+            key={key}
+            content={
+              <span>
+                <strong>{label}</strong>: {strategicResources![key]}
+                {incomeStr && <> · Income: {incomeStr} from colonies</>}
+              </span>
+            }
+          >
+            <div className="resource-item" data-testid={`strategic-${key}`}>
+              <Icon name={icon} size={compact ? 16 : 20} className="resource-item__icon" />
+              <span className="resource-item__value" style={{ color }}>{strategicResources![key]}</span>
+              {incomeStr && (
+                <span className="resource-item__delta positive" style={{ fontSize: '0.65rem' }}>{incomeStr}</span>
+              )}
+            </div>
+          </Tooltip>
+        );
+      })}
     </div>
   );
 }
