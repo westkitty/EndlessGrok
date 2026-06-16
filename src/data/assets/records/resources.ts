@@ -47,7 +47,7 @@ export const RESOURCE_ASSETS: AssetRecord[] = [
   baseResource('antimatter', 'resource:antimatter', 'Antimatter', 'High-energy strategic resource.', 'Contained annihilation syntax — volatile.', 'antimatter', 'resource-antimatter'),
   baseResource('darkmatter', 'resource:darkmatter', 'Dark Matter', 'Rare strategic resource for late projects.', 'Gravitational residue from collapsed lanes.', 'darkmatter', 'resource-darkmatter'),
   {
-    id: 'starsilk-thread',
+    id: 'resource-starsilk-thread',
     mechanicalKey: 'resource:starsilkThread',
     displayName: 'Starsilk Thread',
     family: 'resources',
@@ -70,7 +70,7 @@ export const RESOURCE_ASSETS: AssetRecord[] = [
     plannedFiles: { svg: 'src/assets/icons/resources/starsilk-thread.svg' },
   },
   {
-    id: 'inert-starsilk',
+    id: 'resource-inert-starsilk',
     mechanicalKey: 'resource:inertStarsilk',
     displayName: 'Inert Starsilk',
     family: 'resources',
@@ -92,7 +92,7 @@ export const RESOURCE_ASSETS: AssetRecord[] = [
     plannedFiles: { svg: 'src/assets/icons/resources/inert-starsilk.svg' },
   },
   {
-    id: 'syrin-reagent',
+    id: 'resource-syrin-reagent',
     mechanicalKey: 'resource:syrinReagent',
     displayName: 'Syrin Reagent',
     family: 'resources',
@@ -114,7 +114,7 @@ export const RESOURCE_ASSETS: AssetRecord[] = [
     plannedFiles: { svg: 'src/assets/icons/resources/syrin-reagent.svg' },
   },
   {
-    id: 'archive-data',
+    id: 'resource-archive-data',
     mechanicalKey: 'resource:archiveData',
     displayName: 'Archive Data',
     family: 'resources',
@@ -135,7 +135,7 @@ export const RESOURCE_ASSETS: AssetRecord[] = [
     plannedFiles: { svg: 'src/assets/icons/resources/archive-data.svg' },
   },
   {
-    id: 'blood-ring-glass',
+    id: 'resource-blood-ring-glass',
     mechanicalKey: 'resource:bloodRingGlass',
     displayName: 'Blood Ring Glass',
     family: 'resources',
@@ -158,7 +158,7 @@ export const RESOURCE_ASSETS: AssetRecord[] = [
     plannedFiles: { svg: 'src/assets/icons/resources/blood-ring-glass.svg' },
   },
   {
-    id: 'siege-lattice-fragment',
+    id: 'resource-siege-lattice-fragment',
     mechanicalKey: 'resource:siegeLatticeFragment',
     displayName: 'Siege Lattice Fragment',
     family: 'resources',

@@ -1,3 +1,4 @@
+import { getCanonicalAssetId, LEGACY_TO_CANONICAL } from './assetIdReconciliation';
 import { RESOURCE_ASSETS } from './records/resources';
 import { VICTORY_ASSETS } from './records/victory';
 import { MACRO_ASSETS, MACRO_EFFECT_ASSETS } from './records/macros';
@@ -22,6 +23,18 @@ const byMechanicalKey = new Map<string, AssetRecord>();
 for (const record of ASSET_REGISTRY) {
   byId.set(record.id, record);
   byMechanicalKey.set(record.mechanicalKey, record);
+  const canonical = getCanonicalAssetId(record.id);
+  if (canonical !== record.id) {
+    byId.set(canonical, record);
+  }
+}
+
+for (const [legacyId, canonicalId] of Object.entries(LEGACY_TO_CANONICAL)) {
+  const record = byId.get(canonicalId) ?? byId.get(legacyId);
+  if (record) {
+    byId.set(legacyId, record);
+    byId.set(canonicalId, record);
+  }
 }
 
 const VALID_FAMILIES = new Set<AssetFamily>([

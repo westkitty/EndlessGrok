@@ -6,7 +6,7 @@
   "canonSafetyVersion": "1.0",
   "assets": [
     {
-      "assetId": "starsilk-thread",
+      "assetId": "resource-starsilk-thread",
       "mechanicalKey": "resource:starsilkThread",
       "family": "resources",
       "type": "strategic",

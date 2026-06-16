@@ -21,7 +21,7 @@ const MACRO_VARIANT: Record<string, AssetRecord['visualVariant']> = {
 
 function macroAsset(macro: (typeof MACROS)[number]): AssetRecord {
   return {
-    id: `macro-${macro.id}`,
+    id: `macro-${macro.id.replace(/_/g, '-')}`,
     mechanicalKey: `macro:${macro.id}`,
     displayName: macro.name,
     family: 'macros',
