@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { Icon, type IconName } from './icons/Icon';
+import { Icon } from './icons/Icon';
+import { type IconName } from './icons/iconHelpers';
 import { Tooltip } from './Tooltip';
 import type { EconomyBreakdown, Resources, StrategicResources } from '../game/types';
 

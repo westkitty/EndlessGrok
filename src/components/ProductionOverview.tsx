@@ -1,4 +1,5 @@
-import { Icon, getShipIconName } from './icons/Icon';
+import { Icon } from './icons/Icon';
+import { getShipIconName } from './icons/iconHelpers';
 import { getProductionQueueEta } from '../game/production';
 import { getShipDisplayName } from '../game/ships';
 import type { GameState } from '../game/types';

@@ -545,6 +545,3 @@ export function GalaxyMap({
   );
 }
 
-export function getDefaultViewport(): GalaxyViewport {
-  return { zoom: 1, panX: 0, panY: 0 };
-}

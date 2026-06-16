@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { getShipDisplayName } from '../game/ships';
-import { Icon, getShipIconName } from './icons/Icon';
+import { Icon } from './icons/Icon';
+import { getShipIconName } from './icons/iconHelpers';
 import type { BattleReport, GameState } from '../game/types';
 
 interface Props {

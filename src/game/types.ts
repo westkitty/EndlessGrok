@@ -229,7 +229,7 @@ export interface BattleReport {
   bombardmentDamage?: number;
 }
 
-export interface CombatResult extends BattleReport {}
+export type CombatResult = BattleReport;
 
 export interface CombatPrediction {
   attackerWinChance: number;

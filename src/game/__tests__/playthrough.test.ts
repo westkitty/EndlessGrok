@@ -195,7 +195,7 @@ describe('Full playthrough simulation', () => {
     const player = game.empires.find(e => e.isPlayer)!;
     const home = game.systems.find(s => s.planets.some(p => p.ownerId === player.id))!;
 
-    let state = cloneState(game);
+    const state = cloneState(game);
     buildShip(state, 'scout', home.id);
     buildShip(state, 'scout', home.id);
 

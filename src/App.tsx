@@ -9,8 +9,8 @@ import { GALAXY_SHAPE_DESCRIPTIONS } from './game/settings';
 import { FACTION_DEFINITIONS, factionToPlayerSetup } from './game/factions';
 import { loadUISettings, saveUISettings, type UISettings } from './game/uiSettings';
 import type { Difficulty, GalaxyShape, GalaxySizeOption, GameSettings, GameState, Resources, TurnSummary } from './game/types';
-import { GalaxyMap, getDefaultViewport } from './components/GalaxyMap';
-import type { GalaxyTransform, GalaxyViewport } from './components/galaxy/mapHelpers';
+import { GalaxyMap } from './components/GalaxyMap';
+import { getDefaultViewport, type GalaxyTransform, type GalaxyViewport } from './components/galaxy/mapHelpers';
 import { Minimap } from './components/Minimap';
 import { SystemPanel } from './components/SystemPanel';
 import { EmpirePanel } from './components/EmpirePanel';
@@ -27,7 +27,8 @@ import { SettingsModal } from './components/SettingsModal';
 import { KeyboardShortcutsOverlay } from './components/KeyboardShortcutsOverlay';
 import { CombatOverlay } from './components/CombatOverlay';
 import { LoadingScreen } from './components/LoadingScreen';
-import { Icon, getEmblemIconName } from './components/icons/Icon';
+import { Icon } from './components/icons/Icon';
+import { getEmblemIconName } from './components/icons/iconHelpers';
 import { ConfirmDialog } from './components/ConfirmDialog';
 import { LoadSaveModal } from './components/LoadSaveModal';
 import { PrecursorLoreModal } from './components/PrecursorLoreModal';
@@ -253,7 +254,8 @@ function GameScreen({
   }, [state.combatResults.length]);
 
   const handleEndTurn = useCallback(() => {
-    prevResourcesRef.current = { ...player.resources };
+    const playerEmpire = state.empires.find(e => e.id === state.playerEmpireId)!;
+    prevResourcesRef.current = { ...playerEmpire.resources };
     const cloned = cloneGameState(state);
     const newState = endTurn(cloned);
     saveGame(newState);
@@ -262,17 +264,18 @@ function GameScreen({
     if (latestSummary) {
       setTurnSummary(latestSummary);
       if (prevResourcesRef.current) {
+        const updatedPlayer = newState.empires.find(e => e.id === state.playerEmpireId)!;
         setResourceDeltas({
-          credits: newState.empires.find(e => e.id === player.id)!.resources.credits - prevResourcesRef.current.credits,
-          food: newState.empires.find(e => e.id === player.id)!.resources.food - prevResourcesRef.current.food,
-          industry: newState.empires.find(e => e.id === player.id)!.resources.industry - prevResourcesRef.current.industry,
-          science: newState.empires.find(e => e.id === player.id)!.resources.science - prevResourcesRef.current.science,
+          credits: updatedPlayer.resources.credits - prevResourcesRef.current.credits,
+          food: updatedPlayer.resources.food - prevResourcesRef.current.food,
+          industry: updatedPlayer.resources.industry - prevResourcesRef.current.industry,
+          science: updatedPlayer.resources.science - prevResourcesRef.current.science,
         });
       }
     }
 
     onUpdate(newState);
-  }, [state, onUpdate, player.id]);
+  }, [state, onUpdate]);
 
   const handleSelectSystem = (systemId: string) => {
     onUpdate({ ...state, selectedSystemId: systemId });

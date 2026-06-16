@@ -7,19 +7,20 @@ interface Props {
 }
 
 export function CombatOverlay({ active, animationsEnabled = true }: Props) {
-  const [visible, setVisible] = useState(false);
+  const [animating, setAnimating] = useState(false);
+  const enabled = active && animationsEnabled;
 
   useEffect(() => {
-    if (!active || !animationsEnabled) {
-      setVisible(false);
-      return;
-    }
-    setVisible(true);
-    const timer = setTimeout(() => setVisible(false), 600);
-    return () => clearTimeout(timer);
-  }, [active, animationsEnabled]);
+    if (!enabled) return;
+    const frame = requestAnimationFrame(() => setAnimating(true));
+    const timer = setTimeout(() => setAnimating(false), 600);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(timer);
+    };
+  }, [enabled, active]);
 
-  if (!visible) return null;
+  if (!enabled || !animating) return null;
 
   return (
     <div className="combat-overlay" aria-hidden="true">

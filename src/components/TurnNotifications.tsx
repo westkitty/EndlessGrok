@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { Icon } from './icons/Icon';
+import type { IconName } from './icons/iconHelpers';
 import type { GameEvent } from '../game/types';
 
 interface TurnNotificationsProps {
@@ -16,7 +17,7 @@ interface Notification {
 
 const NOTIFY_TYPES = new Set<GameEvent['type']>(['research', 'colonize', 'combat', 'victory', 'defeat', 'diplomacy', 'event', 'anomaly']);
 
-const TYPE_ICONS: Partial<Record<GameEvent['type'], Parameters<typeof Icon>[0]['name']>> = {
+const TYPE_ICONS: Partial<Record<GameEvent['type'], IconName>> = {
   research: 'research',
   colonize: 'colony',
   combat: 'combat',
@@ -61,9 +62,12 @@ export function TurnNotifications({ events, turn }: TurnNotificationsProps) {
       });
     }
 
-    if (newNotifs.length > 0) {
+    if (newNotifs.length === 0) return;
+
+    const frame = requestAnimationFrame(() => {
       setNotifications(prev => [...newNotifs, ...prev].slice(0, 8));
-    }
+    });
+    return () => cancelAnimationFrame(frame);
   }, [events, turn]);
 
   useEffect(() => {

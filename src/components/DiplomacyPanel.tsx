@@ -1,7 +1,8 @@
 import { acceptProposalAction, demandPeaceAction, demandTributeAction, rejectProposalAction, setDiplomacyAction } from '../game/actions';
 import { getPendingProposalsForEmpire } from '../game/diplomaticProposals';
 import { getBorderFrictionScore, getRelationScore, getWarScore } from '../game/diplomacy';
-import { Icon, getEmblemIconName } from './icons/Icon';
+import { Icon } from './icons/Icon';
+import { getEmblemIconName } from './icons/iconHelpers';
 import type { DiplomacyState, GameEvent, GameState } from '../game/types';
 
 interface Props {

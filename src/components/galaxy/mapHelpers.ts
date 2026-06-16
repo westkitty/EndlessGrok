@@ -16,6 +16,10 @@ export interface GalaxyViewport {
   panY: number;
 }
 
+export function getDefaultViewport(): GalaxyViewport {
+  return { zoom: 1, panX: 0, panY: 0 };
+}
+
 export const SECTOR_NAMES = ['Alpha', 'Beta', 'Gamma', 'Delta'] as const;
 
 export function computeGalaxyTransform(

@@ -126,7 +126,7 @@ function resolveRound(
   const defPower = getFleetPower(defenderShips, 1, defBonus);
 
   let atkDamage = Math.max(1, Math.floor(atkPower.attack * (0.8 + rng.next() * 0.4) - defPower.defense * 0.3));
-  let defDamage = Math.max(1, Math.floor(defPower.attack * (0.8 + rng.next() * 0.4) - atkPower.defense * 0.3));
+  const defDamage = Math.max(1, Math.floor(defPower.attack * (0.8 + rng.next() * 0.4) - atkPower.defense * 0.3));
 
   if (attackerShips[0] && defenderShips[0]) {
     const wMod = getWeaponDefenseModifier(
