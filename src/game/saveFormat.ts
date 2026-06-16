@@ -1,10 +1,11 @@
 import { deserializeGame } from './game';
+import { migrateActiveMacroEffect } from './macroEffects';
 import type { GameState, SerializedGameState } from './types';
 
 import { createDefaultShipDesigns } from './shipDesigns';
 
 /** Increment when the on-disk save envelope or serialized state shape changes. */
-export const SAVE_SCHEMA_VERSION = 3;
+export const SAVE_SCHEMA_VERSION = 4;
 
 export const SAVE_GAME_ID = 'endlessgrok';
 
@@ -100,6 +101,20 @@ function migrateSerializedV1ToV2(state: SerializedGameState): SerializedGameStat
   };
 }
 
+function migrateSerializedV3ToV4(state: SerializedGameState): SerializedGameState {
+  const turn = state.turn ?? 0;
+  return {
+    ...state,
+    empires: state.empires.map(empire => ({
+      ...empire,
+      activeMacroEffects: (empire.activeMacroEffects ?? []).map(e => migrateActiveMacroEffect(e, turn)),
+      aiVictoryFocus: empire.aiVictoryFocus,
+      aiVictoryFocusTurn: empire.aiVictoryFocusTurn,
+      starbindingThreatWarned: empire.starbindingThreatWarned ?? {},
+    })),
+  };
+}
+
 function migrateSerializedV2ToV3(state: SerializedGameState): SerializedGameState {
   return {
     ...state,
@@ -147,6 +162,7 @@ function migrateSerializedV2ToV3(state: SerializedGameState): SerializedGameStat
 const SERIALIZED_STATE_MIGRATIONS: Partial<Record<number, SerializedMigration>> = {
   2: migrateSerializedV1ToV2,
   3: migrateSerializedV2ToV3,
+  4: migrateSerializedV3ToV4,
 };
 
 export function migrateSerializedState(

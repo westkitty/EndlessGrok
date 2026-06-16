@@ -36,6 +36,19 @@ describe('Macro strategic actions', () => {
     expect(err).toBe('Planet not owned');
   });
 
+  it('creates active timed effect on execute', () => {
+    const state = createNewGame(14);
+    unlockStarbindingTestFixture(state);
+    const player = state.empires.find(e => e.id === state.playerEmpireId)!;
+    player.starsilkResources!.archiveData = 5;
+    const system = state.systems.find(s => s.id === player.capitalSystemId)!;
+    executeMacro(state, player.id, 'local_checksum_audit', system.id);
+    const effect = player.activeMacroEffects?.[0];
+    expect(effect?.macroId).toBe('local_checksum_audit');
+    expect(effect?.turnsRemaining).toBe(3);
+    expect(effect?.systemId).toBe(system.id);
+  });
+
   it('persists cooldowns through save/load', () => {
     const state = createNewGame(13);
     unlockStarbindingTestFixture(state);

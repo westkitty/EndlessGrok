@@ -110,13 +110,36 @@ export interface MacroCooldown {
   turnsRemaining: number;
 }
 
+export interface MacroEffectModifiers {
+  defenseBonusPct?: number;
+  sciencePerTurn?: number;
+  archiveDataPerTurn?: number;
+  approvalPenalty?: number;
+  hazardSuppressed?: boolean;
+  singularitySeal?: boolean;
+}
+
 export interface ActiveMacroEffect {
+  id: string;
   macroId: string;
   empireId: string;
   systemId?: string;
   planetId?: string;
   turnsRemaining: number;
+  createdTurn: number;
+  modifiers: MacroEffectModifiers;
+  recurring?: boolean;
 }
+
+export type AIVictoryFocus =
+  | 'starbinding'
+  | 'ledger_dominion'
+  | 'archive_continuity'
+  | 'blood_eclipse'
+  | 'syrin_inerting'
+  | 'science'
+  | 'domination'
+  | 'expand';
 
 export interface ShipDesignModules {
   weapon: string;
@@ -278,6 +301,9 @@ export interface Empire {
   aiPersonality?: AIPersonality;
   aiGoal?: AIGoal;
   aiGoalTurn?: number;
+  aiVictoryFocus?: AIVictoryFocus;
+  aiVictoryFocusTurn?: number;
+  starbindingThreatWarned?: Record<string, number>;
   repeatableTechCounts?: Record<string, number>;
   factionResearchHint?: string;
   isPirate?: boolean;
@@ -531,6 +557,9 @@ export interface SerializedEmpire {
   aiPersonality?: AIPersonality;
   aiGoal?: AIGoal;
   aiGoalTurn?: number;
+  aiVictoryFocus?: AIVictoryFocus;
+  aiVictoryFocusTurn?: number;
+  starbindingThreatWarned?: Record<string, number>;
   repeatableTechCounts?: Record<string, number>;
   factionResearchHint?: string;
   isPirate?: boolean;

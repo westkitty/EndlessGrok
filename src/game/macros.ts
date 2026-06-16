@@ -2,8 +2,13 @@ import { hasUnlock } from './research';
 import { ensureStarsilkResources, spendStarsilkCost } from './starsilkResources';
 import { getFactionReactionToBloodRingUse } from './factionIdeology';
 import { emitFirstMacroEvent } from './starsilkEvents';
+import {
+  addOrRefreshMacroEffect,
+  applyRecurringMacroEffects,
+  processMacroEffectDurations,
+  scrubMacroEffectsInSystem,
+} from './macroEffects';
 import type {
-  ActiveMacroEffect,
   Empire,
   GameState,
   StarsilkResources,
@@ -69,7 +74,7 @@ export const MACROS: MacroDefinition[] = [
     id: 'siege_lattice_anchor',
     name: 'Siege Lattice Anchor',
     category: 'fortification',
-    description: 'Fortify chokepoint or collapsed system (+defense rating)',
+    description: 'Fortify chokepoint or collapsed system (+25% defense)',
     requiredTech: 'macro_execution',
     cost: { siegeLatticeFragment: 1, starsilkThread: 1 },
     targetType: 'system',
@@ -82,13 +87,13 @@ export const MACROS: MacroDefinition[] = [
     id: 'archive_extraction_loop',
     name: 'Archive Extraction Loop',
     category: 'extraction',
-    description: '+3 Archive Data, -10 happiness on target planet',
+    description: '+1 Archive Data/turn for 3 turns, -3 approval on target',
     requiredTech: 'archive_syntax',
     cost: { starsilkThread: 1 },
     targetType: 'planet',
     cooldown: 3,
     risk: 'Destabilizes local population',
-    effectTurns: 0,
+    effectTurns: 3,
     loreBasis: 'Archive harvest macro',
   },
   {
@@ -121,7 +126,7 @@ export const MACROS: MacroDefinition[] = [
     id: 'counter_macro_scrub',
     name: 'Counter-Macro Scrub',
     category: 'counter',
-    description: 'Remove active enemy macro effect in system',
+    description: 'Remove active enemy macro effects in system',
     requiredTech: 'macro_execution',
     cost: { archiveData: 2, syrinReagent: 1 },
     targetType: 'system',
@@ -173,11 +178,23 @@ export function canExecuteMacro(
     const system = state.systems.find(s => s.id === targetId);
     if (!system) return 'System not found';
     if (!empire.knownSystems.has(targetId)) return 'System unknown';
+    if (macro.id === 'siege_lattice_anchor' && system.connections.length > 2 && system.systemType !== 'black_hole') {
+      return 'Requires chokepoint or collapsed system';
+    }
   }
   if (macro.targetType === 'planet') {
     const planet = state.systems.flatMap(s => s.planets).find(p => p.id === targetId);
     if (!planet) return 'Planet not found';
     if (planet.ownerId !== empireId) return 'Planet not owned';
+    if (macro.id === 'first_dirt_protocol' && planet.happiness > 40 && planet.population > 2) {
+      return 'Planet not sufficiently ruined';
+    }
+    if (macro.id === 'archive_extraction_loop') {
+      const system = state.systems.find(s => s.id === planet.systemId);
+      if (!system?.isArchiveStar && planet.starsilkDeposit !== 'archive_light_field') {
+        return 'Requires archive-rich system';
+      }
+    }
   }
 
   return null;
@@ -189,7 +206,7 @@ function canAffordMacroCost(empire: Empire, macro: MacroDefinition): boolean {
   for (const [key, val] of Object.entries(macro.cost)) {
     if (key === 'influence') continue;
     const k = key as keyof StarsilkResources;
-    if ((pool[k] ?? 0) < (val ?? 0)) return false;
+    if ((pool[k] ?? 0) < (typeof val === 'number' ? val : 0)) return false;
   }
   return true;
 }
@@ -244,15 +261,8 @@ function applyMacroEffect(
   targetId: string,
 ): void {
   if (macro.effectTurns > 0) {
-    empire.activeMacroEffects = empire.activeMacroEffects ?? [];
-    const effect: ActiveMacroEffect = {
-      macroId: macro.id,
-      empireId: empire.id,
-      turnsRemaining: macro.effectTurns,
-    };
-    if (macro.targetType === 'system') effect.systemId = targetId;
-    if (macro.targetType === 'planet') effect.planetId = targetId;
-    empire.activeMacroEffects.push(effect);
+    const targetType = macro.targetType === 'planet' ? 'planet' : 'system';
+    addOrRefreshMacroEffect(empire, macro.id, targetId, targetType, macro.effectTurns, state.turn);
   }
 
   switch (macro.id) {
@@ -268,8 +278,8 @@ function applyMacroEffect(
     case 'archive_extraction_loop': {
       const planet = state.systems.flatMap(s => s.planets).find(p => p.id === targetId);
       const pool = ensureStarsilkResources(empire);
-      pool.archiveData += 3;
-      if (planet) planet.happiness = Math.max(0, planet.happiness - 10);
+      pool.archiveData += 2;
+      if (planet) planet.happiness = Math.max(0, planet.happiness - 5);
       break;
     }
     case 'drakken_biosphere_render': {
@@ -278,15 +288,26 @@ function applyMacroEffect(
         planet.population -= 1;
         empire.resources.industry += 15;
         planet.industryOutput += 2;
+        planet.approval = Math.max(0, planet.approval - 8);
       }
       break;
     }
     case 'counter_macro_scrub': {
-      for (const other of state.empires) {
-        if (other.id === empire.id) continue;
-        other.activeMacroEffects = (other.activeMacroEffects ?? []).filter(
-          e => e.systemId !== targetId,
-        );
+      const removed = scrubMacroEffectsInSystem(state, targetId, empire.id);
+      state.events.push({
+        turn: state.turn,
+        type: 'macro',
+        message: removed > 0
+          ? `Counter-Macro Scrub cleared ${removed} hostile effect(s).`
+          : 'Counter-Macro Scrub found no hostile macros to remove.',
+      });
+      break;
+    }
+    case 'local_checksum_audit': {
+      for (const planet of state.systems.find(s => s.id === targetId)?.planets ?? []) {
+        if (planet.ownerId === empire.id && planet.isColonized) {
+          planet.approval = Math.max(0, planet.approval - 2);
+        }
       }
       break;
     }
@@ -295,16 +316,16 @@ function applyMacroEffect(
   }
 }
 
+export function processMacroTurn(state: GameState, empire: Empire): void {
+  applyRecurringMacroEffects(state, empire);
+  processMacroEffectDurations(state, empire);
+}
+
+/** @deprecated use processMacroTurn */
 export function processMacroCooldowns(empire: Empire): void {
-  if (!empire.macroCooldowns) return;
+  if (!empire.macroCooldowns) empire.macroCooldowns = [];
   for (const cd of empire.macroCooldowns) {
     if (cd.turnsRemaining > 0) cd.turnsRemaining--;
   }
   empire.macroCooldowns = empire.macroCooldowns.filter(c => c.turnsRemaining > 0);
-
-  if (!empire.activeMacroEffects) return;
-  for (const effect of empire.activeMacroEffects) {
-    if (effect.turnsRemaining > 0) effect.turnsRemaining--;
-  }
-  empire.activeMacroEffects = empire.activeMacroEffects.filter(e => e.turnsRemaining > 0);
 }

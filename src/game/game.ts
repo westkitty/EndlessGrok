@@ -35,7 +35,8 @@ import { processFleetMovement } from './travel';
 import { processColonyUnrest } from './unrest';
 import { updateVisibility } from './visibility';
 import { ensureFactionIdeology, applyStarbindingProgressReactions } from './factionIdeology';
-import { processMacroCooldowns } from './macros';
+import { processMacroTurn } from './macros';
+import { migrateActiveMacroEffect } from './macroEffects';
 import { createStarbindingState, processStarbindingTurn } from './starbinding';
 import { createEmptyStarsilkResources, extractStarsilkResources, migratePlanetStarsilk } from './starsilkResources';
 import { processStarsilkDiscoveryEvents } from './starsilkEvents';
@@ -104,6 +105,7 @@ function createEmpire(
     macroCooldowns: [],
     activeMacroEffects: [],
     starsilkDiscoveryFlags: {},
+    starbindingThreatWarned: {},
   };
 }
 
@@ -185,7 +187,10 @@ function migrateEmpire(empire: SerializedEmpire): Empire {
     starsilkResources: empire.starsilkResources ?? createEmptyStarsilkResources(),
     starbinding: empire.starbinding ?? createStarbindingState(),
     macroCooldowns: empire.macroCooldowns ?? [],
-    activeMacroEffects: empire.activeMacroEffects ?? [],
+    activeMacroEffects: (empire.activeMacroEffects ?? []).map(e => migrateActiveMacroEffect(e)),
+    aiVictoryFocus: empire.aiVictoryFocus,
+    aiVictoryFocusTurn: empire.aiVictoryFocusTurn,
+    starbindingThreatWarned: empire.starbindingThreatWarned ?? {},
     ideologyTags: empire.ideologyTags,
     stabilityPenalty: empire.stabilityPenalty ?? 0,
     starsilkDiscoveryFlags: empire.starsilkDiscoveryFlags ?? {},
@@ -520,7 +525,7 @@ export function endTurn(state: GameState): GameState {
     empire.starsilkDiscoveryFlags = empire.starsilkDiscoveryFlags ?? {};
     processStarsilkDiscoveryEvents(state, empire, gained);
     processStarbindingTurn(state, empire.id);
-    processMacroCooldowns(empire);
+    processMacroTurn(state, empire);
     applyStarbindingProgressReactions(state, empire.id);
   }
 
