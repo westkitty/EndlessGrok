@@ -28,6 +28,9 @@ npm run assets:ledger:validate
 npm run starsilk:validate
 npm run starsilk:fixtures
 npm run events:materialize
+npm run assets:generate:batch1
+npm run assets:promote:batch1
+npm run assets:validate -- src/data/assets/__fixtures__/manifests/batch-resources-generated.json
 npm run assets:validate -- src/data/assets/__fixtures__/manifests/planned-batch.json
 npm run lint && npm test && npm run build && npm run test:e2e
 ```

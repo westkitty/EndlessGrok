@@ -1,4 +1,9 @@
+import { existsSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, it, expect } from 'vitest';
+
+const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../../..');
 import {
   loadAssetManifest,
   getAssetById,
@@ -17,7 +22,8 @@ describe('runtime manifest', () => {
 
   it('indexes by family and status', () => {
     expect(getAssetsByFamily('resources')).toHaveLength(10);
-    expect(getAssetsByStatus('prompted')).toHaveLength(134);
+    expect(getAssetsByStatus('prompted')).toHaveLength(115);
+    expect(getAssetsByStatus('generated-unverified')).toHaveLength(19);
     expect(getAssetsBySourceBasis('direct canon').length).toBeGreaterThan(0);
   });
 
@@ -27,9 +33,11 @@ describe('runtime manifest', () => {
     expect(record?.tooltip.warning).toBeTruthy();
   });
 
-  it('passes runtime validation', () => {
+  it('passes runtime validation when generated files exist', () => {
     const errors = getRuntimeValidationErrors(
-      validateRuntimeManifest(loadAssetManifest().records, { fileExists: () => false }),
+      validateRuntimeManifest(loadAssetManifest().records, {
+        fileExists: p => existsSync(resolve(repoRoot, p)),
+      }),
     );
     expect(errors).toEqual([]);
   });

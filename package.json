@@ -17,7 +17,9 @@
     "assets:ledger:validate": "tsx scripts/validate-assets-ledger.ts",
     "starsilk:validate": "tsx scripts/validate-starsilk-ledger.ts",
     "starsilk:fixtures": "tsx scripts/generate-starsilk-fixtures.ts",
-    "events:materialize": "tsx scripts/materialize-event-json.ts"
+    "events:materialize": "tsx scripts/materialize-event-json.ts",
+    "assets:generate:batch1": "tsx scripts/generate-starsilk-svg-batch.ts",
+    "assets:promote:batch1": "tsx scripts/promote-generated-batch.ts"
   },
   "dependencies": {
     "react": "^19.2.6",

@@ -48,7 +48,10 @@ test.describe('Victory and hazard systems', () => {
       (window as Window & { __egPrepareMacroTest?: () => void }).__egPrepareMacroTest?.();
     });
     await page.getByTestId('tab-system').click();
-    await page.getByTestId('execute-macro-gravity_thread_seal').click();
+    await expect(page.getByTestId('macro-panel')).toBeVisible({ timeout: 15000 });
+    const sealBtn = page.getByTestId('execute-macro-gravity_thread_seal');
+    await expect(sealBtn).toBeEnabled({ timeout: 10000 });
+    await sealBtn.click();
     await expect(page.getByTestId('system-hazard-status')).toBeVisible({ timeout: 5000 }).catch(() => {});
   });
 });

@@ -15,7 +15,7 @@
     "tooltip": null,
     "testId": "resource-starsilk-thread",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "resource-inert-starsilk",
@@ -33,7 +33,7 @@
     "tooltip": null,
     "testId": "resource-inert-starsilk",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "resource-syrin-reagent",
@@ -51,7 +51,7 @@
     "tooltip": null,
     "testId": "resource-syrin-reagent",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "resource-archive-data",
@@ -69,7 +69,7 @@
     "tooltip": null,
     "testId": "resource-archive-data",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "resource-blood-ring-glass",
@@ -87,7 +87,7 @@
     "tooltip": null,
     "testId": "resource-blood-ring-glass",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "resource-siege-lattice-fragment",
@@ -105,7 +105,7 @@
     "tooltip": null,
     "testId": "resource-siege-lattice-fragment",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "resource-macro-labor",
@@ -195,7 +195,7 @@
     "tooltip": null,
     "testId": "victory-starbinding",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "victory-starbinding-stage-forbidden-theory",
@@ -411,7 +411,7 @@
     "tooltip": null,
     "testId": "victory-syrin-inerting",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "victory-ledger-dominion",
@@ -429,7 +429,7 @@
     "tooltip": null,
     "testId": "victory-ledger-dominion",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "victory-blood-eclipse",
@@ -447,7 +447,7 @@
     "tooltip": null,
     "testId": "victory-blood-eclipse",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "victory-archive-continuity",
@@ -465,7 +465,7 @@
     "tooltip": null,
     "testId": "victory-archive-continuity",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "map-star-normal",
@@ -807,7 +807,7 @@
     "tooltip": null,
     "testId": "macro-local-checksum-audit",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "macro-first-dirt-protocol",
@@ -825,7 +825,7 @@
     "tooltip": null,
     "testId": "macro-first-dirt-protocol",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "macro-syrin-inerting-mist",
@@ -843,7 +843,7 @@
     "tooltip": null,
     "testId": "macro-syrin-inerting-mist",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "macro-siege-lattice-anchor",
@@ -861,7 +861,7 @@
     "tooltip": null,
     "testId": "macro-siege-lattice-anchor",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "macro-archive-extraction-loop",
@@ -879,7 +879,7 @@
     "tooltip": null,
     "testId": "macro-archive-extraction-loop",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "macro-drakken-biosphere-render",
@@ -897,7 +897,7 @@
     "tooltip": null,
     "testId": "macro-drakken-biosphere-render",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "macro-gravity-thread-seal",
@@ -915,7 +915,7 @@
     "tooltip": null,
     "testId": "macro-gravity-thread-seal",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "macro-counter-macro-scrub",
@@ -933,7 +933,7 @@
     "tooltip": null,
     "testId": "macro-counter-macro-scrub",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "macro-active-effect-badge",

@@ -22,10 +22,11 @@ function repoFileExists(relativePath: string): boolean {
 }
 
 describe('ledger manifest', () => {
-  it('loads 134 prompted records from assets.manifest.json', () => {
+  it('loads 134 ledger records from assets.manifest.json', () => {
     const records = loadLedgerManifest(manifestPath);
     expect(records).toHaveLength(134);
-    expect(records.every(record => record.status === 'prompted')).toBe(true);
+    expect(records.filter(r => r.status === 'prompted')).toHaveLength(115);
+    expect(records.filter(r => r.status === 'generated-unverified')).toHaveLength(19);
   });
 
   it('exports manifest for app import', () => {
@@ -40,9 +41,11 @@ describe('ledger manifest', () => {
     expect(rows[0].assetId).toBe('audio-ui-confirm');
   });
 
-  it('validates manifest schema without file claims for prompted status', () => {
+  it('validates manifest schema when generated batch files exist', () => {
     const records = loadLedgerManifest(manifestPath);
-    const errors = getLedgerValidationErrors(validateLedgerManifest(records, { fileExists: () => false }));
+    const errors = getLedgerValidationErrors(
+      validateLedgerManifest(records, { fileExists: repoFileExists }),
+    );
     expect(errors).toEqual([]);
   });
 
