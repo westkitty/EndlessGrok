@@ -2,6 +2,8 @@ import { RESOURCE_ASSETS } from './records/resources';
 import { VICTORY_ASSETS } from './records/victory';
 import { MACRO_ASSETS, MACRO_EFFECT_ASSETS } from './records/macros';
 import { MAP_ASSETS } from './records/map';
+import { FLEET_ASSETS } from './records/fleets';
+import { FACTION_ASSETS } from './records/factions';
 import type { AssetFamily, AssetRecord, AssetStatus } from './types';
 
 export const ASSET_REGISTRY: AssetRecord[] = [
@@ -10,6 +12,8 @@ export const ASSET_REGISTRY: AssetRecord[] = [
   ...MACRO_ASSETS,
   ...MACRO_EFFECT_ASSETS,
   ...MAP_ASSETS,
+  ...FLEET_ASSETS,
+  ...FACTION_ASSETS,
 ];
 
 const byId = new Map<string, AssetRecord>();

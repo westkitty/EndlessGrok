@@ -6,8 +6,8 @@ import {
   type FleetFilter,
 } from '../game/fleetManager';
 import { cloneGameState } from '../game/clone';
-import { Icon } from './icons/Icon';
-import { getStanceIconName } from './icons/iconHelpers';
+import { AssetIcon } from './AssetIcon';
+import { getFleetRoleMechanicalKey, getFleetStanceMechanicalKey } from '../data/assets/resolve';
 import { Tooltip } from './Tooltip';
 import type { GameState } from '../game/types';
 
@@ -52,7 +52,7 @@ export function FleetPanel({ state, onUpdate }: Props) {
     <div className="panel-content" data-testid="fleet-manager">
       <div className="section">
         <div className="section-title">
-          <Icon name="fleet" size={14} />
+          <AssetIcon mechanicalKey="fleet:manager" size={14} />
           Fleet Manager ({summaries.length})
         </div>
         <div className="action-buttons" style={{ flexWrap: 'wrap', gap: 4, marginBottom: 8 }}>
@@ -96,11 +96,13 @@ export function FleetPanel({ state, onUpdate }: Props) {
                   )}
                 </div>
                 <div className="fleet-card__stats">
-                  <span>{summary.role}</span>
+                  <span data-testid={`fleet-role-${summary.fleet.id}`}>
+                    <AssetIcon mechanicalKey={getFleetRoleMechanicalKey(summary.role)} size={12} /> {summary.role}
+                  </span>
                   <span>{summary.shipCount} ships</span>
                   <span>Str: {summary.strength}</span>
-                  <span>
-                    <Icon name={getStanceIconName(summary.stance)} size={12} /> {summary.stance}
+                  <span data-testid={`fleet-stance-${summary.fleet.id}`}>
+                    <AssetIcon mechanicalKey={getFleetStanceMechanicalKey(summary.stance)} size={12} /> {summary.stance}
                   </span>
                   <span>{summary.upkeep} cr/upkeep</span>
                 </div>

@@ -83,6 +83,22 @@ export function getAssetAccessibilityLabel(assetOrKey: string | AssetRecord): st
   return record?.accessibilityLabel ?? getAssetDisplayName(assetOrKey);
 }
 
+export function getFleetRoleMechanicalKey(role: string): string {
+  return `fleet:${role}`;
+}
+
+export function getFleetStanceMechanicalKey(stance: string): string {
+  return stance === 'aggressive' ? 'fleet:stance-aggressive' : 'fleet:stance-passive';
+}
+
+export function getFactionEmblemMechanicalKey(emblem: string): string {
+  return `faction:emblem-${emblem}`;
+}
+
+export function getMacroMechanicalKey(macroId: string): string {
+  return `macro:${macroId}`;
+}
+
 export function buildRuntimeTooltip(
   assetOrKey: string | AssetRecord,
   runtime: RuntimeTooltipContext = {},

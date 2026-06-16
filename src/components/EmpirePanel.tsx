@@ -11,8 +11,10 @@ import { getEmpireRankings } from '../game/scoring';
 import { getVisibleMacroIntel, getMacroIntelSummary } from '../game/macroIntel';
 import { VictoryPanel } from './VictoryPanel';
 import { getShipDisplayName } from '../game/ships';
+import { AssetIcon } from './AssetIcon';
+import { getFactionEmblemMechanicalKey, getMacroMechanicalKey } from '../data/assets/resolve';
 import { Icon } from './icons/Icon';
-import { getEmblemIconName, getShipIconName, getStanceIconName } from './icons/iconHelpers';
+import { getShipIconName, getStanceIconName } from './icons/iconHelpers';
 import { ResourceBar } from './ResourceBar';
 import { BattleReportPanel } from './BattleReportPanel';
 import { ProductionOverview } from './ProductionOverview';
@@ -74,7 +76,7 @@ export function EmpirePanel({ state, onUpdate }: Props) {
     <div className="panel-content">
       <div className="section">
         <div className="section-title">
-          <Icon name={getEmblemIconName(player.emblem)} size={16} />
+          <AssetIcon mechanicalKey={getFactionEmblemMechanicalKey(player.emblem)} size={16} />
           {player.name}
         </div>
         <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginBottom: 8 }}>
@@ -86,7 +88,8 @@ export function EmpirePanel({ state, onUpdate }: Props) {
             <div className="stat-card__label">Planets</div>
           </div>
           <Tooltip content="Used for colonization and buildings">
-            <div className="stat-card">
+            <div className="stat-card" data-testid="empire-stat-influence">
+              <AssetIcon mechanicalKey="resource:influence" size={12} />
               <div className="stat-card__value">{player.influence}</div>
               <div className="stat-card__label">Influence</div>
             </div>
@@ -121,9 +124,15 @@ export function EmpirePanel({ state, onUpdate }: Props) {
       <div className="section">
         <div className="section-title">Strategic Resources</div>
         <div className="strategic-resources">
-          <span className="strategic-resource"><Icon name="titanium" size={14} /> {player.strategicResources.titanium}</span>
-          <span className="strategic-resource"><Icon name="antimatter" size={14} /> {player.strategicResources.antimatter}</span>
-          <span className="strategic-resource"><Icon name="darkmatter" size={14} /> {player.strategicResources.darkmatter}</span>
+          <span className="strategic-resource" data-testid="strategic-titanium">
+            <AssetIcon mechanicalKey="resource:titanium" size={14} /> {player.strategicResources.titanium}
+          </span>
+          <span className="strategic-resource" data-testid="strategic-antimatter">
+            <AssetIcon mechanicalKey="resource:antimatter" size={14} /> {player.strategicResources.antimatter}
+          </span>
+          <span className="strategic-resource" data-testid="strategic-darkmatter">
+            <AssetIcon mechanicalKey="resource:darkmatter" size={14} /> {player.strategicResources.darkmatter}
+          </span>
         </div>
       </div>
 
@@ -185,7 +194,7 @@ export function EmpirePanel({ state, onUpdate }: Props) {
               className={`leaderboard-card ${empire.id === player.id ? 'leaderboard-card--player' : ''}`}
             >
               <span className="leaderboard-card__rank">#{rank}</span>
-              <Icon name={getEmblemIconName(empire.emblem)} size={20} />
+              <AssetIcon mechanicalKey={getFactionEmblemMechanicalKey(empire.emblem)} size={20} />
               <span className="leaderboard-card__name" style={{ color: empire.color }}>{empire.name}</span>
               <span className="leaderboard-card__score">{score}</span>
             </div>
@@ -315,7 +324,10 @@ export function EmpirePanel({ state, onUpdate }: Props) {
             ))}
             {macroIntel.slice(0, 6).map(entry => (
               <div key={entry.effectId} className="info-row" data-testid={`empire-macro-${entry.effectId}`}>
-                <span>{entry.macroName} ({entry.sourceEmpireName})</span>
+                <span>
+                  <AssetIcon mechanicalKey={getMacroMechanicalKey(entry.macroId)} size={12} />
+                  {entry.macroName} ({entry.sourceEmpireName})
+                </span>
                 <span>{entry.turnsRemaining}t — {entry.systemName ?? 'empire'}</span>
               </div>
             ))}
