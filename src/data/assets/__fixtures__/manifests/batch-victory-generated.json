@@ -1,0 +1,172 @@
+{
+  "batchId": "batch-victory-generated",
+  "batchName": "Starsilk Victory Icons (Generated)",
+  "sourceAgent": "Starsilk Asset Production Agent",
+  "createdAt": "2026-06-16T18:21:13.989Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "victory-starbinding",
+      "mechanicalKey": "victory:starbinding",
+      "family": "victory",
+      "displayName": "The Starbinding",
+      "filename": "victory-starbinding.svg",
+      "relativePath": "public/assets/icons/victory/victory-starbinding.svg",
+      "status": "generated",
+      "testId": "victory-starbinding",
+      "fallbackIconName": "combat",
+      "visualVariant": "catastrophic",
+      "tooltip": {
+        "title": "The Starbinding",
+        "mechanical": "Research chain → array → archive dives → heliocide → final Partition macro.",
+        "lore": "A ledgered catastrophe sold as necessity.",
+        "canonLabel": "direct_canon",
+        "warning": "Irreversible. Morally compromised. Heliocide-linked. Not heroic.",
+        "requirements": [
+          "Forbidden Starbinding Theory",
+          "Macro Execution",
+          "Archive access",
+          "Starsilk resources"
+        ]
+      },
+      "states": [
+        "locked",
+        "foundation",
+        "active",
+        "completable",
+        "completed"
+      ],
+      "sourceLabel": "victory systems",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "victory-syrin-inerting",
+      "mechanicalKey": "victory:syrinInerting",
+      "family": "victory",
+      "displayName": "Syrin Inerting",
+      "filename": "victory-syrin-inerting.svg",
+      "relativePath": "public/assets/icons/victory/victory-syrin-inerting.svg",
+      "status": "generated",
+      "testId": "victory-syrin-inerting",
+      "fallbackIconName": "research",
+      "visualVariant": "inerting",
+      "tooltip": {
+        "title": "Syrin Inerting",
+        "mechanical": "Inert Starsilk threshold, protected systems, mist applications, zero player heliocide.",
+        "lore": "Syrin chemistry holds the thread still while the galaxy argues about whether that counts as mercy.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "locked",
+        "foundation",
+        "active",
+        "completable",
+        "completed"
+      ],
+      "sourceLabel": "victory systems",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "victory-ledger-dominion",
+      "mechanicalKey": "victory:ledgerDominion",
+      "family": "victory",
+      "displayName": "Ledger Dominion",
+      "filename": "victory-ledger-dominion.svg",
+      "relativePath": "public/assets/icons/victory/victory-ledger-dominion.svg",
+      "status": "generated",
+      "testId": "victory-ledger-dominion",
+      "fallbackIconName": "diplomacy",
+      "tooltip": {
+        "title": "Ledger Dominion",
+        "mechanical": "Foundation only: influence and territorial tracking. Vassalization audits not completable.",
+        "lore": "The Administration dreams of a galaxy that signs every turn.",
+        "canonLabel": "interpretive",
+        "stateLabel": "Foundation — not completable"
+      },
+      "states": [
+        "locked",
+        "foundation",
+        "active",
+        "completable",
+        "completed"
+      ],
+      "sourceLabel": "victory systems",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "victory-blood-eclipse",
+      "mechanicalKey": "victory:bloodEclipse",
+      "family": "victory",
+      "displayName": "Blood Eclipse",
+      "filename": "victory-blood-eclipse.svg",
+      "relativePath": "public/assets/icons/victory/victory-blood-eclipse.svg",
+      "status": "generated",
+      "testId": "victory-blood-eclipse",
+      "fallbackIconName": "combat",
+      "visualVariant": "catastrophic",
+      "tooltip": {
+        "title": "Blood Eclipse",
+        "mechanical": "Foundation only: Blood Ring Glass and biosphere render tracked.",
+        "lore": "Terraforming as conquest biology.",
+        "canonLabel": "canon_faithful",
+        "stateLabel": "Foundation — not completable"
+      },
+      "states": [
+        "locked",
+        "foundation",
+        "active",
+        "completable",
+        "completed"
+      ],
+      "sourceLabel": "victory systems",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "victory-archive-continuity",
+      "mechanicalKey": "victory:archiveContinuity",
+      "family": "victory",
+      "displayName": "Archive Continuity",
+      "filename": "victory-archive-continuity.svg",
+      "relativePath": "public/assets/icons/victory/victory-archive-continuity.svg",
+      "status": "generated",
+      "testId": "victory-archive-continuity",
+      "fallbackIconName": "science",
+      "tooltip": {
+        "title": "Archive Continuity",
+        "mechanical": "Foundation only: Archive Data and research progress tracked.",
+        "lore": "Continuity factions fear erasure more than stagnation.",
+        "canonLabel": "canon_faithful",
+        "stateLabel": "Foundation — not completable"
+      },
+      "states": [
+        "locked",
+        "foundation",
+        "active",
+        "completable",
+        "completed"
+      ],
+      "sourceLabel": "victory systems",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    }
+  ]
+}

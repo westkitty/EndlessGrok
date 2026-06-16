@@ -28,9 +28,9 @@ function victoryAsset(
     },
     testId,
     sourceBasis: 'victory systems',
-    status: 'planned',
+    status: 'generated',
     fallbackIconName: 'research',
-    plannedFiles: { svg: `src/assets/icons/victory/${id}.svg` },
+    plannedFiles: { svg: `public/assets/icons/victory/${id}.svg` },
     ...rest,
   };
 }
@@ -136,7 +136,11 @@ export const VICTORY_ASSETS: AssetRecord[] = [
     'Control a threshold of colonizable worlds.',
     'Territorial fact enforced by fleet and colony count.',
     'victory-domination',
-    { fallbackIconName: 'fleet', status: 'integrated' },
+    {
+      fallbackIconName: 'fleet',
+      status: 'integrated',
+      plannedFiles: { svg: 'src/assets/icons/victory/victory-domination.svg' },
+    },
   ),
   victoryAsset(
     'victory-science',
@@ -145,6 +149,10 @@ export const VICTORY_ASSETS: AssetRecord[] = [
     'Reach quantum computing and broad tech threshold.',
     'Syntax victory through research accumulation.',
     'victory-science',
-    { fallbackIconName: 'science', status: 'integrated' },
+    {
+      fallbackIconName: 'science',
+      status: 'integrated',
+      plannedFiles: { svg: 'src/assets/icons/victory/victory-science.svg' },
+    },
   ),
 ];
