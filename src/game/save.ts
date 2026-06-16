@@ -1,6 +1,12 @@
 import { AUTOSAVE_INTERVAL } from './constants';
-import { deserializeGame, serializeGame } from './game';
-import type { GameState, SaveMetadata, SerializedGameState } from './types';
+import { serializeGame } from './game';
+import {
+  createVersionedSaveFile,
+  parseAndHydrateSave,
+  parseSaveJson,
+  readStoredSavePayload,
+} from './saveFormat';
+import type { GameState, SaveMetadata } from './types';
 
 const LEGACY_KEY = 'endlessgrok-save';
 const AUTOSAVE_KEY = 'endlessgrok-autosave';
@@ -27,13 +33,19 @@ export function buildSaveMetadata(state: GameState, slotId: SaveSlotId = 'slot-0
   };
 }
 
+function buildStoredSavePayload(state: GameState, slotId: SaveSlotId): string {
+  const serialized = serializeGame(state);
+  serialized.saveMetadata = buildSaveMetadata(state, slotId);
+  const envelope = createVersionedSaveFile(serialized, serialized.saveMetadata.savedAt);
+  return JSON.stringify(envelope);
+}
+
 export function saveGame(state: GameState, slotId: SaveSlotId = 'slot-0'): boolean {
   try {
-    const data = serializeGame(state);
-    data.saveMetadata = buildSaveMetadata(state, slotId);
-    localStorage.setItem(slotKey(slotId), JSON.stringify(data));
+    const payload = buildStoredSavePayload(state, slotId);
+    localStorage.setItem(slotKey(slotId), payload);
     if (slotId === 'slot-0' || slotId === 'autosave') {
-      localStorage.setItem(LEGACY_KEY, JSON.stringify(data));
+      localStorage.setItem(LEGACY_KEY, payload);
     }
     return true;
   } catch {
@@ -49,8 +61,9 @@ export function loadGameFromSlot(slotId: SaveSlotId): { state: GameState | null;
   try {
     const raw = localStorage.getItem(slotKey(slotId));
     if (!raw) return { state: null, error: null };
-    const data = JSON.parse(raw) as SerializedGameState;
-    return { state: deserializeGame(data), error: null };
+    const parsed = parseSaveJson(raw);
+    if (parsed.error) return { state: null, error: parsed.error };
+    return parseAndHydrateSave(parsed.raw);
   } catch {
     return { state: null, error: 'Save file is corrupted and could not be loaded.' };
   }
@@ -66,7 +79,9 @@ export function loadGame(): GameState | null {
   try {
     const raw = localStorage.getItem(LEGACY_KEY);
     if (!raw) return null;
-    return deserializeGame(JSON.parse(raw) as SerializedGameState);
+    const parsed = parseSaveJson(raw);
+    if (parsed.error) return null;
+    return parseAndHydrateSave(parsed.raw).state;
   } catch {
     return null;
   }
@@ -80,7 +95,38 @@ export function listSaveMetadata(): (SaveMetadata & { slotId: SaveSlotId; corrup
     try {
       const raw = localStorage.getItem(slotKey(slotId));
       if (!raw) continue;
-      const data = JSON.parse(raw) as SerializedGameState;
+      const parsed = parseSaveJson(raw);
+      if (parsed.error) {
+        results.push({
+          turn: 0,
+          faction: 'Corrupted Save',
+          seed: 0,
+          difficulty: 'normal',
+          galaxySize: 'medium',
+          galaxyShape: 'spiral',
+          savedAt: '',
+          slotId,
+          corrupt: true,
+        });
+        continue;
+      }
+
+      const data = readStoredSavePayload(parsed.raw);
+      if (!data) {
+        results.push({
+          turn: 0,
+          faction: 'Corrupted Save',
+          seed: 0,
+          difficulty: 'normal',
+          galaxySize: 'medium',
+          galaxyShape: 'spiral',
+          savedAt: '',
+          slotId,
+          corrupt: true,
+        });
+        continue;
+      }
+
       if (data.saveMetadata) {
         results.push({ ...data.saveMetadata, slotId });
       } else {
@@ -140,23 +186,19 @@ export function shouldAutosave(turn: number): boolean {
 }
 
 export function exportSaveToJson(state: GameState): string {
-  const data = serializeGame(state);
-  data.saveMetadata = buildSaveMetadata(state);
-  return JSON.stringify(data, null, 2);
+  const serialized = serializeGame(state);
+  serialized.saveMetadata = buildSaveMetadata(state);
+  const envelope = createVersionedSaveFile(serialized, serialized.saveMetadata.savedAt);
+  return JSON.stringify(envelope, null, 2);
 }
 
 export function importSaveFromJson(json: string): { state: GameState | null; error: string | null } {
-  try {
-    const data = JSON.parse(json) as SerializedGameState;
-    if (!data.seed || !data.empires || !data.systems) {
-      return { state: null, error: 'Invalid save file format.' };
-    }
-    const state = deserializeGame(data);
-    saveGame(state, 'slot-0');
-    return { state, error: null };
-  } catch {
-    return { state: null, error: 'Could not parse save file. The file may be corrupted.' };
-  }
+  const parsed = parseSaveJson(json);
+  if (parsed.error) return { state: null, error: parsed.error };
+  const result = parseAndHydrateSave(parsed.raw);
+  if (!result.state) return result;
+  saveGame(result.state, 'slot-0');
+  return result;
 }
 
 export function downloadSave(state: GameState, filename?: string): void {
