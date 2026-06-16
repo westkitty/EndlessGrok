@@ -1,0 +1,26 @@
+{
+  "id": "resource-research-syntax",
+  "displayName": "Resource Research Syntax",
+  "family": "resources",
+  "filename": "resource-research-syntax.svg",
+  "plannedPath": "public/assets/icons/resources/resource-research-syntax.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/resources/resource-research-syntax.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "Science/research output.",
+  "loreMeaning": "Terminal glyph and archive-prism syntax.",
+  "accessibilityLabel": "resource research syntax",
+  "tooltip": {
+    "title": "Research Syntax",
+    "mechanical": "Science/research output.",
+    "lore": "Terminal glyph and archive-prism syntax.",
+    "uiNotes": "Avoid generic flask/atom."
+  },
+  "testId": "resource-research-syntax",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "resource:research-syntax"
+}

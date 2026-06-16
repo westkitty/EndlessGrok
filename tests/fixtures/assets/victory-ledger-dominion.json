@@ -1,0 +1,25 @@
+{
+  "id": "victory-ledger-dominion",
+  "displayName": "Victory Ledger Dominion",
+  "family": "victory",
+  "filename": "victory-ledger-dominion.svg",
+  "plannedPath": "public/assets/icons/victory/victory-ledger-dominion.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/victory/victory-ledger-dominion.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "victory ledger dominion",
+  "tooltip": {
+    "title": "Victory Ledger Dominion",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "victory-ledger-dominion",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "victory:ledger-dominion"
+}

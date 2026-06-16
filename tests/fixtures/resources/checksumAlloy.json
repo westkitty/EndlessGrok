@@ -1,0 +1,18 @@
+{
+  "key": "checksumAlloy",
+  "assetId": "checksum-alloy",
+  "manifestAssetId": "module-defense-checksum-hull",
+  "displayName": "Checksum Alloy",
+  "mechanicalMeaning": "Hull integrity alloy keyed to checksum audit macros.",
+  "loreMeaning": "Administrative metal — strength through verified syntax, not heroics.",
+  "tooltip": {
+    "title": "Checksum Alloy",
+    "mechanical": "Hull integrity alloy keyed to checksum audit macros.",
+    "lore": "Administrative metal — strength through verified syntax, not heroics.",
+    "uiNotes": "Linked to module-defense-checksum-hull."
+  },
+  "iconAssetId": "module-defense-checksum-hull",
+  "testId": "checksum-alloy",
+  "sourceBasis": "direct canon",
+  "status": "prompted"
+}

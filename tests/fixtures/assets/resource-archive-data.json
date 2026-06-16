@@ -1,0 +1,26 @@
+{
+  "id": "resource-archive-data",
+  "displayName": "Resource Archive Data",
+  "family": "resources",
+  "filename": "resource-archive-data.svg",
+  "plannedPath": "public/assets/icons/resources/resource-archive-data.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/resources/resource-archive-data.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "Research and intel resource.",
+  "loreMeaning": "Stellar record or data trace, not soul currency.",
+  "accessibilityLabel": "resource archive data",
+  "tooltip": {
+    "title": "Archive Data",
+    "mechanical": "Research and intel resource.",
+    "lore": "Stellar record or data trace, not soul currency.",
+    "uiNotes": "Use prism/scan-line motifs."
+  },
+  "testId": "resource-archive-data",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "resource:archive-data"
+}

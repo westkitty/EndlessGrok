@@ -1,0 +1,192 @@
+[
+  {
+    "key": "archiveData",
+    "assetId": "resource-archive-data",
+    "manifestAssetId": "resource-archive-data",
+    "displayName": "Archive Data",
+    "mechanicalMeaning": "Research and intel resource.",
+    "loreMeaning": "Stellar record or data trace, not soul currency.",
+    "tooltip": {
+      "title": "Archive Data",
+      "mechanical": "Research and intel resource.",
+      "lore": "Stellar record or data trace, not soul currency.",
+      "uiNotes": "Use prism/scan-line motifs."
+    },
+    "iconAssetId": "resource-archive-data",
+    "testId": "resource-archive-data",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "key": "starsilkThread",
+    "assetId": "resource-starsilk-thread",
+    "manifestAssetId": "resource-starsilk-thread",
+    "displayName": "Starsilk Thread",
+    "mechanicalMeaning": "Rare strategic resource for high-risk Starsilk systems.",
+    "loreMeaning": "Dangerous systemic filament, not fuel.",
+    "tooltip": {
+      "title": "Starsilk Thread",
+      "mechanical": "Rare strategic resource for high-risk Starsilk systems.",
+      "lore": "Dangerous systemic filament, not fuel.",
+      "warning": "Thread misuse escalates diplomatic and hazard pressure.",
+      "uiNotes": "Warning-coded ribbon/barcode icon."
+    },
+    "warning": "Thread misuse escalates diplomatic and hazard pressure.",
+    "iconAssetId": "resource-starsilk-thread",
+    "testId": "resource-starsilk-thread",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "key": "bloodRingGlass",
+    "assetId": "resource-blood-ring-glass",
+    "manifestAssetId": "resource-blood-ring-glass",
+    "displayName": "Blood Ring Glass",
+    "mechanicalMeaning": "Contaminated strategic material.",
+    "loreMeaning": "Atrocity-linked vitrified remnant.",
+    "tooltip": {
+      "title": "Blood Ring Glass",
+      "mechanical": "Contaminated strategic material.",
+      "lore": "Atrocity-linked vitrified remnant.",
+      "warning": "Never present as clean reward.",
+      "uiNotes": "Never present as clean reward."
+    },
+    "warning": "Never present as clean reward.",
+    "iconAssetId": "resource-blood-ring-glass",
+    "testId": "resource-blood-ring-glass",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "key": "siegeLatticeFragment",
+    "assetId": "resource-siege-lattice-fragment",
+    "manifestAssetId": "resource-siege-lattice-fragment",
+    "displayName": "Siege Lattice Fragment",
+    "mechanicalMeaning": "Containment/singularity material.",
+    "loreMeaning": "Black-hole lattice shard and infrastructure fragment.",
+    "tooltip": {
+      "title": "Siege Lattice Fragment",
+      "mechanical": "Containment/singularity material.",
+      "lore": "Black-hole lattice shard and infrastructure fragment.",
+      "warning": "Fortification near singularities remains dangerous.",
+      "uiNotes": "Avoid web/whirlpool shapes."
+    },
+    "warning": "Fortification near singularities remains dangerous.",
+    "iconAssetId": "resource-siege-lattice-fragment",
+    "testId": "resource-siege-lattice-fragment",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "key": "checksumAlloy",
+    "assetId": "checksum-alloy",
+    "manifestAssetId": "module-defense-checksum-hull",
+    "displayName": "Checksum Alloy",
+    "mechanicalMeaning": "Hull integrity alloy keyed to checksum audit macros.",
+    "loreMeaning": "Administrative metal — strength through verified syntax, not heroics.",
+    "tooltip": {
+      "title": "Checksum Alloy",
+      "mechanical": "Hull integrity alloy keyed to checksum audit macros.",
+      "lore": "Administrative metal — strength through verified syntax, not heroics.",
+      "uiNotes": "Linked to module-defense-checksum-hull."
+    },
+    "iconAssetId": "module-defense-checksum-hull",
+    "testId": "checksum-alloy",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "key": "macroCatalyst",
+    "assetId": "resource-macro-labor",
+    "manifestAssetId": "resource-macro-labor",
+    "displayName": "Macro Catalyst",
+    "mechanicalMeaning": "Catalytic capacity that accelerates macro execution loops.",
+    "loreMeaning": "Industrial syntax catalyst — macro labor concentrated for burst output.",
+    "tooltip": {
+      "title": "Macro Catalyst",
+      "mechanical": "Catalytic capacity that accelerates macro execution loops.",
+      "lore": "Industrial syntax catalyst — macro labor concentrated for burst output.",
+      "uiNotes": "Gear-code motif."
+    },
+    "iconAssetId": "resource-macro-labor",
+    "testId": "resource-macro-labor",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "key": "syrinReagent",
+    "assetId": "resource-syrin-reagent",
+    "manifestAssetId": "resource-syrin-reagent",
+    "displayName": "Syrin Reagent",
+    "mechanicalMeaning": "Inerting and bypass resource.",
+    "loreMeaning": "Containment vapor or droplet, not blood.",
+    "tooltip": {
+      "title": "Syrin Reagent",
+      "mechanical": "Inerting and bypass resource.",
+      "lore": "Containment vapor or droplet, not blood.",
+      "warning": "Inerting buys time; it does not erase consequences.",
+      "uiNotes": "Avoid gore/potion cues."
+    },
+    "warning": "Inerting buys time; it does not erase consequences.",
+    "iconAssetId": "resource-syrin-reagent",
+    "testId": "resource-syrin-reagent",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "key": "obsidianPlate",
+    "assetId": "obsidian-plate",
+    "manifestAssetId": "module-defense-obsidian-shell",
+    "displayName": "Obsidian Plate",
+    "mechanicalMeaning": "Dense defensive plating for singularity-adjacent hull stress.",
+    "loreMeaning": "Obsidian shell laminate — containment geometry made solid.",
+    "tooltip": {
+      "title": "Obsidian Plate",
+      "mechanical": "Dense defensive plating for singularity-adjacent hull stress.",
+      "lore": "Obsidian shell laminate — containment geometry made solid.",
+      "uiNotes": "Linked to module-defense-obsidian-shell."
+    },
+    "iconAssetId": "module-defense-obsidian-shell",
+    "testId": "obsidian-plate",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "key": "cinderCore",
+    "assetId": "cinder-core",
+    "manifestAssetId": "module-engine-cinderverge-thrusters",
+    "displayName": "Cinder Core",
+    "mechanicalMeaning": "High-thrust engine core material for cinderverge thrusters.",
+    "loreMeaning": "Cinder-verge burn residue — velocity bought with heat and hazard.",
+    "tooltip": {
+      "title": "Cinder Core",
+      "mechanical": "High-thrust engine core material for cinderverge thrusters.",
+      "lore": "Cinder-verge burn residue — velocity bought with heat and hazard.",
+      "uiNotes": "Linked to module-engine-cinderverge-thrusters."
+    },
+    "iconAssetId": "module-engine-cinderverge-thrusters",
+    "testId": "cinder-core",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "key": "gravityThread",
+    "assetId": "gravity-thread",
+    "manifestAssetId": "macro-gravity-thread-seal",
+    "displayName": "Gravity Thread",
+    "mechanicalMeaning": "Curved gravity boundary material for seals and thread engines.",
+    "loreMeaning": "Partition geometry made tangible — hazard mitigation, not triumph.",
+    "tooltip": {
+      "title": "Gravity Thread",
+      "mechanical": "Curved gravity boundary material for seals and thread engines.",
+      "lore": "Partition geometry made tangible — hazard mitigation, not triumph.",
+      "warning": "Sealing gravity admits the wound stays open.",
+      "uiNotes": "Linked to macro-gravity-thread-seal and gravity-thread engine."
+    },
+    "warning": "Sealing gravity admits the wound stays open.",
+    "iconAssetId": "macro-gravity-thread-seal",
+    "testId": "gravity-thread",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "id": "fleet-combat-risk-medium",
+  "displayName": "Fleet Combat Risk Medium",
+  "family": "fleets",
+  "filename": "fleet-combat-risk-medium.svg",
+  "plannedPath": "public/assets/icons/fleets/fleet-combat-risk-medium.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/fleet-combat-risk-medium.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "fleet combat risk medium",
+  "tooltip": {
+    "title": "Fleet Combat Risk Medium",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "fleet-combat-risk-medium",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "fleet:combat-risk-medium"
+}

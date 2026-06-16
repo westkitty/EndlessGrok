@@ -1,0 +1,25 @@
+{
+  "id": "audio-heliocide-armed",
+  "displayName": "Audio Heliocide Armed",
+  "family": "audio",
+  "filename": "audio-heliocide-armed.ogg",
+  "plannedPath": "public/assets/audio/audio-heliocide-armed.ogg",
+  "plannedFiles": {
+    "ogg": "public/assets/audio/audio-heliocide-armed.ogg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "audio heliocide armed",
+  "tooltip": {
+    "title": "Audio Heliocide Armed",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "audio-heliocide-armed",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "audio:heliocide-armed"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "audio-archive-record-recovered",
+  "displayName": "Audio Archive Record Recovered",
+  "family": "audio",
+  "filename": "audio-archive-record-recovered.ogg",
+  "plannedPath": "public/assets/audio/audio-archive-record-recovered.ogg",
+  "plannedFiles": {
+    "ogg": "public/assets/audio/audio-archive-record-recovered.ogg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "audio archive record recovered",
+  "tooltip": {
+    "title": "Audio Archive Record Recovered",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "audio-archive-record-recovered",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "audio:archive-record-recovered"
+}

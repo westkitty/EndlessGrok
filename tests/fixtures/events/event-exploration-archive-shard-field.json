@@ -1,0 +1,27 @@
+{
+  "id": "event-exploration-archive-shard-field",
+  "assetId": "event-exploration-archive-shard-field",
+  "category": "exploration",
+  "title": "Archive Shard Field Detected",
+  "body": "Long-range scans resolve a debris field of archive shards. Data traces flicker across the lane.",
+  "severity": "medium",
+  "sourceLabel": "interpretive adaptation",
+  "triggerCondition": "explore_system_with_archive_deposit",
+  "affectedScope": "target_system",
+  "mechanicalEffect": "Grants +1 Archive Data on survey completion; increases rival intel interest.",
+  "options": [
+    {
+      "id": "survey",
+      "label": "Survey shards",
+      "mechanicalEffect": "+1 Archive Data"
+    },
+    {
+      "id": "avoid",
+      "label": "Mark hazard and withdraw",
+      "mechanicalEffect": "No gain; reduces diplomatic exposure"
+    }
+  ],
+  "testId": "event-exploration-archive-shard-field",
+  "testFixture": "tests/fixtures/events/event-exploration-archive-shard-field.json",
+  "status": "prompted"
+}

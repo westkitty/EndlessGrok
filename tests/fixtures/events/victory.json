@@ -1,0 +1,67 @@
+[
+  {
+    "id": "event-victory-rival-starbinding-threshold",
+    "title": "Rival Starbinding Threshold",
+    "category": "victory",
+    "trigger": "rival_starbinding_progress_above_0.5",
+    "body": "Intelligence confirms rival Starbinding progress crossed containment threshold.",
+    "choices": [
+      {
+        "id": "contain",
+        "label": "Issue containment protest",
+        "mechanicalEffect": "Threat +5; relations shift"
+      },
+      {
+        "id": "monitor",
+        "label": "Monitor only",
+        "mechanicalEffect": "Intel updated; no relation change"
+      }
+    ],
+    "effects": "Increases threat and relation penalties; triggers rival project warning UI.",
+    "severity": "critical",
+    "sourceLabel": "mechanical UI necessity",
+    "mechanicalTags": [
+      "victory",
+      "critical",
+      "galaxy_diplomacy",
+      "catastrophic"
+    ],
+    "relatedAssetIds": [
+      "event-victory-rival-starbinding-threshold"
+    ],
+    "testId": "event-victory-rival-starbinding-threshold",
+    "logType": "victory"
+  },
+  {
+    "id": "event-victory-archive-continuity-custody",
+    "title": "Archive Continuity Custody",
+    "category": "victory",
+    "trigger": "archive_data_above_threshold",
+    "body": "Archive Custodians demand custody review of recovered data traces. Preservation is ambiguous.",
+    "choices": [
+      {
+        "id": "surrender_custody",
+        "label": "Grant custody review",
+        "mechanicalEffect": "Archive Continuity +0.05; Archive Data -1"
+      },
+      {
+        "id": "retain",
+        "label": "Retain records",
+        "mechanicalEffect": "Relations -6; Archive Continuity stalled"
+      }
+    ],
+    "effects": "Custody compliance improves Archive Continuity foundation; refusal increases rival intel.",
+    "severity": "medium",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "victory",
+      "medium",
+      "empire_diplomacy"
+    ],
+    "relatedAssetIds": [
+      "event-victory-archive-continuity-custody"
+    ],
+    "testId": "event-victory-archive-continuity-custody",
+    "logType": "victory"
+  }
+]

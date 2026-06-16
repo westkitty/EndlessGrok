@@ -1,0 +1,25 @@
+{
+  "id": "map-lane-sealed",
+  "displayName": "Map Lane Sealed",
+  "family": "map",
+  "filename": "map-lane-sealed.svg",
+  "plannedPath": "public/assets/icons/map/map-lane-sealed.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/map/map-lane-sealed.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "map lane sealed",
+  "tooltip": {
+    "title": "Map Lane Sealed",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "map-lane-sealed",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "map:lane-sealed"
+}

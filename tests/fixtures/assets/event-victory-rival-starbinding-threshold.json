@@ -1,0 +1,25 @@
+{
+  "id": "event-victory-rival-starbinding-threshold",
+  "displayName": "Event Victory Rival Starbinding Threshold",
+  "family": "events",
+  "filename": "event-victory-rival-starbinding-threshold.json",
+  "plannedPath": "src/data/events/event-victory-rival-starbinding-threshold.json",
+  "plannedFiles": {
+    "json": "src/data/events/event-victory-rival-starbinding-threshold.json"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "event victory rival starbinding threshold",
+  "tooltip": {
+    "title": "Event Victory Rival Starbinding Threshold",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "event-victory-rival-starbinding-threshold",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "event:victory-rival-starbinding-threshold"
+}

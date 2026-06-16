@@ -1,0 +1,27 @@
+{
+  "id": "event-diplomacy-drakken-rendering-notice",
+  "assetId": "event-diplomacy-drakken-rendering-notice",
+  "category": "diplomacy",
+  "title": "Drakken Rendering Notice",
+  "body": "Drakken Genesis Host issues rendering notice for contested biosphere. Overwrite pressure increases.",
+  "severity": "high",
+  "sourceLabel": "direct canon",
+  "triggerCondition": "drakken_faction_adjacent_to_player_colony",
+  "affectedScope": "target_planet",
+  "mechanicalEffect": "Increases Drakken pressure; Blood Ring Glass demand if biosphere macros used.",
+  "options": [
+    {
+      "id": "negotiate",
+      "label": "Open rendering talks",
+      "mechanicalEffect": "Delay pressure 3 turns"
+    },
+    {
+      "id": "fortify",
+      "label": "Fortify biosphere",
+      "mechanicalEffect": "Industry cost; pressure continues"
+    }
+  ],
+  "testId": "event-diplomacy-drakken-rendering-notice",
+  "testFixture": "tests/fixtures/events/event-diplomacy-drakken-rendering-notice.json",
+  "status": "prompted"
+}

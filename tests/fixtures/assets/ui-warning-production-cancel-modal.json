@@ -1,0 +1,25 @@
+{
+  "id": "ui-warning-production-cancel-modal",
+  "displayName": "Ui Warning Production Cancel Modal",
+  "family": "ui",
+  "filename": "ui-warning-production-cancel-modal.svg",
+  "plannedPath": "public/assets/icons/ui/ui-warning-production-cancel-modal.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/ui/ui-warning-production-cancel-modal.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "ui warning production cancel modal",
+  "tooltip": {
+    "title": "Ui Warning Production Cancel Modal",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "ui-warning-production-cancel-modal",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:warning-production-cancel-modal"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "map-fog-intel-mask",
+  "displayName": "Map Fog Intel Mask",
+  "family": "map",
+  "filename": "map-fog-intel-mask.svg",
+  "plannedPath": "public/assets/icons/map/map-fog-intel-mask.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/map/map-fog-intel-mask.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "map fog intel mask",
+  "tooltip": {
+    "title": "Map Fog Intel Mask",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "map-fog-intel-mask",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "map:fog-intel-mask"
+}

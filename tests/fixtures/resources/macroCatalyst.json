@@ -1,0 +1,18 @@
+{
+  "key": "macroCatalyst",
+  "assetId": "resource-macro-labor",
+  "manifestAssetId": "resource-macro-labor",
+  "displayName": "Macro Catalyst",
+  "mechanicalMeaning": "Catalytic capacity that accelerates macro execution loops.",
+  "loreMeaning": "Industrial syntax catalyst — macro labor concentrated for burst output.",
+  "tooltip": {
+    "title": "Macro Catalyst",
+    "mechanical": "Catalytic capacity that accelerates macro execution loops.",
+    "lore": "Industrial syntax catalyst — macro labor concentrated for burst output.",
+    "uiNotes": "Gear-code motif."
+  },
+  "iconAssetId": "resource-macro-labor",
+  "testId": "resource-macro-labor",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted"
+}

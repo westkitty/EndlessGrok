@@ -1,0 +1,25 @@
+{
+  "id": "faction-diplomacy-tone-pack-solidarity-cells-partition-front",
+  "displayName": "Faction Diplomacy Tone Pack Solidarity Cells Partition Front",
+  "family": "factions",
+  "filename": "faction-diplomacy-tone-pack-solidarity-cells-partition-front.json",
+  "plannedPath": "src/data/factions/faction-diplomacy-tone-pack-solidarity-cells-partition-front.json",
+  "plannedFiles": {
+    "json": "src/data/factions/faction-diplomacy-tone-pack-solidarity-cells-partition-front.json"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "faction diplomacy tone pack solidarity cells partition front",
+  "tooltip": {
+    "title": "Faction Diplomacy Tone Pack Solidarity Cells Partition Front",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "faction-diplomacy-tone-pack-solidarity-cells-partition-front",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "faction:diplomacy-tone-pack-solidarity-cells-partition-front"
+}

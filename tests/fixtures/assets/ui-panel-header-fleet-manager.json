@@ -1,0 +1,25 @@
+{
+  "id": "ui-panel-header-fleet-manager",
+  "displayName": "Ui Panel Header Fleet Manager",
+  "family": "ui",
+  "filename": "ui-panel-header-fleet-manager.svg",
+  "plannedPath": "public/assets/icons/ui/ui-panel-header-fleet-manager.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/ui/ui-panel-header-fleet-manager.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "ui panel header fleet manager",
+  "tooltip": {
+    "title": "Ui Panel Header Fleet Manager",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "ui-panel-header-fleet-manager",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:panel-header-fleet-manager"
+}

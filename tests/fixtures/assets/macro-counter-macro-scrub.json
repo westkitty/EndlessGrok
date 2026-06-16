@@ -1,0 +1,25 @@
+{
+  "id": "macro-counter-macro-scrub",
+  "displayName": "Macro Counter Macro Scrub",
+  "family": "macros",
+  "filename": "macro-counter-macro-scrub.svg",
+  "plannedPath": "public/assets/icons/macros/macro-counter-macro-scrub.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/macros/macro-counter-macro-scrub.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "macro counter macro scrub",
+  "tooltip": {
+    "title": "Macro Counter Macro Scrub",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "macro-counter-macro-scrub",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "macro:counter-macro-scrub"
+}

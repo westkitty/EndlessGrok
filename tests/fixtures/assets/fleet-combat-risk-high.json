@@ -1,0 +1,25 @@
+{
+  "id": "fleet-combat-risk-high",
+  "displayName": "Fleet Combat Risk High",
+  "family": "fleets",
+  "filename": "fleet-combat-risk-high.svg",
+  "plannedPath": "public/assets/icons/fleets/fleet-combat-risk-high.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/fleet-combat-risk-high.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "fleet combat risk high",
+  "tooltip": {
+    "title": "Fleet Combat Risk High",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "fleet-combat-risk-high",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "fleet:combat-risk-high"
+}

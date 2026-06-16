@@ -1,0 +1,493 @@
+[
+  {
+    "id": "event-exploration-archive-shard-field",
+    "title": "Archive Shard Field Detected",
+    "category": "anomalies",
+    "trigger": "explore_system_with_archive_deposit",
+    "body": "Long-range scans resolve a debris field of archive shards. Data traces flicker across the lane.",
+    "choices": [
+      {
+        "id": "survey",
+        "label": "Survey shards",
+        "mechanicalEffect": "+1 Archive Data"
+      },
+      {
+        "id": "avoid",
+        "label": "Mark hazard and withdraw",
+        "mechanicalEffect": "No gain; reduces diplomatic exposure"
+      }
+    ],
+    "effects": "Grants +1 Archive Data on survey completion; increases rival intel interest.",
+    "severity": "medium",
+    "sourceLabel": "interpretive adaptation",
+    "mechanicalTags": [
+      "exploration",
+      "medium",
+      "target_system"
+    ],
+    "relatedAssetIds": [
+      "event-exploration-archive-shard-field"
+    ],
+    "testId": "event-exploration-archive-shard-field",
+    "logType": "explore"
+  },
+  {
+    "id": "event-exploration-starsilk-leak-detected",
+    "title": "Starsilk Leak Detected",
+    "category": "anomalies",
+    "trigger": "system_has_starsilk_hazard",
+    "body": "Containment sensors report thread bleed in local space. The leak is active, not historical.",
+    "choices": [
+      {
+        "id": "contain",
+        "label": "Deploy containment protocol",
+        "mechanicalEffect": "Hazard flagged; Syrin cost if inerting available"
+      },
+      {
+        "id": "log",
+        "label": "Log and continue",
+        "mechanicalEffect": "Hazard escalates next turn"
+      }
+    ],
+    "effects": "Applies Starsilk hazard flag; increases macro and diplomatic pressure if ignored.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "exploration",
+      "high",
+      "target_system"
+    ],
+    "relatedAssetIds": [
+      "event-exploration-starsilk-leak-detected"
+    ],
+    "testId": "event-exploration-starsilk-leak-detected",
+    "logType": "explore"
+  },
+  {
+    "id": "event-resource-blood-ring-glass-recovered",
+    "title": "Blood Ring Glass Recovered",
+    "category": "resources",
+    "trigger": "deposit_blood_ring_glass_discovered",
+    "body": "Vitrified remnant extracted from a burned ring structure. The material is filed under infrastructure, not reward.",
+    "choices": [
+      {
+        "id": "file",
+        "label": "File under quarantine",
+        "mechanicalEffect": "+1 Blood Ring Glass, flagged contaminated"
+      },
+      {
+        "id": "reject",
+        "label": "Reject extraction",
+        "mechanicalEffect": "No resource; approval +2"
+      }
+    ],
+    "effects": "+1 Blood Ring Glass; diplomatic penalty from non-Drakken factions on first use.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "resource",
+      "high",
+      "empire_inventory"
+    ],
+    "relatedAssetIds": [
+      "event-resource-blood-ring-glass-recovered"
+    ],
+    "testId": "event-resource-blood-ring-glass-recovered",
+    "canonSafetyNotes": "Atrocity-linked; never glamorize.",
+    "logType": "event"
+  },
+  {
+    "id": "event-resource-siege-lattice-fragment-unstable",
+    "title": "Siege Lattice Fragment Unstable",
+    "category": "resources",
+    "trigger": "siege_lattice_fragment_in_singularity_system",
+    "body": "Lattice shard resonance exceeds containment brackets. Instability is rising.",
+    "choices": [
+      {
+        "id": "anchor",
+        "label": "Anchor lattice",
+        "mechanicalEffect": "Enables fortification macro; hazard persists"
+      },
+      {
+        "id": "jettison",
+        "label": "Jettison fragment",
+        "mechanicalEffect": "Lose fragment; hazard -1"
+      }
+    ],
+    "effects": "Fragment remains usable but system hazard increases until anchored or sealed.",
+    "severity": "critical",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "resource",
+      "critical",
+      "target_system"
+    ],
+    "relatedAssetIds": [
+      "event-resource-siege-lattice-fragment-unstable"
+    ],
+    "testId": "event-resource-siege-lattice-fragment-unstable",
+    "logType": "event"
+  },
+  {
+    "id": "event-macro-syrin-inerting-mist-executed",
+    "title": "Syrin Inerting Mist Executed",
+    "category": "macros",
+    "trigger": "macro_syrin_inerting_mist_executed",
+    "body": "Inerting mist deployed. Hazard suppression active for fixed duration. Cost logged.",
+    "choices": [
+      {
+        "id": "acknowledge",
+        "label": "Acknowledge report",
+        "mechanicalEffect": "Apply mist duration and costs"
+      }
+    ],
+    "effects": "Suppresses Starsilk hazard 5 turns; consumes Syrin Reagent; counts toward inerting victory tracking.",
+    "severity": "medium",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "macro",
+      "medium",
+      "target_system"
+    ],
+    "relatedAssetIds": [
+      "event-macro-syrin-inerting-mist-executed"
+    ],
+    "testId": "event-macro-syrin-inerting-mist-executed",
+    "logType": "macro"
+  },
+  {
+    "id": "event-macro-counter-macro-scrub-failed",
+    "title": "Counter-Macro Scrub Failed",
+    "category": "macros",
+    "trigger": "counter_macro_scrub_against_lattice_anchored_macro",
+    "body": "Checksum scrub could not dislodge enemy macro. Lattice anchoring resisted removal.",
+    "choices": [
+      {
+        "id": "retry",
+        "label": "Schedule second scrub",
+        "mechanicalEffect": "Cooldown applies; additional cost"
+      },
+      {
+        "id": "accept",
+        "label": "Accept failure",
+        "mechanicalEffect": "No change; hazard remains"
+      }
+    ],
+    "effects": "Enemy macro remains; Archive Data and Syrin Reagent spent without effect.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "macro",
+      "high",
+      "target_system"
+    ],
+    "relatedAssetIds": [
+      "event-macro-counter-macro-scrub-failed"
+    ],
+    "testId": "event-macro-counter-macro-scrub-failed",
+    "logType": "macro"
+  },
+  {
+    "id": "event-diplomacy-ledger-audit-demand",
+    "title": "Ledger Audit Demand",
+    "category": "diplomacy",
+    "trigger": "relation_with_ledger_administration_below_threshold",
+    "body": "Ledger Administration requests checksum audit of your macro registry. Refusal carries relation penalty.",
+    "choices": [
+      {
+        "id": "comply",
+        "label": "Submit audit",
+        "mechanicalEffect": "Relations +8; approval -3"
+      },
+      {
+        "id": "refuse",
+        "label": "Refuse audit",
+        "mechanicalEffect": "Relations -12; threat +5"
+      }
+    ],
+    "effects": "Audit compliance improves relations; refusal reduces relations and increases threat.",
+    "severity": "medium",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "diplomacy",
+      "medium",
+      "empire_diplomacy"
+    ],
+    "relatedAssetIds": [
+      "event-diplomacy-ledger-audit-demand"
+    ],
+    "testId": "event-diplomacy-ledger-audit-demand",
+    "logType": "diplomacy"
+  },
+  {
+    "id": "event-diplomacy-drakken-rendering-notice",
+    "title": "Drakken Rendering Notice",
+    "category": "diplomacy",
+    "trigger": "drakken_faction_adjacent_to_player_colony",
+    "body": "Drakken Genesis Host issues rendering notice for contested biosphere. Overwrite pressure increases.",
+    "choices": [
+      {
+        "id": "negotiate",
+        "label": "Open rendering talks",
+        "mechanicalEffect": "Delay pressure 3 turns"
+      },
+      {
+        "id": "fortify",
+        "label": "Fortify biosphere",
+        "mechanicalEffect": "Industry cost; pressure continues"
+      }
+    ],
+    "effects": "Increases Drakken pressure; Blood Ring Glass demand if biosphere macros used.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "diplomacy",
+      "high",
+      "target_planet"
+    ],
+    "relatedAssetIds": [
+      "event-diplomacy-drakken-rendering-notice"
+    ],
+    "testId": "event-diplomacy-drakken-rendering-notice",
+    "logType": "diplomacy"
+  },
+  {
+    "id": "event-combat-checksum-hull-breach",
+    "title": "Checksum Hull Breach",
+    "category": "combat",
+    "trigger": "combat_with_checksum_hull_equipped",
+    "body": "Hull integrity failed checksum mid-engagement. Breach is procedural, not heroic.",
+    "choices": [
+      {
+        "id": "report",
+        "label": "Log breach",
+        "mechanicalEffect": "Apply damage modifier"
+      },
+      {
+        "id": "withdraw",
+        "label": "Emergency withdraw",
+        "mechanicalEffect": "End combat; morale penalty"
+      }
+    ],
+    "effects": "Fleet takes increased damage; defense modules stressed.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "combat",
+      "high",
+      "target_fleet"
+    ],
+    "relatedAssetIds": [
+      "event-combat-checksum-hull-breach"
+    ],
+    "testId": "event-combat-checksum-hull-breach",
+    "logType": "combat"
+  },
+  {
+    "id": "event-victory-rival-starbinding-threshold",
+    "title": "Rival Starbinding Threshold",
+    "category": "victory",
+    "trigger": "rival_starbinding_progress_above_0.5",
+    "body": "Intelligence confirms rival Starbinding progress crossed containment threshold.",
+    "choices": [
+      {
+        "id": "contain",
+        "label": "Issue containment protest",
+        "mechanicalEffect": "Threat +5; relations shift"
+      },
+      {
+        "id": "monitor",
+        "label": "Monitor only",
+        "mechanicalEffect": "Intel updated; no relation change"
+      }
+    ],
+    "effects": "Increases threat and relation penalties; triggers rival project warning UI.",
+    "severity": "critical",
+    "sourceLabel": "mechanical UI necessity",
+    "mechanicalTags": [
+      "victory",
+      "critical",
+      "galaxy_diplomacy",
+      "catastrophic"
+    ],
+    "relatedAssetIds": [
+      "event-victory-rival-starbinding-threshold"
+    ],
+    "testId": "event-victory-rival-starbinding-threshold",
+    "logType": "victory"
+  },
+  {
+    "id": "event-victory-heliocide-confirmation",
+    "title": "Heliocide Confirmation Required",
+    "category": "starbinding",
+    "trigger": "starbinding_heliocide_stage_active",
+    "body": "Heliocide sequence armed. Confirmation will collapse the target star irreversibly.",
+    "choices": [
+      {
+        "id": "confirm",
+        "label": "Confirm heliocide",
+        "mechanicalEffect": "Begin collapse timer; irreversible"
+      },
+      {
+        "id": "abort",
+        "label": "Abort sequence",
+        "mechanicalEffect": "Starbinding progress stalls; relations +3"
+      }
+    ],
+    "effects": "Irreversible stellar collapse on confirm; diplomatic crisis triggered.",
+    "severity": "critical",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "victory",
+      "critical",
+      "target_star",
+      "irreversible"
+    ],
+    "relatedAssetIds": [
+      "event-victory-heliocide-confirmation"
+    ],
+    "testId": "event-victory-heliocide-confirmation",
+    "canonSafetyNotes": "Irreversible; report cost not triumph.",
+    "logType": "heliocide"
+  },
+  {
+    "id": "event-victory-archive-continuity-custody",
+    "title": "Archive Continuity Custody",
+    "category": "victory",
+    "trigger": "archive_data_above_threshold",
+    "body": "Archive Custodians demand custody review of recovered data traces. Preservation is ambiguous.",
+    "choices": [
+      {
+        "id": "surrender_custody",
+        "label": "Grant custody review",
+        "mechanicalEffect": "Archive Continuity +0.05; Archive Data -1"
+      },
+      {
+        "id": "retain",
+        "label": "Retain records",
+        "mechanicalEffect": "Relations -6; Archive Continuity stalled"
+      }
+    ],
+    "effects": "Custody compliance improves Archive Continuity foundation; refusal increases rival intel.",
+    "severity": "medium",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "victory",
+      "medium",
+      "empire_diplomacy"
+    ],
+    "relatedAssetIds": [
+      "event-victory-archive-continuity-custody"
+    ],
+    "testId": "event-victory-archive-continuity-custody",
+    "logType": "victory"
+  },
+  {
+    "id": "discovery-starsilk-thread",
+    "title": "Starsilk Thread Isolated",
+    "category": "resources",
+    "trigger": "first_starsilkThread_gain",
+    "body": "Reality-code strand logged. Handle with containment protocol.",
+    "choices": [
+      {
+        "id": "ack",
+        "label": "Acknowledge",
+        "mechanicalEffect": "Flag first discovery"
+      }
+    ],
+    "effects": "First Starsilk Thread catalogued.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "discovery",
+      "starsilk",
+      "containment"
+    ],
+    "relatedAssetIds": [
+      "resource-starsilk-thread"
+    ],
+    "testId": "discovery-starsilk-thread",
+    "canonSafetyNotes": "Not fuel. Containment problem.",
+    "logType": "event"
+  },
+  {
+    "id": "discovery-syrin-reagent",
+    "title": "Syrin Reagent Catalogued",
+    "category": "resources",
+    "trigger": "first_syrinReagent_gain",
+    "body": "Inerting chemistry confirmed.",
+    "choices": [
+      {
+        "id": "ack",
+        "label": "Acknowledge",
+        "mechanicalEffect": "Flag first discovery"
+      }
+    ],
+    "effects": "First Syrin Reagent catalogued.",
+    "severity": "medium",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "discovery",
+      "syrin",
+      "inerting"
+    ],
+    "relatedAssetIds": [
+      "resource-syrin-reagent"
+    ],
+    "testId": "discovery-syrin-reagent",
+    "logType": "event"
+  },
+  {
+    "id": "discovery-first-macro",
+    "title": "First Macro Execution",
+    "category": "macros",
+    "trigger": "first_macro_executed",
+    "body": "The universe accepted the loop.",
+    "choices": [
+      {
+        "id": "ack",
+        "label": "Acknowledge",
+        "mechanicalEffect": "Flag first macro"
+      }
+    ],
+    "effects": "First macro execution logged.",
+    "severity": "medium",
+    "sourceLabel": "mechanical UI necessity",
+    "mechanicalTags": [
+      "macro",
+      "execution"
+    ],
+    "relatedAssetIds": [
+      "macro-syrin-inerting-mist"
+    ],
+    "testId": "discovery-first-macro",
+    "logType": "macro"
+  },
+  {
+    "id": "starbinding-stage-advance",
+    "title": "Starbinding Stage Advance",
+    "category": "starbinding",
+    "trigger": "starbinding_stage_increased",
+    "body": "Stage label emitted from Starbinding progression.",
+    "choices": [
+      {
+        "id": "ack",
+        "label": "Acknowledge",
+        "mechanicalEffect": "Log stage"
+      }
+    ],
+    "effects": "Starbinding stage counter incremented.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "starbinding",
+      "stage"
+    ],
+    "relatedAssetIds": [
+      "victory-starbinding"
+    ],
+    "testId": "starbinding-stage-advance",
+    "canonSafetyNotes": "Never frame as clean triumph.",
+    "logType": "starbinding"
+  }
+]

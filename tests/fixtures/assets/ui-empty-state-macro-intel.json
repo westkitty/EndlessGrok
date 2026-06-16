@@ -1,0 +1,25 @@
+{
+  "id": "ui-empty-state-macro-intel",
+  "displayName": "Ui Empty State Macro Intel",
+  "family": "ui",
+  "filename": "ui-empty-state-macro-intel.svg",
+  "plannedPath": "public/assets/icons/ui/ui-empty-state-macro-intel.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/ui/ui-empty-state-macro-intel.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "ui empty state macro intel",
+  "tooltip": {
+    "title": "Ui Empty State Macro Intel",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "ui-empty-state-macro-intel",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:empty-state-macro-intel"
+}

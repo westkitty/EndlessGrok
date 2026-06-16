@@ -1,0 +1,25 @@
+{
+  "id": "ui-empty-state-victory-paths",
+  "displayName": "Ui Empty State Victory Paths",
+  "family": "ui",
+  "filename": "ui-empty-state-victory-paths.svg",
+  "plannedPath": "public/assets/icons/ui/ui-empty-state-victory-paths.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/ui/ui-empty-state-victory-paths.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "ui empty state victory paths",
+  "tooltip": {
+    "title": "Ui Empty State Victory Paths",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "ui-empty-state-victory-paths",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:empty-state-victory-paths"
+}

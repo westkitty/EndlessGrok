@@ -1,0 +1,25 @@
+{
+  "id": "victory-starbinding-stage-final-macro-execution",
+  "displayName": "Victory Starbinding Stage Final Macro Execution",
+  "family": "victory",
+  "filename": "victory-starbinding-stage-final-macro-execution.svg",
+  "plannedPath": "public/assets/icons/victory/victory-starbinding-stage-final-macro-execution.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/victory/victory-starbinding-stage-final-macro-execution.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "victory starbinding stage final macro execution",
+  "tooltip": {
+    "title": "Victory Starbinding Stage Final Macro Execution",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "victory-starbinding-stage-final-macro-execution",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "victory:starbinding-stage-final-macro-execution"
+}

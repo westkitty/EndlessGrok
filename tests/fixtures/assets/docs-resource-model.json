@@ -1,0 +1,25 @@
+{
+  "id": "docs-resource-model",
+  "displayName": "Docs Resource Model",
+  "family": "ui",
+  "filename": "resource-model.md",
+  "plannedPath": "docs/resource-model.md",
+  "plannedFiles": {
+    "md": "docs/resource-model.md"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "docs resource model",
+  "tooltip": {
+    "title": "Docs Resource Model",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "docs-resource-model",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:docs-resource-model"
+}

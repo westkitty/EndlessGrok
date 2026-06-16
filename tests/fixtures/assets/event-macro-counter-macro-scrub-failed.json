@@ -1,0 +1,25 @@
+{
+  "id": "event-macro-counter-macro-scrub-failed",
+  "displayName": "Event Macro Counter Macro Scrub Failed",
+  "family": "events",
+  "filename": "event-macro-counter-macro-scrub-failed.json",
+  "plannedPath": "src/data/events/event-macro-counter-macro-scrub-failed.json",
+  "plannedFiles": {
+    "json": "src/data/events/event-macro-counter-macro-scrub-failed.json"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "event macro counter macro scrub failed",
+  "tooltip": {
+    "title": "Event Macro Counter Macro Scrub Failed",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "event-macro-counter-macro-scrub-failed",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "event:macro-counter-macro-scrub-failed"
+}

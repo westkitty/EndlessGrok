@@ -1,0 +1,66 @@
+[
+  {
+    "id": "event-diplomacy-ledger-audit-demand",
+    "title": "Ledger Audit Demand",
+    "category": "diplomacy",
+    "trigger": "relation_with_ledger_administration_below_threshold",
+    "body": "Ledger Administration requests checksum audit of your macro registry. Refusal carries relation penalty.",
+    "choices": [
+      {
+        "id": "comply",
+        "label": "Submit audit",
+        "mechanicalEffect": "Relations +8; approval -3"
+      },
+      {
+        "id": "refuse",
+        "label": "Refuse audit",
+        "mechanicalEffect": "Relations -12; threat +5"
+      }
+    ],
+    "effects": "Audit compliance improves relations; refusal reduces relations and increases threat.",
+    "severity": "medium",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "diplomacy",
+      "medium",
+      "empire_diplomacy"
+    ],
+    "relatedAssetIds": [
+      "event-diplomacy-ledger-audit-demand"
+    ],
+    "testId": "event-diplomacy-ledger-audit-demand",
+    "logType": "diplomacy"
+  },
+  {
+    "id": "event-diplomacy-drakken-rendering-notice",
+    "title": "Drakken Rendering Notice",
+    "category": "diplomacy",
+    "trigger": "drakken_faction_adjacent_to_player_colony",
+    "body": "Drakken Genesis Host issues rendering notice for contested biosphere. Overwrite pressure increases.",
+    "choices": [
+      {
+        "id": "negotiate",
+        "label": "Open rendering talks",
+        "mechanicalEffect": "Delay pressure 3 turns"
+      },
+      {
+        "id": "fortify",
+        "label": "Fortify biosphere",
+        "mechanicalEffect": "Industry cost; pressure continues"
+      }
+    ],
+    "effects": "Increases Drakken pressure; Blood Ring Glass demand if biosphere macros used.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "diplomacy",
+      "high",
+      "target_planet"
+    ],
+    "relatedAssetIds": [
+      "event-diplomacy-drakken-rendering-notice"
+    ],
+    "testId": "event-diplomacy-drakken-rendering-notice",
+    "logType": "diplomacy"
+  }
+]

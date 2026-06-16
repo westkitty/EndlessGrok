@@ -1,0 +1,25 @@
+{
+  "id": "docs-faction-guide",
+  "displayName": "Docs Faction Guide",
+  "family": "ui",
+  "filename": "faction-guide.md",
+  "plannedPath": "docs/faction-guide.md",
+  "plannedFiles": {
+    "md": "docs/faction-guide.md"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "docs faction guide",
+  "tooltip": {
+    "title": "Docs Faction Guide",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "docs-faction-guide",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:docs-faction-guide"
+}

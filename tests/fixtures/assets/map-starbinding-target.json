@@ -1,0 +1,25 @@
+{
+  "id": "map-starbinding-target",
+  "displayName": "Map Starbinding Target",
+  "family": "map",
+  "filename": "map-starbinding-target.svg",
+  "plannedPath": "public/assets/icons/map/map-starbinding-target.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/map/map-starbinding-target.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "map starbinding target",
+  "tooltip": {
+    "title": "Map Starbinding Target",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "map-starbinding-target",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "map:starbinding-target"
+}

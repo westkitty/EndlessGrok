@@ -1,0 +1,25 @@
+{
+  "id": "archive-continuity",
+  "displayName": "Archive Continuity",
+  "assetId": "victory-archive-continuity",
+  "mechanicalMeaning": "Preservation victory through Archive Data custody and research syntax thresholds.",
+  "loreMeaning": "Memory kept against Partition pressure. Preservation remains morally ambiguous.",
+  "warning": "Custody is not innocence. Records can be weaponized.",
+  "completable": false,
+  "stages": [
+    {
+      "id": "victory-archive-continuity",
+      "assetId": "victory-archive-continuity",
+      "pathId": "archive-continuity",
+      "stageOrder": 1,
+      "displayName": "Archive Continuity",
+      "mechanicalMeaning": "Foundation tracking for archive custody progress.",
+      "loreMeaning": "Continuity factions fear erasure more than stagnation.",
+      "irreversible": false,
+      "testId": "victory-archive-continuity",
+      "status": "prompted"
+    }
+  ],
+  "testId": "victory-archive-continuity",
+  "status": "prompted"
+}

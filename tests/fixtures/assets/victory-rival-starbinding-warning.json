@@ -1,0 +1,25 @@
+{
+  "id": "victory-rival-starbinding-warning",
+  "displayName": "Victory Rival Starbinding Warning",
+  "family": "victory",
+  "filename": "victory-rival-starbinding-warning.svg",
+  "plannedPath": "public/assets/icons/victory/victory-rival-starbinding-warning.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/victory/victory-rival-starbinding-warning.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "victory rival starbinding warning",
+  "tooltip": {
+    "title": "Victory Rival Starbinding Warning",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "victory-rival-starbinding-warning",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "victory:rival-starbinding-warning"
+}

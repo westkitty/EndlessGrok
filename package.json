@@ -13,7 +13,11 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "assets:validate": "tsx scripts/validate-asset-manifest.ts",
-    "assets:preview": "tsx scripts/preview-asset-manifest.ts"
+    "assets:preview": "tsx scripts/preview-asset-manifest.ts",
+    "assets:ledger:validate": "tsx scripts/validate-assets-ledger.ts",
+    "starsilk:validate": "tsx scripts/validate-starsilk-ledger.ts",
+    "starsilk:fixtures": "tsx scripts/generate-starsilk-fixtures.ts",
+    "events:materialize": "tsx scripts/materialize-event-json.ts"
   },
   "dependencies": {
     "react": "^19.2.6",

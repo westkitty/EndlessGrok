@@ -1,0 +1,25 @@
+{
+  "id": "audio-diplomacy-crisis",
+  "displayName": "Audio Diplomacy Crisis",
+  "family": "audio",
+  "filename": "audio-diplomacy-crisis.ogg",
+  "plannedPath": "public/assets/audio/audio-diplomacy-crisis.ogg",
+  "plannedFiles": {
+    "ogg": "public/assets/audio/audio-diplomacy-crisis.ogg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "audio diplomacy crisis",
+  "tooltip": {
+    "title": "Audio Diplomacy Crisis",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "audio-diplomacy-crisis",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "audio:diplomacy-crisis"
+}

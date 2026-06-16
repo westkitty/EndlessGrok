@@ -1,0 +1,27 @@
+{
+  "id": "resource-starsilk-thread",
+  "displayName": "Resource Starsilk Thread",
+  "family": "resources",
+  "filename": "resource-starsilk-thread.svg",
+  "plannedPath": "public/assets/icons/resources/resource-starsilk-thread.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/resources/resource-starsilk-thread.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "Rare strategic resource for high-risk Starsilk systems.",
+  "loreMeaning": "Dangerous systemic filament, not fuel.",
+  "accessibilityLabel": "resource starsilk thread",
+  "tooltip": {
+    "title": "Starsilk Thread",
+    "mechanical": "Rare strategic resource for high-risk Starsilk systems.",
+    "lore": "Dangerous systemic filament, not fuel.",
+    "warning": "Thread misuse escalates diplomatic and hazard pressure.",
+    "uiNotes": "Warning-coded ribbon/barcode icon."
+  },
+  "testId": "resource-starsilk-thread",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "resource:starsilk-thread"
+}

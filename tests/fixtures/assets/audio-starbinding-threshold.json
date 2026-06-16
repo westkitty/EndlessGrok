@@ -1,0 +1,25 @@
+{
+  "id": "audio-starbinding-threshold",
+  "displayName": "Audio Starbinding Threshold",
+  "family": "audio",
+  "filename": "audio-starbinding-threshold.ogg",
+  "plannedPath": "public/assets/audio/audio-starbinding-threshold.ogg",
+  "plannedFiles": {
+    "ogg": "public/assets/audio/audio-starbinding-threshold.ogg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "audio starbinding threshold",
+  "tooltip": {
+    "title": "Audio Starbinding Threshold",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "audio-starbinding-threshold",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "audio:starbinding-threshold"
+}

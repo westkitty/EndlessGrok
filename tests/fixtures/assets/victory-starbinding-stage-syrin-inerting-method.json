@@ -1,0 +1,25 @@
+{
+  "id": "victory-starbinding-stage-syrin-inerting-method",
+  "displayName": "Victory Starbinding Stage Syrin Inerting Method",
+  "family": "victory",
+  "filename": "victory-starbinding-stage-syrin-inerting-method.svg",
+  "plannedPath": "public/assets/icons/victory/victory-starbinding-stage-syrin-inerting-method.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/victory/victory-starbinding-stage-syrin-inerting-method.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "victory starbinding stage syrin inerting method",
+  "tooltip": {
+    "title": "Victory Starbinding Stage Syrin Inerting Method",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "victory-starbinding-stage-syrin-inerting-method",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "victory:starbinding-stage-syrin-inerting-method"
+}

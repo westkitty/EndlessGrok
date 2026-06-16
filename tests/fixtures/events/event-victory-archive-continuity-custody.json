@@ -1,0 +1,27 @@
+{
+  "id": "event-victory-archive-continuity-custody",
+  "assetId": "event-victory-archive-continuity-custody",
+  "category": "victory",
+  "title": "Archive Continuity Custody",
+  "body": "Archive Custodians demand custody review of recovered data traces. Preservation is ambiguous.",
+  "severity": "medium",
+  "sourceLabel": "direct canon",
+  "triggerCondition": "archive_data_above_threshold",
+  "affectedScope": "empire_diplomacy",
+  "mechanicalEffect": "Custody compliance improves Archive Continuity foundation; refusal increases rival intel.",
+  "options": [
+    {
+      "id": "surrender_custody",
+      "label": "Grant custody review",
+      "mechanicalEffect": "Archive Continuity +0.05; Archive Data -1"
+    },
+    {
+      "id": "retain",
+      "label": "Retain records",
+      "mechanicalEffect": "Relations -6; Archive Continuity stalled"
+    }
+  ],
+  "testId": "event-victory-archive-continuity-custody",
+  "testFixture": "tests/fixtures/events/event-victory-archive-continuity-custody.json",
+  "status": "prompted"
+}

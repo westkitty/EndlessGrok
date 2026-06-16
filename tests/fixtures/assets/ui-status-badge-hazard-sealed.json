@@ -1,0 +1,25 @@
+{
+  "id": "ui-status-badge-hazard-sealed",
+  "displayName": "Ui Status Badge Hazard Sealed",
+  "family": "ui",
+  "filename": "ui-status-badge-hazard-sealed.svg",
+  "plannedPath": "public/assets/icons/ui/ui-status-badge-hazard-sealed.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/ui/ui-status-badge-hazard-sealed.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "ui status badge hazard sealed",
+  "tooltip": {
+    "title": "Ui Status Badge Hazard Sealed",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "ui-status-badge-hazard-sealed",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:status-badge-hazard-sealed"
+}

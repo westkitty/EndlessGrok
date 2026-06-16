@@ -1,0 +1,25 @@
+{
+  "id": "map-lane-hostile",
+  "displayName": "Map Lane Hostile",
+  "family": "map",
+  "filename": "map-lane-hostile.svg",
+  "plannedPath": "public/assets/icons/map/map-lane-hostile.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/map/map-lane-hostile.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "map lane hostile",
+  "tooltip": {
+    "title": "Map Lane Hostile",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "map-lane-hostile",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "map:lane-hostile"
+}

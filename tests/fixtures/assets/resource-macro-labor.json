@@ -1,0 +1,26 @@
+{
+  "id": "resource-macro-labor",
+  "displayName": "Resource Macro Labor",
+  "family": "resources",
+  "filename": "resource-macro-labor.svg",
+  "plannedPath": "public/assets/icons/resources/resource-macro-labor.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/resources/resource-macro-labor.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "Production-loop capacity.",
+  "loreMeaning": "Industrial syntax embedded in macro action-loops.",
+  "accessibilityLabel": "resource macro labor",
+  "tooltip": {
+    "title": "Macro Labor",
+    "mechanical": "Production-loop capacity.",
+    "lore": "Industrial syntax embedded in macro action-loops.",
+    "uiNotes": "Gear-code motif."
+  },
+  "testId": "resource-macro-labor",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "resource:macro-labor"
+}

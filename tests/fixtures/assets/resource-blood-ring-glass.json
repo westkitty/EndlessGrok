@@ -1,0 +1,27 @@
+{
+  "id": "resource-blood-ring-glass",
+  "displayName": "Resource Blood Ring Glass",
+  "family": "resources",
+  "filename": "resource-blood-ring-glass.svg",
+  "plannedPath": "public/assets/icons/resources/resource-blood-ring-glass.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/resources/resource-blood-ring-glass.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "Contaminated strategic material.",
+  "loreMeaning": "Atrocity-linked vitrified remnant.",
+  "accessibilityLabel": "resource blood ring glass",
+  "tooltip": {
+    "title": "Blood Ring Glass",
+    "mechanical": "Contaminated strategic material.",
+    "lore": "Atrocity-linked vitrified remnant.",
+    "warning": "Never present as clean reward. Diplomatic cost applies.",
+    "uiNotes": "Never present as clean reward."
+  },
+  "testId": "resource-blood-ring-glass",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "resource:blood-ring-glass"
+}

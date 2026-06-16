@@ -1,0 +1,18 @@
+{
+  "key": "archiveData",
+  "assetId": "resource-archive-data",
+  "manifestAssetId": "resource-archive-data",
+  "displayName": "Archive Data",
+  "mechanicalMeaning": "Research and intel resource.",
+  "loreMeaning": "Stellar record or data trace, not soul currency.",
+  "tooltip": {
+    "title": "Archive Data",
+    "mechanical": "Research and intel resource.",
+    "lore": "Stellar record or data trace, not soul currency.",
+    "uiNotes": "Use prism/scan-line motifs."
+  },
+  "iconAssetId": "resource-archive-data",
+  "testId": "resource-archive-data",
+  "sourceBasis": "direct canon",
+  "status": "prompted"
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "event-resource-blood-ring-glass-recovered",
+    "title": "Blood Ring Glass Recovered",
+    "category": "resources",
+    "trigger": "deposit_blood_ring_glass_discovered",
+    "body": "Vitrified remnant extracted from a burned ring structure. The material is filed under infrastructure, not reward.",
+    "choices": [
+      {
+        "id": "file",
+        "label": "File under quarantine",
+        "mechanicalEffect": "+1 Blood Ring Glass, flagged contaminated"
+      },
+      {
+        "id": "reject",
+        "label": "Reject extraction",
+        "mechanicalEffect": "No resource; approval +2"
+      }
+    ],
+    "effects": "+1 Blood Ring Glass; diplomatic penalty from non-Drakken factions on first use.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "resource",
+      "high",
+      "empire_inventory"
+    ],
+    "relatedAssetIds": [
+      "event-resource-blood-ring-glass-recovered"
+    ],
+    "testId": "event-resource-blood-ring-glass-recovered",
+    "canonSafetyNotes": "Atrocity-linked; never glamorize.",
+    "logType": "event"
+  },
+  {
+    "id": "event-resource-siege-lattice-fragment-unstable",
+    "title": "Siege Lattice Fragment Unstable",
+    "category": "resources",
+    "trigger": "siege_lattice_fragment_in_singularity_system",
+    "body": "Lattice shard resonance exceeds containment brackets. Instability is rising.",
+    "choices": [
+      {
+        "id": "anchor",
+        "label": "Anchor lattice",
+        "mechanicalEffect": "Enables fortification macro; hazard persists"
+      },
+      {
+        "id": "jettison",
+        "label": "Jettison fragment",
+        "mechanicalEffect": "Lose fragment; hazard -1"
+      }
+    ],
+    "effects": "Fragment remains usable but system hazard increases until anchored or sealed.",
+    "severity": "critical",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "resource",
+      "critical",
+      "target_system"
+    ],
+    "relatedAssetIds": [
+      "event-resource-siege-lattice-fragment-unstable"
+    ],
+    "testId": "event-resource-siege-lattice-fragment-unstable",
+    "logType": "event"
+  },
+  {
+    "id": "discovery-starsilk-thread",
+    "title": "Starsilk Thread Isolated",
+    "category": "resources",
+    "trigger": "first_starsilkThread_gain",
+    "body": "Reality-code strand logged. Handle with containment protocol.",
+    "choices": [
+      {
+        "id": "ack",
+        "label": "Acknowledge",
+        "mechanicalEffect": "Flag first discovery"
+      }
+    ],
+    "effects": "First Starsilk Thread catalogued.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "discovery",
+      "starsilk",
+      "containment"
+    ],
+    "relatedAssetIds": [
+      "resource-starsilk-thread"
+    ],
+    "testId": "discovery-starsilk-thread",
+    "canonSafetyNotes": "Not fuel. Containment problem.",
+    "logType": "event"
+  },
+  {
+    "id": "discovery-syrin-reagent",
+    "title": "Syrin Reagent Catalogued",
+    "category": "resources",
+    "trigger": "first_syrinReagent_gain",
+    "body": "Inerting chemistry confirmed.",
+    "choices": [
+      {
+        "id": "ack",
+        "label": "Acknowledge",
+        "mechanicalEffect": "Flag first discovery"
+      }
+    ],
+    "effects": "First Syrin Reagent catalogued.",
+    "severity": "medium",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "discovery",
+      "syrin",
+      "inerting"
+    ],
+    "relatedAssetIds": [
+      "resource-syrin-reagent"
+    ],
+    "testId": "discovery-syrin-reagent",
+    "logType": "event"
+  }
+]

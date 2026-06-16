@@ -1,0 +1,22 @@
+{
+  "id": "event-macro-syrin-inerting-mist-executed",
+  "assetId": "event-macro-syrin-inerting-mist-executed",
+  "category": "macro",
+  "title": "Syrin Inerting Mist Executed",
+  "body": "Inerting mist deployed. Hazard suppression active for fixed duration. Cost logged.",
+  "severity": "medium",
+  "sourceLabel": "direct canon",
+  "triggerCondition": "macro_syrin_inerting_mist_executed",
+  "affectedScope": "target_system",
+  "mechanicalEffect": "Suppresses Starsilk hazard 5 turns; consumes Syrin Reagent; counts toward inerting victory tracking.",
+  "options": [
+    {
+      "id": "acknowledge",
+      "label": "Acknowledge report",
+      "mechanicalEffect": "Apply mist duration and costs"
+    }
+  ],
+  "testId": "event-macro-syrin-inerting-mist-executed",
+  "testFixture": "tests/fixtures/events/event-macro-syrin-inerting-mist-executed.json",
+  "status": "prompted"
+}

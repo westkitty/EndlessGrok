@@ -1,0 +1,26 @@
+{
+  "id": "resource-inert-starsilk",
+  "displayName": "Resource Inert Starsilk",
+  "family": "resources",
+  "filename": "resource-inert-starsilk.svg",
+  "plannedPath": "public/assets/icons/resources/resource-inert-starsilk.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/resources/resource-inert-starsilk.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "Stabilized Starsilk input for safer operations.",
+  "loreMeaning": "Muted sealed strand; stabilized, not purified.",
+  "accessibilityLabel": "resource inert starsilk",
+  "tooltip": {
+    "title": "Inert Starsilk",
+    "mechanical": "Stabilized Starsilk input for safer operations.",
+    "lore": "Muted sealed strand; stabilized, not purified.",
+    "uiNotes": "Use sealed/muted visual language."
+  },
+  "testId": "resource-inert-starsilk",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "resource:inert-starsilk"
+}

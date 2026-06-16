@@ -1,0 +1,25 @@
+{
+  "id": "map-hazard-macro-sealed-system",
+  "displayName": "Map Hazard Macro Sealed System",
+  "family": "map",
+  "filename": "map-hazard-macro-sealed-system.svg",
+  "plannedPath": "public/assets/icons/map/map-hazard-macro-sealed-system.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/map/map-hazard-macro-sealed-system.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "map hazard macro sealed system",
+  "tooltip": {
+    "title": "Map Hazard Macro Sealed System",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "map-hazard-macro-sealed-system",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "map:hazard-macro-sealed-system"
+}

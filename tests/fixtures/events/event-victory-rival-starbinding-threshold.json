@@ -1,0 +1,27 @@
+{
+  "id": "event-victory-rival-starbinding-threshold",
+  "assetId": "event-victory-rival-starbinding-threshold",
+  "category": "victory",
+  "title": "Rival Starbinding Threshold",
+  "body": "Intelligence confirms rival Starbinding progress crossed containment threshold.",
+  "severity": "critical",
+  "sourceLabel": "mechanical UI necessity",
+  "triggerCondition": "rival_starbinding_progress_above_0.5",
+  "affectedScope": "galaxy_diplomacy",
+  "mechanicalEffect": "Increases threat and relation penalties; triggers rival project warning UI.",
+  "options": [
+    {
+      "id": "contain",
+      "label": "Issue containment protest",
+      "mechanicalEffect": "Threat +5; relations shift"
+    },
+    {
+      "id": "monitor",
+      "label": "Monitor only",
+      "mechanicalEffect": "Intel updated; no relation change"
+    }
+  ],
+  "testId": "event-victory-rival-starbinding-threshold",
+  "testFixture": "tests/fixtures/events/event-victory-rival-starbinding-threshold.json",
+  "status": "prompted"
+}

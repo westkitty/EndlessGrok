@@ -1,0 +1,25 @@
+{
+  "id": "faction-diplomacy-tone-pack-containment-order-shard-god",
+  "displayName": "Faction Diplomacy Tone Pack Containment Order Shard God",
+  "family": "factions",
+  "filename": "faction-diplomacy-tone-pack-containment-order-shard-god.json",
+  "plannedPath": "src/data/factions/faction-diplomacy-tone-pack-containment-order-shard-god.json",
+  "plannedFiles": {
+    "json": "src/data/factions/faction-diplomacy-tone-pack-containment-order-shard-god.json"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "faction diplomacy tone pack containment order shard god",
+  "tooltip": {
+    "title": "Faction Diplomacy Tone Pack Containment Order Shard God",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "faction-diplomacy-tone-pack-containment-order-shard-god",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "faction:diplomacy-tone-pack-containment-order-shard-god"
+}

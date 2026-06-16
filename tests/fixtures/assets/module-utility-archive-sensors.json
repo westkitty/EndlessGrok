@@ -1,0 +1,25 @@
+{
+  "id": "module-utility-archive-sensors",
+  "displayName": "Module Utility Archive Sensors",
+  "family": "fleets",
+  "filename": "module-utility-archive-sensors.svg",
+  "plannedPath": "public/assets/icons/fleets/module-utility-archive-sensors.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/module-utility-archive-sensors.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "module utility archive sensors",
+  "tooltip": {
+    "title": "Module Utility Archive Sensors",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "module-utility-archive-sensors",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "fleet:module-utility-archive-sensors"
+}

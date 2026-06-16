@@ -1,0 +1,25 @@
+{
+  "id": "victory-starbinding-stage-worldsvault-array",
+  "displayName": "Victory Starbinding Stage Worldsvault Array",
+  "family": "victory",
+  "filename": "victory-starbinding-stage-worldsvault-array.svg",
+  "plannedPath": "public/assets/icons/victory/victory-starbinding-stage-worldsvault-array.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/victory/victory-starbinding-stage-worldsvault-array.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "victory starbinding stage worldsvault array",
+  "tooltip": {
+    "title": "Victory Starbinding Stage Worldsvault Array",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "victory-starbinding-stage-worldsvault-array",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "victory:starbinding-stage-worldsvault-array"
+}

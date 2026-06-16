@@ -1,0 +1,25 @@
+{
+  "id": "event-combat-checksum-hull-breach",
+  "displayName": "Event Combat Checksum Hull Breach",
+  "family": "events",
+  "filename": "event-combat-checksum-hull-breach.json",
+  "plannedPath": "src/data/events/event-combat-checksum-hull-breach.json",
+  "plannedFiles": {
+    "json": "src/data/events/event-combat-checksum-hull-breach.json"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "event combat checksum hull breach",
+  "tooltip": {
+    "title": "Event Combat Checksum Hull Breach",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "event-combat-checksum-hull-breach",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "event:combat-checksum-hull-breach"
+}

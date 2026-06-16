@@ -1,0 +1,25 @@
+{
+  "id": "ui-panel-header-macro-panel",
+  "displayName": "Ui Panel Header Macro Panel",
+  "family": "ui",
+  "filename": "ui-panel-header-macro-panel.svg",
+  "plannedPath": "public/assets/icons/ui/ui-panel-header-macro-panel.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/ui/ui-panel-header-macro-panel.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "ui panel header macro panel",
+  "tooltip": {
+    "title": "Ui Panel Header Macro Panel",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "ui-panel-header-macro-panel",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:panel-header-macro-panel"
+}

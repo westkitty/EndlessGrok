@@ -1,0 +1,20 @@
+{
+  "key": "bloodRingGlass",
+  "assetId": "resource-blood-ring-glass",
+  "manifestAssetId": "resource-blood-ring-glass",
+  "displayName": "Blood Ring Glass",
+  "mechanicalMeaning": "Contaminated strategic material.",
+  "loreMeaning": "Atrocity-linked vitrified remnant.",
+  "tooltip": {
+    "title": "Blood Ring Glass",
+    "mechanical": "Contaminated strategic material.",
+    "lore": "Atrocity-linked vitrified remnant.",
+    "warning": "Never present as clean reward.",
+    "uiNotes": "Never present as clean reward."
+  },
+  "warning": "Never present as clean reward.",
+  "iconAssetId": "resource-blood-ring-glass",
+  "testId": "resource-blood-ring-glass",
+  "sourceBasis": "direct canon",
+  "status": "prompted"
+}

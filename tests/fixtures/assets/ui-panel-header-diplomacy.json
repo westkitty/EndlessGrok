@@ -1,0 +1,25 @@
+{
+  "id": "ui-panel-header-diplomacy",
+  "displayName": "Ui Panel Header Diplomacy",
+  "family": "ui",
+  "filename": "ui-panel-header-diplomacy.svg",
+  "plannedPath": "public/assets/icons/ui/ui-panel-header-diplomacy.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/ui/ui-panel-header-diplomacy.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "ui panel header diplomacy",
+  "tooltip": {
+    "title": "Ui Panel Header Diplomacy",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "ui-panel-header-diplomacy",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:panel-header-diplomacy"
+}

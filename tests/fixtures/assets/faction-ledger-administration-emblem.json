@@ -1,0 +1,25 @@
+{
+  "id": "faction-ledger-administration-emblem",
+  "displayName": "Faction Ledger Administration Emblem",
+  "family": "factions",
+  "filename": "faction-ledger-administration-emblem.svg",
+  "plannedPath": "public/assets/icons/factions/faction-ledger-administration-emblem.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/factions/faction-ledger-administration-emblem.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "faction ledger administration emblem",
+  "tooltip": {
+    "title": "Faction Ledger Administration Emblem",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "faction-ledger-administration-emblem",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "faction:ledger-administration-emblem"
+}

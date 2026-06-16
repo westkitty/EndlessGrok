@@ -1,0 +1,27 @@
+{
+  "id": "event-exploration-starsilk-leak-detected",
+  "assetId": "event-exploration-starsilk-leak-detected",
+  "category": "exploration",
+  "title": "Starsilk Leak Detected",
+  "body": "Containment sensors report thread bleed in local space. The leak is active, not historical.",
+  "severity": "high",
+  "sourceLabel": "direct canon",
+  "triggerCondition": "system_has_starsilk_hazard",
+  "affectedScope": "target_system",
+  "mechanicalEffect": "Applies Starsilk hazard flag; increases macro and diplomatic pressure if ignored.",
+  "options": [
+    {
+      "id": "contain",
+      "label": "Deploy containment protocol",
+      "mechanicalEffect": "Hazard flagged; Syrin cost if inerting available"
+    },
+    {
+      "id": "log",
+      "label": "Log and continue",
+      "mechanicalEffect": "Hazard escalates next turn"
+    }
+  ],
+  "testId": "event-exploration-starsilk-leak-detected",
+  "testFixture": "tests/fixtures/events/event-exploration-starsilk-leak-detected.json",
+  "status": "prompted"
+}

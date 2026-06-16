@@ -1,0 +1,91 @@
+import type { StarsilkFactionRecord } from './types';
+
+function faction(
+  id: StarsilkFactionRecord['id'],
+  name: string,
+  visualMotifs: string[],
+  aiPersonality: string,
+  diplomacyStyle: string,
+  victoryPreference: string,
+  resourcePreference: string,
+  aiTendencies: string[],
+): StarsilkFactionRecord {
+  const slug = id;
+  return {
+    id,
+    name,
+    visualMotifs,
+    aiPersonality,
+    diplomacyStyle,
+    victoryPreference,
+    resourcePreference,
+    aiTendencies,
+    emblemAssetId: `faction-${slug}-emblem`,
+    tonePackAssetId: `faction-diplomacy-tone-pack-${slug}`,
+    testId: `faction-${slug}-emblem`,
+    status: 'prompted',
+  };
+}
+
+export const STARSILK_FACTION_RECORDS: StarsilkFactionRecord[] = [
+  faction(
+    'ledger-administration',
+    'Ledger Administration',
+    ['checksum', 'audit', 'containment'],
+    'clinical control',
+    'Procedural audits and checksum demands; relations shift on ledger compliance.',
+    'Ledger Dominion',
+    'Command Legitimacy',
+    ['prioritize_checksum_macros', 'influence_hegemony', 'containment_escalation'],
+  ),
+  faction(
+    'drakken-genesis-host',
+    'Drakken Genesis Host',
+    ['bio-geologic overwrite'],
+    'pressure through rendering',
+    'Rendering notices and biosphere pressure; not draconic conquest rhetoric.',
+    'Blood Eclipse',
+    'Fabrication Mass',
+    ['biosphere_render', 'blood_ring_extraction', 'territorial_pressure'],
+  ),
+  faction(
+    'solidarity-cells-partition-front',
+    'Solidarity Cells / Partition Front',
+    ['partition math', 'sabotage'],
+    'disciplined rupture',
+    'Partition mathematics diplomacy; opposes unilateral Starbinding.',
+    'Starbinding',
+    'Starsilk Thread',
+    ['starbinding_progress', 'sabotage_counters', 'collective_rupture'],
+  ),
+  faction(
+    'syrin-survivor-enclave',
+    'Syrin Survivor Enclave',
+    ['inerting', 'preservation'],
+    'defensive survival',
+    'Inerting advocacy; condemns heliocide and thread weaponization.',
+    'Syrin Inerting',
+    'Syrin Reagent',
+    ['inerting_mist', 'hazard_suppression', 'defensive_posture'],
+  ),
+  faction(
+    'archive-custodians-exhumed-cipher',
+    'Archive Custodians / Exhumed Cipher',
+    ['prisms', 'custody', 'records'],
+    'ambiguous preservation',
+    'Custody demands and record audits; preservation without clean hero framing.',
+    'Archive Continuity',
+    'Archive Data',
+    ['archive_extraction', 'memory_custody', 'research_syntax'],
+  ),
+  faction(
+    'containment-order-shard-god',
+    'Containment Order / Shard-God aligned force',
+    ['divine procedure', 'brackets'],
+    'cold containment',
+    'Cold procedural containment; divine procedure without glamour.',
+    'Siege Custody',
+    'Siege Lattice Fragment',
+    ['lattice_anchoring', 'singularity_containment', 'ledger_containment_hybrid'],
+  ),
+];

@@ -1,0 +1,25 @@
+{
+  "id": "audio-macro-expired",
+  "displayName": "Audio Macro Expired",
+  "family": "audio",
+  "filename": "audio-macro-expired.ogg",
+  "plannedPath": "public/assets/audio/audio-macro-expired.ogg",
+  "plannedFiles": {
+    "ogg": "public/assets/audio/audio-macro-expired.ogg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "audio macro expired",
+  "tooltip": {
+    "title": "Audio Macro Expired",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "audio-macro-expired",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "audio:macro-expired"
+}

@@ -1,0 +1,20 @@
+{
+  "key": "gravityThread",
+  "assetId": "gravity-thread",
+  "manifestAssetId": "macro-gravity-thread-seal",
+  "displayName": "Gravity Thread",
+  "mechanicalMeaning": "Curved gravity boundary material for seals and thread engines.",
+  "loreMeaning": "Partition geometry made tangible — hazard mitigation, not triumph.",
+  "tooltip": {
+    "title": "Gravity Thread",
+    "mechanical": "Curved gravity boundary material for seals and thread engines.",
+    "lore": "Partition geometry made tangible — hazard mitigation, not triumph.",
+    "warning": "Sealing gravity admits the wound stays open.",
+    "uiNotes": "Linked to macro-gravity-thread-seal and gravity-thread engine."
+  },
+  "warning": "Sealing gravity admits the wound stays open.",
+  "iconAssetId": "macro-gravity-thread-seal",
+  "testId": "gravity-thread",
+  "sourceBasis": "direct canon",
+  "status": "prompted"
+}

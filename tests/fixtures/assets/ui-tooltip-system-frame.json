@@ -1,0 +1,25 @@
+{
+  "id": "ui-tooltip-system-frame",
+  "displayName": "Ui Tooltip System Frame",
+  "family": "ui",
+  "filename": "ui-tooltip-system-frame.svg",
+  "plannedPath": "public/assets/icons/ui/ui-tooltip-system-frame.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/ui/ui-tooltip-system-frame.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "ui tooltip system frame",
+  "tooltip": {
+    "title": "Ui Tooltip System Frame",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "ui-tooltip-system-frame",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:tooltip-system-frame"
+}

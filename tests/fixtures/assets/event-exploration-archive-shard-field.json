@@ -1,0 +1,25 @@
+{
+  "id": "event-exploration-archive-shard-field",
+  "displayName": "Event Exploration Archive Shard Field",
+  "family": "events",
+  "filename": "event-exploration-archive-shard-field.json",
+  "plannedPath": "src/data/events/event-exploration-archive-shard-field.json",
+  "plannedFiles": {
+    "json": "src/data/events/event-exploration-archive-shard-field.json"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "event exploration archive shard field",
+  "tooltip": {
+    "title": "Event Exploration Archive Shard Field",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "event-exploration-archive-shard-field",
+  "sourceBasis": "interpretive adaptation",
+  "status": "prompted",
+  "mechanicalKey": "event:exploration-archive-shard-field"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ui-panel-header-research",
+  "displayName": "Ui Panel Header Research",
+  "family": "ui",
+  "filename": "ui-panel-header-research.svg",
+  "plannedPath": "public/assets/icons/ui/ui-panel-header-research.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/ui/ui-panel-header-research.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "ui panel header research",
+  "tooltip": {
+    "title": "Ui Panel Header Research",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "ui-panel-header-research",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:panel-header-research"
+}

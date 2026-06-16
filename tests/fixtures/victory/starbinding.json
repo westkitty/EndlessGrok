@@ -1,0 +1,112 @@
+{
+  "id": "starbinding",
+  "displayName": "The Starbinding",
+  "assetId": "victory-starbinding",
+  "mechanicalMeaning": "Catastrophic Partition victory via heliocide dives, inert stabilization, and final macro execution.",
+  "loreMeaning": "The sky is severed on purpose. No consensus was sought.",
+  "warning": "Irreversible. Morally compromised. Heliocide-linked. Not heroic.",
+  "completable": true,
+  "stages": [
+    {
+      "id": "victory-starbinding-stage-forbidden-theory",
+      "assetId": "victory-starbinding-stage-forbidden-theory",
+      "pathId": "starbinding",
+      "stageOrder": 1,
+      "displayName": "Forbidden Theory",
+      "mechanicalMeaning": "Catalogue forbidden Starbinding theory.",
+      "loreMeaning": "The ledger accepts the theory before morality does.",
+      "irreversible": false,
+      "testId": "victory-starbinding-stage-forbidden-theory",
+      "status": "prompted"
+    },
+    {
+      "id": "victory-starbinding-stage-partition-mathematics",
+      "assetId": "victory-starbinding-stage-partition-mathematics",
+      "pathId": "starbinding",
+      "stageOrder": 2,
+      "displayName": "Partition Mathematics",
+      "mechanicalMeaning": "Derive partition mathematics for array construction.",
+      "loreMeaning": "Geometry of rupture written as necessity.",
+      "irreversible": false,
+      "testId": "victory-starbinding-stage-partition-mathematics",
+      "status": "prompted"
+    },
+    {
+      "id": "victory-starbinding-stage-syrin-inerting-method",
+      "assetId": "victory-starbinding-stage-syrin-inerting-method",
+      "pathId": "starbinding",
+      "stageOrder": 3,
+      "displayName": "Syrin Inerting Method",
+      "mechanicalMeaning": "Acquire Syrin inerting stabilization method.",
+      "loreMeaning": "Containment chemistry bought against thread bleed.",
+      "irreversible": false,
+      "testId": "victory-starbinding-stage-syrin-inerting-method",
+      "status": "prompted"
+    },
+    {
+      "id": "victory-starbinding-stage-worldsvault-array",
+      "assetId": "victory-starbinding-stage-worldsvault-array",
+      "pathId": "starbinding",
+      "stageOrder": 4,
+      "displayName": "Worldsvault Array",
+      "mechanicalMeaning": "Construct Starbinding array at target system.",
+      "loreMeaning": "Array accepts no appeal once anchored.",
+      "irreversible": false,
+      "testId": "victory-starbinding-stage-worldsvault-array",
+      "status": "prompted"
+    },
+    {
+      "id": "victory-starbinding-stage-target-selection",
+      "assetId": "victory-starbinding-stage-target-selection",
+      "pathId": "starbinding",
+      "stageOrder": 5,
+      "displayName": "Target Selection",
+      "mechanicalMeaning": "Select archive stars for dive sequence.",
+      "loreMeaning": "Targets chosen; diplomatic crisis accumulates.",
+      "irreversible": false,
+      "testId": "victory-starbinding-stage-target-selection",
+      "status": "prompted"
+    },
+    {
+      "id": "victory-starbinding-stage-heliocide-sequence",
+      "assetId": "victory-starbinding-stage-heliocide-sequence",
+      "pathId": "heliocide",
+      "stageOrder": 6,
+      "displayName": "Heliocide Sequence",
+      "mechanicalMeaning": "Execute heliocide dives on selected stars.",
+      "loreMeaning": "Stars collapse by procedure, not heroism.",
+      "warning": "Irreversible stellar collapse. Memory and lanes are destroyed.",
+      "irreversible": true,
+      "testId": "victory-starbinding-stage-heliocide-sequence",
+      "status": "prompted"
+    },
+    {
+      "id": "victory-starbinding-stage-diplomatic-crisis",
+      "assetId": "victory-starbinding-stage-diplomatic-crisis",
+      "pathId": "starbinding",
+      "stageOrder": 7,
+      "displayName": "Diplomatic Crisis",
+      "mechanicalMeaning": "Survive diplomatic crisis before final macro.",
+      "loreMeaning": "Allies fracture; containment factions escalate.",
+      "warning": "Relations may sever permanently.",
+      "irreversible": false,
+      "testId": "victory-starbinding-stage-diplomatic-crisis",
+      "status": "prompted"
+    },
+    {
+      "id": "victory-starbinding-stage-final-macro-execution",
+      "assetId": "victory-starbinding-stage-final-macro-execution",
+      "pathId": "starbinding",
+      "stageOrder": 8,
+      "displayName": "Final Macro Execution",
+      "mechanicalMeaning": "Execute final Partition macro.",
+      "loreMeaning": "Sky severed on purpose. Not a clean triumph.",
+      "warning": "Morally compromised victory. Cost is permanent.",
+      "irreversible": true,
+      "testId": "victory-starbinding-stage-final-macro-execution",
+      "status": "prompted"
+    }
+  ],
+  "testId": "victory-starbinding",
+  "status": "prompted"
+}

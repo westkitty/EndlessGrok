@@ -1,0 +1,25 @@
+{
+  "id": "audio-combat-report",
+  "displayName": "Audio Combat Report",
+  "family": "audio",
+  "filename": "audio-combat-report.ogg",
+  "plannedPath": "public/assets/audio/audio-combat-report.ogg",
+  "plannedFiles": {
+    "ogg": "public/assets/audio/audio-combat-report.ogg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "audio combat report",
+  "tooltip": {
+    "title": "Audio Combat Report",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "audio-combat-report",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "audio:combat-report"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "map-hazard-singularity",
+  "displayName": "Map Hazard Singularity",
+  "family": "map",
+  "filename": "map-hazard-singularity.svg",
+  "plannedPath": "public/assets/icons/map/map-hazard-singularity.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/map/map-hazard-singularity.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "map hazard singularity",
+  "tooltip": {
+    "title": "Map Hazard Singularity",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "map-hazard-singularity",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "map:hazard-singularity"
+}

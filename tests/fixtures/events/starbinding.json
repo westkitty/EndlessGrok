@@ -1,0 +1,63 @@
+[
+  {
+    "id": "event-victory-heliocide-confirmation",
+    "title": "Heliocide Confirmation Required",
+    "category": "starbinding",
+    "trigger": "starbinding_heliocide_stage_active",
+    "body": "Heliocide sequence armed. Confirmation will collapse the target star irreversibly.",
+    "choices": [
+      {
+        "id": "confirm",
+        "label": "Confirm heliocide",
+        "mechanicalEffect": "Begin collapse timer; irreversible"
+      },
+      {
+        "id": "abort",
+        "label": "Abort sequence",
+        "mechanicalEffect": "Starbinding progress stalls; relations +3"
+      }
+    ],
+    "effects": "Irreversible stellar collapse on confirm; diplomatic crisis triggered.",
+    "severity": "critical",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "victory",
+      "critical",
+      "target_star",
+      "irreversible"
+    ],
+    "relatedAssetIds": [
+      "event-victory-heliocide-confirmation"
+    ],
+    "testId": "event-victory-heliocide-confirmation",
+    "canonSafetyNotes": "Irreversible; report cost not triumph.",
+    "logType": "heliocide"
+  },
+  {
+    "id": "starbinding-stage-advance",
+    "title": "Starbinding Stage Advance",
+    "category": "starbinding",
+    "trigger": "starbinding_stage_increased",
+    "body": "Stage label emitted from Starbinding progression.",
+    "choices": [
+      {
+        "id": "ack",
+        "label": "Acknowledge",
+        "mechanicalEffect": "Log stage"
+      }
+    ],
+    "effects": "Starbinding stage counter incremented.",
+    "severity": "high",
+    "sourceLabel": "direct canon",
+    "mechanicalTags": [
+      "starbinding",
+      "stage"
+    ],
+    "relatedAssetIds": [
+      "victory-starbinding"
+    ],
+    "testId": "starbinding-stage-advance",
+    "canonSafetyNotes": "Never frame as clean triumph.",
+    "logType": "starbinding"
+  }
+]

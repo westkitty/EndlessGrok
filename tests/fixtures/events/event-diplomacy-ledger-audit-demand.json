@@ -1,0 +1,27 @@
+{
+  "id": "event-diplomacy-ledger-audit-demand",
+  "assetId": "event-diplomacy-ledger-audit-demand",
+  "category": "diplomacy",
+  "title": "Ledger Audit Demand",
+  "body": "Ledger Administration requests checksum audit of your macro registry. Refusal carries relation penalty.",
+  "severity": "medium",
+  "sourceLabel": "direct canon",
+  "triggerCondition": "relation_with_ledger_administration_below_threshold",
+  "affectedScope": "empire_diplomacy",
+  "mechanicalEffect": "Audit compliance improves relations; refusal reduces relations and increases threat.",
+  "options": [
+    {
+      "id": "comply",
+      "label": "Submit audit",
+      "mechanicalEffect": "Relations +8; approval -3"
+    },
+    {
+      "id": "refuse",
+      "label": "Refuse audit",
+      "mechanicalEffect": "Relations -12; threat +5"
+    }
+  ],
+  "testId": "event-diplomacy-ledger-audit-demand",
+  "testFixture": "tests/fixtures/events/event-diplomacy-ledger-audit-demand.json",
+  "status": "prompted"
+}

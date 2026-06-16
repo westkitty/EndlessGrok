@@ -1,0 +1,26 @@
+{
+  "id": "resource-command-legitimacy",
+  "displayName": "Resource Command Legitimacy",
+  "family": "resources",
+  "filename": "resource-command-legitimacy.svg",
+  "plannedPath": "public/assets/icons/resources/resource-command-legitimacy.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/resources/resource-command-legitimacy.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "Influence and political pressure.",
+  "loreMeaning": "Ledger seal/audit authority.",
+  "accessibilityLabel": "resource command legitimacy",
+  "tooltip": {
+    "title": "Command Legitimacy",
+    "mechanical": "Influence and political pressure.",
+    "lore": "Ledger seal/audit authority.",
+    "uiNotes": "No crown/hero badge."
+  },
+  "testId": "resource-command-legitimacy",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "resource:command-legitimacy"
+}

@@ -1,0 +1,20 @@
+{
+  "key": "starsilkThread",
+  "assetId": "resource-starsilk-thread",
+  "manifestAssetId": "resource-starsilk-thread",
+  "displayName": "Starsilk Thread",
+  "mechanicalMeaning": "Rare strategic resource for high-risk Starsilk systems.",
+  "loreMeaning": "Dangerous systemic filament, not fuel.",
+  "tooltip": {
+    "title": "Starsilk Thread",
+    "mechanical": "Rare strategic resource for high-risk Starsilk systems.",
+    "lore": "Dangerous systemic filament, not fuel.",
+    "warning": "Thread misuse escalates diplomatic and hazard pressure.",
+    "uiNotes": "Warning-coded ribbon/barcode icon."
+  },
+  "warning": "Thread misuse escalates diplomatic and hazard pressure.",
+  "iconAssetId": "resource-starsilk-thread",
+  "testId": "resource-starsilk-thread",
+  "sourceBasis": "direct canon",
+  "status": "prompted"
+}

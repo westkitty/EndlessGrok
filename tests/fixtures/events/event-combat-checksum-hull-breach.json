@@ -1,0 +1,27 @@
+{
+  "id": "event-combat-checksum-hull-breach",
+  "assetId": "event-combat-checksum-hull-breach",
+  "category": "combat",
+  "title": "Checksum Hull Breach",
+  "body": "Hull integrity failed checksum mid-engagement. Breach is procedural, not heroic.",
+  "severity": "high",
+  "sourceLabel": "direct canon",
+  "triggerCondition": "combat_with_checksum_hull_equipped",
+  "affectedScope": "target_fleet",
+  "mechanicalEffect": "Fleet takes increased damage; defense modules stressed.",
+  "options": [
+    {
+      "id": "report",
+      "label": "Log breach",
+      "mechanicalEffect": "Apply damage modifier"
+    },
+    {
+      "id": "withdraw",
+      "label": "Emergency withdraw",
+      "mechanicalEffect": "End combat; morale penalty"
+    }
+  ],
+  "testId": "event-combat-checksum-hull-breach",
+  "testFixture": "tests/fixtures/events/event-combat-checksum-hull-breach.json",
+  "status": "prompted"
+}

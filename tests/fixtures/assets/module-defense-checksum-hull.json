@@ -1,0 +1,25 @@
+{
+  "id": "module-defense-checksum-hull",
+  "displayName": "Module Defense Checksum Hull",
+  "family": "fleets",
+  "filename": "module-defense-checksum-hull.svg",
+  "plannedPath": "public/assets/icons/fleets/module-defense-checksum-hull.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/module-defense-checksum-hull.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "module defense checksum hull",
+  "tooltip": {
+    "title": "Module Defense Checksum Hull",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "module-defense-checksum-hull",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "fleet:module-defense-checksum-hull"
+}

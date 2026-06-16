@@ -1,0 +1,27 @@
+{
+  "id": "event-victory-heliocide-confirmation",
+  "assetId": "event-victory-heliocide-confirmation",
+  "category": "victory",
+  "title": "Heliocide Confirmation Required",
+  "body": "Heliocide sequence armed. Confirmation will collapse the target star irreversibly.",
+  "severity": "critical",
+  "sourceLabel": "direct canon",
+  "triggerCondition": "starbinding_heliocide_stage_active",
+  "affectedScope": "target_star",
+  "mechanicalEffect": "Irreversible stellar collapse on confirm; diplomatic crisis triggered.",
+  "options": [
+    {
+      "id": "confirm",
+      "label": "Confirm heliocide",
+      "mechanicalEffect": "Begin collapse timer; irreversible"
+    },
+    {
+      "id": "abort",
+      "label": "Abort sequence",
+      "mechanicalEffect": "Starbinding progress stalls; relations +3"
+    }
+  ],
+  "testId": "event-victory-heliocide-confirmation",
+  "testFixture": "tests/fixtures/events/event-victory-heliocide-confirmation.json",
+  "status": "prompted"
+}

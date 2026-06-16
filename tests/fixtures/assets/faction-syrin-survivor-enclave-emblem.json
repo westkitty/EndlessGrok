@@ -1,0 +1,25 @@
+{
+  "id": "faction-syrin-survivor-enclave-emblem",
+  "displayName": "Faction Syrin Survivor Enclave Emblem",
+  "family": "factions",
+  "filename": "faction-syrin-survivor-enclave-emblem.svg",
+  "plannedPath": "public/assets/icons/factions/faction-syrin-survivor-enclave-emblem.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/factions/faction-syrin-survivor-enclave-emblem.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "faction syrin survivor enclave emblem",
+  "tooltip": {
+    "title": "Faction Syrin Survivor Enclave Emblem",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "faction-syrin-survivor-enclave-emblem",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "faction:syrin-survivor-enclave-emblem"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "heliocide",
+  "displayName": "Heliocide",
+  "assetId": "victory-starbinding-stage-heliocide-sequence",
+  "mechanicalMeaning": "Irreversible stellar collapse stage within Starbinding.",
+  "loreMeaning": "Stars collapsed by procedure. Ledgered singularities replace living light.",
+  "warning": "Irreversible. Reports cost and instability, never triumph.",
+  "completable": false,
+  "stages": [
+    {
+      "id": "victory-starbinding-stage-heliocide-sequence",
+      "assetId": "victory-starbinding-stage-heliocide-sequence",
+      "pathId": "heliocide",
+      "stageOrder": 6,
+      "displayName": "Heliocide Sequence",
+      "mechanicalMeaning": "Execute heliocide dives on selected stars.",
+      "loreMeaning": "Stars collapse by procedure, not heroism.",
+      "warning": "Irreversible stellar collapse. Memory and lanes are destroyed.",
+      "irreversible": true,
+      "testId": "victory-starbinding-stage-heliocide-sequence",
+      "status": "prompted"
+    }
+  ],
+  "testId": "victory-starbinding-stage-heliocide-sequence",
+  "status": "prompted"
+}

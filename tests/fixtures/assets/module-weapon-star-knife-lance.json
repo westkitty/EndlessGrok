@@ -1,0 +1,25 @@
+{
+  "id": "module-weapon-star-knife-lance",
+  "displayName": "Module Weapon Star Knife Lance",
+  "family": "fleets",
+  "filename": "module-weapon-star-knife-lance.svg",
+  "plannedPath": "public/assets/icons/fleets/module-weapon-star-knife-lance.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/module-weapon-star-knife-lance.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "module weapon star knife lance",
+  "tooltip": {
+    "title": "Module Weapon Star Knife Lance",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "module-weapon-star-knife-lance",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "fleet:module-weapon-star-knife-lance"
+}

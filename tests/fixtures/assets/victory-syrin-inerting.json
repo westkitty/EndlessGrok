@@ -1,0 +1,25 @@
+{
+  "id": "victory-syrin-inerting",
+  "displayName": "Victory Syrin Inerting",
+  "family": "victory",
+  "filename": "victory-syrin-inerting.svg",
+  "plannedPath": "public/assets/icons/victory/victory-syrin-inerting.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/victory/victory-syrin-inerting.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "victory syrin inerting",
+  "tooltip": {
+    "title": "Victory Syrin Inerting",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "victory-syrin-inerting",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "victory:syrin-inerting"
+}

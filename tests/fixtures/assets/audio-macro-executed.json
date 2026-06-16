@@ -1,0 +1,25 @@
+{
+  "id": "audio-macro-executed",
+  "displayName": "Audio Macro Executed",
+  "family": "audio",
+  "filename": "audio-macro-executed.ogg",
+  "plannedPath": "public/assets/audio/audio-macro-executed.ogg",
+  "plannedFiles": {
+    "ogg": "public/assets/audio/audio-macro-executed.ogg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "audio macro executed",
+  "tooltip": {
+    "title": "Audio Macro Executed",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "audio-macro-executed",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "audio:macro-executed"
+}

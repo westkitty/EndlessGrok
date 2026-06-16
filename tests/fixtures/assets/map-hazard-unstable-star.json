@@ -1,0 +1,25 @@
+{
+  "id": "map-hazard-unstable-star",
+  "displayName": "Map Hazard Unstable Star",
+  "family": "map",
+  "filename": "map-hazard-unstable-star.svg",
+  "plannedPath": "public/assets/icons/map/map-hazard-unstable-star.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/map/map-hazard-unstable-star.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "map hazard unstable star",
+  "tooltip": {
+    "title": "Map Hazard Unstable Star",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "map-hazard-unstable-star",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "map:hazard-unstable-star"
+}

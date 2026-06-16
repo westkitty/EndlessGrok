@@ -1,0 +1,25 @@
+{
+  "id": "victory-starbinding-stage-forbidden-theory",
+  "displayName": "Victory Starbinding Stage Forbidden Theory",
+  "family": "victory",
+  "filename": "victory-starbinding-stage-forbidden-theory.svg",
+  "plannedPath": "public/assets/icons/victory/victory-starbinding-stage-forbidden-theory.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/victory/victory-starbinding-stage-forbidden-theory.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "victory starbinding stage forbidden theory",
+  "tooltip": {
+    "title": "Victory Starbinding Stage Forbidden Theory",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "victory-starbinding-stage-forbidden-theory",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "victory:starbinding-stage-forbidden-theory"
+}

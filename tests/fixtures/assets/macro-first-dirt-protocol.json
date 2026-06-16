@@ -1,0 +1,25 @@
+{
+  "id": "macro-first-dirt-protocol",
+  "displayName": "Macro First Dirt Protocol",
+  "family": "macros",
+  "filename": "macro-first-dirt-protocol.svg",
+  "plannedPath": "public/assets/icons/macros/macro-first-dirt-protocol.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/macros/macro-first-dirt-protocol.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "macro first dirt protocol",
+  "tooltip": {
+    "title": "Macro First Dirt Protocol",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "macro-first-dirt-protocol",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "macro:first-dirt-protocol"
+}

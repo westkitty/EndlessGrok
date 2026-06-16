@@ -1,0 +1,25 @@
+{
+  "id": "faction-solidarity-cells-partition-front-emblem",
+  "displayName": "Faction Solidarity Cells Partition Front Emblem",
+  "family": "factions",
+  "filename": "faction-solidarity-cells-partition-front-emblem.svg",
+  "plannedPath": "public/assets/icons/factions/faction-solidarity-cells-partition-front-emblem.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/factions/faction-solidarity-cells-partition-front-emblem.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "faction solidarity cells partition front emblem",
+  "tooltip": {
+    "title": "Faction Solidarity Cells Partition Front Emblem",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "faction-solidarity-cells-partition-front-emblem",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "faction:solidarity-cells-partition-front-emblem"
+}

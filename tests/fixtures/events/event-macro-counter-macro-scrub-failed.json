@@ -1,0 +1,27 @@
+{
+  "id": "event-macro-counter-macro-scrub-failed",
+  "assetId": "event-macro-counter-macro-scrub-failed",
+  "category": "macro",
+  "title": "Counter-Macro Scrub Failed",
+  "body": "Checksum scrub could not dislodge enemy macro. Lattice anchoring resisted removal.",
+  "severity": "high",
+  "sourceLabel": "direct canon",
+  "triggerCondition": "counter_macro_scrub_against_lattice_anchored_macro",
+  "affectedScope": "target_system",
+  "mechanicalEffect": "Enemy macro remains; Archive Data and Syrin Reagent spent without effect.",
+  "options": [
+    {
+      "id": "retry",
+      "label": "Schedule second scrub",
+      "mechanicalEffect": "Cooldown applies; additional cost"
+    },
+    {
+      "id": "accept",
+      "label": "Accept failure",
+      "mechanicalEffect": "No change; hazard remains"
+    }
+  ],
+  "testId": "event-macro-counter-macro-scrub-failed",
+  "testFixture": "tests/fixtures/events/event-macro-counter-macro-scrub-failed.json",
+  "status": "prompted"
+}

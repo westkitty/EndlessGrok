@@ -1,0 +1,25 @@
+{
+  "id": "module-engine-cinderverge-thrusters",
+  "displayName": "Module Engine Cinderverge Thrusters",
+  "family": "fleets",
+  "filename": "module-engine-cinderverge-thrusters.svg",
+  "plannedPath": "public/assets/icons/fleets/module-engine-cinderverge-thrusters.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/module-engine-cinderverge-thrusters.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "module engine cinderverge thrusters",
+  "tooltip": {
+    "title": "Module Engine Cinderverge Thrusters",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "module-engine-cinderverge-thrusters",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "fleet:module-engine-cinderverge-thrusters"
+}

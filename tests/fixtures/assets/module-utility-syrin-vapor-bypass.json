@@ -1,0 +1,25 @@
+{
+  "id": "module-utility-syrin-vapor-bypass",
+  "displayName": "Module Utility Syrin Vapor Bypass",
+  "family": "fleets",
+  "filename": "module-utility-syrin-vapor-bypass.svg",
+  "plannedPath": "public/assets/icons/fleets/module-utility-syrin-vapor-bypass.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/module-utility-syrin-vapor-bypass.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "module utility syrin vapor bypass",
+  "tooltip": {
+    "title": "Module Utility Syrin Vapor Bypass",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "module-utility-syrin-vapor-bypass",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "fleet:module-utility-syrin-vapor-bypass"
+}

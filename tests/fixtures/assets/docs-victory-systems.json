@@ -1,0 +1,25 @@
+{
+  "id": "docs-victory-systems",
+  "displayName": "Docs Victory Systems",
+  "family": "ui",
+  "filename": "victory-systems.md",
+  "plannedPath": "docs/victory-systems.md",
+  "plannedFiles": {
+    "md": "docs/victory-systems.md"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "docs victory systems",
+  "tooltip": {
+    "title": "Docs Victory Systems",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "docs-victory-systems",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:docs-victory-systems"
+}

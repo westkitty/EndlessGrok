@@ -1,0 +1,25 @@
+{
+  "id": "docs-event-writing-guide",
+  "displayName": "Docs Event Writing Guide",
+  "family": "ui",
+  "filename": "event-writing-guide.md",
+  "plannedPath": "docs/event-writing-guide.md",
+  "plannedFiles": {
+    "md": "docs/event-writing-guide.md"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "docs event writing guide",
+  "tooltip": {
+    "title": "Docs Event Writing Guide",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "docs-event-writing-guide",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:docs-event-writing-guide"
+}

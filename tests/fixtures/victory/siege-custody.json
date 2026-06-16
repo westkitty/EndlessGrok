@@ -1,0 +1,38 @@
+{
+  "id": "siege-custody",
+  "displayName": "Siege Custody",
+  "assetId": "victory-ledger-dominion",
+  "mechanicalMeaning": "Containment victory through siege lattice anchoring and administrative custody.",
+  "loreMeaning": "Order imposed by checksum, lattice anchors, and vassal ledger — cold containment, not conquest glamour.",
+  "warning": "Custody admits the wound stays open. Singularity hazard remains.",
+  "completable": false,
+  "stages": [
+    {
+      "id": "victory-ledger-dominion",
+      "assetId": "victory-ledger-dominion",
+      "pathId": "siege-custody",
+      "stageOrder": 1,
+      "displayName": "Ledger Dominion Foundation",
+      "mechanicalMeaning": "Influence hegemony and lattice containment tracked.",
+      "loreMeaning": "Administration dreams of a galaxy that signs every turn.",
+      "irreversible": false,
+      "testId": "victory-ledger-dominion",
+      "status": "prompted"
+    },
+    {
+      "id": "macro-siege-lattice-anchor",
+      "assetId": "macro-siege-lattice-anchor",
+      "pathId": "siege-custody",
+      "stageOrder": 2,
+      "displayName": "Lattice Anchoring",
+      "mechanicalMeaning": "Siege lattice anchors chokepoints near singularities.",
+      "loreMeaning": "Lattice torn from siege geometry.",
+      "warning": "Fleet hazard remains after anchoring.",
+      "irreversible": false,
+      "testId": "macro-siege-lattice-anchor",
+      "status": "prompted"
+    }
+  ],
+  "testId": "victory-ledger-dominion",
+  "status": "prompted"
+}

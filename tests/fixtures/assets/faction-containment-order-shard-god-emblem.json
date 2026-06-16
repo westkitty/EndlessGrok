@@ -1,0 +1,25 @@
+{
+  "id": "faction-containment-order-shard-god-emblem",
+  "displayName": "Faction Containment Order Shard God Emblem",
+  "family": "factions",
+  "filename": "faction-containment-order-shard-god-emblem.svg",
+  "plannedPath": "public/assets/icons/factions/faction-containment-order-shard-god-emblem.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/factions/faction-containment-order-shard-god-emblem.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "faction containment order shard god emblem",
+  "tooltip": {
+    "title": "Faction Containment Order Shard God Emblem",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "faction-containment-order-shard-god-emblem",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "faction:containment-order-shard-god-emblem"
+}

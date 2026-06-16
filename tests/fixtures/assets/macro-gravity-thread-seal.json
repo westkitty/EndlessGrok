@@ -1,0 +1,25 @@
+{
+  "id": "macro-gravity-thread-seal",
+  "displayName": "Macro Gravity Thread Seal",
+  "family": "macros",
+  "filename": "macro-gravity-thread-seal.svg",
+  "plannedPath": "public/assets/icons/macros/macro-gravity-thread-seal.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/macros/macro-gravity-thread-seal.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "macro gravity thread seal",
+  "tooltip": {
+    "title": "Macro Gravity Thread Seal",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "macro-gravity-thread-seal",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "macro:gravity-thread-seal"
+}

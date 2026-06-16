@@ -1,0 +1,25 @@
+{
+  "id": "map-star-normal",
+  "displayName": "Map Star Normal",
+  "family": "map",
+  "filename": "map-star-normal.svg",
+  "plannedPath": "public/assets/icons/map/map-star-normal.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/map/map-star-normal.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "map star normal",
+  "tooltip": {
+    "title": "Map Star Normal",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "map-star-normal",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "map:star-normal"
+}

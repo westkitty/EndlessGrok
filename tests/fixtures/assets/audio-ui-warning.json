@@ -1,0 +1,25 @@
+{
+  "id": "audio-ui-warning",
+  "displayName": "Audio Ui Warning",
+  "family": "audio",
+  "filename": "audio-ui-warning.ogg",
+  "plannedPath": "public/assets/audio/audio-ui-warning.ogg",
+  "plannedFiles": {
+    "ogg": "public/assets/audio/audio-ui-warning.ogg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "audio ui warning",
+  "tooltip": {
+    "title": "Audio Ui Warning",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "audio-ui-warning",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "audio:ui-warning"
+}

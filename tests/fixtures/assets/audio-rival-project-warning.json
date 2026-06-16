@@ -1,0 +1,25 @@
+{
+  "id": "audio-rival-project-warning",
+  "displayName": "Audio Rival Project Warning",
+  "family": "audio",
+  "filename": "audio-rival-project-warning.ogg",
+  "plannedPath": "public/assets/audio/audio-rival-project-warning.ogg",
+  "plannedFiles": {
+    "ogg": "public/assets/audio/audio-rival-project-warning.ogg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "audio rival project warning",
+  "tooltip": {
+    "title": "Audio Rival Project Warning",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "audio-rival-project-warning",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "audio:rival-project-warning"
+}

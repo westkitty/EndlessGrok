@@ -1,0 +1,26 @@
+{
+  "id": "resource-fabrication-mass",
+  "displayName": "Resource Fabrication Mass",
+  "family": "resources",
+  "filename": "resource-fabrication-mass.svg",
+  "plannedPath": "public/assets/icons/resources/resource-fabrication-mass.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/resources/resource-fabrication-mass.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "Build output and construction mass.",
+  "loreMeaning": "Macro-pressed industrial throughput.",
+  "accessibilityLabel": "resource fabrication mass",
+  "tooltip": {
+    "title": "Fabrication Mass",
+    "mechanical": "Build output and construction mass.",
+    "lore": "Macro-pressed industrial throughput.",
+    "uiNotes": "Avoid generic ore."
+  },
+  "testId": "resource-fabrication-mass",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "resource:fabrication-mass"
+}

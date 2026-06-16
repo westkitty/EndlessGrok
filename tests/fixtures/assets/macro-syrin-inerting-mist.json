@@ -1,0 +1,25 @@
+{
+  "id": "macro-syrin-inerting-mist",
+  "displayName": "Macro Syrin Inerting Mist",
+  "family": "macros",
+  "filename": "macro-syrin-inerting-mist.svg",
+  "plannedPath": "public/assets/icons/macros/macro-syrin-inerting-mist.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/macros/macro-syrin-inerting-mist.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "macro syrin inerting mist",
+  "tooltip": {
+    "title": "Macro Syrin Inerting Mist",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "macro-syrin-inerting-mist",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "macro:syrin-inerting-mist"
+}

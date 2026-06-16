@@ -1,0 +1,25 @@
+{
+  "id": "fleet-selected-marker",
+  "displayName": "Fleet Selected Marker",
+  "family": "fleets",
+  "filename": "fleet-selected-marker.svg",
+  "plannedPath": "public/assets/icons/fleets/fleet-selected-marker.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/fleet-selected-marker.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "fleet selected marker",
+  "tooltip": {
+    "title": "Fleet Selected Marker",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "fleet-selected-marker",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "fleet:selected-marker"
+}

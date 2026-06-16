@@ -1,0 +1,20 @@
+{
+  "key": "syrinReagent",
+  "assetId": "resource-syrin-reagent",
+  "manifestAssetId": "resource-syrin-reagent",
+  "displayName": "Syrin Reagent",
+  "mechanicalMeaning": "Inerting and bypass resource.",
+  "loreMeaning": "Containment vapor or droplet, not blood.",
+  "tooltip": {
+    "title": "Syrin Reagent",
+    "mechanical": "Inerting and bypass resource.",
+    "lore": "Containment vapor or droplet, not blood.",
+    "warning": "Inerting buys time; it does not erase consequences.",
+    "uiNotes": "Avoid gore/potion cues."
+  },
+  "warning": "Inerting buys time; it does not erase consequences.",
+  "iconAssetId": "resource-syrin-reagent",
+  "testId": "resource-syrin-reagent",
+  "sourceBasis": "direct canon",
+  "status": "prompted"
+}

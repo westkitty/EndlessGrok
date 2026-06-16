@@ -1,0 +1,20 @@
+{
+  "key": "siegeLatticeFragment",
+  "assetId": "resource-siege-lattice-fragment",
+  "manifestAssetId": "resource-siege-lattice-fragment",
+  "displayName": "Siege Lattice Fragment",
+  "mechanicalMeaning": "Containment/singularity material.",
+  "loreMeaning": "Black-hole lattice shard and infrastructure fragment.",
+  "tooltip": {
+    "title": "Siege Lattice Fragment",
+    "mechanical": "Containment/singularity material.",
+    "lore": "Black-hole lattice shard and infrastructure fragment.",
+    "warning": "Fortification near singularities remains dangerous.",
+    "uiNotes": "Avoid web/whirlpool shapes."
+  },
+  "warning": "Fortification near singularities remains dangerous.",
+  "iconAssetId": "resource-siege-lattice-fragment",
+  "testId": "resource-siege-lattice-fragment",
+  "sourceBasis": "direct canon",
+  "status": "prompted"
+}

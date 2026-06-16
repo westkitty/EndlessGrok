@@ -1,0 +1,25 @@
+{
+  "id": "map-lane-unknown",
+  "displayName": "Map Lane Unknown",
+  "family": "map",
+  "filename": "map-lane-unknown.svg",
+  "plannedPath": "public/assets/icons/map/map-lane-unknown.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/map/map-lane-unknown.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "map lane unknown",
+  "tooltip": {
+    "title": "Map Lane Unknown",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "map-lane-unknown",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "map:lane-unknown"
+}

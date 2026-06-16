@@ -1,0 +1,25 @@
+{
+  "id": "event-diplomacy-ledger-audit-demand",
+  "displayName": "Event Diplomacy Ledger Audit Demand",
+  "family": "events",
+  "filename": "event-diplomacy-ledger-audit-demand.json",
+  "plannedPath": "src/data/events/event-diplomacy-ledger-audit-demand.json",
+  "plannedFiles": {
+    "json": "src/data/events/event-diplomacy-ledger-audit-demand.json"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "event diplomacy ledger audit demand",
+  "tooltip": {
+    "title": "Event Diplomacy Ledger Audit Demand",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "event-diplomacy-ledger-audit-demand",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "event:diplomacy-ledger-audit-demand"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "macro-active-effect-badge",
+  "displayName": "Macro Active Effect Badge",
+  "family": "macros",
+  "filename": "macro-active-effect-badge.svg",
+  "plannedPath": "public/assets/icons/macros/macro-active-effect-badge.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/macros/macro-active-effect-badge.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "macro active effect badge",
+  "tooltip": {
+    "title": "Macro Active Effect Badge",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "macro-active-effect-badge",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "macro:active-effect-badge"
+}

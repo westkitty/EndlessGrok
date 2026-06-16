@@ -1,0 +1,27 @@
+{
+  "id": "event-resource-blood-ring-glass-recovered",
+  "assetId": "event-resource-blood-ring-glass-recovered",
+  "category": "resource",
+  "title": "Blood Ring Glass Recovered",
+  "body": "Vitrified remnant extracted from a burned ring structure. The material is filed under infrastructure, not reward.",
+  "severity": "high",
+  "sourceLabel": "direct canon",
+  "triggerCondition": "deposit_blood_ring_glass_discovered",
+  "affectedScope": "empire_inventory",
+  "mechanicalEffect": "+1 Blood Ring Glass; diplomatic penalty from non-Drakken factions on first use.",
+  "options": [
+    {
+      "id": "file",
+      "label": "File under quarantine",
+      "mechanicalEffect": "+1 Blood Ring Glass, flagged contaminated"
+    },
+    {
+      "id": "reject",
+      "label": "Reject extraction",
+      "mechanicalEffect": "No resource; approval +2"
+    }
+  ],
+  "testId": "event-resource-blood-ring-glass-recovered",
+  "testFixture": "tests/fixtures/events/event-resource-blood-ring-glass-recovered.json",
+  "status": "prompted"
+}

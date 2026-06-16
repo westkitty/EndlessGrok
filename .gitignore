@@ -19,6 +19,9 @@ dist-ssr
 .endlessgrok-server.log
 scripts/macos/build
 
+# External Starsilk Asset Production Agent package (do not vendor)
+starsilk_4x_assets/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

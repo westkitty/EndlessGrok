@@ -1,0 +1,203 @@
+[
+  {
+    "id": "starbinding",
+    "displayName": "The Starbinding",
+    "assetId": "victory-starbinding",
+    "mechanicalMeaning": "Catastrophic Partition victory via heliocide dives, inert stabilization, and final macro execution.",
+    "loreMeaning": "The sky is severed on purpose. No consensus was sought.",
+    "warning": "Irreversible. Morally compromised. Heliocide-linked. Not heroic.",
+    "completable": true,
+    "stages": [
+      {
+        "id": "victory-starbinding-stage-forbidden-theory",
+        "assetId": "victory-starbinding-stage-forbidden-theory",
+        "pathId": "starbinding",
+        "stageOrder": 1,
+        "displayName": "Forbidden Theory",
+        "mechanicalMeaning": "Catalogue forbidden Starbinding theory.",
+        "loreMeaning": "The ledger accepts the theory before morality does.",
+        "irreversible": false,
+        "testId": "victory-starbinding-stage-forbidden-theory",
+        "status": "prompted"
+      },
+      {
+        "id": "victory-starbinding-stage-partition-mathematics",
+        "assetId": "victory-starbinding-stage-partition-mathematics",
+        "pathId": "starbinding",
+        "stageOrder": 2,
+        "displayName": "Partition Mathematics",
+        "mechanicalMeaning": "Derive partition mathematics for array construction.",
+        "loreMeaning": "Geometry of rupture written as necessity.",
+        "irreversible": false,
+        "testId": "victory-starbinding-stage-partition-mathematics",
+        "status": "prompted"
+      },
+      {
+        "id": "victory-starbinding-stage-syrin-inerting-method",
+        "assetId": "victory-starbinding-stage-syrin-inerting-method",
+        "pathId": "starbinding",
+        "stageOrder": 3,
+        "displayName": "Syrin Inerting Method",
+        "mechanicalMeaning": "Acquire Syrin inerting stabilization method.",
+        "loreMeaning": "Containment chemistry bought against thread bleed.",
+        "irreversible": false,
+        "testId": "victory-starbinding-stage-syrin-inerting-method",
+        "status": "prompted"
+      },
+      {
+        "id": "victory-starbinding-stage-worldsvault-array",
+        "assetId": "victory-starbinding-stage-worldsvault-array",
+        "pathId": "starbinding",
+        "stageOrder": 4,
+        "displayName": "Worldsvault Array",
+        "mechanicalMeaning": "Construct Starbinding array at target system.",
+        "loreMeaning": "Array accepts no appeal once anchored.",
+        "irreversible": false,
+        "testId": "victory-starbinding-stage-worldsvault-array",
+        "status": "prompted"
+      },
+      {
+        "id": "victory-starbinding-stage-target-selection",
+        "assetId": "victory-starbinding-stage-target-selection",
+        "pathId": "starbinding",
+        "stageOrder": 5,
+        "displayName": "Target Selection",
+        "mechanicalMeaning": "Select archive stars for dive sequence.",
+        "loreMeaning": "Targets chosen; diplomatic crisis accumulates.",
+        "irreversible": false,
+        "testId": "victory-starbinding-stage-target-selection",
+        "status": "prompted"
+      },
+      {
+        "id": "victory-starbinding-stage-heliocide-sequence",
+        "assetId": "victory-starbinding-stage-heliocide-sequence",
+        "pathId": "heliocide",
+        "stageOrder": 6,
+        "displayName": "Heliocide Sequence",
+        "mechanicalMeaning": "Execute heliocide dives on selected stars.",
+        "loreMeaning": "Stars collapse by procedure, not heroism.",
+        "warning": "Irreversible stellar collapse. Memory and lanes are destroyed.",
+        "irreversible": true,
+        "testId": "victory-starbinding-stage-heliocide-sequence",
+        "status": "prompted"
+      },
+      {
+        "id": "victory-starbinding-stage-diplomatic-crisis",
+        "assetId": "victory-starbinding-stage-diplomatic-crisis",
+        "pathId": "starbinding",
+        "stageOrder": 7,
+        "displayName": "Diplomatic Crisis",
+        "mechanicalMeaning": "Survive diplomatic crisis before final macro.",
+        "loreMeaning": "Allies fracture; containment factions escalate.",
+        "warning": "Relations may sever permanently.",
+        "irreversible": false,
+        "testId": "victory-starbinding-stage-diplomatic-crisis",
+        "status": "prompted"
+      },
+      {
+        "id": "victory-starbinding-stage-final-macro-execution",
+        "assetId": "victory-starbinding-stage-final-macro-execution",
+        "pathId": "starbinding",
+        "stageOrder": 8,
+        "displayName": "Final Macro Execution",
+        "mechanicalMeaning": "Execute final Partition macro.",
+        "loreMeaning": "Sky severed on purpose. Not a clean triumph.",
+        "warning": "Morally compromised victory. Cost is permanent.",
+        "irreversible": true,
+        "testId": "victory-starbinding-stage-final-macro-execution",
+        "status": "prompted"
+      }
+    ],
+    "testId": "victory-starbinding",
+    "status": "prompted"
+  },
+  {
+    "id": "archive-continuity",
+    "displayName": "Archive Continuity",
+    "assetId": "victory-archive-continuity",
+    "mechanicalMeaning": "Preservation victory through Archive Data custody and research syntax thresholds.",
+    "loreMeaning": "Memory kept against Partition pressure. Preservation remains morally ambiguous.",
+    "warning": "Custody is not innocence. Records can be weaponized.",
+    "completable": false,
+    "stages": [
+      {
+        "id": "victory-archive-continuity",
+        "assetId": "victory-archive-continuity",
+        "pathId": "archive-continuity",
+        "stageOrder": 1,
+        "displayName": "Archive Continuity",
+        "mechanicalMeaning": "Foundation tracking for archive custody progress.",
+        "loreMeaning": "Continuity factions fear erasure more than stagnation.",
+        "irreversible": false,
+        "testId": "victory-archive-continuity",
+        "status": "prompted"
+      }
+    ],
+    "testId": "victory-archive-continuity",
+    "status": "prompted"
+  },
+  {
+    "id": "siege-custody",
+    "displayName": "Siege Custody",
+    "assetId": "victory-ledger-dominion",
+    "mechanicalMeaning": "Containment victory through siege lattice anchoring and administrative custody.",
+    "loreMeaning": "Order imposed by checksum, lattice anchors, and vassal ledger — cold containment, not conquest glamour.",
+    "warning": "Custody admits the wound stays open. Singularity hazard remains.",
+    "completable": false,
+    "stages": [
+      {
+        "id": "victory-ledger-dominion",
+        "assetId": "victory-ledger-dominion",
+        "pathId": "siege-custody",
+        "stageOrder": 1,
+        "displayName": "Ledger Dominion Foundation",
+        "mechanicalMeaning": "Influence hegemony and lattice containment tracked.",
+        "loreMeaning": "Administration dreams of a galaxy that signs every turn.",
+        "irreversible": false,
+        "testId": "victory-ledger-dominion",
+        "status": "prompted"
+      },
+      {
+        "id": "macro-siege-lattice-anchor",
+        "assetId": "macro-siege-lattice-anchor",
+        "pathId": "siege-custody",
+        "stageOrder": 2,
+        "displayName": "Lattice Anchoring",
+        "mechanicalMeaning": "Siege lattice anchors chokepoints near singularities.",
+        "loreMeaning": "Lattice torn from siege geometry.",
+        "warning": "Fleet hazard remains after anchoring.",
+        "irreversible": false,
+        "testId": "macro-siege-lattice-anchor",
+        "status": "prompted"
+      }
+    ],
+    "testId": "victory-ledger-dominion",
+    "status": "prompted"
+  },
+  {
+    "id": "heliocide",
+    "displayName": "Heliocide",
+    "assetId": "victory-starbinding-stage-heliocide-sequence",
+    "mechanicalMeaning": "Irreversible stellar collapse stage within Starbinding.",
+    "loreMeaning": "Stars collapsed by procedure. Ledgered singularities replace living light.",
+    "warning": "Irreversible. Reports cost and instability, never triumph.",
+    "completable": false,
+    "stages": [
+      {
+        "id": "victory-starbinding-stage-heliocide-sequence",
+        "assetId": "victory-starbinding-stage-heliocide-sequence",
+        "pathId": "heliocide",
+        "stageOrder": 6,
+        "displayName": "Heliocide Sequence",
+        "mechanicalMeaning": "Execute heliocide dives on selected stars.",
+        "loreMeaning": "Stars collapse by procedure, not heroism.",
+        "warning": "Irreversible stellar collapse. Memory and lanes are destroyed.",
+        "irreversible": true,
+        "testId": "victory-starbinding-stage-heliocide-sequence",
+        "status": "prompted"
+      }
+    ],
+    "testId": "victory-starbinding-stage-heliocide-sequence",
+    "status": "prompted"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "id": "macro-siege-lattice-anchor",
+  "displayName": "Macro Siege Lattice Anchor",
+  "family": "macros",
+  "filename": "macro-siege-lattice-anchor.svg",
+  "plannedPath": "public/assets/icons/macros/macro-siege-lattice-anchor.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/macros/macro-siege-lattice-anchor.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "macro siege lattice anchor",
+  "tooltip": {
+    "title": "Macro Siege Lattice Anchor",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "macro-siege-lattice-anchor",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "macro:siege-lattice-anchor"
+}

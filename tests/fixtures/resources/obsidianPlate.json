@@ -1,0 +1,18 @@
+{
+  "key": "obsidianPlate",
+  "assetId": "obsidian-plate",
+  "manifestAssetId": "module-defense-obsidian-shell",
+  "displayName": "Obsidian Plate",
+  "mechanicalMeaning": "Dense defensive plating for singularity-adjacent hull stress.",
+  "loreMeaning": "Obsidian shell laminate — containment geometry made solid.",
+  "tooltip": {
+    "title": "Obsidian Plate",
+    "mechanical": "Dense defensive plating for singularity-adjacent hull stress.",
+    "lore": "Obsidian shell laminate — containment geometry made solid.",
+    "uiNotes": "Linked to module-defense-obsidian-shell."
+  },
+  "iconAssetId": "module-defense-obsidian-shell",
+  "testId": "obsidian-plate",
+  "sourceBasis": "direct canon",
+  "status": "prompted"
+}

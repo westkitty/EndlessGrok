@@ -1,0 +1,25 @@
+{
+  "id": "module-defense-obsidian-shell",
+  "displayName": "Module Defense Obsidian Shell",
+  "family": "fleets",
+  "filename": "module-defense-obsidian-shell.svg",
+  "plannedPath": "public/assets/icons/fleets/module-defense-obsidian-shell.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/module-defense-obsidian-shell.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "module defense obsidian shell",
+  "tooltip": {
+    "title": "Module Defense Obsidian Shell",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "module-defense-obsidian-shell",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "fleet:module-defense-obsidian-shell"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "docs-asset-registry",
+  "displayName": "Docs Asset Registry",
+  "family": "ui",
+  "filename": "asset-registry.md",
+  "plannedPath": "docs/asset-registry.md",
+  "plannedFiles": {
+    "md": "docs/asset-registry.md"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "docs asset registry",
+  "tooltip": {
+    "title": "Docs Asset Registry",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "docs-asset-registry",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "ui:docs-asset-registry"
+}

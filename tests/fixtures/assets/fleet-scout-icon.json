@@ -1,0 +1,25 @@
+{
+  "id": "fleet-scout-icon",
+  "displayName": "Fleet Scout Icon",
+  "family": "fleets",
+  "filename": "fleet-scout-icon.svg",
+  "plannedPath": "public/assets/icons/fleets/fleet-scout-icon.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/fleet-scout-icon.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "fleet scout icon",
+  "tooltip": {
+    "title": "Fleet Scout Icon",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "fleet-scout-icon",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "fleet:scout-icon"
+}

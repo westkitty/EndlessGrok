@@ -1,0 +1,25 @@
+{
+  "id": "macro-drakken-biosphere-render",
+  "displayName": "Macro Drakken Biosphere Render",
+  "family": "macros",
+  "filename": "macro-drakken-biosphere-render.svg",
+  "plannedPath": "public/assets/icons/macros/macro-drakken-biosphere-render.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/macros/macro-drakken-biosphere-render.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "macro drakken biosphere render",
+  "tooltip": {
+    "title": "Macro Drakken Biosphere Render",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "macro-drakken-biosphere-render",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "macro:drakken-biosphere-render"
+}

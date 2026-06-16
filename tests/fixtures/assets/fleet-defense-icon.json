@@ -1,0 +1,25 @@
+{
+  "id": "fleet-defense-icon",
+  "displayName": "Fleet Defense Icon",
+  "family": "fleets",
+  "filename": "fleet-defense-icon.svg",
+  "plannedPath": "public/assets/icons/fleets/fleet-defense-icon.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/fleets/fleet-defense-icon.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "fleet defense icon",
+  "tooltip": {
+    "title": "Fleet Defense Icon",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "fleet-defense-icon",
+  "sourceBasis": "mechanical UI necessity",
+  "status": "prompted",
+  "mechanicalKey": "fleet:defense-icon"
+}

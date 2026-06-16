@@ -1,0 +1,25 @@
+{
+  "id": "faction-archive-custodians-exhumed-cipher-emblem",
+  "displayName": "Faction Archive Custodians Exhumed Cipher Emblem",
+  "family": "factions",
+  "filename": "faction-archive-custodians-exhumed-cipher-emblem.svg",
+  "plannedPath": "public/assets/icons/factions/faction-archive-custodians-exhumed-cipher-emblem.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/factions/faction-archive-custodians-exhumed-cipher-emblem.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "faction archive custodians exhumed cipher emblem",
+  "tooltip": {
+    "title": "Faction Archive Custodians Exhumed Cipher Emblem",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "faction-archive-custodians-exhumed-cipher-emblem",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "faction:archive-custodians-exhumed-cipher-emblem"
+}

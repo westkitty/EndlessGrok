@@ -1,0 +1,25 @@
+{
+  "id": "victory-starbinding-stage-target-selection",
+  "displayName": "Victory Starbinding Stage Target Selection",
+  "family": "victory",
+  "filename": "victory-starbinding-stage-target-selection.svg",
+  "plannedPath": "public/assets/icons/victory/victory-starbinding-stage-target-selection.svg",
+  "plannedFiles": {
+    "svg": "public/assets/icons/victory/victory-starbinding-stage-target-selection.svg"
+  },
+  "states": [
+    "default"
+  ],
+  "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+  "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+  "accessibilityLabel": "victory starbinding stage target selection",
+  "tooltip": {
+    "title": "Victory Starbinding Stage Target Selection",
+    "mechanical": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "lore": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning."
+  },
+  "testId": "victory-starbinding-stage-target-selection",
+  "sourceBasis": "direct canon",
+  "status": "prompted",
+  "mechanicalKey": "victory:starbinding-stage-target-selection"
+}

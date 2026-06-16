@@ -1,0 +1,27 @@
+{
+  "id": "event-resource-siege-lattice-fragment-unstable",
+  "assetId": "event-resource-siege-lattice-fragment-unstable",
+  "category": "resource",
+  "title": "Siege Lattice Fragment Unstable",
+  "body": "Lattice shard resonance exceeds containment brackets. Instability is rising.",
+  "severity": "critical",
+  "sourceLabel": "direct canon",
+  "triggerCondition": "siege_lattice_fragment_in_singularity_system",
+  "affectedScope": "target_system",
+  "mechanicalEffect": "Fragment remains usable but system hazard increases until anchored or sealed.",
+  "options": [
+    {
+      "id": "anchor",
+      "label": "Anchor lattice",
+      "mechanicalEffect": "Enables fortification macro; hazard persists"
+    },
+    {
+      "id": "jettison",
+      "label": "Jettison fragment",
+      "mechanicalEffect": "Lose fragment; hazard -1"
+    }
+  ],
+  "testId": "event-resource-siege-lattice-fragment-unstable",
+  "testFixture": "tests/fixtures/events/event-resource-siege-lattice-fragment-unstable.json",
+  "status": "prompted"
+}

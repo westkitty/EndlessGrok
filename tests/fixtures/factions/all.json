@@ -1,0 +1,129 @@
+[
+  {
+    "id": "ledger-administration",
+    "name": "Ledger Administration",
+    "visualMotifs": [
+      "checksum",
+      "audit",
+      "containment"
+    ],
+    "aiPersonality": "clinical control",
+    "diplomacyStyle": "Procedural audits and checksum demands; relations shift on ledger compliance.",
+    "victoryPreference": "Ledger Dominion",
+    "resourcePreference": "Command Legitimacy",
+    "aiTendencies": [
+      "prioritize_checksum_macros",
+      "influence_hegemony",
+      "containment_escalation"
+    ],
+    "emblemAssetId": "faction-ledger-administration-emblem",
+    "tonePackAssetId": "faction-diplomacy-tone-pack-ledger-administration",
+    "testId": "faction-ledger-administration-emblem",
+    "status": "prompted"
+  },
+  {
+    "id": "drakken-genesis-host",
+    "name": "Drakken Genesis Host",
+    "visualMotifs": [
+      "bio-geologic overwrite"
+    ],
+    "aiPersonality": "pressure through rendering",
+    "diplomacyStyle": "Rendering notices and biosphere pressure; not draconic conquest rhetoric.",
+    "victoryPreference": "Blood Eclipse",
+    "resourcePreference": "Fabrication Mass",
+    "aiTendencies": [
+      "biosphere_render",
+      "blood_ring_extraction",
+      "territorial_pressure"
+    ],
+    "emblemAssetId": "faction-drakken-genesis-host-emblem",
+    "tonePackAssetId": "faction-diplomacy-tone-pack-drakken-genesis-host",
+    "testId": "faction-drakken-genesis-host-emblem",
+    "status": "prompted"
+  },
+  {
+    "id": "solidarity-cells-partition-front",
+    "name": "Solidarity Cells / Partition Front",
+    "visualMotifs": [
+      "partition math",
+      "sabotage"
+    ],
+    "aiPersonality": "disciplined rupture",
+    "diplomacyStyle": "Partition mathematics diplomacy; opposes unilateral Starbinding.",
+    "victoryPreference": "Starbinding",
+    "resourcePreference": "Starsilk Thread",
+    "aiTendencies": [
+      "starbinding_progress",
+      "sabotage_counters",
+      "collective_rupture"
+    ],
+    "emblemAssetId": "faction-solidarity-cells-partition-front-emblem",
+    "tonePackAssetId": "faction-diplomacy-tone-pack-solidarity-cells-partition-front",
+    "testId": "faction-solidarity-cells-partition-front-emblem",
+    "status": "prompted"
+  },
+  {
+    "id": "syrin-survivor-enclave",
+    "name": "Syrin Survivor Enclave",
+    "visualMotifs": [
+      "inerting",
+      "preservation"
+    ],
+    "aiPersonality": "defensive survival",
+    "diplomacyStyle": "Inerting advocacy; condemns heliocide and thread weaponization.",
+    "victoryPreference": "Syrin Inerting",
+    "resourcePreference": "Syrin Reagent",
+    "aiTendencies": [
+      "inerting_mist",
+      "hazard_suppression",
+      "defensive_posture"
+    ],
+    "emblemAssetId": "faction-syrin-survivor-enclave-emblem",
+    "tonePackAssetId": "faction-diplomacy-tone-pack-syrin-survivor-enclave",
+    "testId": "faction-syrin-survivor-enclave-emblem",
+    "status": "prompted"
+  },
+  {
+    "id": "archive-custodians-exhumed-cipher",
+    "name": "Archive Custodians / Exhumed Cipher",
+    "visualMotifs": [
+      "prisms",
+      "custody",
+      "records"
+    ],
+    "aiPersonality": "ambiguous preservation",
+    "diplomacyStyle": "Custody demands and record audits; preservation without clean hero framing.",
+    "victoryPreference": "Archive Continuity",
+    "resourcePreference": "Archive Data",
+    "aiTendencies": [
+      "archive_extraction",
+      "memory_custody",
+      "research_syntax"
+    ],
+    "emblemAssetId": "faction-archive-custodians-exhumed-cipher-emblem",
+    "tonePackAssetId": "faction-diplomacy-tone-pack-archive-custodians-exhumed-cipher",
+    "testId": "faction-archive-custodians-exhumed-cipher-emblem",
+    "status": "prompted"
+  },
+  {
+    "id": "containment-order-shard-god",
+    "name": "Containment Order / Shard-God aligned force",
+    "visualMotifs": [
+      "divine procedure",
+      "brackets"
+    ],
+    "aiPersonality": "cold containment",
+    "diplomacyStyle": "Cold procedural containment; divine procedure without glamour.",
+    "victoryPreference": "Siege Custody",
+    "resourcePreference": "Siege Lattice Fragment",
+    "aiTendencies": [
+      "lattice_anchoring",
+      "singularity_containment",
+      "ledger_containment_hybrid"
+    ],
+    "emblemAssetId": "faction-containment-order-shard-god-emblem",
+    "tonePackAssetId": "faction-diplomacy-tone-pack-containment-order-shard-god",
+    "testId": "faction-containment-order-shard-god-emblem",
+    "status": "prompted"
+  }
+]

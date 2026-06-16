@@ -1,0 +1,18 @@
+{
+  "key": "cinderCore",
+  "assetId": "cinder-core",
+  "manifestAssetId": "module-engine-cinderverge-thrusters",
+  "displayName": "Cinder Core",
+  "mechanicalMeaning": "High-thrust engine core material for cinderverge thrusters.",
+  "loreMeaning": "Cinder-verge burn residue — velocity bought with heat and hazard.",
+  "tooltip": {
+    "title": "Cinder Core",
+    "mechanical": "High-thrust engine core material for cinderverge thrusters.",
+    "lore": "Cinder-verge burn residue — velocity bought with heat and hazard.",
+    "uiNotes": "Linked to module-engine-cinderverge-thrusters."
+  },
+  "iconAssetId": "module-engine-cinderverge-thrusters",
+  "testId": "cinder-core",
+  "sourceBasis": "direct canon",
+  "status": "prompted"
+}

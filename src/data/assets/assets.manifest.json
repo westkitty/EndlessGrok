@@ -1,0 +1,2414 @@
+[
+  {
+    "id": "resource-starsilk-thread",
+    "displayName": "Resource Starsilk Thread",
+    "family": "resources",
+    "plannedFiles": {
+      "svg": "public/assets/icons/resources/resource-starsilk-thread.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "resource starsilk thread",
+    "tooltip": null,
+    "testId": "resource-starsilk-thread",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "resource-inert-starsilk",
+    "displayName": "Resource Inert Starsilk",
+    "family": "resources",
+    "plannedFiles": {
+      "svg": "public/assets/icons/resources/resource-inert-starsilk.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "resource inert starsilk",
+    "tooltip": null,
+    "testId": "resource-inert-starsilk",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "resource-syrin-reagent",
+    "displayName": "Resource Syrin Reagent",
+    "family": "resources",
+    "plannedFiles": {
+      "svg": "public/assets/icons/resources/resource-syrin-reagent.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "resource syrin reagent",
+    "tooltip": null,
+    "testId": "resource-syrin-reagent",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "resource-archive-data",
+    "displayName": "Resource Archive Data",
+    "family": "resources",
+    "plannedFiles": {
+      "svg": "public/assets/icons/resources/resource-archive-data.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "resource archive data",
+    "tooltip": null,
+    "testId": "resource-archive-data",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "resource-blood-ring-glass",
+    "displayName": "Resource Blood Ring Glass",
+    "family": "resources",
+    "plannedFiles": {
+      "svg": "public/assets/icons/resources/resource-blood-ring-glass.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "resource blood ring glass",
+    "tooltip": null,
+    "testId": "resource-blood-ring-glass",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "resource-siege-lattice-fragment",
+    "displayName": "Resource Siege Lattice Fragment",
+    "family": "resources",
+    "plannedFiles": {
+      "svg": "public/assets/icons/resources/resource-siege-lattice-fragment.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "resource siege lattice fragment",
+    "tooltip": null,
+    "testId": "resource-siege-lattice-fragment",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "resource-macro-labor",
+    "displayName": "Resource Macro Labor",
+    "family": "resources",
+    "plannedFiles": {
+      "svg": "public/assets/icons/resources/resource-macro-labor.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "resource macro labor",
+    "tooltip": null,
+    "testId": "resource-macro-labor",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "resource-command-legitimacy",
+    "displayName": "Resource Command Legitimacy",
+    "family": "resources",
+    "plannedFiles": {
+      "svg": "public/assets/icons/resources/resource-command-legitimacy.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "resource command legitimacy",
+    "tooltip": null,
+    "testId": "resource-command-legitimacy",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "resource-fabrication-mass",
+    "displayName": "Resource Fabrication Mass",
+    "family": "resources",
+    "plannedFiles": {
+      "svg": "public/assets/icons/resources/resource-fabrication-mass.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "resource fabrication mass",
+    "tooltip": null,
+    "testId": "resource-fabrication-mass",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "resource-research-syntax",
+    "displayName": "Resource Research Syntax",
+    "family": "resources",
+    "plannedFiles": {
+      "svg": "public/assets/icons/resources/resource-research-syntax.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "resource research syntax",
+    "tooltip": null,
+    "testId": "resource-research-syntax",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-starbinding",
+    "displayName": "Victory Starbinding",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-starbinding.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory starbinding",
+    "tooltip": null,
+    "testId": "victory-starbinding",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-starbinding-stage-forbidden-theory",
+    "displayName": "Victory Starbinding Stage Forbidden Theory",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-starbinding-stage-forbidden-theory.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory starbinding stage forbidden theory",
+    "tooltip": null,
+    "testId": "victory-starbinding-stage-forbidden-theory",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-starbinding-stage-partition-mathematics",
+    "displayName": "Victory Starbinding Stage Partition Mathematics",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-starbinding-stage-partition-mathematics.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory starbinding stage partition mathematics",
+    "tooltip": null,
+    "testId": "victory-starbinding-stage-partition-mathematics",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-starbinding-stage-syrin-inerting-method",
+    "displayName": "Victory Starbinding Stage Syrin Inerting Method",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-starbinding-stage-syrin-inerting-method.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory starbinding stage syrin inerting method",
+    "tooltip": null,
+    "testId": "victory-starbinding-stage-syrin-inerting-method",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-starbinding-stage-worldsvault-array",
+    "displayName": "Victory Starbinding Stage Worldsvault Array",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-starbinding-stage-worldsvault-array.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory starbinding stage worldsvault array",
+    "tooltip": null,
+    "testId": "victory-starbinding-stage-worldsvault-array",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-starbinding-stage-target-selection",
+    "displayName": "Victory Starbinding Stage Target Selection",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-starbinding-stage-target-selection.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory starbinding stage target selection",
+    "tooltip": null,
+    "testId": "victory-starbinding-stage-target-selection",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-starbinding-stage-heliocide-sequence",
+    "displayName": "Victory Starbinding Stage Heliocide Sequence",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-starbinding-stage-heliocide-sequence.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory starbinding stage heliocide sequence",
+    "tooltip": null,
+    "testId": "victory-starbinding-stage-heliocide-sequence",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-starbinding-stage-diplomatic-crisis",
+    "displayName": "Victory Starbinding Stage Diplomatic Crisis",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-starbinding-stage-diplomatic-crisis.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory starbinding stage diplomatic crisis",
+    "tooltip": null,
+    "testId": "victory-starbinding-stage-diplomatic-crisis",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-starbinding-stage-final-macro-execution",
+    "displayName": "Victory Starbinding Stage Final Macro Execution",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-starbinding-stage-final-macro-execution.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory starbinding stage final macro execution",
+    "tooltip": null,
+    "testId": "victory-starbinding-stage-final-macro-execution",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-starbinding-target-marker",
+    "displayName": "Victory Starbinding Target Marker",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-starbinding-target-marker.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory starbinding target marker",
+    "tooltip": null,
+    "testId": "victory-starbinding-target-marker",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-rival-starbinding-warning",
+    "displayName": "Victory Rival Starbinding Warning",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-rival-starbinding-warning.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory rival starbinding warning",
+    "tooltip": null,
+    "testId": "victory-rival-starbinding-warning",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-catastrophic-final-modal",
+    "displayName": "Victory Catastrophic Final Modal",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-catastrophic-final-modal.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory catastrophic final modal",
+    "tooltip": null,
+    "testId": "victory-catastrophic-final-modal",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-syrin-inerting",
+    "displayName": "Victory Syrin Inerting",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-syrin-inerting.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory syrin inerting",
+    "tooltip": null,
+    "testId": "victory-syrin-inerting",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-ledger-dominion",
+    "displayName": "Victory Ledger Dominion",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-ledger-dominion.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory ledger dominion",
+    "tooltip": null,
+    "testId": "victory-ledger-dominion",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-blood-eclipse",
+    "displayName": "Victory Blood Eclipse",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-blood-eclipse.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory blood eclipse",
+    "tooltip": null,
+    "testId": "victory-blood-eclipse",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "victory-archive-continuity",
+    "displayName": "Victory Archive Continuity",
+    "family": "victory",
+    "plannedFiles": {
+      "svg": "public/assets/icons/victory/victory-archive-continuity.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "victory archive continuity",
+    "tooltip": null,
+    "testId": "victory-archive-continuity",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-star-normal",
+    "displayName": "Map Star Normal",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-star-normal.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map star normal",
+    "tooltip": null,
+    "testId": "map-star-normal",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "map-collapsed-star",
+    "displayName": "Map Collapsed Star",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-collapsed-star.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map collapsed star",
+    "tooltip": null,
+    "testId": "map-collapsed-star",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-starbinding-target",
+    "displayName": "Map Starbinding Target",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-starbinding-target.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map starbinding target",
+    "tooltip": null,
+    "testId": "map-starbinding-target",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-deposit-starsilk-leak",
+    "displayName": "Map Deposit Starsilk Leak",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-deposit-starsilk-leak.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map deposit starsilk leak",
+    "tooltip": null,
+    "testId": "map-deposit-starsilk-leak",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-deposit-syrin-trace",
+    "displayName": "Map Deposit Syrin Trace",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-deposit-syrin-trace.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map deposit syrin trace",
+    "tooltip": null,
+    "testId": "map-deposit-syrin-trace",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-deposit-blood-ring-glass",
+    "displayName": "Map Deposit Blood Ring Glass",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-deposit-blood-ring-glass.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map deposit blood ring glass",
+    "tooltip": null,
+    "testId": "map-deposit-blood-ring-glass",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-deposit-siege-lattice-fragment",
+    "displayName": "Map Deposit Siege Lattice Fragment",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-deposit-siege-lattice-fragment.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map deposit siege lattice fragment",
+    "tooltip": null,
+    "testId": "map-deposit-siege-lattice-fragment",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-deposit-archive-data",
+    "displayName": "Map Deposit Archive Data",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-deposit-archive-data.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map deposit archive data",
+    "tooltip": null,
+    "testId": "map-deposit-archive-data",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-hazard-singularity",
+    "displayName": "Map Hazard Singularity",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-hazard-singularity.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map hazard singularity",
+    "tooltip": null,
+    "testId": "map-hazard-singularity",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-hazard-unstable-star",
+    "displayName": "Map Hazard Unstable Star",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-hazard-unstable-star.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map hazard unstable star",
+    "tooltip": null,
+    "testId": "map-hazard-unstable-star",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-hazard-macro-sealed-system",
+    "displayName": "Map Hazard Macro Sealed System",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-hazard-macro-sealed-system.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map hazard macro sealed system",
+    "tooltip": null,
+    "testId": "map-hazard-macro-sealed-system",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "map-lane-normal",
+    "displayName": "Map Lane Normal",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-lane-normal.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map lane normal",
+    "tooltip": null,
+    "testId": "map-lane-normal",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "map-lane-unknown",
+    "displayName": "Map Lane Unknown",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-lane-unknown.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map lane unknown",
+    "tooltip": null,
+    "testId": "map-lane-unknown",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "map-lane-blocked",
+    "displayName": "Map Lane Blocked",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-lane-blocked.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map lane blocked",
+    "tooltip": null,
+    "testId": "map-lane-blocked",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "map-lane-hazardous",
+    "displayName": "Map Lane Hazardous",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-lane-hazardous.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map lane hazardous",
+    "tooltip": null,
+    "testId": "map-lane-hazardous",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "map-lane-sealed",
+    "displayName": "Map Lane Sealed",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-lane-sealed.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map lane sealed",
+    "tooltip": null,
+    "testId": "map-lane-sealed",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "map-lane-hostile",
+    "displayName": "Map Lane Hostile",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-lane-hostile.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map lane hostile",
+    "tooltip": null,
+    "testId": "map-lane-hostile",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "map-fog-intel-mask",
+    "displayName": "Map Fog Intel Mask",
+    "family": "map",
+    "plannedFiles": {
+      "svg": "public/assets/icons/map/map-fog-intel-mask.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "map fog intel mask",
+    "tooltip": null,
+    "testId": "map-fog-intel-mask",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "macro-local-checksum-audit",
+    "displayName": "Macro Local Checksum Audit",
+    "family": "macros",
+    "plannedFiles": {
+      "svg": "public/assets/icons/macros/macro-local-checksum-audit.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "macro local checksum audit",
+    "tooltip": null,
+    "testId": "macro-local-checksum-audit",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "macro-first-dirt-protocol",
+    "displayName": "Macro First Dirt Protocol",
+    "family": "macros",
+    "plannedFiles": {
+      "svg": "public/assets/icons/macros/macro-first-dirt-protocol.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "macro first dirt protocol",
+    "tooltip": null,
+    "testId": "macro-first-dirt-protocol",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "macro-syrin-inerting-mist",
+    "displayName": "Macro Syrin Inerting Mist",
+    "family": "macros",
+    "plannedFiles": {
+      "svg": "public/assets/icons/macros/macro-syrin-inerting-mist.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "macro syrin inerting mist",
+    "tooltip": null,
+    "testId": "macro-syrin-inerting-mist",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "macro-siege-lattice-anchor",
+    "displayName": "Macro Siege Lattice Anchor",
+    "family": "macros",
+    "plannedFiles": {
+      "svg": "public/assets/icons/macros/macro-siege-lattice-anchor.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "macro siege lattice anchor",
+    "tooltip": null,
+    "testId": "macro-siege-lattice-anchor",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "macro-archive-extraction-loop",
+    "displayName": "Macro Archive Extraction Loop",
+    "family": "macros",
+    "plannedFiles": {
+      "svg": "public/assets/icons/macros/macro-archive-extraction-loop.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "macro archive extraction loop",
+    "tooltip": null,
+    "testId": "macro-archive-extraction-loop",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "macro-drakken-biosphere-render",
+    "displayName": "Macro Drakken Biosphere Render",
+    "family": "macros",
+    "plannedFiles": {
+      "svg": "public/assets/icons/macros/macro-drakken-biosphere-render.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "macro drakken biosphere render",
+    "tooltip": null,
+    "testId": "macro-drakken-biosphere-render",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "macro-gravity-thread-seal",
+    "displayName": "Macro Gravity Thread Seal",
+    "family": "macros",
+    "plannedFiles": {
+      "svg": "public/assets/icons/macros/macro-gravity-thread-seal.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "macro gravity thread seal",
+    "tooltip": null,
+    "testId": "macro-gravity-thread-seal",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "macro-counter-macro-scrub",
+    "displayName": "Macro Counter Macro Scrub",
+    "family": "macros",
+    "plannedFiles": {
+      "svg": "public/assets/icons/macros/macro-counter-macro-scrub.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "macro counter macro scrub",
+    "tooltip": null,
+    "testId": "macro-counter-macro-scrub",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "macro-active-effect-badge",
+    "displayName": "Macro Active Effect Badge",
+    "family": "macros",
+    "plannedFiles": {
+      "svg": "public/assets/icons/macros/macro-active-effect-badge.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "macro active effect badge",
+    "tooltip": null,
+    "testId": "macro-active-effect-badge",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "macro-cooldown-badge",
+    "displayName": "Macro Cooldown Badge",
+    "family": "macros",
+    "plannedFiles": {
+      "svg": "public/assets/icons/macros/macro-cooldown-badge.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "macro cooldown badge",
+    "tooltip": null,
+    "testId": "macro-cooldown-badge",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-ledger-administration-emblem",
+    "displayName": "Faction Ledger Administration Emblem",
+    "family": "factions",
+    "plannedFiles": {
+      "svg": "public/assets/icons/factions/faction-ledger-administration-emblem.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction ledger administration emblem",
+    "tooltip": null,
+    "testId": "faction-ledger-administration-emblem",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-drakken-genesis-host-emblem",
+    "displayName": "Faction Drakken Genesis Host Emblem",
+    "family": "factions",
+    "plannedFiles": {
+      "svg": "public/assets/icons/factions/faction-drakken-genesis-host-emblem.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction drakken genesis host emblem",
+    "tooltip": null,
+    "testId": "faction-drakken-genesis-host-emblem",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-solidarity-cells-partition-front-emblem",
+    "displayName": "Faction Solidarity Cells Partition Front Emblem",
+    "family": "factions",
+    "plannedFiles": {
+      "svg": "public/assets/icons/factions/faction-solidarity-cells-partition-front-emblem.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction solidarity cells partition front emblem",
+    "tooltip": null,
+    "testId": "faction-solidarity-cells-partition-front-emblem",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-syrin-survivor-enclave-emblem",
+    "displayName": "Faction Syrin Survivor Enclave Emblem",
+    "family": "factions",
+    "plannedFiles": {
+      "svg": "public/assets/icons/factions/faction-syrin-survivor-enclave-emblem.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction syrin survivor enclave emblem",
+    "tooltip": null,
+    "testId": "faction-syrin-survivor-enclave-emblem",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-archive-custodians-exhumed-cipher-emblem",
+    "displayName": "Faction Archive Custodians Exhumed Cipher Emblem",
+    "family": "factions",
+    "plannedFiles": {
+      "svg": "public/assets/icons/factions/faction-archive-custodians-exhumed-cipher-emblem.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction archive custodians exhumed cipher emblem",
+    "tooltip": null,
+    "testId": "faction-archive-custodians-exhumed-cipher-emblem",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-containment-order-shard-god-emblem",
+    "displayName": "Faction Containment Order Shard God Emblem",
+    "family": "factions",
+    "plannedFiles": {
+      "svg": "public/assets/icons/factions/faction-containment-order-shard-god-emblem.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction containment order shard god emblem",
+    "tooltip": null,
+    "testId": "faction-containment-order-shard-god-emblem",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-diplomacy-tone-pack-ledger-administration",
+    "displayName": "Faction Diplomacy Tone Pack Ledger Administration",
+    "family": "factions",
+    "plannedFiles": {
+      "json": "src/data/factions/faction-diplomacy-tone-pack-ledger-administration.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction diplomacy tone pack ledger administration",
+    "tooltip": null,
+    "testId": "faction-diplomacy-tone-pack-ledger-administration",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-diplomacy-tone-pack-drakken-genesis-host",
+    "displayName": "Faction Diplomacy Tone Pack Drakken Genesis Host",
+    "family": "factions",
+    "plannedFiles": {
+      "json": "src/data/factions/faction-diplomacy-tone-pack-drakken-genesis-host.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction diplomacy tone pack drakken genesis host",
+    "tooltip": null,
+    "testId": "faction-diplomacy-tone-pack-drakken-genesis-host",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-diplomacy-tone-pack-solidarity-cells-partition-front",
+    "displayName": "Faction Diplomacy Tone Pack Solidarity Cells Partition Front",
+    "family": "factions",
+    "plannedFiles": {
+      "json": "src/data/factions/faction-diplomacy-tone-pack-solidarity-cells-partition-front.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction diplomacy tone pack solidarity cells partition front",
+    "tooltip": null,
+    "testId": "faction-diplomacy-tone-pack-solidarity-cells-partition-front",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-diplomacy-tone-pack-syrin-survivor-enclave",
+    "displayName": "Faction Diplomacy Tone Pack Syrin Survivor Enclave",
+    "family": "factions",
+    "plannedFiles": {
+      "json": "src/data/factions/faction-diplomacy-tone-pack-syrin-survivor-enclave.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction diplomacy tone pack syrin survivor enclave",
+    "tooltip": null,
+    "testId": "faction-diplomacy-tone-pack-syrin-survivor-enclave",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-diplomacy-tone-pack-archive-custodians-exhumed-cipher",
+    "displayName": "Faction Diplomacy Tone Pack Archive Custodians Exhumed Cipher",
+    "family": "factions",
+    "plannedFiles": {
+      "json": "src/data/factions/faction-diplomacy-tone-pack-archive-custodians-exhumed-cipher.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction diplomacy tone pack archive custodians exhumed cipher",
+    "tooltip": null,
+    "testId": "faction-diplomacy-tone-pack-archive-custodians-exhumed-cipher",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "faction-diplomacy-tone-pack-containment-order-shard-god",
+    "displayName": "Faction Diplomacy Tone Pack Containment Order Shard God",
+    "family": "factions",
+    "plannedFiles": {
+      "json": "src/data/factions/faction-diplomacy-tone-pack-containment-order-shard-god.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "faction diplomacy tone pack containment order shard god",
+    "tooltip": null,
+    "testId": "faction-diplomacy-tone-pack-containment-order-shard-god",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "fleet-scout-icon",
+    "displayName": "Fleet Scout Icon",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/fleet-scout-icon.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "fleet scout icon",
+    "tooltip": null,
+    "testId": "fleet-scout-icon",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "fleet-colony-icon",
+    "displayName": "Fleet Colony Icon",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/fleet-colony-icon.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "fleet colony icon",
+    "tooltip": null,
+    "testId": "fleet-colony-icon",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "fleet-military-icon",
+    "displayName": "Fleet Military Icon",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/fleet-military-icon.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "fleet military icon",
+    "tooltip": null,
+    "testId": "fleet-military-icon",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "fleet-defense-icon",
+    "displayName": "Fleet Defense Icon",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/fleet-defense-icon.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "fleet defense icon",
+    "tooltip": null,
+    "testId": "fleet-defense-icon",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "fleet-movement-trail",
+    "displayName": "Fleet Movement Trail",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/fleet-movement-trail.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "fleet movement trail",
+    "tooltip": null,
+    "testId": "fleet-movement-trail",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "fleet-selected-marker",
+    "displayName": "Fleet Selected Marker",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/fleet-selected-marker.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "fleet selected marker",
+    "tooltip": null,
+    "testId": "fleet-selected-marker",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "fleet-combat-risk-low",
+    "displayName": "Fleet Combat Risk Low",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/fleet-combat-risk-low.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "fleet combat risk low",
+    "tooltip": null,
+    "testId": "fleet-combat-risk-low",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "fleet-combat-risk-medium",
+    "displayName": "Fleet Combat Risk Medium",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/fleet-combat-risk-medium.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "fleet combat risk medium",
+    "tooltip": null,
+    "testId": "fleet-combat-risk-medium",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "fleet-combat-risk-high",
+    "displayName": "Fleet Combat Risk High",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/fleet-combat-risk-high.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "fleet combat risk high",
+    "tooltip": null,
+    "testId": "fleet-combat-risk-high",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "module-weapon-star-knife-lance",
+    "displayName": "Module Weapon Star Knife Lance",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/module-weapon-star-knife-lance.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "module weapon star knife lance",
+    "tooltip": null,
+    "testId": "module-weapon-star-knife-lance",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "module-weapon-macro-injector-array",
+    "displayName": "Module Weapon Macro Injector Array",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/module-weapon-macro-injector-array.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "module weapon macro injector array",
+    "tooltip": null,
+    "testId": "module-weapon-macro-injector-array",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "module-defense-checksum-hull",
+    "displayName": "Module Defense Checksum Hull",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/module-defense-checksum-hull.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "module defense checksum hull",
+    "tooltip": null,
+    "testId": "module-defense-checksum-hull",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "module-defense-obsidian-shell",
+    "displayName": "Module Defense Obsidian Shell",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/module-defense-obsidian-shell.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "module defense obsidian shell",
+    "tooltip": null,
+    "testId": "module-defense-obsidian-shell",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "module-engine-gravity-thread-engine",
+    "displayName": "Module Engine Gravity Thread Engine",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/module-engine-gravity-thread-engine.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "module engine gravity thread engine",
+    "tooltip": null,
+    "testId": "module-engine-gravity-thread-engine",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "module-engine-cinderverge-thrusters",
+    "displayName": "Module Engine Cinderverge Thrusters",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/module-engine-cinderverge-thrusters.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "module engine cinderverge thrusters",
+    "tooltip": null,
+    "testId": "module-engine-cinderverge-thrusters",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "module-utility-archive-sensors",
+    "displayName": "Module Utility Archive Sensors",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/module-utility-archive-sensors.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "module utility archive sensors",
+    "tooltip": null,
+    "testId": "module-utility-archive-sensors",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "module-utility-syrin-vapor-bypass",
+    "displayName": "Module Utility Syrin Vapor Bypass",
+    "family": "fleets",
+    "plannedFiles": {
+      "svg": "public/assets/icons/fleets/module-utility-syrin-vapor-bypass.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "module utility syrin vapor bypass",
+    "tooltip": null,
+    "testId": "module-utility-syrin-vapor-bypass",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "event-exploration-archive-shard-field",
+    "displayName": "Event Exploration Archive Shard Field",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-exploration-archive-shard-field.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event exploration archive shard field",
+    "tooltip": null,
+    "testId": "event-exploration-archive-shard-field",
+    "sourceBasis": "interpretive adaptation",
+    "status": "prompted"
+  },
+  {
+    "id": "event-exploration-starsilk-leak-detected",
+    "displayName": "Event Exploration Starsilk Leak Detected",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-exploration-starsilk-leak-detected.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event exploration starsilk leak detected",
+    "tooltip": null,
+    "testId": "event-exploration-starsilk-leak-detected",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "event-resource-blood-ring-glass-recovered",
+    "displayName": "Event Resource Blood Ring Glass Recovered",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-resource-blood-ring-glass-recovered.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event resource blood ring glass recovered",
+    "tooltip": null,
+    "testId": "event-resource-blood-ring-glass-recovered",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "event-resource-siege-lattice-fragment-unstable",
+    "displayName": "Event Resource Siege Lattice Fragment Unstable",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-resource-siege-lattice-fragment-unstable.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event resource siege lattice fragment unstable",
+    "tooltip": null,
+    "testId": "event-resource-siege-lattice-fragment-unstable",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "event-macro-syrin-inerting-mist-executed",
+    "displayName": "Event Macro Syrin Inerting Mist Executed",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-macro-syrin-inerting-mist-executed.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event macro syrin inerting mist executed",
+    "tooltip": null,
+    "testId": "event-macro-syrin-inerting-mist-executed",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "event-macro-counter-macro-scrub-failed",
+    "displayName": "Event Macro Counter Macro Scrub Failed",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-macro-counter-macro-scrub-failed.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event macro counter macro scrub failed",
+    "tooltip": null,
+    "testId": "event-macro-counter-macro-scrub-failed",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "event-diplomacy-ledger-audit-demand",
+    "displayName": "Event Diplomacy Ledger Audit Demand",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-diplomacy-ledger-audit-demand.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event diplomacy ledger audit demand",
+    "tooltip": null,
+    "testId": "event-diplomacy-ledger-audit-demand",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "event-diplomacy-drakken-rendering-notice",
+    "displayName": "Event Diplomacy Drakken Rendering Notice",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-diplomacy-drakken-rendering-notice.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event diplomacy drakken rendering notice",
+    "tooltip": null,
+    "testId": "event-diplomacy-drakken-rendering-notice",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "event-combat-checksum-hull-breach",
+    "displayName": "Event Combat Checksum Hull Breach",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-combat-checksum-hull-breach.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event combat checksum hull breach",
+    "tooltip": null,
+    "testId": "event-combat-checksum-hull-breach",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "event-victory-rival-starbinding-threshold",
+    "displayName": "Event Victory Rival Starbinding Threshold",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-victory-rival-starbinding-threshold.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event victory rival starbinding threshold",
+    "tooltip": null,
+    "testId": "event-victory-rival-starbinding-threshold",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "event-victory-heliocide-confirmation",
+    "displayName": "Event Victory Heliocide Confirmation",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-victory-heliocide-confirmation.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event victory heliocide confirmation",
+    "tooltip": null,
+    "testId": "event-victory-heliocide-confirmation",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "event-victory-archive-continuity-custody",
+    "displayName": "Event Victory Archive Continuity Custody",
+    "family": "events",
+    "plannedFiles": {
+      "json": "src/data/events/event-victory-archive-continuity-custody.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "event victory archive continuity custody",
+    "tooltip": null,
+    "testId": "event-victory-archive-continuity-custody",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "docs-asset-registry",
+    "displayName": "Docs Asset Registry",
+    "family": "ui",
+    "plannedFiles": {
+      "md": "docs/asset-registry.md"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "docs asset registry",
+    "tooltip": null,
+    "testId": "docs-asset-registry",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "docs-starsilk-lore-adaptation",
+    "displayName": "Docs Starsilk Lore Adaptation",
+    "family": "ui",
+    "plannedFiles": {
+      "md": "docs/starsilk-lore-adaptation.md"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "docs starsilk lore adaptation",
+    "tooltip": null,
+    "testId": "docs-starsilk-lore-adaptation",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "docs-resource-model",
+    "displayName": "Docs Resource Model",
+    "family": "ui",
+    "plannedFiles": {
+      "md": "docs/resource-model.md"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "docs resource model",
+    "tooltip": null,
+    "testId": "docs-resource-model",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "docs-victory-systems",
+    "displayName": "Docs Victory Systems",
+    "family": "ui",
+    "plannedFiles": {
+      "md": "docs/victory-systems.md"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "docs victory systems",
+    "tooltip": null,
+    "testId": "docs-victory-systems",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "docs-faction-guide",
+    "displayName": "Docs Faction Guide",
+    "family": "ui",
+    "plannedFiles": {
+      "md": "docs/faction-guide.md"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "docs faction guide",
+    "tooltip": null,
+    "testId": "docs-faction-guide",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "docs-event-writing-guide",
+    "displayName": "Docs Event Writing Guide",
+    "family": "ui",
+    "plannedFiles": {
+      "md": "docs/event-writing-guide.md"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "docs event writing guide",
+    "tooltip": null,
+    "testId": "docs-event-writing-guide",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "docs-testing-guide",
+    "displayName": "Docs Testing Guide",
+    "family": "ui",
+    "plannedFiles": {
+      "md": "docs/testing-guide.md"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "docs testing guide",
+    "tooltip": null,
+    "testId": "docs-testing-guide",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "data-assets-manifest",
+    "displayName": "Data Assets Manifest",
+    "family": "ui",
+    "plannedFiles": {
+      "json": "src/data/assets/assets.manifest.json"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "data assets manifest",
+    "tooltip": null,
+    "testId": "data-assets-manifest",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-panel-header-research",
+    "displayName": "Ui Panel Header Research",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-panel-header-research.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui panel header research",
+    "tooltip": null,
+    "testId": "ui-panel-header-research",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-panel-header-fleet-manager",
+    "displayName": "Ui Panel Header Fleet Manager",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-panel-header-fleet-manager.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui panel header fleet manager",
+    "tooltip": null,
+    "testId": "ui-panel-header-fleet-manager",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-panel-header-macro-panel",
+    "displayName": "Ui Panel Header Macro Panel",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-panel-header-macro-panel.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui panel header macro panel",
+    "tooltip": null,
+    "testId": "ui-panel-header-macro-panel",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-panel-header-victory",
+    "displayName": "Ui Panel Header Victory",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-panel-header-victory.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui panel header victory",
+    "tooltip": null,
+    "testId": "ui-panel-header-victory",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-panel-header-diplomacy",
+    "displayName": "Ui Panel Header Diplomacy",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-panel-header-diplomacy.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui panel header diplomacy",
+    "tooltip": null,
+    "testId": "ui-panel-header-diplomacy",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-tooltip-system-frame",
+    "displayName": "Ui Tooltip System Frame",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-tooltip-system-frame.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui tooltip system frame",
+    "tooltip": null,
+    "testId": "ui-tooltip-system-frame",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-warning-heliocide-modal",
+    "displayName": "Ui Warning Heliocide Modal",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-warning-heliocide-modal.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui warning heliocide modal",
+    "tooltip": null,
+    "testId": "ui-warning-heliocide-modal",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-warning-starbinding-modal",
+    "displayName": "Ui Warning Starbinding Modal",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-warning-starbinding-modal.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui warning starbinding modal",
+    "tooltip": null,
+    "testId": "ui-warning-starbinding-modal",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-warning-war-move-modal",
+    "displayName": "Ui Warning War Move Modal",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-warning-war-move-modal.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui warning war move modal",
+    "tooltip": null,
+    "testId": "ui-warning-war-move-modal",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-warning-production-cancel-modal",
+    "displayName": "Ui Warning Production Cancel Modal",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-warning-production-cancel-modal.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui warning production cancel modal",
+    "tooltip": null,
+    "testId": "ui-warning-production-cancel-modal",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-progress-bar-victory",
+    "displayName": "Ui Progress Bar Victory",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-progress-bar-victory.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui progress bar victory",
+    "tooltip": null,
+    "testId": "ui-progress-bar-victory",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-progress-bar-macro-duration",
+    "displayName": "Ui Progress Bar Macro Duration",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-progress-bar-macro-duration.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui progress bar macro duration",
+    "tooltip": null,
+    "testId": "ui-progress-bar-macro-duration",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-status-badge-active-macro",
+    "displayName": "Ui Status Badge Active Macro",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-status-badge-active-macro.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui status badge active macro",
+    "tooltip": null,
+    "testId": "ui-status-badge-active-macro",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-status-badge-hazard-sealed",
+    "displayName": "Ui Status Badge Hazard Sealed",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-status-badge-hazard-sealed.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui status badge hazard sealed",
+    "tooltip": null,
+    "testId": "ui-status-badge-hazard-sealed",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-status-badge-inerted",
+    "displayName": "Ui Status Badge Inerted",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-status-badge-inerted.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui status badge inerted",
+    "tooltip": null,
+    "testId": "ui-status-badge-inerted",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-status-badge-hostile",
+    "displayName": "Ui Status Badge Hostile",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-status-badge-hostile.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui status badge hostile",
+    "tooltip": null,
+    "testId": "ui-status-badge-hostile",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-empty-state-fleet-manager",
+    "displayName": "Ui Empty State Fleet Manager",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-empty-state-fleet-manager.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui empty state fleet manager",
+    "tooltip": null,
+    "testId": "ui-empty-state-fleet-manager",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-empty-state-macro-intel",
+    "displayName": "Ui Empty State Macro Intel",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-empty-state-macro-intel.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui empty state macro intel",
+    "tooltip": null,
+    "testId": "ui-empty-state-macro-intel",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "ui-empty-state-victory-paths",
+    "displayName": "Ui Empty State Victory Paths",
+    "family": "ui",
+    "plannedFiles": {
+      "svg": "public/assets/icons/ui/ui-empty-state-victory-paths.svg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "ui empty state victory paths",
+    "tooltip": null,
+    "testId": "ui-empty-state-victory-paths",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-ui-confirm",
+    "displayName": "Audio Ui Confirm",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-ui-confirm.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio ui confirm",
+    "tooltip": null,
+    "testId": "audio-ui-confirm",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-ui-warning",
+    "displayName": "Audio Ui Warning",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-ui-warning.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio ui warning",
+    "tooltip": null,
+    "testId": "audio-ui-warning",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-ui-critical-warning",
+    "displayName": "Audio Ui Critical Warning",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-ui-critical-warning.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio ui critical warning",
+    "tooltip": null,
+    "testId": "audio-ui-critical-warning",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-resource-discovered",
+    "displayName": "Audio Resource Discovered",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-resource-discovered.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio resource discovered",
+    "tooltip": null,
+    "testId": "audio-resource-discovered",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-macro-executed",
+    "displayName": "Audio Macro Executed",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-macro-executed.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio macro executed",
+    "tooltip": null,
+    "testId": "audio-macro-executed",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-macro-expired",
+    "displayName": "Audio Macro Expired",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-macro-expired.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio macro expired",
+    "tooltip": null,
+    "testId": "audio-macro-expired",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-starbinding-threshold",
+    "displayName": "Audio Starbinding Threshold",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-starbinding-threshold.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio starbinding threshold",
+    "tooltip": null,
+    "testId": "audio-starbinding-threshold",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-heliocide-armed",
+    "displayName": "Audio Heliocide Armed",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-heliocide-armed.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio heliocide armed",
+    "tooltip": null,
+    "testId": "audio-heliocide-armed",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-rival-project-warning",
+    "displayName": "Audio Rival Project Warning",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-rival-project-warning.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio rival project warning",
+    "tooltip": null,
+    "testId": "audio-rival-project-warning",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-diplomacy-crisis",
+    "displayName": "Audio Diplomacy Crisis",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-diplomacy-crisis.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio diplomacy crisis",
+    "tooltip": null,
+    "testId": "audio-diplomacy-crisis",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-combat-report",
+    "displayName": "Audio Combat Report",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-combat-report.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio combat report",
+    "tooltip": null,
+    "testId": "audio-combat-report",
+    "sourceBasis": "mechanical UI necessity",
+    "status": "prompted"
+  },
+  {
+    "id": "audio-archive-record-recovered",
+    "displayName": "Audio Archive Record Recovered",
+    "family": "audio",
+    "plannedFiles": {
+      "ogg": "public/assets/audio/audio-archive-record-recovered.ogg"
+    },
+    "states": [
+      "default"
+    ],
+    "mechanicalMeaning": "See docs/asset-registry.md and batch handoff for mechanics-first purpose.",
+    "loreMeaning": "See docs/starsilk-lore-adaptation.md and batch handoff for Starsilk meaning.",
+    "accessibilityLabel": "audio archive record recovered",
+    "tooltip": null,
+    "testId": "audio-archive-record-recovered",
+    "sourceBasis": "direct canon",
+    "status": "prompted"
+  }
+]
