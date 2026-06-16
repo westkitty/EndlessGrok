@@ -1,6 +1,6 @@
 const SHORTCUTS = [
   { keys: 'E', action: 'End Turn' },
-  { keys: '1–5', action: 'Switch panel tabs' },
+  { keys: '1–6', action: 'Switch panel tabs' },
   { keys: 'Esc', action: 'Pause menu' },
   { keys: '?', action: 'Show hotkeys' },
   { keys: 'Scroll', action: 'Zoom galaxy map' },

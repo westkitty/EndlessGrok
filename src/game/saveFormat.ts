@@ -1,8 +1,10 @@
 import { deserializeGame } from './game';
 import type { GameState, SerializedGameState } from './types';
 
+import { createDefaultShipDesigns } from './shipDesigns';
+
 /** Increment when the on-disk save envelope or serialized state shape changes. */
-export const SAVE_SCHEMA_VERSION = 1;
+export const SAVE_SCHEMA_VERSION = 2;
 
 export const SAVE_GAME_ID = 'endlessgrok';
 
@@ -78,9 +80,29 @@ export function migrateLegacySerializedState(data: SerializedGameState): Seriali
 
 type SerializedMigration = (state: SerializedGameState) => SerializedGameState;
 
+function migrateSerializedV1ToV2(state: SerializedGameState): SerializedGameState {
+  const defaultDesigns = createDefaultShipDesigns();
+  return {
+    ...state,
+    empires: state.empires.map(empire => ({
+      ...empire,
+      shipDesigns: empire.shipDesigns ?? defaultDesigns,
+      activeResearchStrategicSpent: empire.activeResearchStrategicSpent,
+      queuedResearchStrategicSpent: empire.queuedResearchStrategicSpent,
+    })),
+    fleets: state.fleets.map(fleet => ({
+      ...fleet,
+      ships: fleet.ships.map(ship => ({
+        ...ship,
+        designId: ship.designId ?? `default-${ship.type}`,
+      })),
+    })),
+  };
+}
+
 /** Dispatcher for serialized-state migrations between schema versions. */
 const SERIALIZED_STATE_MIGRATIONS: Partial<Record<number, SerializedMigration>> = {
-  // 2: migrateSerializedV1ToV2,
+  2: migrateSerializedV1ToV2,
 };
 
 export function migrateSerializedState(

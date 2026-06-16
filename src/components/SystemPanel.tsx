@@ -3,7 +3,8 @@ import { COLONIZATION_CREDITS_COST, COLONIZATION_FOOD_COST, INFLUENCE_COLONIZE_C
 import { getColonizationProjectForPlanet } from '../game/colonization';
 import { BUILDING_DEFINITIONS, getPlanetBuildingSlots } from '../game/buildings';
 import { getPopulationGrowthPreview } from '../game/economy';
-import { getShipProductionTurns } from '../game/production';
+import { getEmpireBuildableDesigns, getShipProductionTurns } from '../game/production';
+import { calculateShipDesignCost } from '../game/shipDesigns';
 import { getAnomalyRewardPreview } from '../game/anomalies';
 import { getStarColor } from '../game/galaxy';
 import {
@@ -17,7 +18,7 @@ import {
   clearBlockerAction, canClearBlocker,
   setSystemSpecialization, getCombatPrediction,
 } from '../game/actions';
-import { getShipStrategicCost } from '../game/production';
+
 import { formatStrategicCost } from '../game/strategicResources';
 import { TERRAFORMING_TURNS } from '../game/constants';
 import { getSystemDefenseRating } from '../game/combat';
@@ -38,7 +39,7 @@ interface Props {
   animationsEnabled?: boolean;
 }
 
-const SHIP_TYPES: ShipType[] = ['scout', 'frigate', 'cruiser', 'destroyer', 'carrier', 'dreadnought', 'colony'];
+
 const FOCUS_OPTIONS: PlanetFocus[] = ['balanced', 'food', 'industry', 'science'];
 const SPEC_OPTIONS: SystemSpecialization[] = ['science', 'industry', 'economy', 'military', 'frontier'];
 
@@ -85,9 +86,9 @@ export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props
     if (buildBuilding(newState, planetId, type)) onUpdate(newState);
   };
 
-  const handleQueue = (planetId: string, type: ShipType | BuildingType, kind: 'ship' | 'building') => {
+  const handleQueue = (planetId: string, type: ShipType | BuildingType, kind: 'ship' | 'building', designId?: string) => {
     const newState = cloneGameState(state);
-    if (queueProduction(newState, planetId, type, kind)) onUpdate(newState);
+    if (queueProduction(newState, planetId, type, kind, designId)) onUpdate(newState);
   };
 
   const handleExploreAnomaly = (choice: 'safe' | 'risky' | 'skip' = 'safe') => {
@@ -425,17 +426,22 @@ export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props
           <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', marginBottom: 6 }}>
             Ships are built through the production queue ({ownedPlanet.productionQueue.length}/3 slots used). Each ship takes turns to complete.
           </div>
-          <div className="action-buttons" style={{ flexWrap: 'wrap', gap: 4 }}>
-            {SHIP_TYPES.map(type => {
-              const err = canQueueProduction(state, ownedPlanet.id, type, 'ship');
-              const turns = getShipProductionTurns(type, player);
-              const strategic = formatStrategicCost(getShipStrategicCost(type));
+          <div className="action-buttons" style={{ flexWrap: 'wrap', gap: 4 }} data-testid="shipyard-designs">
+            {getEmpireBuildableDesigns(player).map(design => {
+              const err = canQueueProduction(state, ownedPlanet.id, design.hull, 'ship', design.id);
+              const turns = getShipProductionTurns(design.hull, player, design);
+              const strategic = formatStrategicCost(calculateShipDesignCost(design).strategic);
               const costHint = strategic ? ` · Strategic: ${strategic}` : '';
               return (
-                <Tooltip key={type} content={err || `Queue ${getShipDisplayName(type)} (${turns} turn${turns > 1 ? 's' : ''})${costHint}`}>
-                  <button className="btn btn-sm btn-icon" disabled={!!err} onClick={() => handleQueue(ownedPlanet.id, type, 'ship')}>
-                    <Icon name={getShipIconName(type)} size={14} />
-                    {getShipDisplayName(type)} ({turns}t)
+                <Tooltip key={design.id} content={err || `Queue ${design.name} (${turns} turn${turns > 1 ? 's' : ''})${costHint}`}>
+                  <button
+                    className="btn btn-sm btn-icon"
+                    disabled={!!err}
+                    data-testid={`queue-ship-${design.id}`}
+                    onClick={() => handleQueue(ownedPlanet.id, design.hull, 'ship', design.id)}
+                  >
+                    <Icon name={getShipIconName(design.hull)} size={14} />
+                    {design.name} ({turns}t)
                   </button>
                 </Tooltip>
               );

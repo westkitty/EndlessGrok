@@ -8,6 +8,7 @@ import { saveGame, hasSave, listSaveMetadata, loadGameFromSlot, importSaveFromJs
 import { GALAXY_SHAPE_DESCRIPTIONS } from './game/settings';
 import { FACTION_DEFINITIONS, factionToPlayerSetup } from './game/factions';
 import { loadUISettings, saveUISettings, type UISettings } from './game/uiSettings';
+import { previewStrategicIncome } from './game/economy';
 import type { Difficulty, GalaxyShape, GalaxySizeOption, GameSettings, GameState, Resources, TurnSummary } from './game/types';
 import { GalaxyMap } from './components/GalaxyMap';
 import { getDefaultViewport, type GalaxyTransform, type GalaxyViewport } from './components/galaxy/mapHelpers';
@@ -17,6 +18,7 @@ import { EmpirePanel } from './components/EmpirePanel';
 import { ResearchPanel } from './components/ResearchPanel';
 import { DiplomacyPanel } from './components/DiplomacyPanel';
 import { FleetPanel } from './components/FleetPanel';
+import { ShipDesignerPanel } from './components/ShipDesignerPanel';
 import { EventLog } from './components/EventLog';
 import { ResourceBar } from './components/ResourceBar';
 import { TurnNotifications } from './components/TurnNotifications';
@@ -34,14 +36,15 @@ import { ConfirmDialog } from './components/ConfirmDialog';
 import { LoadSaveModal } from './components/LoadSaveModal';
 import { PrecursorLoreModal } from './components/PrecursorLoreModal';
 
-type Tab = 'system' | 'empire' | 'fleets' | 'research' | 'diplomacy';
+type Tab = 'system' | 'empire' | 'fleets' | 'designer' | 'research' | 'diplomacy';
 
 const TAB_HOTKEYS: Record<string, Tab> = {
   '1': 'system',
   '2': 'empire',
   '3': 'fleets',
-  '4': 'research',
-  '5': 'diplomacy',
+  '4': 'designer',
+  '5': 'research',
+  '6': 'diplomacy',
 };
 
 function NewGameSetup({ onNewGame, onLoadSlot, onImportSave, defaultGalaxyShape }: {
@@ -161,6 +164,7 @@ function NewGameSetup({ onNewGame, onLoadSlot, onImportSave, defaultGalaxyShape 
               value={seed}
               onChange={e => setSeed(e.target.value)}
               aria-label="Game seed"
+              data-testid="game-seed"
             />
           </div>
         </div>
@@ -357,6 +361,7 @@ function GameScreen({
             deltas={resourceDeltas}
             economy={state.turnSummaries[state.turnSummaries.length - 1]?.economy}
             showStrategicResources={player.researchedTechs.includes('strategic_resources')}
+            strategicIncome={previewStrategicIncome(player, state.systems)}
             compact
           />
         </div>
@@ -395,7 +400,7 @@ function GameScreen({
         </div>
         <div className="side-panel" style={panelStyle}>
           <div className="panel-tabs">
-            {(['system', 'empire', 'fleets', 'research', 'diplomacy'] as Tab[]).map((t, i) => (
+            {(['system', 'empire', 'fleets', 'designer', 'research', 'diplomacy'] as Tab[]).map((t, i) => (
               <div
                 key={t}
                 className={`panel-tab panel-tab--stagger-${i} ${tab === t ? 'active' : ''}`}
@@ -406,8 +411,8 @@ function GameScreen({
                 data-testid={`tab-${t}`}
                 onKeyDown={e => e.key === 'Enter' && setTab(t)}
               >
-                <Icon name={t === 'system' ? 'anomaly' : t === 'empire' ? 'fleet' : t === 'fleets' ? 'fleet' : t === 'research' ? 'research' : 'diplomacy'} size={16} className="icon" />
-                {t === 'fleets' ? 'Fleets' : t.charAt(0).toUpperCase() + t.slice(1)}
+                <Icon name={t === 'system' ? 'anomaly' : t === 'empire' ? 'fleet' : t === 'fleets' || t === 'designer' ? 'fleet' : t === 'research' ? 'research' : 'diplomacy'} size={16} className="icon" />
+                {t === 'fleets' ? 'Fleets' : t === 'designer' ? 'Designer' : t.charAt(0).toUpperCase() + t.slice(1)}
                 <kbd className="hotkey-hint">{i + 1}</kbd>
               </div>
             ))}
@@ -416,6 +421,7 @@ function GameScreen({
             {tab === 'system' && <SystemPanel state={state} onUpdate={onUpdate} animationsEnabled={uiSettings.animationsEnabled} />}
             {tab === 'empire' && <EmpirePanel state={state} onUpdate={onUpdate} />}
             {tab === 'fleets' && <FleetPanel state={state} onUpdate={onUpdate} />}
+            {tab === 'designer' && <ShipDesignerPanel state={state} onUpdate={onUpdate} />}
             {tab === 'research' && <ResearchPanel state={state} onUpdate={onUpdate} />}
             {tab === 'diplomacy' && <DiplomacyPanel state={state} onUpdate={onUpdate} />}
           </div>

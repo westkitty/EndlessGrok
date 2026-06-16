@@ -1,4 +1,5 @@
 import { EMPIRE_COLORS, EMPIRE_EMBLEMS, EMPIRE_NAMES, EMPIRE_TRAITS, STARTING_INFLUENCE } from './constants';
+import { createDefaultShipDesigns } from './shipDesigns';
 import type {
   EmblemId,
   Empire,
@@ -127,6 +128,9 @@ export function migrateEmpire(empire: SerializedEmpire): Empire {
     trait: empire.trait ?? EMPIRE_TRAITS[index % EMPIRE_TRAITS.length],
     strategicResources: empire.strategicResources ?? { titanium: 0, antimatter: 0, darkmatter: 0 },
     researchQueue: empire.researchQueue ?? null,
+    shipDesigns: empire.shipDesigns ?? createDefaultShipDesigns(),
+    activeResearchStrategicSpent: empire.activeResearchStrategicSpent,
+    queuedResearchStrategicSpent: empire.queuedResearchStrategicSpent,
     influence: empire.influence ?? STARTING_INFLUENCE,
     influenceVictoryTurns: empire.influenceVictoryTurns ?? 0,
     warWeariness: empire.warWeariness ?? 0,

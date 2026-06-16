@@ -20,7 +20,7 @@ const SHIP_DEFENSE_TYPES: Record<ShipType, DefenseType> = {
   dreadnought: 'shields',
 };
 
-const SHIP_STATS: Record<ShipType, Omit<Ship, 'type' | 'weaponType' | 'defenseType'>> = {
+export const SHIP_STATS: Record<ShipType, Omit<Ship, 'type' | 'weaponType' | 'defenseType' | 'designId'>> = {
   scout: { hp: 20, maxHp: 20, attack: 5, defense: 3, speed: 3 },
   frigate: { hp: 50, maxHp: 50, attack: 15, defense: 10, speed: 2 },
   cruiser: { hp: 100, maxHp: 100, attack: 30, defense: 20, speed: 1 },

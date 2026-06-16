@@ -15,7 +15,7 @@ import { processLateGameCrisis } from './crisis';
 import { processFleetExploration, processPlayerAutoExplore } from './exploration';
 import { placeMysterySites } from './mysteries';
 import { applyEconomyToEmpire, countEmpirePlanets } from './economy';
-import { generateEmpireDisplayName } from './empireNames';
+import { generateEmpireDisplayName, generateLeaderTitle } from './empireNames';
 import { processEventChains, processRandomEvents, trimEventLog } from './events';
 import { checkAndResolveBattles } from './combat';
 import { generateGalaxy } from './galaxy';
@@ -25,6 +25,7 @@ import { runAI } from './ai';
 import { getTechnology } from './research';
 import { processProductionQueues, resetProductionCounter } from './production';
 import { getScoutMoveBonus } from './fleetRoles';
+import { createDefaultShipDesigns, createShipFromDesign, getDefaultDesignForHull, hydrateShipDesign } from './shipDesigns';
 import { createShip } from './ships';
 import { SeededRNG } from './rng';
 import { updateAllEmpireScores } from './scoring';
@@ -76,6 +77,7 @@ function createEmpire(
     currentResearch: null,
     researchProgress: 0,
     researchQueue: null,
+    shipDesigns: createDefaultShipDesigns(),
     knownSystems: new Set(),
     visibleSystems: new Set(),
     diplomacy: {},
@@ -123,7 +125,8 @@ function migrateSystem(system: StarSystem): StarSystem {
   };
 }
 
-function migrateFleet(fleet: Fleet): Fleet {
+function migrateFleet(fleet: Fleet, empireDesigns?: Empire['shipDesigns']): Fleet {
+  const designs = empireDesigns ?? createDefaultShipDesigns();
   return {
     ...fleet,
     destinationSystemId: fleet.destinationSystemId ?? null,
@@ -133,11 +136,7 @@ function migrateFleet(fleet: Fleet): Fleet {
     autoExplore: fleet.autoExplore ?? false,
     battleCount: fleet.battleCount ?? 0,
     isVeteran: fleet.isVeteran ?? false,
-    ships: fleet.ships.map(s => ({
-      ...s,
-      weaponType: s.weaponType,
-      defenseType: s.defenseType,
-    })),
+    ships: fleet.ships.map(s => hydrateShipDesign(s, designs)),
   };
 }
 
@@ -166,6 +165,9 @@ function migrateEmpire(empire: SerializedEmpire): Empire {
     isPirate: empire.isPirate ?? false,
     lastSeenSystems: empire.lastSeenSystems ?? {},
     factionIndex: empire.factionIndex,
+    shipDesigns: empire.shipDesigns ?? createDefaultShipDesigns(),
+    activeResearchStrategicSpent: empire.activeResearchStrategicSpent,
+    queuedResearchStrategicSpent: empire.queuedResearchStrategicSpent,
     knownSystems: new Set(empire.knownSystems),
     visibleSystems: new Set(empire.visibleSystems),
   };
@@ -200,7 +202,14 @@ function setupStartingPositions(state: GameState, rng: SeededRNG, playerFactionI
       homeworld.scienceOutput += 1;
       homeworld.quality = 'rich';
       homeworld.buildings = ['farm', 'spaceport'];
+      if (empire.isPlayer && homeworld.rareResource === 'none') {
+        homeworld.rareResource = 'titanium';
+      }
       empire.capitalSystemId = system.id;
+    }
+
+    if (empire.isPlayer) {
+      empire.strategicResources.titanium = Math.max(empire.strategicResources.titanium, 1);
     }
 
     applyDifficultyToEmpire(empire, state.settings.difficulty, empire.isPlayer);
@@ -226,11 +235,12 @@ function setupStartingPositions(state: GameState, rng: SeededRNG, playerFactionI
 
     empire.totalPlanets = countEmpirePlanets(empire.id, state.systems);
 
+    const scoutDesign = getDefaultDesignForHull(empire.shipDesigns!, 'scout');
     state.fleets.push({
       id: createFleetId(),
       empireId: empire.id,
       systemId: system.id,
-      ships: [createShip('scout')],
+      ships: [scoutDesign ? createShipFromDesign(scoutDesign) : createShip('scout')],
       movesRemaining: 2,
       hasColonyShip: false,
       destinationSystemId: null,
@@ -243,11 +253,12 @@ function setupStartingPositions(state: GameState, rng: SeededRNG, playerFactionI
     });
 
     if (empire.isPlayer) {
+      const colonyDesign = getDefaultDesignForHull(empire.shipDesigns!, 'colony');
       state.fleets.push({
         id: createFleetId(),
         empireId: empire.id,
         systemId: system.id,
-        ships: [createShip('colony')],
+        ships: [colonyDesign ? createShipFromDesign(colonyDesign) : createShip('colony')],
         movesRemaining: 1,
         hasColonyShip: true,
         destinationSystemId: null,
@@ -297,11 +308,12 @@ export function createNewGame(
   const aiCount = totalEmpires - 1;
 
   const faction = FACTION_DEFINITIONS[playerFactionIndex] ?? FACTION_DEFINITIONS[0];
-  const playerName = playerSetup?.name ?? faction.name;
   const playerColor = playerSetup?.color ?? EMPIRE_COLORS[0];
   const playerEmblem = playerSetup?.emblem ?? 'terran';
   const playerTrait = playerSetup?.trait ?? 'expansionist';
-  const playerNaming = generateEmpireDisplayName(playerName, rng);
+  const playerNaming = playerSetup
+    ? { name: playerSetup.name, leaderTitle: generateLeaderTitle(rng) }
+    : generateEmpireDisplayName(faction.name, rng);
 
   const playerEmpire = createEmpire(
     'empire-0', playerNaming.name, playerColor, true, playerEmblem, playerTrait, playerNaming.leaderTitle
@@ -374,6 +386,8 @@ function processResearch(state: GameState): void {
       empire.currentResearch = empire.researchQueue;
       empire.researchQueue = null;
       empire.researchProgress = 0;
+      empire.activeResearchStrategicSpent = empire.queuedResearchStrategicSpent;
+      empire.queuedResearchStrategicSpent = undefined;
     }
 
     if (!empire.currentResearch) continue;
@@ -393,6 +407,7 @@ function processResearch(state: GameState): void {
       }
       empire.currentResearch = null;
       empire.researchProgress = 0;
+      empire.activeResearchStrategicSpent = undefined;
       state.events.push({
         turn: state.turn,
         type: 'research',
@@ -403,6 +418,8 @@ function processResearch(state: GameState): void {
         empire.currentResearch = empire.researchQueue;
         empire.researchQueue = null;
         empire.researchProgress = 0;
+        empire.activeResearchStrategicSpent = empire.queuedResearchStrategicSpent;
+        empire.queuedResearchStrategicSpent = undefined;
       }
     }
   }
@@ -658,8 +675,12 @@ export function deserializeGame(data: SerializedGameState): GameState {
     maxTurns: data.maxTurns ?? settings.maxTurns,
     turnSummaries: data.turnSummaries ?? [],
     systems: data.systems.map(migrateSystem),
-    fleets: data.fleets.map(migrateFleet),
     empires: data.empires.map(migrateEmpire),
+    fleets: data.fleets.map(fleet => {
+      const empire = data.empires.find(e => e.id === fleet.empireId);
+      const designs = empire?.shipDesigns ?? createDefaultShipDesigns();
+      return migrateFleet(fleet, designs);
+    }),
     piratesSpawned: data.piratesSpawned ?? false,
     pirateEmpireId: data.pirateEmpireId ?? null,
     activeEventChains: data.activeEventChains ?? [],

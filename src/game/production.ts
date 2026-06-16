@@ -1,16 +1,25 @@
-import { BUILDING_COSTS, COLONY_SHIP_COST, CRUISER_COST, DESTROYER_COST, DREADNOUGHT_COST, FRIGATE_COST, CARRIER_COST, SCOUT_COST } from './constants';
+import { BUILDING_COSTS } from './constants';
 import { getBuildingDefinition } from './buildings';
 import { getFleetCommandLimit } from './combat';
 import { hasUnlock } from './research';
+import {
+  calculateShipDesignCost,
+  canBuildShipDesign,
+  createDefaultShipDesigns,
+  createShipFromDesign,
+  getBuildableDesigns,
+  getDefaultDesignForHull,
+  getDesignDisplayStats,
+} from './shipDesigns';
 import {
   formatMissingStrategicResources,
   getShipStrategicCost,
   spendStrategicCost,
 } from './strategicResources';
 import { createShip } from './ships';
-import type { BuildingType, Empire, Fleet, GameState, Planet, ProductionItem, ShipType } from './types';
+import type { BuildingType, Empire, Fleet, GameState, Planet, ProductionItem, ShipDesign, ShipType } from './types';
 
-export { getShipStrategicCost };
+export { getShipStrategicCost, getDesignDisplayStats };
 
 let productionCounter = 0;
 
@@ -22,7 +31,7 @@ export function resetProductionCounter(): void {
   productionCounter = 0;
 }
 
-const SHIP_TURNS: Record<ShipType, number> = {
+const HULL_TURNS: Record<ShipType, number> = {
   scout: 1,
   frigate: 2,
   cruiser: 3,
@@ -30,16 +39,6 @@ const SHIP_TURNS: Record<ShipType, number> = {
   carrier: 5,
   colony: 2,
   dreadnought: 6,
-};
-
-const SHIP_COSTS: Record<ShipType, { credits: number; industry: number; tech?: string }> = {
-  scout: { ...SCOUT_COST, tech: 'scout' },
-  frigate: { ...FRIGATE_COST, tech: 'frigate' },
-  cruiser: { ...CRUISER_COST, tech: 'cruiser' },
-  destroyer: { ...DESTROYER_COST, tech: 'destroyer' },
-  carrier: { ...CARRIER_COST, tech: 'carrier' },
-  colony: { ...COLONY_SHIP_COST, tech: 'scout' },
-  dreadnought: { ...DREADNOUGHT_COST, tech: 'dreadnought' },
 };
 
 export function getProductionQueueEta(item: ProductionItem): { turnsRemaining: number; totalTurns: number; percentComplete: number } {
@@ -53,29 +52,39 @@ export function getProductionQueueEta(item: ProductionItem): { turnsRemaining: n
   };
 }
 
-export function getShipProductionTurns(type: ShipType, empire: Empire): number {
-  let turns = SHIP_TURNS[type];
+export function getShipProductionTurns(type: ShipType, empire: Empire, design?: ShipDesign): number {
+  let turns = design ? calculateShipDesignCost(design).turns : HULL_TURNS[type];
   if (hasUnlock(empire.researchedTechs, 'advanced_manufacturing')) {
     turns = Math.max(1, turns - 1);
   }
   return turns;
 }
 
-export function canQueueShip(
+export function resolveShipDesign(empire: Empire, hull: ShipType, designId?: string): ShipDesign | null {
+  const designs = empire.shipDesigns?.length ? empire.shipDesigns : createDefaultShipDesigns();
+  if (designId) {
+    const found = designs.find(d => d.id === designId);
+    if (found) return found;
+  }
+  return getDefaultDesignForHull(designs, hull) ?? null;
+}
+
+export function canQueueShipDesign(
   planet: Planet,
-  type: ShipType,
+  design: ShipDesign,
   empire: Empire,
-  state?: GameState
+  state?: GameState,
 ): string | null {
   if (!planet.isColonized || planet.ownerId !== empire.id) return 'Planet not owned';
   if (!planet.buildings.includes('spaceport')) return 'Requires spaceport — build one first';
-  const cost = SHIP_COSTS[type];
-  if (cost.tech && !hasUnlock(empire.researchedTechs, cost.tech)) return `Requires ${cost.tech} technology`;
-  if (empire.resources.credits < cost.credits) return 'Not enough credits';
-  if (empire.resources.industry < cost.industry) return 'Not enough industry';
-  const strategicCost = getShipStrategicCost(type);
-  const missingStrategic = formatMissingStrategicResources(empire, strategicCost);
+
+  const buildErr = canBuildShipDesign(design, empire);
+  if (buildErr) return buildErr;
+
+  const cost = calculateShipDesignCost(design);
+  const missingStrategic = formatMissingStrategicResources(empire, cost.strategic);
   if (missingStrategic) return missingStrategic;
+
   if (planet.productionQueue.length >= 3) return 'Queue full (max 3 items)';
   if (state) {
     const shipCount = state.fleets
@@ -90,6 +99,18 @@ export function canQueueShip(
     if (shipCount + queuedShips >= limit) return `Fleet command limit reached (${limit} ships)`;
   }
   return null;
+}
+
+/** @deprecated Use canQueueShipDesign with a resolved design */
+export function canQueueShip(
+  planet: Planet,
+  type: ShipType,
+  empire: Empire,
+  state?: GameState,
+): string | null {
+  const design = resolveShipDesign(empire, type);
+  if (!design) return `No design available for ${type}`;
+  return canQueueShipDesign(planet, design, empire, state);
 }
 
 export function canQueueBuilding(planet: Planet, type: BuildingType, empire: Empire): string | null {
@@ -108,24 +129,26 @@ export function canQueueBuilding(planet: Planet, type: BuildingType, empire: Emp
   return null;
 }
 
-export function queueShipProduction(
+export function queueShipDesignProduction(
   planet: Planet,
-  type: ShipType,
+  design: ShipDesign,
   empire: Empire,
   systemId: string,
-  state?: GameState
+  state?: GameState,
 ): ProductionItem | null {
-  const err = canQueueShip(planet, type, empire, state);
+  const err = canQueueShipDesign(planet, design, empire, state);
   if (err) return null;
-  const cost = SHIP_COSTS[type];
-  const strategicCost = getShipStrategicCost(type);
+
+  const cost = calculateShipDesignCost(design);
   empire.resources.credits -= cost.credits;
   empire.resources.industry -= cost.industry;
-  if (!spendStrategicCost(empire, strategicCost)) return null;
-  const turns = getShipProductionTurns(type, empire);
+  if (!spendStrategicCost(empire, cost.strategic)) return null;
+
+  const turns = getShipProductionTurns(design.hull, empire, design);
   const item: ProductionItem = {
     id: createProductionId(),
-    type,
+    type: design.hull,
+    designId: design.id,
     kind: 'ship',
     turnsRemaining: turns,
     totalTurns: turns,
@@ -134,6 +157,19 @@ export function queueShipProduction(
   };
   planet.productionQueue.push(item);
   return item;
+}
+
+export function queueShipProduction(
+  planet: Planet,
+  type: ShipType,
+  empire: Empire,
+  systemId: string,
+  state?: GameState,
+  designId?: string,
+): ProductionItem | null {
+  const design = resolveShipDesign(empire, type, designId);
+  if (!design) return null;
+  return queueShipDesignProduction(planet, design, empire, systemId, state);
 }
 
 export function queueBuildingProduction(
@@ -167,18 +203,22 @@ function completeShipProduction(
   empire: Empire
 ): void {
   const shipType = item.type as ShipType;
+  const design = resolveShipDesign(empire, shipType, item.designId);
+  const ship = design ? createShipFromDesign(design) : createShip(shipType);
+  const designName = design?.name ?? shipType;
+
   const existingFleet = state.fleets.find(
     f => f.empireId === empire.id && f.systemId === item.systemId && f.movesRemaining > 0 && !f.hasColonyShip
   );
   if (existingFleet && shipType !== 'colony') {
-    existingFleet.ships.push(createShip(shipType));
+    existingFleet.ships.push(ship);
   } else {
     const baseMoves = hasUnlock(empire.researchedTechs, 'scout') ? 3 : 2;
     const fleet: Fleet = {
       id: `fleet-prod-${item.id}`,
       empireId: empire.id,
       systemId: item.systemId,
-      ships: [createShip(shipType)],
+      ships: [ship],
       movesRemaining: shipType === 'colony' ? 1 : baseMoves,
       hasColonyShip: shipType === 'colony',
       destinationSystemId: null,
@@ -192,7 +232,7 @@ function completeShipProduction(
   state.events.push({
     turn: state.turn,
     type: 'production',
-    message: `${empire.name} completed ${shipType} at ${planet.name}`,
+    message: `${empire.name} completed ${designName} at ${planet.name}`,
   });
 }
 
@@ -235,4 +275,8 @@ export function processProductionQueues(state: GameState): void {
       }
     }
   }
+}
+
+export function getEmpireBuildableDesigns(empire: Empire): ShipDesign[] {
+  return getBuildableDesigns(empire);
 }

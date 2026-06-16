@@ -63,8 +63,25 @@ export interface StrategicResources {
   darkmatter: number;
 }
 
+export interface ShipDesignModules {
+  weapon: string;
+  defense: string;
+  engine: string;
+  utility: string;
+}
+
+export interface ShipDesign {
+  id: string;
+  name: string;
+  hull: ShipType;
+  role: string;
+  modules: ShipDesignModules;
+  isDefault?: boolean;
+}
+
 export interface Ship {
   type: ShipType;
+  designId?: string;
   hp: number;
   maxHp: number;
   attack: number;
@@ -94,6 +111,7 @@ export interface ProductionItem {
   id: string;
   type: ShipType | BuildingType;
   kind: 'ship' | 'building';
+  designId?: string;
   turnsRemaining: number;
   totalTurns: number;
   systemId: string;
@@ -183,6 +201,9 @@ export interface Empire {
   currentResearch: string | null;
   researchProgress: number;
   researchQueue: string | null;
+  activeResearchStrategicSpent?: StrategicResources;
+  queuedResearchStrategicSpent?: StrategicResources;
+  shipDesigns?: ShipDesign[];
   knownSystems: Set<string>;
   visibleSystems: Set<string>;
   diplomacy: Record<string, DiplomacyState>;
@@ -418,6 +439,9 @@ export interface SerializedEmpire {
   currentResearch: string | null;
   researchProgress: number;
   researchQueue?: string | null;
+  activeResearchStrategicSpent?: StrategicResources;
+  queuedResearchStrategicSpent?: StrategicResources;
+  shipDesigns?: ShipDesign[];
   knownSystems: string[];
   visibleSystems: string[];
   diplomacy: Record<string, DiplomacyState>;
