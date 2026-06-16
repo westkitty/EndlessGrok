@@ -175,10 +175,16 @@ export function processMacroEffectDurations(state: GameState, empire: Empire): v
 
   for (const effect of expiring) {
     const macroName = effect.macroId.replace(/_/g, ' ');
+    let message = `Macro expired: ${macroName}. Checksum loop terminated.`;
+    if (effect.modifiers.singularitySeal) {
+      message = `Gravity thread seal expired. Singularity hazard returns — protection was temporary.`;
+    } else if (effect.modifiers.hazardSuppressed) {
+      message = `Inerting mist dissipated. Starsilk hazard unsuppressed.`;
+    }
     state.events.push({
       turn: state.turn,
       type: 'macro',
-      message: `Macro expired: ${macroName}. Checksum loop terminated.`,
+      message,
     });
   }
 

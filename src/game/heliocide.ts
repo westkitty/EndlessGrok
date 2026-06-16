@@ -1,3 +1,10 @@
+import {
+  applyFleetSingularityHazard,
+  getCollapsePopulationLossFactor,
+  getHazardProtectionLevel,
+  isSingularityHazardSystem,
+} from './hazards';
+import { SeededRNG } from './rng';
 import type {
   GameEvent,
   GameState,
@@ -76,13 +83,20 @@ export function collapseStar(
   state: GameState,
   systemId: string,
   empireId: string,
+  rng: SeededRNG = new SeededRNG(state.seed + state.turn * 31337 + systemId.length),
 ): GameEvent | null {
   const system = state.systems.find(s => s.id === systemId);
   if (!system) return null;
 
+  const popLossFactor = getCollapsePopulationLossFactor(state, systemId, empireId);
+  const protection = getHazardProtectionLevel(state, systemId, empireId);
+
   for (const planet of system.planets) {
     if (planet.isColonized) {
-      planet.population = Math.max(0, planet.population - Math.floor(planet.population * 0.8));
+      const ownerFactor = planet.ownerId
+        ? getCollapsePopulationLossFactor(state, systemId, planet.ownerId)
+        : popLossFactor;
+      planet.population = Math.max(0, planet.population - Math.floor(planet.population * ownerFactor));
       planet.foodOutput = 0;
       planet.industryOutput = 0;
       planet.scienceOutput = Math.floor(planet.scienceOutput * 0.1);
@@ -103,15 +117,20 @@ export function collapseStar(
 
   const hazardFleets = state.fleets.filter(f => f.systemId === systemId);
   for (const fleet of hazardFleets) {
-    if (fleet.empireId !== empireId && Math.random() < SINGULARITY_FLEET_HAZARD_CHANCE) {
-      fleet.ships = fleet.ships.slice(0, Math.max(1, Math.floor(fleet.ships.length * 0.5)));
-    }
+    applyFleetSingularityHazard(state, fleet, systemId, rng, 'collapse');
+  }
+
+  let message = `Heliocide confirmed at ${system.name}. Archive yield terminated. Ledgered singularity registered.`;
+  if (protection === 'sealed') {
+    message = `Heliocide at ${system.name} — gravity seal reduced collateral. Irreversible. Not safe.`;
+  } else if (protection === 'inerting') {
+    message = `Heliocide at ${system.name} — inerting mist limited damage. The star is still gone.`;
   }
 
   return {
     turn: state.turn,
     type: 'heliocide',
-    message: `Heliocide confirmed at ${system.name}. Archive yield terminated. Ledgered singularity registered.`,
+    message,
   };
 }
 
@@ -123,7 +142,7 @@ export function getStarbindingWarnings(system: StarSystem): string[] {
   if (system.starState === 'collapsing') {
     warnings.push('Star collapse in progress');
   }
-  if (isCollapsedSystem(system)) {
+  if (isSingularityHazardSystem(system)) {
     warnings.push('Singularity hazard — fleet movement risky');
   }
   if (system.isArchiveStar) {

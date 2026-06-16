@@ -1,4 +1,6 @@
+import { getStarbindingSafetyBonus } from './hazards';
 import { COLLAPSE_TURNS, beginStarDive, canTargetStarForDive, collapseStar, isCollapsedSystem } from './heliocide';
+import { SeededRNG } from './rng';
 import { applyHeliocideDiplomaticReactions } from './factionIdeology';
 import { hasUnlock } from './research';
 import { ensureStarsilkResources, inertStarsilkThread, spendStarsilkCost } from './starsilkResources';
@@ -180,11 +182,19 @@ export function beginStarbindingDive(state: GameState, systemId: string, empireI
   if (!beginStarDive(state, systemId, empireId)) return false;
   const sb = ensureStarbinding(empire);
   sb.activeCollapseSystemId = systemId;
-  sb.collapseTurnsRemaining = COLLAPSE_TURNS;
+  const safety = getStarbindingSafetyBonus(state, empireId, systemId);
+  sb.collapseTurnsRemaining = safety >= 0.35
+    ? Math.max(1, COLLAPSE_TURNS - 1)
+    : safety >= 0.2
+      ? COLLAPSE_TURNS
+      : COLLAPSE_TURNS;
+  const systemName = state.systems.find(s => s.id === systemId)!.name;
   state.events.push({
     turn: state.turn,
     type: 'heliocide',
-    message: `Star dive initiated at ${state.systems.find(s => s.id === systemId)!.name}. The star did not burn. It was opened.`,
+    message: safety >= 0.2
+      ? `Star dive initiated at ${systemName}. Inerting/seal stabilized sequence — moral cost remains.`
+      : `Star dive initiated at ${systemName}. The star did not burn. It was opened.`,
   });
   applyHeliocideDiplomaticReactions(state, empireId);
   return true;
@@ -250,7 +260,12 @@ export function processStarbindingTurn(state: GameState, empireId: string): void
     sb.collapseTurnsRemaining--;
     if (sb.collapseTurnsRemaining <= 0) {
       const systemId = sb.activeCollapseSystemId;
-      const event = collapseStar(state, systemId, empireId);
+      const event = collapseStar(
+        state,
+        systemId,
+        empireId,
+        new SeededRNG(state.seed + state.turn * 7919 + systemId.length),
+      );
       if (event) state.events.push(event);
       sb.completedDiveSystemIds.push(systemId);
       sb.targetSystemIds = sb.targetSystemIds.filter(id => id !== systemId);

@@ -1,4 +1,6 @@
 import { areSystemsConnected } from './galaxy';
+import { processTravelSingularityHazards } from './hazards';
+import { SeededRNG } from './rng';
 import type { Fleet, GameState, StarSystem } from './types';
 
 export function findPath(
@@ -72,7 +74,12 @@ export function setFleetTravelPath(
   return true;
 }
 
-export function processFleetMovement(fleet: Fleet, systems: StarSystem[]): boolean {
+export function processFleetMovement(
+  fleet: Fleet,
+  systems: StarSystem[],
+  state?: GameState,
+  rng?: SeededRNG,
+): boolean {
   if (!fleet.destinationSystemId || fleet.movesRemaining <= 0) return false;
 
   if (fleet.systemId === fleet.destinationSystemId) {
@@ -94,9 +101,14 @@ export function processFleetMovement(fleet: Fleet, systems: StarSystem[]): boole
 
   if (!nextHop) return false;
 
+  const previousSystemId = fleet.systemId;
   fleet.systemId = nextHop;
   fleet.movesRemaining--;
   fleet.travelTurns = Math.max(0, fleet.travelTurns - 1);
+
+  if (state && rng) {
+    processTravelSingularityHazards(state, fleet, nextHop, previousSystemId, rng);
+  }
 
   if (fleet.systemId === fleet.destinationSystemId) {
     fleet.destinationSystemId = null;

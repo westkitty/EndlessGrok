@@ -29,6 +29,7 @@ import { isCollapsedSystem } from '../game/heliocide';
 import { MacroPanel } from './MacroPanel';
 import { formatActiveMacroEffect, getActiveMacroEffectsForSystem } from '../game/macroEffects';
 import { getMacro } from '../game/macros';
+import { getHazardProtectionLabel, getHazardProtectionLevel, isSingularityHazardSystem } from '../game/hazards';
 
 import { formatStrategicCost } from '../game/strategicResources';
 import { TERRAFORMING_TURNS } from '../game/constants';
@@ -139,6 +140,14 @@ export function SystemPanel({ state, onUpdate, animationsEnabled = true }: Props
             <span>Defense Rating</span>
             <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>
               {getSystemDefenseRating(state, system, player.id)}
+            </span>
+          </div>
+        )}
+        {isSingularityHazardSystem(system) && (
+          <div className="info-row" data-testid="system-hazard-status">
+            <span>Singularity hazard</span>
+            <span style={{ color: getHazardProtectionLevel(state, system.id, player.id) === 'none' ? 'var(--warning)' : 'var(--accent-cyan)' }}>
+              {getHazardProtectionLabel(getHazardProtectionLevel(state, system.id, player.id))}
             </span>
           </div>
         )}

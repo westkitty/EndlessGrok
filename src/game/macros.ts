@@ -2,12 +2,14 @@ import { hasUnlock } from './research';
 import { ensureStarsilkResources, spendStarsilkCost } from './starsilkResources';
 import { getFactionReactionToBloodRingUse } from './factionIdeology';
 import { emitFirstMacroEvent } from './starsilkEvents';
+import { getHazardProtectionLabel, getHazardProtectionLevel } from './hazards';
 import {
   addOrRefreshMacroEffect,
   applyRecurringMacroEffects,
   processMacroEffectDurations,
   scrubMacroEffectsInSystem,
 } from './macroEffects';
+import { recordGravityThreadSeal, recordSyrinInertingMist } from './syrinInertingVictory';
 import type {
   Empire,
   GameState,
@@ -246,11 +248,29 @@ export function executeMacro(
   }
 
   emitFirstMacroEvent(state, empire, macro.name);
-  state.events.push({
-    turn: state.turn,
-    type: 'macro',
-    message: `Macro executed: ${macro.name}. ${macro.risk}`,
-  });
+
+  if (macro.id === 'syrin_inerting_mist' && macro.targetType === 'system') {
+    recordSyrinInertingMist(state, empireId, targetId);
+    const level = getHazardProtectionLevel(state, targetId, empireId);
+    state.events.push({
+      turn: state.turn,
+      type: 'macro',
+      message: `Hazard suppressed: ${macro.name} at ${state.systems.find(s => s.id === targetId)?.name ?? targetId}. ${getHazardProtectionLabel(level)}`,
+    });
+  } else if (macro.id === 'gravity_thread_seal' && macro.targetType === 'system') {
+    recordGravityThreadSeal(state, empireId, targetId);
+    state.events.push({
+      turn: state.turn,
+      type: 'macro',
+      message: `Singularity seal active at ${state.systems.find(s => s.id === targetId)?.name ?? targetId}. Hazard mitigated, not erased.`,
+    });
+  } else {
+    state.events.push({
+      turn: state.turn,
+      type: 'macro',
+      message: `Macro executed: ${macro.name}. ${macro.risk}`,
+    });
+  }
   return true;
 }
 
