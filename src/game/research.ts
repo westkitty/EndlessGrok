@@ -35,6 +35,12 @@ export const TECHNOLOGIES: Technology[] = [
   { id: 'galactic_market', name: 'Galactic Market', description: '+5 credits per planet and trade route bonus', cost: 160, prerequisites: ['trade_networks', 'influence_projection'], unlocks: ['galactic_market'], category: 'economy', branch: 'economy' },
   { id: 'planetary_shield', name: 'Planetary Shield', description: '+25% planetary defense in combat', cost: 170, prerequisites: ['shield_tech', 'planetary_engineering'], unlocks: ['planetary_shield'], category: 'military', branch: 'military' },
   { id: 'economic_efficiency', name: 'Economic Efficiency', description: '+5% credits per repeat (max 3)', cost: 80, prerequisites: ['trade_networks'], unlocks: ['economic_efficiency'], category: 'economy', branch: 'economy', repeatable: true, maxRepeats: 3 },
+  { id: 'archive_syntax', name: 'Archive Syntax', description: 'Decode stellar archive traces into research data', cost: 120, prerequisites: ['deep_space_scan'], unlocks: ['archive_syntax'], category: 'science', branch: 'science' },
+  { id: 'starsilk_extraction', name: 'Starsilk Extraction', description: 'Harvest dangerous reality-code from deposits', cost: 100, prerequisites: ['strategic_resources'], unlocks: ['starsilk_extraction'], category: 'science', branch: 'science' },
+  { id: 'forbidden_starbinding', name: 'Forbidden Starbinding Theory', description: 'Catalogue catastrophic Partition macro theory — Stage 0→1', cost: 200, prerequisites: ['quantum_computing', 'singularity_drive'], unlocks: ['forbidden_starbinding'], category: 'science', branch: 'science' },
+  { id: 'partition_mathematics', name: 'Partition Mathematics', description: 'Derive geometry to sever reality infrastructure', cost: 180, prerequisites: ['forbidden_starbinding'], unlocks: ['partition_mathematics'], category: 'science', branch: 'science' },
+  { id: 'syrin_inerting_method', name: 'Syrin Inerting Method', description: 'Stabilize Starsilk Thread with Syrin Reagent', cost: 150, prerequisites: ['partition_mathematics'], unlocks: ['syrin_inerting_method'], category: 'science', branch: 'science' },
+  { id: 'macro_execution', name: 'Macro Execution', description: 'Execute repeatable reality action-loops empire-wide', cost: 160, prerequisites: ['partition_mathematics', 'archive_syntax'], unlocks: ['macro_execution'], category: 'science', branch: 'science' },
 ];
 
 export function getTechnology(id: string): Technology | undefined {

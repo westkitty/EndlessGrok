@@ -8,11 +8,23 @@ import {
   SCIENCE_VICTORY_TECH_COUNT,
 } from './constants';
 import { getColonizablePlanets } from './galaxy';
+import {
+  checkStarbindingVictory,
+  getRequiredStarDives,
+  getStarbindingProgress,
+  getStarbindingStage,
+  isStarbindingUnlocked,
+} from './starbinding';
 import type { Empire, GameState, VictoryProgress, VictoryType } from './types';
 
 export function getVictoryProgress(state: GameState, empireId?: string): VictoryProgress {
   const empire = state.empires.find(e => e.id === (empireId ?? state.playerEmpireId));
-  if (!empire) return { domination: 0, science: 0, survival: 0, influence: 0, economy: 0 };
+  if (!empire) {
+    return {
+      domination: 0, science: 0, survival: 0, influence: 0, economy: 0,
+      starbinding: 0, ledgerDominion: 0, bloodEclipse: 0, archiveContinuity: 0, syrinInerting: 0,
+    };
+  }
 
   const colonizable = getColonizablePlanets(state.systems);
   const totalColonizable = colonizable.length;
@@ -31,12 +43,37 @@ export function getVictoryProgress(state: GameState, empireId?: string): Victory
   const creditProgress = Math.min(1, empire.resources.credits / ECONOMY_VICTORY_CREDITS_THRESHOLD);
   const economy = hasMarketTech ? Math.min(1, creditProgress * 0.6 + (empire.economyVictoryTurns ?? 0) / ECONOMY_VICTORY_TURNS * 0.4) : creditProgress * 0.3;
 
+  const starbinding = isStarbindingUnlocked(empire)
+    ? getStarbindingProgress(state, empire.id)
+    : 0;
+
+  const hasArchiveSyntax = empire.researchedTechs.includes('archive_syntax');
+  const archiveContinuity = hasArchiveSyntax
+    ? Math.min(1, (empire.starsilkResources?.archiveData ?? 0) / 20 + techProgress * 0.5)
+    : 0;
+
+  const hasAdminTech = empire.researchedTechs.includes('influence_projection');
+  const ledgerDominion = hasAdminTech ? Math.min(1, influence * 0.7 + domination * 0.3) : 0;
+
+  const bloodEclipse = empire.researchedTechs.includes('planetary_engineering')
+    ? Math.min(1, (empire.starsilkResources?.bloodRingGlass ?? 0) / 10 + domination * 0.2)
+    : 0;
+
+  const syrinInerting = empire.researchedTechs.includes('syrin_inerting_method')
+    ? Math.min(1, (empire.starsilkResources?.inertStarsilk ?? 0) / 15)
+    : 0;
+
   return {
     domination: Math.min(1, domination),
     science: Math.min(1, science),
     survival: Math.min(1, survival),
     influence: Math.min(1, influence),
     economy: Math.min(1, economy),
+    starbinding: Math.min(1, starbinding),
+    ledgerDominion: Math.min(1, ledgerDominion),
+    bloodEclipse: Math.min(1, bloodEclipse),
+    archiveContinuity: Math.min(1, archiveContinuity),
+    syrinInerting: Math.min(1, syrinInerting),
   };
 }
 
@@ -76,6 +113,10 @@ export function checkVictoryConditions(state: GameState): { winnerId: string | n
 
   for (const empire of state.empires) {
     if (!empire.isAlive) continue;
+
+    if (checkStarbindingVictory(state, empire.id)) {
+      return { winnerId: empire.id, type: 'starbinding' };
+    }
 
     const owned = colonizable.filter(p => p.ownerId === empire.id && p.isColonized).length;
     if (totalColonizable > 0 && owned / totalColonizable >= DOMINATION_THRESHOLD) {
@@ -125,10 +166,30 @@ export function getVictoryMessage(type: VictoryType, empireName: string, maxTurn
     case 'survival': return `${empireName} survives until turn ${maxTurns ?? 100}!`;
     case 'influence': return `${empireName} achieves Influence Victory!`;
     case 'economy': return `${empireName} achieves Economic Hegemony Victory!`;
+    case 'starbinding': return `${empireName} executes The Starbinding. The sky is severed. No consensus was sought.`;
     default: return '';
   }
 }
 
 export function getVictoryProgressForEmpire(empire: Empire, state: GameState): VictoryProgress {
   return getVictoryProgress(state, empire.id);
+}
+
+export function getStarbindingVictoryDetails(state: GameState, empireId: string): {
+  stage: number;
+  requiredDives: number;
+  completedDives: number;
+  nextAction: string;
+} {
+  const empire = state.empires.find(e => e.id === empireId);
+  if (!empire) {
+    return { stage: 0, requiredDives: 0, completedDives: 0, nextAction: '' };
+  }
+  const sb = empire.starbinding;
+  return {
+    stage: getStarbindingStage(empire),
+    requiredDives: getRequiredStarDives(state),
+    completedDives: sb?.completedDiveSystemIds.length ?? 0,
+    nextAction: '',
+  };
 }

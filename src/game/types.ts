@@ -4,7 +4,24 @@ export type PlanetType = keyof typeof PLANET_TYPE_INFO;
 export type DiplomacyState = 'neutral' | 'hostile' | 'war' | 'trade' | 'pact' | 'research_pact';
 export type ShipType = 'scout' | 'frigate' | 'cruiser' | 'destroyer' | 'carrier' | 'colony' | 'dreadnought';
 export type GamePhase = 'menu' | 'playing' | 'victory' | 'defeat';
-export type VictoryType = 'domination' | 'science' | 'survival' | 'influence' | 'economy' | null;
+export type VictoryType = 'domination' | 'science' | 'survival' | 'influence' | 'economy' | 'starbinding' | null;
+export type StarState = 'stable' | 'unstable' | 'starbinding_targeted' | 'collapsing' | 'collapsed_black_hole' | 'inert_partition_anchor';
+export type StarsilkDepositType =
+  | 'none'
+  | 'starsilk_leak'
+  | 'syrin_trace'
+  | 'blood_ring_remnant'
+  | 'siege_lattice_shard'
+  | 'archive_light_field'
+  | 'biomass_scar';
+export type FactionIdeologyTag =
+  | 'administration'
+  | 'drakken'
+  | 'solidarity'
+  | 'syrin'
+  | 'archive'
+  | 'containment'
+  | 'frontier';
 export type DiplomaticProposalType = 'trade' | 'pact' | 'research_pact' | 'peace';
 export type StarSpectralClass = 'O' | 'B' | 'A' | 'F' | 'G' | 'K' | 'M';
 export type SystemType = 'normal' | 'black_hole';
@@ -29,7 +46,9 @@ export type BuildingType =
   | 'market'
   | 'academy'
   | 'fortress'
-  | 'orbital_station';
+  | 'orbital_station'
+  | 'starbinding_array'
+  | 'partition_anchor';
 export type Difficulty = 'easy' | 'normal' | 'hard';
 export type GalaxySizeOption = 'small' | 'medium' | 'large' | 'huge';
 export type GalaxyShape = 'spiral' | 'cluster' | 'ring' | 'elliptical' | 'sparse';
@@ -61,6 +80,42 @@ export interface StrategicResources {
   titanium: number;
   antimatter: number;
   darkmatter: number;
+}
+
+export interface StarsilkResources {
+  starsilkThread: number;
+  inertStarsilk: number;
+  syrinReagent: number;
+  archiveData: number;
+  bloodRingGlass: number;
+  siegeLatticeFragment: number;
+}
+
+export interface StarbindingState {
+  stage: number;
+  targetSystemIds: string[];
+  completedDiveSystemIds: string[];
+  activeCollapseSystemId: string | null;
+  collapseTurnsRemaining: number;
+  inertStarsilkStabilized: number;
+  partitionAnchorsBuilt: number;
+  arraySystemId: string | null;
+  finalExecutionTurnsRemaining: number;
+  failed: boolean;
+  crisisTriggered: boolean;
+}
+
+export interface MacroCooldown {
+  macroId: string;
+  turnsRemaining: number;
+}
+
+export interface ActiveMacroEffect {
+  macroId: string;
+  empireId: string;
+  systemId?: string;
+  planetId?: string;
+  turnsRemaining: number;
 }
 
 export interface ShipDesignModules {
@@ -145,6 +200,7 @@ export interface Planet {
   luxuryResource?: LuxuryResource | 'none';
   developmentLevel?: number;
   terraformingProgress?: number;
+  starsilkDeposit?: StarsilkDepositType;
 }
 
 export interface SystemAnomaly {
@@ -172,6 +228,8 @@ export interface StarSystem {
   orbitalStationOwnerId: string | null;
   siegeBlockaders: string[];
   specialization?: SystemSpecialization | null;
+  starState?: StarState;
+  isArchiveStar?: boolean;
 }
 
 export interface Technology {
@@ -225,6 +283,13 @@ export interface Empire {
   isPirate?: boolean;
   lastSeenSystems?: Record<string, number>;
   factionIndex?: number;
+  starsilkResources?: StarsilkResources;
+  starbinding?: StarbindingState;
+  macroCooldowns?: MacroCooldown[];
+  activeMacroEffects?: ActiveMacroEffect[];
+  ideologyTags?: FactionIdeologyTag[];
+  stabilityPenalty?: number;
+  starsilkDiscoveryFlags?: Record<string, boolean>;
 }
 
 export interface ShipLossDetail {
@@ -313,6 +378,11 @@ export interface VictoryProgress {
   survival: number;
   influence: number;
   economy: number;
+  starbinding: number;
+  ledgerDominion: number;
+  bloodEclipse: number;
+  archiveContinuity: number;
+  syrinInerting: number;
 }
 
 export interface GameEvent {
@@ -331,7 +401,10 @@ export interface GameEvent {
     | 'anomaly'
     | 'event'
     | 'capture'
-    | 'siege';
+    | 'siege'
+    | 'starbinding'
+    | 'heliocide'
+    | 'macro';
   message: string;
 }
 
@@ -463,4 +536,11 @@ export interface SerializedEmpire {
   isPirate?: boolean;
   lastSeenSystems?: Record<string, number>;
   factionIndex?: number;
+  starsilkResources?: StarsilkResources;
+  starbinding?: StarbindingState;
+  macroCooldowns?: MacroCooldown[];
+  activeMacroEffects?: ActiveMacroEffect[];
+  ideologyTags?: FactionIdeologyTag[];
+  stabilityPenalty?: number;
+  starsilkDiscoveryFlags?: Record<string, boolean>;
 }
