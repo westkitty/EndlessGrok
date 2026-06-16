@@ -17,9 +17,9 @@ async function startNewGame(page: import('@playwright/test').Page, seed = '42') 
 }
 
 async function dismissTurnSummary(page: import('@playwright/test').Page) {
-  const summary = page.locator('.turn-summary-modal, .overlay-content');
-  if (await summary.first().isVisible({ timeout: 3000 }).catch(() => false)) {
-    await page.keyboard.press('Escape');
+  const continueBtn = page.getByRole('button', { name: 'Continue' });
+  if (await continueBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+    await continueBtn.click();
   }
   const decision = page.locator('.decision-overlay button').first();
   if (await decision.isVisible({ timeout: 2000 }).catch(() => false)) {

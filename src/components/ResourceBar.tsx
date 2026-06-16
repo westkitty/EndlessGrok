@@ -1,11 +1,8 @@
-import type { ReactNode } from 'react';
-import { Icon } from './icons/Icon';
-import { type IconName } from './icons/iconHelpers';
+import { buildRuntimeTooltip } from '../data/assets/resolve';
+import { AssetIcon } from './AssetIcon';
+import { StarsilkTooltipContent } from './StarsilkTooltip';
 import { Tooltip } from './Tooltip';
-import {
-  STARSILK_RESOURCE_KEYS,
-  STARSILK_RESOURCE_LABELS,
-} from '../game/starsilkResources';
+import { STARSILK_RESOURCE_KEYS } from '../game/starsilkResources';
 import type { EconomyBreakdown, Resources, StarsilkResources, StrategicResources } from '../game/types';
 
 interface ResourceBarProps {
@@ -22,83 +19,106 @@ interface ResourceBarProps {
   starsilkIncome?: StarsilkResources;
 }
 
-const STRATEGIC_CONFIG: {
-  key: keyof StrategicResources;
-  icon: IconName;
-  label: string;
-  color: string;
-}[] = [
-  { key: 'titanium', icon: 'titanium', label: 'Titanium', color: '#c0c0c0' },
-  { key: 'antimatter', icon: 'antimatter', label: 'Antimatter', color: '#ff66ff' },
-  { key: 'darkmatter', icon: 'darkmatter', label: 'Dark Matter', color: '#9b6dff' },
+const CORE_RESOURCE_KEYS: (keyof Resources | 'influence')[] = [
+  'credits', 'food', 'industry', 'science', 'influence',
 ];
 
-const RESOURCE_CONFIG: {
-  key: keyof Resources | 'influence';
-  icon: IconName;
-  label: string;
-  color: string;
-}[] = [
-  { key: 'credits', icon: 'credits', label: 'Credits', color: 'var(--res-credits)' },
-  { key: 'food', icon: 'food', label: 'Food', color: 'var(--res-food)' },
-  { key: 'industry', icon: 'industry', label: 'Industry', color: 'var(--res-industry)' },
-  { key: 'science', icon: 'science', label: 'Science', color: 'var(--res-science)' },
-  { key: 'influence', icon: 'influence', label: 'Influence', color: 'var(--res-influence)' },
-];
+const STRATEGIC_KEYS: (keyof StrategicResources)[] = ['titanium', 'antimatter', 'darkmatter'];
+
+const RESOURCE_COLORS: Record<string, string> = {
+  credits: 'var(--res-credits)',
+  food: 'var(--res-food)',
+  industry: 'var(--res-industry)',
+  science: 'var(--res-science)',
+  influence: 'var(--res-influence)',
+  titanium: '#c0c0c0',
+  antimatter: '#ff66ff',
+  darkmatter: '#9b6dff',
+  starsilkThread: 'var(--accent-violet)',
+  inertStarsilk: 'var(--accent-cyan)',
+  syrinReagent: 'var(--accent-cyan)',
+  archiveData: 'var(--res-science)',
+  bloodRingGlass: 'var(--danger)',
+  siegeLatticeFragment: 'var(--warning)',
+};
 
 function formatDelta(value: number): string {
   if (value === 0) return '';
   return value > 0 ? `+${value}` : `${value}`;
 }
 
-function buildTooltip(
-  key: keyof Resources | 'influence',
+function buildEconomyRuntime(
+  key: keyof Resources,
   value: number,
   deltaStr: string,
-  economy?: EconomyBreakdown
-): ReactNode {
-  const label = RESOURCE_CONFIG.find(r => r.key === key)?.label ?? key;
-
-  if (key === 'influence' || !economy) {
-    return (
-      <span>
-        <strong>{label}</strong>: {value}
-        {deltaStr && ` (${deltaStr} last turn)`}
-      </span>
-    );
+  economy?: EconomyBreakdown,
+) {
+  if (!economy) {
+    return buildRuntimeTooltip(`resource:${key}`, { value, delta: deltaStr || undefined });
   }
-
   const income = economy.income[key];
-  const expense = key === 'credits'
-    ? economy.expenses.credits
-    : economy.expenses[key];
+  const expense = key === 'credits' ? economy.expenses.credits : economy.expenses[key];
   const net = economy.net[key];
+  const incomeNote = key === 'credits' && economy.expenses.fleetUpkeep > 0
+    ? `Fleet upkeep: -${economy.expenses.fleetUpkeep} · Maintenance: -${economy.expenses.maintenance}`
+    : undefined;
+  return buildRuntimeTooltip(`resource:${key}`, {
+    value,
+    delta: deltaStr || undefined,
+    income,
+    expense,
+    net,
+    incomeNote,
+  });
+}
 
+function resolveResourceTestId(testIdSuffix: string): string {
+  if (testIdSuffix === 'titanium' || testIdSuffix === 'antimatter' || testIdSuffix === 'darkmatter') {
+    return `strategic-${testIdSuffix}`;
+  }
+  if (
+    testIdSuffix === 'starsilkThread' ||
+    testIdSuffix === 'inertStarsilk' ||
+    testIdSuffix === 'syrinReagent' ||
+    testIdSuffix === 'archiveData' ||
+    testIdSuffix === 'bloodRingGlass' ||
+    testIdSuffix === 'siegeLatticeFragment'
+  ) {
+    return `starsilk-${testIdSuffix}`;
+  }
+  return `resource-item-${testIdSuffix}`;
+}
+
+function ResourceItem({
+  mechanicalKey,
+  value,
+  deltaStr,
+  color,
+  compact,
+  tooltipData,
+  testIdSuffix,
+}: {
+  mechanicalKey: string;
+  value: number;
+  deltaStr: string;
+  color: string;
+  compact: boolean;
+  tooltipData: ReturnType<typeof buildRuntimeTooltip>;
+  testIdSuffix: string;
+}) {
+  const chipTestId = resolveResourceTestId(testIdSuffix);
   return (
-    <span>
-      <strong>{label}</strong>: {value}
-      {deltaStr && ` (${deltaStr} last turn)`}
-      <br />
-      <span style={{ color: 'var(--success)' }}>Income: +{income}</span>
-      {expense > 0 && (
-        <>
-          <br />
-          <span style={{ color: 'var(--danger)' }}>Expenses: -{expense}</span>
-        </>
-      )}
-      <br />
-      <span style={{ color: net >= 0 ? 'var(--success)' : 'var(--danger)' }}>
-        Net: {net >= 0 ? '+' : ''}{net}
-      </span>
-      {key === 'credits' && economy.expenses.fleetUpkeep > 0 && (
-        <>
-          <br />
-          <span style={{ fontSize: '0.85em', color: 'var(--text-dim)' }}>
-            Fleet upkeep: -{economy.expenses.fleetUpkeep} · Maintenance: -{economy.expenses.maintenance}
+    <Tooltip content={<StarsilkTooltipContent data={tooltipData} testId={`tooltip-${testIdSuffix}`} compact />}>
+      <div className="resource-item" data-testid={chipTestId}>
+        <AssetIcon mechanicalKey={mechanicalKey} size={compact ? 16 : 20} className="resource-item__icon" />
+        <span className="resource-item__value" style={{ color }}>{value}</span>
+        {deltaStr && (
+          <span className={`resource-item__delta ${deltaStr.startsWith('+') ? 'positive' : deltaStr.startsWith('-') ? 'negative' : ''}`}>
+            {deltaStr}
           </span>
-        </>
-      )}
-    </span>
+        )}
+      </div>
+    </Tooltip>
   );
 }
 
@@ -116,82 +136,77 @@ export function ResourceBar({
   starsilkIncome,
 }: ResourceBarProps) {
   const visibleStrategic = strategicResources && showStrategicResources
-    ? STRATEGIC_CONFIG
+    ? STRATEGIC_KEYS
     : strategicResources
-      ? STRATEGIC_CONFIG.filter(({ key }) => strategicResources[key] > 0)
+      ? STRATEGIC_KEYS.filter(key => strategicResources[key] > 0)
       : [];
 
   return (
     <div className={`resource-bar ${compact ? 'resource-bar--compact' : ''}`} data-testid="resource-bar">
-      {RESOURCE_CONFIG.map(({ key, icon, color }) => {
+      {CORE_RESOURCE_KEYS.map(key => {
         if (key === 'influence' && influence === undefined) return null;
         const value = key === 'influence' ? influence! : resources[key as keyof Resources];
         const delta = key !== 'influence' ? deltas?.[key as keyof Resources] : undefined;
         const deltaStr = delta !== undefined ? formatDelta(delta) : '';
+        const mechanicalKey = `resource:${key}`;
+        const tooltipData = key === 'influence'
+          ? buildRuntimeTooltip(mechanicalKey, { value, delta: deltaStr || undefined })
+          : buildEconomyRuntime(key as keyof Resources, value, deltaStr, economy);
 
         return (
-          <Tooltip
+          <ResourceItem
             key={key}
-            content={buildTooltip(key, value, deltaStr, economy)}
-          >
-            <div className="resource-item">
-              <Icon name={icon} size={compact ? 16 : 20} className="resource-item__icon" />
-              <span className="resource-item__value" style={{ color }}>{value}</span>
-              {deltaStr && (
-                <span className={`resource-item__delta ${delta! > 0 ? 'positive' : delta! < 0 ? 'negative' : ''}`}>
-                  {deltaStr}
-                </span>
-              )}
-            </div>
-          </Tooltip>
+            mechanicalKey={mechanicalKey}
+            value={value}
+            deltaStr={deltaStr}
+            color={RESOURCE_COLORS[key]}
+            compact={compact}
+            tooltipData={tooltipData}
+            testIdSuffix={key}
+          />
         );
       })}
-      {visibleStrategic.map(({ key, icon, label, color }) => {
+
+      {visibleStrategic.map(key => {
         const income = strategicIncome?.[key] ?? 0;
-        const incomeStr = income > 0 ? `+${income}/turn` : '';
+        const incomeStr = income > 0 ? `+${income}/turn from colonies` : undefined;
+        const tooltipData = buildRuntimeTooltip(`resource:${key}`, {
+          value: strategicResources![key],
+          incomeNote: incomeStr,
+        });
         return (
-          <Tooltip
+          <ResourceItem
             key={key}
-            content={
-              <span>
-                <strong>{label}</strong>: {strategicResources![key]}
-                {incomeStr && <> · Income: {incomeStr} from colonies</>}
-              </span>
-            }
-          >
-            <div className="resource-item" data-testid={`strategic-${key}`}>
-              <Icon name={icon} size={compact ? 16 : 20} className="resource-item__icon" />
-              <span className="resource-item__value" style={{ color }}>{strategicResources![key]}</span>
-              {incomeStr && (
-                <span className="resource-item__delta positive" style={{ fontSize: '0.65rem' }}>{incomeStr}</span>
-              )}
-            </div>
-          </Tooltip>
+            mechanicalKey={`resource:${key}`}
+            value={strategicResources![key]}
+            deltaStr={income > 0 ? `+${income}/t` : ''}
+            color={RESOURCE_COLORS[key]}
+            compact={compact}
+            tooltipData={tooltipData}
+            testIdSuffix={key}
+          />
         );
       })}
+
       {showStarsilkResources && starsilkResources && STARSILK_RESOURCE_KEYS.map(key => {
         const val = starsilkResources[key];
         if (val <= 0 && !(starsilkIncome?.[key] ?? 0)) return null;
         const income = starsilkIncome?.[key] ?? 0;
+        const tooltipData = buildRuntimeTooltip(`resource:${key}`, {
+          value: val,
+          incomeNote: income > 0 ? `+${income}/turn from deposits/archives` : undefined,
+        });
         return (
-          <Tooltip
+          <ResourceItem
             key={key}
-            content={
-              <span>
-                <strong>{STARSILK_RESOURCE_LABELS[key]}</strong>: {val}
-                {income > 0 && <> · +{income}/turn from deposits/archives</>}
-              </span>
-            }
-          >
-            <div className="resource-item" data-testid={`starsilk-${key}`}>
-              <span className="resource-item__value" style={{ color: 'var(--accent-violet)', fontSize: '0.75rem' }}>
-                {val}
-              </span>
-              <span style={{ fontSize: '0.6rem', color: 'var(--text-dim)' }}>
-                {STARSILK_RESOURCE_LABELS[key].split(' ')[0]}
-              </span>
-            </div>
-          </Tooltip>
+            mechanicalKey={`resource:${key}`}
+            value={val}
+            deltaStr={income > 0 ? `+${income}/t` : ''}
+            color={RESOURCE_COLORS[key]}
+            compact={compact}
+            tooltipData={tooltipData}
+            testIdSuffix={key}
+          />
         );
       })}
     </div>

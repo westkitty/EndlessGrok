@@ -1,5 +1,7 @@
 # Asset Manifest — Endless Grok
 
+> **Registry:** Typed asset records and mechanical keys live in `src/data/assets/` and `docs/asset-registry.md`. Prefer registry lookup for new UI work.
+
 All visual assets are original SVG or procedurally generated (canvas). No external copyrighted art.
 
 ## Design Tokens
