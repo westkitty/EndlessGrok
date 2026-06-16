@@ -1,8 +1,17 @@
+import { materializeEventLogEntry } from '../data/events/materialize';
+import { getEventDefinitionById } from '../data/events/loader';
 import { addOrRefreshMacroEffect } from './macroEffects';
 import { ensureSyrinInertingProgress, SYRIN_INERTING_MIN_INERT, SYRIN_INERTING_MIN_MIST_APPLICATIONS, SYRIN_INERTING_REQUIRED_SYSTEMS } from './syrinInertingVictory';
 import type { GameState } from './types';
 import { createEmptyStarsilkResources } from './starsilkResources';
 import { createStarbindingState } from './starbinding';
+
+/** Seed a structured event definition into the log for deterministic E2E. */
+export function seedEventDefinitionFixture(state: GameState, eventId: string): void {
+  const definition = getEventDefinitionById(eventId);
+  if (!definition) return;
+  state.events.push(materializeEventLogEntry(definition, state.turn));
+}
 
 /** Deterministic unlock for E2E / unit tests — not exposed in normal UI. */
 export function unlockStarbindingTestFixture(state: GameState, empireId?: string): void {

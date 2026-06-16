@@ -74,7 +74,11 @@ export function EventLog({ events, activeEventChains }: Props) {
       </div>
       <div className="event-log">
         {filtered.map((event, i) => (
-          <div key={`${event.turn}-${i}`} className={`event-item ${event.type}`}>
+          <div
+            key={`${event.turn}-${i}`}
+            className={`event-item ${event.type}`}
+            data-testid={event.eventDefinitionId ? `event-log-${event.eventDefinitionId}` : `event-log-${event.type}-${event.turn}-${i}`}
+          >
             {EVENT_ICONS[event.type] && (
               <Icon name={EVENT_ICONS[event.type]!} size={10} style={{ marginRight: 4, verticalAlign: 'middle', opacity: 0.7 }} />
             )}

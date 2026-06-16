@@ -10,7 +10,7 @@ import { FACTION_DEFINITIONS, factionToPlayerSetup } from './game/factions';
 import { loadUISettings, saveUISettings, type UISettings } from './game/uiSettings';
 import { previewStrategicIncome } from './game/economy';
 import { previewStarsilkIncome, STARSILK_RESOURCE_KEYS } from './game/starsilkResources';
-import { unlockStarbindingTestFixture, simulatePlayerStarbindingThreat, setupSyrinInertingVictoryFixture } from './game/testFixtures';
+import { unlockStarbindingTestFixture, simulatePlayerStarbindingThreat, setupSyrinInertingVictoryFixture, seedEventDefinitionFixture } from './game/testFixtures';
 import type { Difficulty, GalaxyShape, GalaxySizeOption, GameSettings, GameState, Resources, TurnSummary } from './game/types';
 import { GalaxyMap } from './components/GalaxyMap';
 import { getDefaultViewport, type GalaxyTransform, type GalaxyViewport } from './components/galaxy/mapHelpers';
@@ -276,13 +276,23 @@ function GameScreen({
     (window as Window & { __egPrepareMacroTest?: () => void }).__egPrepareMacroTest = () => {
       const s = cloneGameState(state);
       unlockStarbindingTestFixture(s);
-      const cap = s.empires.find(e => e.id === s.playerEmpireId)?.capitalSystemId;
-      if (cap) s.selectedSystemId = cap;
+      const player = s.empires.find(e => e.id === s.playerEmpireId);
+      const cap = player?.capitalSystemId;
+      if (cap && player) {
+        s.selectedSystemId = cap;
+        player.knownSystems.add(cap);
+        player.visibleSystems.add(cap);
+      }
       onUpdate(s);
     };
     (window as Window & { __egSetupSyrinVictory?: () => void }).__egSetupSyrinVictory = () => {
       const s = cloneGameState(state);
       setupSyrinInertingVictoryFixture(s);
+      onUpdate(s);
+    };
+    (window as Window & { __egSeedEvent?: (eventId: string) => void }).__egSeedEvent = (eventId: string) => {
+      const s = cloneGameState(state);
+      seedEventDefinitionFixture(s, eventId);
       onUpdate(s);
     };
   }, [state, onUpdate]);

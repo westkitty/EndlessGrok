@@ -21,16 +21,16 @@ async function dismissTurnSummary(page: import('@playwright/test').Page) {
   for (let attempt = 0; attempt < 8; attempt++) {
     if (!(await overlay.first().isVisible().catch(() => false))) return;
 
-    const continueBtn = page.getByRole('button', { name: 'Continue' });
-    if (await continueBtn.isVisible().catch(() => false)) {
-      await continueBtn.click();
+    const decision = page.locator('.decision-overlay button').first();
+    if (await decision.isVisible().catch(() => false)) {
+      await decision.click({ force: true });
       await expect(overlay.first()).toBeHidden({ timeout: 10000 }).catch(() => {});
       continue;
     }
 
-    const decision = page.locator('.decision-overlay button').first();
-    if (await decision.isVisible().catch(() => false)) {
-      await decision.click();
+    const continueBtn = page.getByRole('button', { name: 'Continue' });
+    if (await continueBtn.isVisible().catch(() => false)) {
+      await continueBtn.click({ force: true });
       await expect(overlay.first()).toBeHidden({ timeout: 10000 }).catch(() => {});
       continue;
     }
