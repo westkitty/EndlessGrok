@@ -9,6 +9,10 @@ lerna-debug.log*
 
 node_modules
 dist
+build
+.env
+test-results
+playwright-report
 dist-ssr
 *.local
 .endlessgrok-server.pid
