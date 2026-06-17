@@ -1,0 +1,244 @@
+{
+  "batchId": "batch-fleets-generated",
+  "batchName": "Starsilk Fleet Icons (Generated)",
+  "sourceAgent": "Starsilk Asset Production Agent",
+  "createdAt": "2026-06-17T01:08:45.317Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "fleet-scout-icon",
+      "mechanicalKey": "fleet:scout-icon",
+      "family": "fleets",
+      "displayName": "Fleet Scout Icon",
+      "filename": "fleet-scout-icon.svg",
+      "relativePath": "public/assets/icons/fleets/fleet-scout-icon.svg",
+      "status": "generated",
+      "testId": "fleet-scout-icon",
+      "fallbackIconName": "scout",
+      "tooltip": {
+        "title": "Fleet Scout Icon",
+        "mechanical": "Explorer fleet role marker.",
+        "lore": "Light groups chart fogged lanes.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "fleet-colony-icon",
+      "mechanicalKey": "fleet:colony-icon",
+      "family": "fleets",
+      "displayName": "Fleet Colony Icon",
+      "filename": "fleet-colony-icon.svg",
+      "relativePath": "public/assets/icons/fleets/fleet-colony-icon.svg",
+      "status": "generated",
+      "testId": "fleet-colony-icon",
+      "fallbackIconName": "colony",
+      "tooltip": {
+        "title": "Fleet Colony Icon",
+        "mechanical": "Colonization transport role marker.",
+        "lore": "Population and infrastructure in transit.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "fleet-military-icon",
+      "mechanicalKey": "fleet:military-icon",
+      "family": "fleets",
+      "displayName": "Fleet Military Icon",
+      "filename": "fleet-military-icon.svg",
+      "relativePath": "public/assets/icons/fleets/fleet-military-icon.svg",
+      "status": "generated",
+      "testId": "fleet-military-icon",
+      "fallbackIconName": "cruiser",
+      "tooltip": {
+        "title": "Fleet Military Icon",
+        "mechanical": "Combat-dominant fleet role marker.",
+        "lore": "Force applied as ledger argument.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "fleet-defense-icon",
+      "mechanicalKey": "fleet:defense-icon",
+      "family": "fleets",
+      "displayName": "Fleet Defense Icon",
+      "filename": "fleet-defense-icon.svg",
+      "relativePath": "public/assets/icons/fleets/fleet-defense-icon.svg",
+      "status": "generated",
+      "testId": "fleet-defense-icon",
+      "fallbackIconName": "dreadnought",
+      "tooltip": {
+        "title": "Fleet Defense Icon",
+        "mechanical": "Siege and defense fleet role marker.",
+        "lore": "Lattice-breaking concentration.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "fleet-movement-trail",
+      "mechanicalKey": "fleet:movement-trail",
+      "family": "fleets",
+      "displayName": "Fleet Movement Trail",
+      "filename": "fleet-movement-trail.svg",
+      "relativePath": "public/assets/icons/fleets/fleet-movement-trail.svg",
+      "status": "generated",
+      "testId": "fleet-movement-trail",
+      "fallbackIconName": "fleet",
+      "visualVariant": "default",
+      "tooltip": {
+        "title": "Fleet Movement Trail",
+        "mechanical": "Transit path overlay on the galaxy map.",
+        "lore": "Lane syntax traced in motion.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "fleet-selected-marker",
+      "mechanicalKey": "fleet:selected-marker",
+      "family": "fleets",
+      "displayName": "Fleet Selected Marker",
+      "filename": "fleet-selected-marker.svg",
+      "relativePath": "public/assets/icons/fleets/fleet-selected-marker.svg",
+      "status": "generated",
+      "testId": "fleet-selected-marker",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Fleet Selected Marker",
+        "mechanical": "Selection ring for active fleet.",
+        "lore": "Command focus on deployed group.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "fleet-combat-risk-low",
+      "mechanicalKey": "fleet:combat-risk-low",
+      "family": "fleets",
+      "displayName": "Fleet Combat Risk Low",
+      "filename": "fleet-combat-risk-low.svg",
+      "relativePath": "public/assets/icons/fleets/fleet-combat-risk-low.svg",
+      "status": "generated",
+      "testId": "fleet-combat-risk-low",
+      "fallbackIconName": "stance-passive",
+      "tooltip": {
+        "title": "Fleet Combat Risk Low",
+        "mechanical": "Low engagement risk indicator.",
+        "lore": "Passive stance — holds fire unless attacked.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "fleet-combat-risk-medium",
+      "mechanicalKey": "fleet:combat-risk-medium",
+      "family": "fleets",
+      "displayName": "Fleet Combat Risk Medium",
+      "filename": "fleet-combat-risk-medium.svg",
+      "relativePath": "public/assets/icons/fleets/fleet-combat-risk-medium.svg",
+      "status": "generated",
+      "testId": "fleet-combat-risk-medium",
+      "fallbackIconName": "stance-passive",
+      "tooltip": {
+        "title": "Fleet Combat Risk Medium",
+        "mechanical": "Moderate engagement risk indicator.",
+        "lore": "Cautious transit through contested lanes.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "fleet-combat-risk-high",
+      "mechanicalKey": "fleet:combat-risk-high",
+      "family": "fleets",
+      "displayName": "Fleet Combat Risk High",
+      "filename": "fleet-combat-risk-high.svg",
+      "relativePath": "public/assets/icons/fleets/fleet-combat-risk-high.svg",
+      "status": "generated",
+      "testId": "fleet-combat-risk-high",
+      "fallbackIconName": "stance-aggressive",
+      "tooltip": {
+        "title": "Fleet Combat Risk High",
+        "mechanical": "High engagement risk indicator.",
+        "lore": "Aggressive stance — seeks engagement.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    }
+  ]
+}

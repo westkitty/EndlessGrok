@@ -16,12 +16,6 @@ export const LEGACY_TO_CANONICAL: Record<string, string> = {
   'macro-drakken_biosphere_render': 'macro-drakken-biosphere-render',
   'macro-gravity_thread_seal': 'macro-gravity-thread-seal',
   'macro-counter_macro_scrub': 'macro-counter-macro-scrub',
-  'fleet-scout': 'fleet-scout-icon',
-  'fleet-colony': 'fleet-colony-icon',
-  'fleet-military': 'fleet-military-icon',
-  'fleet-siege': 'fleet-defense-icon',
-  'fleet-stance-passive': 'fleet-combat-risk-low',
-  'fleet-stance-aggressive': 'fleet-combat-risk-high',
 };
 
 const MECHANICAL_TO_CANONICAL: Record<string, string> = {
