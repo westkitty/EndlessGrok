@@ -483,7 +483,7 @@
     "tooltip": null,
     "testId": "map-star-normal",
     "sourceBasis": "mechanical UI necessity",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-collapsed-star",
@@ -501,7 +501,7 @@
     "tooltip": null,
     "testId": "map-collapsed-star",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-starbinding-target",
@@ -519,7 +519,7 @@
     "tooltip": null,
     "testId": "map-starbinding-target",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-deposit-starsilk-leak",
@@ -537,7 +537,7 @@
     "tooltip": null,
     "testId": "map-deposit-starsilk-leak",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-deposit-syrin-trace",
@@ -555,7 +555,7 @@
     "tooltip": null,
     "testId": "map-deposit-syrin-trace",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-deposit-blood-ring-glass",
@@ -573,7 +573,7 @@
     "tooltip": null,
     "testId": "map-deposit-blood-ring-glass",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-deposit-siege-lattice-fragment",
@@ -591,7 +591,7 @@
     "tooltip": null,
     "testId": "map-deposit-siege-lattice-fragment",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-deposit-archive-data",
@@ -609,7 +609,7 @@
     "tooltip": null,
     "testId": "map-deposit-archive-data",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-hazard-singularity",
@@ -627,7 +627,7 @@
     "tooltip": null,
     "testId": "map-hazard-singularity",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-hazard-unstable-star",
@@ -645,7 +645,7 @@
     "tooltip": null,
     "testId": "map-hazard-unstable-star",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-hazard-macro-sealed-system",
@@ -663,7 +663,7 @@
     "tooltip": null,
     "testId": "map-hazard-macro-sealed-system",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-lane-normal",
@@ -681,7 +681,7 @@
     "tooltip": null,
     "testId": "map-lane-normal",
     "sourceBasis": "mechanical UI necessity",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-lane-unknown",
@@ -699,7 +699,7 @@
     "tooltip": null,
     "testId": "map-lane-unknown",
     "sourceBasis": "mechanical UI necessity",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-lane-blocked",
@@ -717,7 +717,7 @@
     "tooltip": null,
     "testId": "map-lane-blocked",
     "sourceBasis": "mechanical UI necessity",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-lane-hazardous",
@@ -735,7 +735,7 @@
     "tooltip": null,
     "testId": "map-lane-hazardous",
     "sourceBasis": "mechanical UI necessity",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-lane-sealed",
@@ -753,7 +753,7 @@
     "tooltip": null,
     "testId": "map-lane-sealed",
     "sourceBasis": "mechanical UI necessity",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-lane-hostile",
@@ -771,7 +771,7 @@
     "tooltip": null,
     "testId": "map-lane-hostile",
     "sourceBasis": "mechanical UI necessity",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "map-fog-intel-mask",
@@ -789,7 +789,7 @@
     "tooltip": null,
     "testId": "map-fog-intel-mask",
     "sourceBasis": "mechanical UI necessity",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "macro-local-checksum-audit",
@@ -987,7 +987,7 @@
     "tooltip": null,
     "testId": "faction-ledger-administration-emblem",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "faction-drakken-genesis-host-emblem",
@@ -1005,7 +1005,7 @@
     "tooltip": null,
     "testId": "faction-drakken-genesis-host-emblem",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "faction-solidarity-cells-partition-front-emblem",
@@ -1023,7 +1023,7 @@
     "tooltip": null,
     "testId": "faction-solidarity-cells-partition-front-emblem",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "faction-syrin-survivor-enclave-emblem",
@@ -1041,7 +1041,7 @@
     "tooltip": null,
     "testId": "faction-syrin-survivor-enclave-emblem",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "faction-archive-custodians-exhumed-cipher-emblem",
@@ -1059,7 +1059,7 @@
     "tooltip": null,
     "testId": "faction-archive-custodians-exhumed-cipher-emblem",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "faction-containment-order-shard-god-emblem",
@@ -1077,7 +1077,7 @@
     "tooltip": null,
     "testId": "faction-containment-order-shard-god-emblem",
     "sourceBasis": "direct canon",
-    "status": "generated-unverified"
+    "status": "generated-verified"
   },
   {
     "id": "faction-diplomacy-tone-pack-ledger-administration",
@@ -1203,7 +1203,7 @@
     "tooltip": null,
     "testId": "fleet-scout-icon",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "fleet-colony-icon",
@@ -1221,7 +1221,7 @@
     "tooltip": null,
     "testId": "fleet-colony-icon",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "fleet-military-icon",
@@ -1239,7 +1239,7 @@
     "tooltip": null,
     "testId": "fleet-military-icon",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "fleet-defense-icon",
@@ -1257,7 +1257,7 @@
     "tooltip": null,
     "testId": "fleet-defense-icon",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "fleet-movement-trail",
@@ -1275,7 +1275,7 @@
     "tooltip": null,
     "testId": "fleet-movement-trail",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "fleet-selected-marker",
@@ -1293,7 +1293,7 @@
     "tooltip": null,
     "testId": "fleet-selected-marker",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "fleet-combat-risk-low",
@@ -1311,7 +1311,7 @@
     "tooltip": null,
     "testId": "fleet-combat-risk-low",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "fleet-combat-risk-medium",
@@ -1329,7 +1329,7 @@
     "tooltip": null,
     "testId": "fleet-combat-risk-medium",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "fleet-combat-risk-high",
@@ -1347,7 +1347,7 @@
     "tooltip": null,
     "testId": "fleet-combat-risk-high",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "module-weapon-star-knife-lance",
@@ -1869,7 +1869,7 @@
     "tooltip": null,
     "testId": "ui-panel-header-research",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-panel-header-fleet-manager",
@@ -1887,7 +1887,7 @@
     "tooltip": null,
     "testId": "ui-panel-header-fleet-manager",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-panel-header-macro-panel",
@@ -1905,7 +1905,7 @@
     "tooltip": null,
     "testId": "ui-panel-header-macro-panel",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-panel-header-victory",
@@ -1923,7 +1923,7 @@
     "tooltip": null,
     "testId": "ui-panel-header-victory",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-panel-header-diplomacy",
@@ -1941,7 +1941,7 @@
     "tooltip": null,
     "testId": "ui-panel-header-diplomacy",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-tooltip-system-frame",
@@ -1959,7 +1959,7 @@
     "tooltip": null,
     "testId": "ui-tooltip-system-frame",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-warning-heliocide-modal",
@@ -1977,7 +1977,7 @@
     "tooltip": null,
     "testId": "ui-warning-heliocide-modal",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-warning-starbinding-modal",
@@ -1995,7 +1995,7 @@
     "tooltip": null,
     "testId": "ui-warning-starbinding-modal",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-warning-war-move-modal",
@@ -2013,7 +2013,7 @@
     "tooltip": null,
     "testId": "ui-warning-war-move-modal",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-warning-production-cancel-modal",
@@ -2031,7 +2031,7 @@
     "tooltip": null,
     "testId": "ui-warning-production-cancel-modal",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-progress-bar-victory",
@@ -2049,7 +2049,7 @@
     "tooltip": null,
     "testId": "ui-progress-bar-victory",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-progress-bar-macro-duration",
@@ -2067,7 +2067,7 @@
     "tooltip": null,
     "testId": "ui-progress-bar-macro-duration",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-status-badge-active-macro",
@@ -2085,7 +2085,7 @@
     "tooltip": null,
     "testId": "ui-status-badge-active-macro",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-status-badge-hazard-sealed",
@@ -2103,7 +2103,7 @@
     "tooltip": null,
     "testId": "ui-status-badge-hazard-sealed",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-status-badge-inerted",
@@ -2121,7 +2121,7 @@
     "tooltip": null,
     "testId": "ui-status-badge-inerted",
     "sourceBasis": "direct canon",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-status-badge-hostile",
@@ -2139,7 +2139,7 @@
     "tooltip": null,
     "testId": "ui-status-badge-hostile",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-empty-state-fleet-manager",
@@ -2157,7 +2157,7 @@
     "tooltip": null,
     "testId": "ui-empty-state-fleet-manager",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-empty-state-macro-intel",
@@ -2175,7 +2175,7 @@
     "tooltip": null,
     "testId": "ui-empty-state-macro-intel",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "ui-empty-state-victory-paths",
@@ -2193,7 +2193,7 @@
     "tooltip": null,
     "testId": "ui-empty-state-victory-paths",
     "sourceBasis": "mechanical UI necessity",
-    "status": "prompted"
+    "status": "generated-unverified"
   },
   {
     "id": "audio-ui-confirm",
