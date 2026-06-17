@@ -22,9 +22,9 @@ describe('runtime manifest', () => {
 
   it('indexes by family and status', () => {
     expect(getAssetsByFamily('resources')).toHaveLength(10);
-    expect(getAssetsByStatus('prompted')).toHaveLength(91);
-    expect(getAssetsByStatus('generated-unverified')).toHaveLength(24);
-    expect(getAssetsByStatus('generated-verified')).toHaveLength(19);
+    expect(getAssetsByStatus('prompted')).toHaveLength(63);
+    expect(getAssetsByStatus('generated-unverified')).toHaveLength(28);
+    expect(getAssetsByStatus('generated-verified')).toHaveLength(43);
     expect(getAssetsBySourceBasis('direct canon').length).toBeGreaterThan(0);
   });
 

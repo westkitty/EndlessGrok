@@ -1,0 +1,511 @@
+{
+  "batchId": "batch-ui-generated",
+  "batchName": "Starsilk UI Chrome (Generated)",
+  "sourceAgent": "Starsilk Asset Production Agent",
+  "createdAt": "2026-06-17T01:08:45.318Z",
+  "canonSafetyVersion": "1.0",
+  "assets": [
+    {
+      "assetId": "ui-panel-header-research",
+      "mechanicalKey": "ui:panel-header-research",
+      "family": "ui",
+      "displayName": "Research Panel Header",
+      "filename": "ui-panel-header-research.svg",
+      "relativePath": "public/assets/icons/ui/ui-panel-header-research.svg",
+      "status": "generated",
+      "testId": "ui-panel-header-research",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Research Panel Header",
+        "mechanical": "Research terminal panel chrome.",
+        "lore": "Archive syntax surfaced for study.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-panel-header-fleet-manager",
+      "mechanicalKey": "ui:panel-header-fleet-manager",
+      "family": "ui",
+      "displayName": "Fleet Manager Panel Header",
+      "filename": "ui-panel-header-fleet-manager.svg",
+      "relativePath": "public/assets/icons/ui/ui-panel-header-fleet-manager.svg",
+      "status": "generated",
+      "testId": "ui-panel-header-fleet-manager",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Fleet Manager Panel Header",
+        "mechanical": "Fleet manager panel chrome.",
+        "lore": "Operational syntax for deployed groups.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-panel-header-macro-panel",
+      "mechanicalKey": "ui:panel-header-macro-panel",
+      "family": "ui",
+      "displayName": "Macro Panel Header",
+      "filename": "ui-panel-header-macro-panel.svg",
+      "relativePath": "public/assets/icons/ui/ui-panel-header-macro-panel.svg",
+      "status": "generated",
+      "testId": "ui-panel-header-macro-panel",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Macro Panel Header",
+        "mechanical": "Macro operations panel chrome.",
+        "lore": "Partition tools under audit framing.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-panel-header-victory",
+      "mechanicalKey": "ui:panel-header-victory",
+      "family": "ui",
+      "displayName": "Victory Panel Header",
+      "filename": "ui-panel-header-victory.svg",
+      "relativePath": "public/assets/icons/ui/ui-panel-header-victory.svg",
+      "status": "generated",
+      "testId": "ui-panel-header-victory",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Victory Panel Header",
+        "mechanical": "Victory path panel chrome.",
+        "lore": "End-state routes under ledger review.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-panel-header-diplomacy",
+      "mechanicalKey": "ui:panel-header-diplomacy",
+      "family": "ui",
+      "displayName": "Diplomacy Panel Header",
+      "filename": "ui-panel-header-diplomacy.svg",
+      "relativePath": "public/assets/icons/ui/ui-panel-header-diplomacy.svg",
+      "status": "generated",
+      "testId": "ui-panel-header-diplomacy",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Diplomacy Panel Header",
+        "mechanical": "Diplomacy panel chrome.",
+        "lore": "Faction relations under containment audit.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-tooltip-system-frame",
+      "mechanicalKey": "ui:tooltip-system-frame",
+      "family": "ui",
+      "displayName": "Tooltip System Frame",
+      "filename": "ui-tooltip-system-frame.svg",
+      "relativePath": "public/assets/icons/ui/ui-tooltip-system-frame.svg",
+      "status": "generated",
+      "testId": "ui-tooltip-system-frame",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Tooltip System Frame",
+        "mechanical": "Standard tooltip border frame.",
+        "lore": "Mechanical and lore summaries in one surface.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-warning-heliocide-modal",
+      "mechanicalKey": "ui:warning-heliocide-modal",
+      "family": "ui",
+      "displayName": "Heliocide Warning Modal",
+      "filename": "ui-warning-heliocide-modal.svg",
+      "relativePath": "public/assets/icons/ui/ui-warning-heliocide-modal.svg",
+      "status": "generated",
+      "testId": "ui-warning-heliocide-modal",
+      "fallbackIconName": "fleet",
+      "visualVariant": "catastrophic",
+      "tooltip": {
+        "title": "Heliocide Warning",
+        "mechanical": "Confirms irreversible star collapse.",
+        "lore": "Partition math admits no reversal.",
+        "warning": "Irreversible.",
+        "canonLabel": "direct_canon"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "direct canon",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-warning-starbinding-modal",
+      "mechanicalKey": "ui:warning-starbinding-modal",
+      "family": "ui",
+      "displayName": "Starbinding Warning Modal",
+      "filename": "ui-warning-starbinding-modal.svg",
+      "relativePath": "public/assets/icons/ui/ui-warning-starbinding-modal.svg",
+      "status": "generated",
+      "testId": "ui-warning-starbinding-modal",
+      "fallbackIconName": "fleet",
+      "visualVariant": "catastrophic",
+      "tooltip": {
+        "title": "Starbinding Warning Modal",
+        "mechanical": "Starbinding escalation confirmation chrome.",
+        "lore": "Archive dive targeting flashpoint.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "direct canon",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-warning-war-move-modal",
+      "mechanicalKey": "ui:warning-war-move-modal",
+      "family": "ui",
+      "displayName": "War Move Warning Modal",
+      "filename": "ui-warning-war-move-modal.svg",
+      "relativePath": "public/assets/icons/ui/ui-warning-war-move-modal.svg",
+      "status": "generated",
+      "testId": "ui-warning-war-move-modal",
+      "fallbackIconName": "fleet",
+      "visualVariant": "hazard",
+      "tooltip": {
+        "title": "War Move Warning Modal",
+        "mechanical": "Hostile transit confirmation chrome.",
+        "lore": "Movement through contested lanes.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-warning-production-cancel-modal",
+      "mechanicalKey": "ui:warning-production-cancel-modal",
+      "family": "ui",
+      "displayName": "Production Cancel Warning Modal",
+      "filename": "ui-warning-production-cancel-modal.svg",
+      "relativePath": "public/assets/icons/ui/ui-warning-production-cancel-modal.svg",
+      "status": "generated",
+      "testId": "ui-warning-production-cancel-modal",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Production Cancel Warning Modal",
+        "mechanical": "Build queue cancellation confirmation chrome.",
+        "lore": "Fabrication mass reclaimed or lost.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-progress-bar-victory",
+      "mechanicalKey": "ui:progress-bar-victory",
+      "family": "ui",
+      "displayName": "Victory Progress Bar",
+      "filename": "ui-progress-bar-victory.svg",
+      "relativePath": "public/assets/icons/ui/ui-progress-bar-victory.svg",
+      "status": "generated",
+      "testId": "ui-progress-bar-victory",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Victory Progress Bar",
+        "mechanical": "Victory path completion meter chrome.",
+        "lore": "End-state syntax advancing under audit.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-progress-bar-macro-duration",
+      "mechanicalKey": "ui:progress-bar-macro-duration",
+      "family": "ui",
+      "displayName": "Macro Duration Progress Bar",
+      "filename": "ui-progress-bar-macro-duration.svg",
+      "relativePath": "public/assets/icons/ui/ui-progress-bar-macro-duration.svg",
+      "status": "generated",
+      "testId": "ui-progress-bar-macro-duration",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Macro Duration Progress Bar",
+        "mechanical": "Active macro duration meter chrome.",
+        "lore": "Partition tool runtime remaining.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-status-badge-active-macro",
+      "mechanicalKey": "ui:status-badge-active-macro",
+      "family": "ui",
+      "displayName": "Active Macro Badge",
+      "filename": "ui-status-badge-active-macro.svg",
+      "relativePath": "public/assets/icons/ui/ui-status-badge-active-macro.svg",
+      "status": "generated",
+      "testId": "ui-status-badge-active-macro",
+      "fallbackIconName": "fleet",
+      "visualVariant": "seal",
+      "tooltip": {
+        "title": "Active Macro Badge",
+        "mechanical": "Indicates macro currently executing.",
+        "lore": "Partition tool live in system.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-status-badge-hazard-sealed",
+      "mechanicalKey": "ui:status-badge-hazard-sealed",
+      "family": "ui",
+      "displayName": "Hazard Sealed Badge",
+      "filename": "ui-status-badge-hazard-sealed.svg",
+      "relativePath": "public/assets/icons/ui/ui-status-badge-hazard-sealed.svg",
+      "status": "generated",
+      "testId": "ui-status-badge-hazard-sealed",
+      "fallbackIconName": "fleet",
+      "visualVariant": "seal",
+      "tooltip": {
+        "title": "Hazard Sealed Badge",
+        "mechanical": "Indicates hazard seal active.",
+        "lore": "Gravity thread seal stitched locally.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-status-badge-inerted",
+      "mechanicalKey": "ui:status-badge-inerted",
+      "family": "ui",
+      "displayName": "Inerted Badge",
+      "filename": "ui-status-badge-inerted.svg",
+      "relativePath": "public/assets/icons/ui/ui-status-badge-inerted.svg",
+      "status": "generated",
+      "testId": "ui-status-badge-inerted",
+      "fallbackIconName": "fleet",
+      "visualVariant": "inerting",
+      "tooltip": {
+        "title": "Inerted Badge",
+        "mechanical": "Indicates Syrin inerting active.",
+        "lore": "Containment field holds the bleed.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "direct canon",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-status-badge-hostile",
+      "mechanicalKey": "ui:status-badge-hostile",
+      "family": "ui",
+      "displayName": "Hostile Badge",
+      "filename": "ui-status-badge-hostile.svg",
+      "relativePath": "public/assets/icons/ui/ui-status-badge-hostile.svg",
+      "status": "generated",
+      "testId": "ui-status-badge-hostile",
+      "fallbackIconName": "fleet",
+      "visualVariant": "catastrophic",
+      "tooltip": {
+        "title": "Hostile Badge",
+        "mechanical": "Indicates hostile control or stance.",
+        "lore": "Transit under fire risk.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-empty-state-fleet-manager",
+      "mechanicalKey": "ui:empty-state-fleet-manager",
+      "family": "ui",
+      "displayName": "Fleet Manager Empty State",
+      "filename": "ui-empty-state-fleet-manager.svg",
+      "relativePath": "public/assets/icons/ui/ui-empty-state-fleet-manager.svg",
+      "status": "generated",
+      "testId": "ui-empty-state-fleet-manager",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Fleet Manager Empty State",
+        "mechanical": "Placeholder when no fleets deployed.",
+        "lore": "No groups in operational syntax.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-empty-state-macro-intel",
+      "mechanicalKey": "ui:empty-state-macro-intel",
+      "family": "ui",
+      "displayName": "Macro Intel Empty State",
+      "filename": "ui-empty-state-macro-intel.svg",
+      "relativePath": "public/assets/icons/ui/ui-empty-state-macro-intel.svg",
+      "status": "generated",
+      "testId": "ui-empty-state-macro-intel",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Macro Intel Empty State",
+        "mechanical": "Placeholder when no macro intel available.",
+        "lore": "Partition surface awaiting scan.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    },
+    {
+      "assetId": "ui-empty-state-victory-paths",
+      "mechanicalKey": "ui:empty-state-victory-paths",
+      "family": "ui",
+      "displayName": "Victory Paths Empty State",
+      "filename": "ui-empty-state-victory-paths.svg",
+      "relativePath": "public/assets/icons/ui/ui-empty-state-victory-paths.svg",
+      "status": "generated",
+      "testId": "ui-empty-state-victory-paths",
+      "fallbackIconName": "fleet",
+      "tooltip": {
+        "title": "Victory Paths Empty State",
+        "mechanical": "Placeholder when no victory routes visible.",
+        "lore": "End-state syntax not yet legible.",
+        "canonLabel": "canon_faithful"
+      },
+      "states": [
+        "default"
+      ],
+      "sourceLabel": "mechanical UI necessity",
+      "qaChecks": [
+        "mechanical summary present",
+        "imagery guardrails pass",
+        "dark background legible"
+      ]
+    }
+  ]
+}

@@ -20,6 +20,7 @@
     "events:materialize": "tsx scripts/materialize-event-json.ts",
     "assets:generate:batch1": "tsx scripts/generate-starsilk-svg-batch.ts",
     "assets:generate:batch2": "tsx scripts/generate-starsilk-svg-batch2.ts",
+    "assets:generate:batch3": "tsx scripts/generate-starsilk-svg-batch3.ts",
     "assets:promote:batch1": "tsx scripts/promote-generated-batch.ts",
     "assets:promote:status": "tsx scripts/promote-asset-status.ts"
   },

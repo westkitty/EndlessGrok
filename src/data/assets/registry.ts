@@ -4,8 +4,10 @@ import { VICTORY_ASSETS } from './records/victory';
 import { MACRO_ASSETS, MACRO_EFFECT_ASSETS } from './records/macros';
 import { MAP_ASSETS } from './records/map';
 import { FLEET_ASSETS } from './records/fleets';
+import { FLEET_ICON_ASSETS } from './records/fleetIcons';
 import { FACTION_ASSETS } from './records/factions';
 import { STARSILK_FACTION_ASSETS } from './records/starsilkFactions';
+import { UI_ASSETS } from './records/ui';
 import type { AssetFamily, AssetRecord, AssetStatus } from './types';
 
 export const ASSET_REGISTRY: AssetRecord[] = [
@@ -15,8 +17,10 @@ export const ASSET_REGISTRY: AssetRecord[] = [
   ...MACRO_EFFECT_ASSETS,
   ...MAP_ASSETS,
   ...FLEET_ASSETS,
+  ...FLEET_ICON_ASSETS,
   ...FACTION_ASSETS,
   ...STARSILK_FACTION_ASSETS,
+  ...UI_ASSETS,
 ];
 
 const byId = new Map<string, AssetRecord>();

@@ -20,6 +20,8 @@ const GENERATED_SAMPLES = [
   { key: 'macro:local_checksum_audit', file: 'public/assets/icons/macros/macro-local-checksum-audit.svg' },
   { key: 'map:collapsed_black_hole', file: 'public/assets/icons/map/map-collapsed-star.svg' },
   { key: 'faction:ledger-administration-emblem', file: 'public/assets/icons/factions/faction-ledger-administration-emblem.svg' },
+  { key: 'fleet:scout', file: 'public/assets/icons/fleets/fleet-scout-icon.svg' },
+  { key: 'ui:panel-header-research', file: 'public/assets/icons/ui/ui-panel-header-research.svg' },
 ] as const;
 
 describe('generated Starsilk asset batch', () => {

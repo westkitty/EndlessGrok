@@ -7,6 +7,8 @@ import { VICTORY_ASSETS } from '../src/data/assets/records/victory.ts';
 import { MACRO_ASSETS } from '../src/data/assets/records/macros.ts';
 import { MAP_ASSETS } from '../src/data/assets/records/map.ts';
 import { STARSILK_FACTION_ASSETS } from '../src/data/assets/records/starsilkFactions.ts';
+import { FLEET_ICON_ASSETS } from '../src/data/assets/records/fleetIcons.ts';
+import { UI_ASSETS } from '../src/data/assets/records/ui.ts';
 import type { AssetRecord } from '../src/data/assets/types.ts';
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -64,6 +66,8 @@ const batches = [
   ['batch-macros-generated', 'Starsilk Macro Icons (Generated)', macros],
   ['batch-map-generated', 'Starsilk Map Icons (Generated)', mapLedger],
   ['batch-factions-generated', 'Starsilk Faction Emblems (Generated)', STARSILK_FACTION_ASSETS],
+  ['batch-fleets-generated', 'Starsilk Fleet Icons (Generated)', FLEET_ICON_ASSETS],
+  ['batch-ui-generated', 'Starsilk UI Chrome (Generated)', UI_ASSETS],
 ] as const;
 
 for (const [id, name, records] of batches) {
